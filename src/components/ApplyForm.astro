@@ -9,18 +9,17 @@ const t = {
   en: {
     title: 'Ready to scale?',
     subtitle: 'Apply to see if you\'re a fit.',
-    name: 'Stage name',
-    email: 'Email',
-    telegram: 'Telegram',
-    telegramHint: 'We\'ll contact you here to confirm your application',
-    social: 'Social media accounts',
-    socialHint: 'Instagram (main + backups), TikTok, Twitter/X, Reddit. Include @ or links',
+    intro: 'We work with both established creators and high-potential profiles.',
+    name: 'Name / Stage Name',
+    instagram: 'Instagram @',
+    contact: 'Telegram @ (preferred) or WhatsApp number',
+    contactHint: 'We\'ll contact you here to confirm your application',
     income: 'Current monthly income (optional)',
-    incomeHint: 'This helps us understand your current stage',
+    incomeHint: 'Don\'t worry if you\'re just starting \u2014 we also work with creators with high potential',
     submit: 'Apply now',
     privacy: 'Your data is treated confidentially.',
     reviewed: 'Applications are reviewed within 24\u201348h',
-    success: 'Application sent! We\'ll reach out on Telegram within 24\u201348h.',
+    success: 'Application sent! We\'ll reach out within 24\u201348h.',
     error: 'Something went wrong. Try again or reach us at hello@mangova.agency',
     income0: '$0',
     income1: '$0 \u2013 $1k',
@@ -32,18 +31,17 @@ const t = {
   es: {
     title: '\u00bfListo para escalar?',
     subtitle: 'Aplica para ver si encajamos.',
-    name: 'Nombre art\u00edstico',
-    email: 'Email',
-    telegram: 'Telegram',
-    telegramHint: 'Te contactaremos aqu\u00ed para confirmar tu solicitud',
-    social: 'Cuentas de redes sociales',
-    socialHint: 'Instagram (principal + backups), TikTok, Twitter/X, Reddit. Incluye @ o links',
+    intro: 'Trabajamos tanto con creadores establecidos como con perfiles de alto potencial.',
+    name: 'Nombre / Nombre art\u00edstico',
+    instagram: 'Instagram @',
+    contact: 'Telegram @ (preferido) o n\u00famero de WhatsApp',
+    contactHint: 'Te contactaremos aqu\u00ed para confirmar tu solicitud',
     income: 'Ingresos mensuales actuales (opcional)',
-    incomeHint: 'Nos ayuda a entender tu etapa actual',
+    incomeHint: 'No te preocupes si est\u00e1s empezando \u2014 tambi\u00e9n trabajamos con creadores con alto potencial',
     submit: 'Aplicar ahora',
     privacy: 'Tus datos se tratan de forma confidencial.',
     reviewed: 'Las solicitudes se revisan en 24\u201348h',
-    success: '\u00a1Solicitud enviada! Te contactaremos por Telegram en 24\u201348h.',
+    success: '\u00a1Solicitud enviada! Te contactaremos en 24\u201348h.',
     error: 'Algo sali\u00f3 mal. Int\u00e9ntalo de nuevo o escr\u00edbenos a hello@mangova.agency',
     income0: '$0',
     income1: '$0 \u2013 $1k',
@@ -65,6 +63,8 @@ const t = {
 
     <!-- Form -->
     <div class="bg-surface-container-lowest border border-outline-variant/20 rounded-2xl p-8 md:p-10">
+      <p class="text-on-surface-variant text-sm text-center mb-8">{t.intro}</p>
+
       <form id="apply-form" class="flex flex-col gap-5">
         <div>
           <label for="name" class="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-2 block">{t.name}</label>
@@ -73,23 +73,16 @@ const t = {
         </div>
 
         <div>
-          <label for="email" class="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-2 block">{t.email}</label>
-          <input type="email" id="email" name="email" required
+          <label for="instagram" class="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-2 block">{t.instagram}</label>
+          <input type="text" id="instagram" name="instagram" placeholder="@" required
             class="w-full bg-surface-container-low border border-outline-variant/30 rounded-lg px-4 py-3 text-sm text-on-surface placeholder:text-outline focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all" />
         </div>
 
         <div>
-          <label for="telegram" class="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-2 block">{t.telegram}</label>
-          <input type="text" id="telegram" name="telegram" placeholder="@" required
+          <label for="contact" class="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-2 block">{t.contact}</label>
+          <input type="text" id="contact" name="contact" placeholder="@username or +1234567890" required
             class="w-full bg-surface-container-low border border-outline-variant/30 rounded-lg px-4 py-3 text-sm text-on-surface placeholder:text-outline focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all" />
-          <p class="text-xs text-outline mt-1.5">{t.telegramHint}</p>
-        </div>
-
-        <div>
-          <label for="social" class="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-2 block">{t.social} <span class="text-error">*</span></label>
-          <textarea id="social" name="social" rows="3" required
-            class="w-full bg-surface-container-low border border-outline-variant/30 rounded-lg px-4 py-3 text-sm text-on-surface placeholder:text-outline focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all resize-none"
-            placeholder={t.socialHint}></textarea>
+          <p class="text-xs text-outline mt-1.5">{t.contactHint}</p>
         </div>
 
         <div>
@@ -111,11 +104,9 @@ const t = {
           {t.submit}
         </button>
 
-        <div class="flex items-center justify-center gap-4 text-xs text-outline">
-          <span class="flex items-center gap-1">
-            <span class="material-symbols-outlined" style="font-size:14px;">lock</span>
-            {t.privacy}
-          </span>
+        <div class="flex items-center justify-center gap-1 text-xs text-outline">
+          <span class="material-symbols-outlined" style="font-size:14px;">lock</span>
+          {t.privacy}
         </div>
         <p class="text-xs text-outline text-center">{t.reviewed}</p>
       </form>
@@ -148,9 +139,8 @@ const t = {
 
     const data = {
       name: form.name.value,
-      email: form.email.value,
-      telegram: form.telegram.value,
-      social: form.social.value,
+      instagram: form.instagram.value,
+      contact: form.contact.value,
       income: form.income.value,
     };
 
@@ -170,7 +160,7 @@ const t = {
     } catch {
       errorEl.classList.remove('hidden');
       btn.disabled = false;
-      btn.textContent = form.querySelector('[type=submit]')?.dataset?.text || 'Apply now';
+      btn.textContent = 'Apply now';
     }
   });
 </script>
