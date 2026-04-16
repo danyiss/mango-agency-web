@@ -1,0 +1,64 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+  activeNav?: string;
+}
+
+const { title, description = 'System-driven agency for creators ready to move from management to infrastructure. Built for performance, not just posting.', activeNav = '' } = Astro.props;
+const currentYear = new Date().getFullYear();
+---
+
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" rel="stylesheet" />
+    <title>{title}</title>
+  </head>
+  <body class="bg-surface text-on-surface font-body antialiased">
+    <!-- Navigation -->
+    <header class="fixed top-0 left-0 right-0 z-50 glass-nav border-b border-outline-variant/10">
+      <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+        <div class="flex items-center gap-8">
+          <a href="/" class="text-xl font-black tracking-tighter text-primary">MANGO</a>
+          <nav class="hidden md:flex items-center gap-6">
+            <a href="/" class:list={["text-sm font-medium transition-colors", activeNav === 'home' ? 'text-primary font-semibold border-b-2 border-primary pb-1' : 'text-secondary hover:text-primary']}>Home</a>
+            <a href="/results" class:list={["text-sm font-medium transition-colors", activeNav === 'results' ? 'text-primary font-semibold border-b-2 border-primary pb-1' : 'text-secondary hover:text-primary']}>Results</a>
+            <a href="/how-it-works" class:list={["text-sm font-medium transition-colors", activeNav === 'how-it-works' ? 'text-primary font-semibold border-b-2 border-primary pb-1' : 'text-secondary hover:text-primary']}>How It Works</a>
+            <a href="/for-agencies" class:list={["text-sm font-medium transition-colors", activeNav === 'for-agencies' ? 'text-primary font-semibold border-b-2 border-primary pb-1' : 'text-secondary hover:text-primary']}>For Agencies</a>
+          </nav>
+        </div>
+        <a href="#apply" class="bg-primary text-on-primary px-5 py-2 text-sm font-bold rounded-lg hover:bg-primary-container transition-all">
+          Apply Now
+        </a>
+      </div>
+    </header>
+
+    <main class="pt-16">
+      <slot />
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-12 bg-white border-t border-outline-variant/20 px-6">
+      <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+        <a href="/" class="text-2xl font-black tracking-tighter text-primary">MANGO</a>
+        <div class="flex gap-8 text-sm text-secondary font-medium">
+          <a class="hover:text-primary transition-colors" href="/legal">Privacy Policy</a>
+          <a class="hover:text-primary transition-colors" href="/legal">Terms of Service</a>
+          <a class="hover:text-primary transition-colors" href="https://instagram.com/mangova.agency" target="_blank" rel="noopener">Instagram</a>
+        </div>
+        <p class="text-xs text-outline font-medium">&copy; {currentYear} MANGO. All rights reserved.</p>
+      </div>
+    </footer>
+  </body>
+</html>
+
