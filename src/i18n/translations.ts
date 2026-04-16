@@ -119,8 +119,8 @@ export const translations = {
 
     // Home Hero
     'home.hero.badge': 'Agencia Basada en Sistemas',
-    'home.hero.title': 'Para creadoras',
-    'home.hero.titleLine2': 'por creadoras',
+    'home.hero.title': 'Para creadores',
+    'home.hero.titleLine2': 'por creadores',
     'home.hero.subtitle': 'Estrategia, contenido y automatizaci\u00f3n impulsadas por IA. Somos una agencia OFM con base en Europa y Asia que convierte tu talento en ingresos reales y sostenibles.',
     'home.hero.cta': 'Quiero aplicar',
     'home.hero.ctaSecondary': 'Ver c\u00f3mo funciona',

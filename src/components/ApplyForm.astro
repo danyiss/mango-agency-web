@@ -17,13 +17,13 @@ const t = {
     privacy: 'Your data is treated confidentially.',
     success: 'Application sent! We\'ll get back to you within 24 hours.',
     error: 'Something went wrong. Try again or email us at hello@mangova.agency',
-    stat1v: '94%', stat1l: 'Avg. Growth',
-    stat2v: '$4M+', stat2l: 'Managed Rev',
-    stat3v: '15', stat3l: 'Elite Creators',
+    contact: 'Prefer a direct conversation?',
+    telegram: 'Telegram',
+    whatsapp: 'WhatsApp',
   },
   es: {
-    title: '\u00bfLista para escalar?',
-    subtitle: 'Solo trabajamos con un n\u00famero limitado de creadoras para mantener la integridad del sistema y un servicio personalizado.',
+    title: '\u00bfListo para escalar?',
+    subtitle: 'Solo trabajamos con un n\u00famero limitado de creadores para mantener la integridad del sistema y un servicio personalizado.',
     name: 'Tu nombre art\u00edstico',
     email: 'Email',
     social: '@ de Instagram / Twitter (opcional)',
@@ -32,31 +32,34 @@ const t = {
     privacy: 'Tus datos se tratan de forma confidencial.',
     success: '\u00a1Solicitud enviada! Te responderemos en menos de 24 horas.',
     error: 'Algo sali\u00f3 mal. Int\u00e9ntalo de nuevo o escr\u00edbenos a hello@mangova.agency',
-    stat1v: '94%', stat1l: 'Crecimiento Medio',
-    stat2v: '$4M+', stat2l: 'Ingresos Gestionados',
-    stat3v: '15', stat3l: 'Creadoras Elite',
+    contact: '\u00bfPrefieres una conversaci\u00f3n directa?',
+    telegram: 'Telegram',
+    whatsapp: 'WhatsApp',
   },
 }[lang];
 ---
 
 <section id="apply" class="py-28 bg-surface px-6">
   <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-    <!-- Left: Text + Stats -->
+    <!-- Left: Text -->
     <div class="flex flex-col gap-8 lg:sticky lg:top-28">
       <h2 class="text-5xl md:text-6xl font-black text-on-surface tracking-tight">{t.title}</h2>
       <p class="text-on-surface-variant text-lg max-w-lg leading-relaxed">{t.subtitle}</p>
-      <div class="grid grid-cols-3 gap-0 divide-x divide-outline-variant/20 border-t border-outline-variant/20 pt-8 mt-4">
-        <div class="flex flex-col items-center gap-1 px-4">
-          <span class="text-3xl md:text-4xl font-black text-on-surface">{t.stat1v}</span>
-          <span class="text-[10px] font-semibold text-outline uppercase tracking-widest">{t.stat1l}</span>
-        </div>
-        <div class="flex flex-col items-center gap-1 px-4">
-          <span class="text-3xl md:text-4xl font-black text-on-surface">{t.stat2v}</span>
-          <span class="text-[10px] font-semibold text-outline uppercase tracking-widest">{t.stat2l}</span>
-        </div>
-        <div class="flex flex-col items-center gap-1 px-4">
-          <span class="text-3xl md:text-4xl font-black text-on-surface">{t.stat3v}</span>
-          <span class="text-[10px] font-semibold text-outline uppercase tracking-widest">{t.stat3l}</span>
+
+      <!-- Direct contact -->
+      <div class="mt-4">
+        <p class="text-xs font-bold uppercase tracking-widest text-outline mb-4">{t.contact}</p>
+        <div class="flex flex-col gap-3">
+          <a href="https://t.me/mangoagency" target="_blank" rel="noopener"
+            class="flex items-center gap-3 px-5 py-3.5 bg-surface-container-lowest border border-outline-variant/20 rounded-xl hover:border-primary/30 hover:shadow-sm transition-all group">
+            <svg class="w-5 h-5 text-on-surface-variant group-hover:text-primary transition-colors" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+            <span class="text-sm font-semibold text-on-surface">{t.telegram}</span>
+          </a>
+          <a href="https://wa.me/message/mangoagency" target="_blank" rel="noopener"
+            class="flex items-center gap-3 px-5 py-3.5 bg-surface-container-lowest border border-outline-variant/20 rounded-xl hover:border-primary/30 hover:shadow-sm transition-all group">
+            <svg class="w-5 h-5 text-on-surface-variant group-hover:text-primary transition-colors" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            <span class="text-sm font-semibold text-on-surface">{t.whatsapp}</span>
+          </a>
         </div>
       </div>
     </div>
