@@ -35,6 +35,7 @@ const serviceSchema = {
 
 <Layout title="MANGO | For Creators, By Creators" activeNav="home" lang="en">
   <Fragment slot="head">
+    <link rel="preload" as="image" href="/assets/340bd35d3f89611dfd4fd778ec3d40c6.png" />
     <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
     <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
   </Fragment>
@@ -47,10 +48,6 @@ const serviceSchema = {
     ></div>
     <div class="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-transparent"></div>
     <div class="relative z-10 max-w-3xl flex flex-col gap-8">
-      <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-1.5">
-        <span class="material-symbols-outlined text-white" style="font-size:14px;">bolt</span>
-        <span class="text-white/80 text-xs font-semibold tracking-widest uppercase">{t('home.hero.badge')}</span>
-      </div>
       <h1 class="text-5xl md:text-7xl font-black text-white leading-[1.05] tracking-tight max-w-3xl">
         {t('home.hero.title')}<br />{t('home.hero.titleLine2')}
       </h1>
