@@ -1,0 +1,149 @@
+---
+interface Props {
+  lang?: 'en' | 'es';
+}
+
+const { lang = 'en' } = Astro.props;
+
+const t = {
+  en: {
+    title: 'Ready to scale?',
+    subtitle: 'We only work with a limited number of creators to maintain system integrity and personalized service.',
+    name: 'Your stage name',
+    email: 'Email',
+    social: '@ Instagram / Twitter (optional)',
+    message: 'Current status (income, niche, goals)',
+    submit: 'Send application',
+    privacy: 'Your data is treated confidentially.',
+    success: 'Application sent! We\'ll get back to you within 24 hours.',
+    error: 'Something went wrong. Try again or email us at hello@mangova.agency',
+    stat1v: '94%', stat1l: 'Avg. Growth',
+    stat2v: '$4M+', stat2l: 'Managed Rev',
+    stat3v: '15', stat3l: 'Elite Creators',
+  },
+  es: {
+    title: '\u00bfLista para escalar?',
+    subtitle: 'Solo trabajamos con un n\u00famero limitado de creadoras para mantener la integridad del sistema y un servicio personalizado.',
+    name: 'Tu nombre art\u00edstico',
+    email: 'Email',
+    social: '@ de Instagram / Twitter (opcional)',
+    message: 'Estado actual (ingresos, nicho, objetivos)',
+    submit: 'Enviar solicitud',
+    privacy: 'Tus datos se tratan de forma confidencial.',
+    success: '\u00a1Solicitud enviada! Te responderemos en menos de 24 horas.',
+    error: 'Algo sali\u00f3 mal. Int\u00e9ntalo de nuevo o escr\u00edbenos a hello@mangova.agency',
+    stat1v: '94%', stat1l: 'Crecimiento Medio',
+    stat2v: '$4M+', stat2l: 'Ingresos Gestionados',
+    stat3v: '15', stat3l: 'Creadoras Elite',
+  },
+}[lang];
+---
+
+<section id="apply" class="py-28 bg-surface px-6">
+  <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+    <!-- Left: Text + Stats -->
+    <div class="flex flex-col gap-8 lg:sticky lg:top-28">
+      <h2 class="text-5xl md:text-6xl font-black text-on-surface tracking-tight">{t.title}</h2>
+      <p class="text-on-surface-variant text-lg max-w-lg leading-relaxed">{t.subtitle}</p>
+      <div class="grid grid-cols-3 gap-0 divide-x divide-outline-variant/20 border-t border-outline-variant/20 pt-8 mt-4">
+        <div class="flex flex-col items-center gap-1 px-4">
+          <span class="text-3xl md:text-4xl font-black text-on-surface">{t.stat1v}</span>
+          <span class="text-[10px] font-semibold text-outline uppercase tracking-widest">{t.stat1l}</span>
+        </div>
+        <div class="flex flex-col items-center gap-1 px-4">
+          <span class="text-3xl md:text-4xl font-black text-on-surface">{t.stat2v}</span>
+          <span class="text-[10px] font-semibold text-outline uppercase tracking-widest">{t.stat2l}</span>
+        </div>
+        <div class="flex flex-col items-center gap-1 px-4">
+          <span class="text-3xl md:text-4xl font-black text-on-surface">{t.stat3v}</span>
+          <span class="text-[10px] font-semibold text-outline uppercase tracking-widest">{t.stat3l}</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right: Form -->
+    <div class="bg-surface-container-lowest border border-outline-variant/20 rounded-2xl p-8 md:p-10">
+      <form id="apply-form" class="flex flex-col gap-5">
+        <div>
+          <label for="name" class="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-2 block">{t.name}</label>
+          <input type="text" id="name" name="name" required
+            class="w-full bg-surface-container-low border border-outline-variant/30 rounded-lg px-4 py-3 text-sm text-on-surface placeholder:text-outline focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all" />
+        </div>
+        <div>
+          <label for="email" class="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-2 block">{t.email}</label>
+          <input type="email" id="email" name="email" required
+            class="w-full bg-surface-container-low border border-outline-variant/30 rounded-lg px-4 py-3 text-sm text-on-surface placeholder:text-outline focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all" />
+        </div>
+        <div>
+          <label for="social" class="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-2 block">{t.social}</label>
+          <input type="text" id="social" name="social"
+            class="w-full bg-surface-container-low border border-outline-variant/30 rounded-lg px-4 py-3 text-sm text-on-surface placeholder:text-outline focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all" />
+        </div>
+        <div>
+          <label for="message" class="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-2 block">{t.message}</label>
+          <textarea id="message" name="message" rows="4"
+            class="w-full bg-surface-container-low border border-outline-variant/30 rounded-lg px-4 py-3 text-sm text-on-surface placeholder:text-outline focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all resize-none"></textarea>
+        </div>
+        <button type="submit" id="submit-btn"
+          class="bg-primary text-on-primary font-bold py-4 rounded-xl text-sm tracking-wide hover:bg-primary-container transition-all w-full mt-2">
+          {t.submit}
+        </button>
+        <p class="text-xs text-outline text-center flex items-center justify-center gap-1.5">
+          <span class="material-symbols-outlined" style="font-size:14px;">lock</span>
+          {t.privacy}
+        </p>
+      </form>
+
+      <!-- Success state -->
+      <div id="form-success" class="hidden text-center py-12">
+        <span class="material-symbols-outlined text-primary mb-4 block" style="font-size:48px;font-variation-settings:'FILL' 1;">check_circle</span>
+        <p class="text-on-surface font-bold text-lg">{t.success}</p>
+      </div>
+
+      <!-- Error state -->
+      <div id="form-error" class="hidden text-center py-4">
+        <p class="text-error text-sm">{t.error}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script is:inline>
+  document.getElementById('apply-form')?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const btn = document.getElementById('submit-btn');
+    const successEl = document.getElementById('form-success');
+    const errorEl = document.getElementById('form-error');
+
+    btn.disabled = true;
+    btn.textContent = '...';
+    errorEl.classList.add('hidden');
+
+    const data = {
+      name: form.name.value,
+      email: form.email.value,
+      social: form.social.value,
+      message: form.message.value,
+    };
+
+    try {
+      const res = await fetch('/api/apply', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
+
+      if (res.ok) {
+        form.classList.add('hidden');
+        successEl.classList.remove('hidden');
+      } else {
+        throw new Error('Request failed');
+      }
+    } catch {
+      errorEl.classList.remove('hidden');
+      btn.disabled = false;
+      btn.textContent = form.dataset.submitText || 'Send application';
+    }
+  });
+</script>
