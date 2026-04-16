@@ -8,63 +8,62 @@ const { lang = 'en' } = Astro.props;
 const t = {
   en: {
     title: 'Ready to scale?',
-    subtitle: 'We only work with a limited number of creators to maintain system integrity and personalized service.',
-    name: 'Your stage name',
+    subtitle: 'Apply to see if you\'re a fit.',
+    name: 'Stage name',
     email: 'Email',
-    social: '@ Instagram / Twitter (optional)',
-    message: 'Current status (income, niche, goals)',
-    submit: 'Send application',
-    privacy: 'Your data is treated confidentially.',
-    success: 'Application sent! We\'ll get back to you within 24 hours.',
-    error: 'Something went wrong. Try again or email us at hello@mangova.agency',
-    contact: 'Prefer a direct conversation?',
     telegram: 'Telegram',
-    whatsapp: 'WhatsApp',
+    telegramHint: 'We\'ll contact you here to confirm your application',
+    social: 'Social media accounts',
+    socialHint: 'Instagram (main + backups), TikTok, Twitter/X, Reddit. Include @ or links',
+    income: 'Current monthly income (optional)',
+    incomeHint: 'This helps us understand your current stage',
+    submit: 'Apply now',
+    privacy: 'Your data is treated confidentially.',
+    reviewed: 'Applications are reviewed within 24\u201348h',
+    success: 'Application sent! We\'ll reach out on Telegram within 24\u201348h.',
+    error: 'Something went wrong. Try again or reach us at hello@mangova.agency',
+    income0: '$0',
+    income1: '$0 \u2013 $1k',
+    income2: '$1k \u2013 $5k',
+    income3: '$5k \u2013 $10k',
+    income4: '$10k+',
+    incomePlaceholder: 'Select range',
   },
   es: {
     title: '\u00bfListo para escalar?',
-    subtitle: 'Solo trabajamos con un n\u00famero limitado de creadores para mantener la integridad del sistema y un servicio personalizado.',
-    name: 'Tu nombre art\u00edstico',
+    subtitle: 'Aplica para ver si encajamos.',
+    name: 'Nombre art\u00edstico',
     email: 'Email',
-    social: '@ de Instagram / Twitter (opcional)',
-    message: 'Estado actual (ingresos, nicho, objetivos)',
-    submit: 'Enviar solicitud',
-    privacy: 'Tus datos se tratan de forma confidencial.',
-    success: '\u00a1Solicitud enviada! Te responderemos en menos de 24 horas.',
-    error: 'Algo sali\u00f3 mal. Int\u00e9ntalo de nuevo o escr\u00edbenos a hello@mangova.agency',
-    contact: '\u00bfPrefieres una conversaci\u00f3n directa?',
     telegram: 'Telegram',
-    whatsapp: 'WhatsApp',
+    telegramHint: 'Te contactaremos aqu\u00ed para confirmar tu solicitud',
+    social: 'Cuentas de redes sociales',
+    socialHint: 'Instagram (principal + backups), TikTok, Twitter/X, Reddit. Incluye @ o links',
+    income: 'Ingresos mensuales actuales (opcional)',
+    incomeHint: 'Nos ayuda a entender tu etapa actual',
+    submit: 'Aplicar ahora',
+    privacy: 'Tus datos se tratan de forma confidencial.',
+    reviewed: 'Las solicitudes se revisan en 24\u201348h',
+    success: '\u00a1Solicitud enviada! Te contactaremos por Telegram en 24\u201348h.',
+    error: 'Algo sali\u00f3 mal. Int\u00e9ntalo de nuevo o escr\u00edbenos a hello@mangova.agency',
+    income0: '$0',
+    income1: '$0 \u2013 $1k',
+    income2: '$1k \u2013 $5k',
+    income3: '$5k \u2013 $10k',
+    income4: '$10k+',
+    incomePlaceholder: 'Selecciona rango',
   },
 }[lang];
 ---
 
 <section id="apply" class="py-28 bg-surface px-6">
-  <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-    <!-- Left: Text -->
-    <div class="flex flex-col gap-8 lg:sticky lg:top-28">
-      <h2 class="text-5xl md:text-6xl font-black text-on-surface tracking-tight">{t.title}</h2>
-      <p class="text-on-surface-variant text-lg max-w-lg leading-relaxed">{t.subtitle}</p>
-
-      <!-- Direct contact -->
-      <div class="mt-4">
-        <p class="text-xs font-bold uppercase tracking-widest text-outline mb-4">{t.contact}</p>
-        <div class="flex flex-col gap-3">
-          <a href="https://t.me/mangoagency" target="_blank" rel="noopener"
-            class="flex items-center gap-3 px-5 py-3.5 bg-surface-container-lowest border border-outline-variant/20 rounded-xl hover:border-primary/30 hover:shadow-sm transition-all group">
-            <svg class="w-5 h-5 text-on-surface-variant group-hover:text-primary transition-colors" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
-            <span class="text-sm font-semibold text-on-surface">{t.telegram}</span>
-          </a>
-          <a href="https://wa.me/message/mangoagency" target="_blank" rel="noopener"
-            class="flex items-center gap-3 px-5 py-3.5 bg-surface-container-lowest border border-outline-variant/20 rounded-xl hover:border-primary/30 hover:shadow-sm transition-all group">
-            <svg class="w-5 h-5 text-on-surface-variant group-hover:text-primary transition-colors" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-            <span class="text-sm font-semibold text-on-surface">{t.whatsapp}</span>
-          </a>
-        </div>
-      </div>
+  <div class="max-w-xl mx-auto">
+    <!-- Header -->
+    <div class="text-center mb-10">
+      <h2 class="text-4xl md:text-5xl font-black text-on-surface tracking-tight mb-4">{t.title}</h2>
+      <p class="text-on-surface-variant text-lg">{t.subtitle}</p>
     </div>
 
-    <!-- Right: Form -->
+    <!-- Form -->
     <div class="bg-surface-container-lowest border border-outline-variant/20 rounded-2xl p-8 md:p-10">
       <form id="apply-form" class="flex flex-col gap-5">
         <div>
@@ -72,29 +71,53 @@ const t = {
           <input type="text" id="name" name="name" required
             class="w-full bg-surface-container-low border border-outline-variant/30 rounded-lg px-4 py-3 text-sm text-on-surface placeholder:text-outline focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all" />
         </div>
+
         <div>
           <label for="email" class="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-2 block">{t.email}</label>
           <input type="email" id="email" name="email" required
             class="w-full bg-surface-container-low border border-outline-variant/30 rounded-lg px-4 py-3 text-sm text-on-surface placeholder:text-outline focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all" />
         </div>
+
         <div>
-          <label for="social" class="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-2 block">{t.social}</label>
-          <input type="text" id="social" name="social"
+          <label for="telegram" class="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-2 block">{t.telegram}</label>
+          <input type="text" id="telegram" name="telegram" placeholder="@" required
             class="w-full bg-surface-container-low border border-outline-variant/30 rounded-lg px-4 py-3 text-sm text-on-surface placeholder:text-outline focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all" />
+          <p class="text-xs text-outline mt-1.5">{t.telegramHint}</p>
         </div>
+
         <div>
-          <label for="message" class="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-2 block">{t.message}</label>
-          <textarea id="message" name="message" rows="4"
-            class="w-full bg-surface-container-low border border-outline-variant/30 rounded-lg px-4 py-3 text-sm text-on-surface placeholder:text-outline focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all resize-none"></textarea>
+          <label for="social" class="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-2 block">{t.social} <span class="text-error">*</span></label>
+          <textarea id="social" name="social" rows="3" required
+            class="w-full bg-surface-container-low border border-outline-variant/30 rounded-lg px-4 py-3 text-sm text-on-surface placeholder:text-outline focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all resize-none"
+            placeholder={t.socialHint}></textarea>
         </div>
+
+        <div>
+          <label for="income" class="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-2 block">{t.income}</label>
+          <select id="income" name="income"
+            class="w-full bg-surface-container-low border border-outline-variant/30 rounded-lg px-4 py-3 text-sm text-on-surface focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all appearance-none cursor-pointer">
+            <option value="" disabled selected>{t.incomePlaceholder}</option>
+            <option value="0">{t.income0}</option>
+            <option value="0-1k">{t.income1}</option>
+            <option value="1k-5k">{t.income2}</option>
+            <option value="5k-10k">{t.income3}</option>
+            <option value="10k+">{t.income4}</option>
+          </select>
+          <p class="text-xs text-outline mt-1.5">{t.incomeHint}</p>
+        </div>
+
         <button type="submit" id="submit-btn"
           class="bg-primary text-on-primary font-bold py-4 rounded-xl text-sm tracking-wide hover:bg-primary-container transition-all w-full mt-2">
           {t.submit}
         </button>
-        <p class="text-xs text-outline text-center flex items-center justify-center gap-1.5">
-          <span class="material-symbols-outlined" style="font-size:14px;">lock</span>
-          {t.privacy}
-        </p>
+
+        <div class="flex items-center justify-center gap-4 text-xs text-outline">
+          <span class="flex items-center gap-1">
+            <span class="material-symbols-outlined" style="font-size:14px;">lock</span>
+            {t.privacy}
+          </span>
+        </div>
+        <p class="text-xs text-outline text-center">{t.reviewed}</p>
       </form>
 
       <!-- Success state -->
@@ -126,8 +149,9 @@ const t = {
     const data = {
       name: form.name.value,
       email: form.email.value,
+      telegram: form.telegram.value,
       social: form.social.value,
-      message: form.message.value,
+      income: form.income.value,
     };
 
     try {
@@ -146,7 +170,7 @@ const t = {
     } catch {
       errorEl.classList.remove('hidden');
       btn.disabled = false;
-      btn.textContent = form.dataset.submitText || 'Send application';
+      btn.textContent = form.querySelector('[type=submit]')?.dataset?.text || 'Apply now';
     }
   });
 </script>
