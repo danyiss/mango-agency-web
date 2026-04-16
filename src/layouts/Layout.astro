@@ -7,22 +7,46 @@ interface Props {
   description?: string;
   activeNav?: string;
   lang?: Lang;
+  ogImage?: string;
 }
 
 const currentLang = Astro.props.lang ?? getLangFromUrl(Astro.url);
 const t = useTranslations(currentLang);
 const altLang = currentLang === 'en' ? 'es' : 'en';
 
-const { title, description = t('home.hero.subtitle'), activeNav = '' } = Astro.props;
+const { title, description = t('home.hero.subtitle'), activeNav = '', ogImage = '/og-image.png' } = Astro.props;
 const currentYear = new Date().getFullYear();
 
-// Build localized paths
+// Canonical and alternate URLs
+const siteUrl = 'https://www.mangova.agency';
 const basePath = Astro.url.pathname.replace(/^\/(es|en)/, '').replace(/\/$/, '') || '/';
+const canonicalUrl = `${siteUrl}${Astro.url.pathname.replace(/\/$/, '') || '/'}`;
 const altUrl = altLang === 'en' ? basePath : `/es${basePath === '/' ? '' : basePath}`;
+const altFullUrl = `${siteUrl}${altUrl}`;
+const ogImageUrl = `${siteUrl}${ogImage}`;
 
 function localPath(path: string) {
   return getLocalizedPath(path, currentLang);
 }
+
+// Organization schema (on every page)
+const orgSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "MANGO Agency",
+  "alternateName": "Mangova Agency",
+  "url": siteUrl,
+  "logo": `${siteUrl}/favicon.svg`,
+  "description": "System-driven talent management agency for content creators. Strategy, chatting, marketing, and operations infrastructure.",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "email": "hello@mangova.agency",
+    "contactType": "sales"
+  },
+  "sameAs": [
+    "https://instagram.com/mangova.agency"
+  ]
+};
 ---
 
 <!doctype html>
@@ -31,14 +55,46 @@ function localPath(path: string) {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
+
+    <!-- Canonical & hreflang -->
+    <link rel="canonical" href={canonicalUrl} />
+    <link rel="alternate" hreflang={currentLang} href={canonicalUrl} />
+    <link rel="alternate" hreflang={altLang} href={altFullUrl} />
+    <link rel="alternate" hreflang="x-default" href={`${siteUrl}${basePath}`} />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:locale" content={currentLang === 'en' ? 'en_US' : 'es_ES'} />
+    <meta property="og:locale:alternate" content={altLang === 'en' ? 'en_US' : 'es_ES'} />
+    <meta property="og:site_name" content="MANGO Agency" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageUrl} />
+
+    <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="alternate" hreflang={altLang} href={altUrl} />
-    <link rel="alternate" hreflang={currentLang} href={Astro.url.pathname} />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" rel="stylesheet" />
+
     <title>{title}</title>
+
+    <!-- Organization Schema -->
+    <script type="application/ld+json" set:html={JSON.stringify(orgSchema)} />
+
+    <!-- Extra head slot for page-specific schema -->
+    <slot name="head" />
   </head>
   <body class="bg-surface text-on-surface font-body antialiased">
     <!-- Navigation -->

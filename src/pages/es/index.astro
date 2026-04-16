@@ -4,9 +4,40 @@ import ApplyForm from '../../components/ApplyForm.astro';
 import { useTranslations } from '../../i18n/translations';
 
 const t = useTranslations('es');
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": t('home.faq.q1'), "acceptedAnswer": { "@type": "Answer", "text": t('home.faq.a1') }},
+    { "@type": "Question", "name": t('home.faq.q2'), "acceptedAnswer": { "@type": "Answer", "text": t('home.faq.a2') }},
+    { "@type": "Question", "name": t('home.faq.q3'), "acceptedAnswer": { "@type": "Answer", "text": t('home.faq.a3') }},
+    { "@type": "Question", "name": t('home.faq.q4'), "acceptedAnswer": { "@type": "Answer", "text": t('home.faq.a4') }},
+    { "@type": "Question", "name": t('home.faq.q5'), "acceptedAnswer": { "@type": "Answer", "text": t('home.faq.a5') }},
+    { "@type": "Question", "name": t('home.faq.q6'), "acceptedAnswer": { "@type": "Answer", "text": t('home.faq.a6') }},
+    { "@type": "Question", "name": t('home.faq.q7'), "acceptedAnswer": { "@type": "Answer", "text": t('home.faq.a7') }},
+    { "@type": "Question", "name": t('home.faq.q8'), "acceptedAnswer": { "@type": "Answer", "text": t('home.faq.a8') }},
+    { "@type": "Question", "name": t('home.faq.q9'), "acceptedAnswer": { "@type": "Answer", "text": t('home.faq.a9') }},
+    { "@type": "Question", "name": t('home.faq.q10'), "acceptedAnswer": { "@type": "Answer", "text": t('home.faq.a10') }},
+  ]
+};
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Gestion OnlyFans",
+  "provider": { "@type": "Organization", "name": "MANGO Agency" },
+  "description": "Agencia de gestion de talento para creadoras de contenido. Operaciones de chatting, estrategia de marketing, generacion de trafico y optimizacion operativa.",
+  "serviceType": "Agencia de Gestion de Talento",
+  "areaServed": ["Europa", "Asia"],
+};
 ---
 
 <Layout title="MANGO | Para Creadoras, Por Creadoras" activeNav="home" lang="es">
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+  </Fragment>
 
   <!-- 1. HERO SECTION -->
   <section class="relative min-h-screen flex items-center justify-start overflow-hidden px-6 lg:px-20">
