@@ -154,6 +154,59 @@ const serviceSchema = {
     </div>
   </section>
 
+  <!-- 4. WHY TOP CREATORS WORK WITH US -->
+  <section class="py-28 bg-surface px-6">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-4xl md:text-5xl font-black text-on-surface tracking-tight leading-[1.1]">Por qu&eacute; los mejores creadores trabajan con nosotros</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        {[
+          {
+            icon: 'settings_suggest',
+            title: 'Sistemas, no suposiciones',
+            text: 'No dependemos de tendencias ni suerte \u2014 conectamos sistemas probados a tu cuenta para generar ingresos constantes.',
+          },
+          {
+            icon: 'groups',
+            title: 'Equipo interno, totalmente controlado',
+            text: 'Nuestros chatters, managers y equipo de marketing est\u00e1n formados y gestionados internamente \u2014 asegurando consistencia y rendimiento.',
+          },
+          {
+            icon: 'language',
+            title: 'Monetizaci\u00f3n en ingl\u00e9s y espa\u00f1ol',
+            text: 'Vendemos a una audiencia global con chatting a nivel nativo \u2014 aumentando conversiones y maximizando tus ingresos.',
+          },
+          {
+            icon: 'trending_up',
+            title: 'Enfocados en ingresos, no en m\u00e9tricas vanidosas',
+            text: 'Nos centramos en cu\u00e1nto ganas y c\u00f3mo aumentarlo cada mes \u2014 no en likes o followers.',
+          },
+          {
+            icon: 'lock_open',
+            title: 'Sin contratos a largo plazo',
+            text: 'Te quedas porque funciona \u2014 no porque est\u00e9s atado. Ganamos nuestro sitio cada mes.',
+          },
+        ].map(card => (
+          <div class="bg-surface-container-lowest p-10 rounded-xl border border-outline-variant/20 hover:shadow-md transition-shadow flex flex-col gap-5">
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 rounded-xl bg-primary flex items-center justify-center flex-shrink-0">
+                <span class="material-symbols-outlined text-on-primary" style="font-size:22px;" set:html={card.icon} />
+              </div>
+              <h3 class="text-xl font-bold text-on-surface">{card.title}</h3>
+            </div>
+            <p class="text-on-surface-variant text-sm leading-relaxed">{card.text}</p>
+          </div>
+        ))}
+      </div>
+
+      <p class="text-center text-on-surface text-lg md:text-xl font-semibold mt-14">
+        Esto no es gesti&oacute;n. Esto es infraestructura.
+      </p>
+    </div>
+  </section>
+
   <!-- 4. PROCESS SECTION -->
   <section id="how-it-works" class="py-28 bg-white px-6">
     <div class="max-w-7xl mx-auto">
@@ -178,48 +231,6 @@ const serviceSchema = {
       <p class="text-center text-on-surface text-lg font-semibold mt-14">
         Sin complicaciones. Sin tiempo perdido. Solo crecimiento.
       </p>
-    </div>
-  </section>
-
-  <!-- 5. DIFFERENTIATION -->
-  <section class="py-28 bg-surface px-6">
-    <div class="max-w-7xl mx-auto">
-      <div class="bg-primary rounded-3xl overflow-hidden">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-0">
-          <div class="flex flex-col gap-10 p-12 lg:p-16">
-            <h2 class="text-4xl md:text-5xl font-black leading-[1.1] tracking-tight">
-              <span class="text-white">{t('home.diff.title')}</span><br />
-              <span class="text-white/40">{t('home.diff.titleFaded')}</span>
-            </h2>
-            <div class="flex flex-col gap-8">
-              {[
-                { icon: 'groups', title: t('home.diff.item1'), text: t('home.diff.item1.text') },
-                { icon: 'visibility', title: t('home.diff.item2'), text: t('home.diff.item2.text') },
-                { icon: 'security', title: t('home.diff.item3'), text: t('home.diff.item3.text') },
-              ].map(item => (
-                <div class="flex gap-5 items-start">
-                  <div class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center flex-shrink-0">
-                    <span class="material-symbols-outlined text-white" style="font-size:20px;">{item.icon}</span>
-                  </div>
-                  <div>
-                    <h4 class="font-bold text-white mb-1">{item.title}</h4>
-                    <p class="text-white/60 text-sm leading-relaxed">{item.text}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-            <div>
-              <a href="#apply" class="inline-flex items-center gap-2 bg-white text-black font-bold px-7 py-3.5 rounded-xl text-sm hover:bg-white/90 transition-all">
-                {t('nav.applyNow')}
-                <span class="material-symbols-outlined" style="font-size:18px;">arrow_forward</span>
-              </a>
-            </div>
-          </div>
-          <div class="relative hidden lg:flex items-center justify-center overflow-hidden">
-            <img src="/assets/5a20460e35b065f9248e5ead5ad27034.png" alt="Real business" class="w-full h-full object-cover opacity-40 mix-blend-screen" />
-          </div>
-        </div>
-      </div>
     </div>
   </section>
 
