@@ -41,13 +41,13 @@ const serviceSchema = {
   </Fragment>
 
   <!-- 1. HERO SECTION -->
-  <section class="relative h-[calc(100vh-4rem)] flex items-center justify-start overflow-hidden px-6 lg:px-20">
+  <section class="relative h-[calc(100vh-4rem)] flex items-center overflow-hidden">
     <div
       class="absolute inset-0 bg-cover bg-bottom bg-no-repeat"
       style="background-image: url('/assets/hero.webp');"
     ></div>
     <div class="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-transparent"></div>
-    <div class="relative z-10 flex flex-col gap-8">
+    <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 w-full flex flex-col gap-8">
       <h1 class="text-5xl md:text-7xl font-black text-white leading-[1.05] tracking-tight">
         For creators<br />by creators
       </h1>
@@ -68,8 +68,8 @@ const serviceSchema = {
   </section>
 
   <!-- 2. PROBLEM SECTION -->
-  <section class="py-28 bg-surface px-6">
-    <div class="max-w-7xl mx-auto">
+  <section class="py-28 bg-surface">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
       <div class="mb-16">
         <h2 class="text-4xl md:text-5xl font-black text-on-surface tracking-tight">Why you're stuck</h2>
       </div>
@@ -106,8 +106,8 @@ const serviceSchema = {
   </section>
 
   <!-- 3. SERVICES SECTION -->
-  <section class="py-28 bg-surface-container px-6">
-    <div class="max-w-6xl mx-auto">
+  <section class="py-28 bg-surface-container">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
       <div class="text-center max-w-3xl mx-auto mb-16">
         <h2 class="text-4xl md:text-5xl font-black text-on-surface tracking-tight leading-[1.1] mb-5">Everything that grows your income &mdash; handled for you</h2>
         <p class="text-on-surface-variant text-lg leading-relaxed">We handle everything behind the scenes &mdash; so your page becomes a consistent revenue machine.</p>
@@ -155,8 +155,8 @@ const serviceSchema = {
   </section>
 
   <!-- 4. WHY TOP CREATORS WORK WITH US -->
-  <section class="py-28 bg-surface px-6">
-    <div class="max-w-6xl mx-auto">
+  <section class="py-28 bg-surface">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
       <div class="text-center max-w-3xl mx-auto mb-16">
         <h2 class="text-4xl md:text-5xl font-black text-on-surface tracking-tight leading-[1.1]">Why top creators work with us</h2>
       </div>
@@ -208,8 +208,8 @@ const serviceSchema = {
   </section>
 
   <!-- 5. PROCESS SECTION -->
-  <section id="how-it-works" class="py-28 bg-white px-6">
-    <div class="max-w-7xl mx-auto">
+  <section id="how-it-works" class="py-28 bg-white">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
       <div class="text-center mb-20">
         <h2 class="text-4xl md:text-5xl font-black text-on-surface tracking-tight">What happens when you join</h2>
         <p class="mt-4 text-on-surface-variant text-lg max-w-xl mx-auto">A simple, fast process to start scaling your income.</p>
@@ -235,8 +235,9 @@ const serviceSchema = {
   </section>
 
   <!-- 6. FAQ SECTION -->
-  <section class="py-28 bg-white px-6">
-    <div class="max-w-3xl mx-auto">
+  <section class="py-28 bg-white">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="max-w-3xl mx-auto">
       <div class="mb-14">
         <span class="text-xs font-bold tracking-widest uppercase text-outline">{t('home.faq.label')}</span>
         <h2 class="mt-3 text-4xl md:text-5xl font-black text-on-surface tracking-tight">{t('home.faq.title')}</h2>
@@ -262,6 +263,7 @@ const serviceSchema = {
             <div class="px-8 pb-8 text-on-surface-variant text-sm leading-relaxed">{faq.a}</div>
           </details>
         ))}
+      </div>
       </div>
     </div>
   </section>

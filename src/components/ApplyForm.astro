@@ -57,15 +57,16 @@ const t = {
 }[lang];
 ---
 
-<section id="apply" class="py-28 bg-surface px-6">
-  <div class="max-w-xl mx-auto">
-    <!-- Header -->
-    <div class="text-center mb-10">
+<section id="apply" class="py-28 bg-surface">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+    <!-- Left: Header -->
+    <div class="lg:sticky lg:top-28">
       <h2 class="text-4xl md:text-5xl font-black text-on-surface tracking-tight mb-4">{t.title}</h2>
       <p class="text-on-surface-variant text-lg">{t.subtitle}</p>
     </div>
 
-    <!-- Form -->
+    <!-- Right: Form -->
     <div class="bg-surface-container-lowest border border-outline-variant/20 rounded-2xl p-8 md:p-10">
       <form id="apply-form" class="flex flex-col gap-5">
         <div>
@@ -130,6 +131,7 @@ const t = {
       <div id="form-error" class="hidden text-center py-4">
         <p class="text-error text-sm">{t.error}</p>
       </div>
+    </div>
     </div>
   </div>
 </section>
