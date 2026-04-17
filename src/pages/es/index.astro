@@ -49,17 +49,15 @@ const serviceSchema = {
     <div class="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-transparent"></div>
     <div class="relative z-10 max-w-3xl flex flex-col gap-8">
       <h1 class="text-5xl md:text-7xl font-black text-white leading-[1.05] tracking-tight max-w-3xl">
-        {t('home.hero.title')}<br />{t('home.hero.titleLine2')}
+        Para creadores<br />por creadores
       </h1>
       <p class="text-white/70 text-lg md:text-xl max-w-xl leading-relaxed">
-        {t('home.hero.subtitle')}
+        Una agencia de OnlyFans basada en sistemas para creadores listos para escalar.<br />
+        Construimos los sistemas &mdash; para que t&uacute; te centres en crear y escalar tus ingresos.
       </p>
-      <div class="flex flex-col sm:flex-row gap-4">
+      <div>
         <a href="#apply" class="bg-white text-black font-bold px-8 py-4 rounded-xl text-sm tracking-wide hover:bg-white/90 transition-all shadow-lg">
-          {t('home.hero.cta')}
-        </a>
-        <a href="#how-it-works" class="border border-white/30 text-white font-semibold px-8 py-4 rounded-xl text-sm tracking-wide hover:bg-white/10 transition-all backdrop-blur-sm">
-          {t('home.hero.ctaSecondary')}
+          Quiero aplicar
         </a>
       </div>
     </div>
@@ -107,52 +105,68 @@ const serviceSchema = {
     </div>
   </section>
 
-  <!-- 3. SOLUTION SECTION -->
+  <!-- 3. SERVICES SECTION -->
   <section class="py-28 bg-surface-container px-6">
-    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-      <div class="flex flex-col gap-8">
-        <div>
-          <span class="text-xs font-bold tracking-widest uppercase text-outline">{t('home.solution.label')}</span>
-          <h2 class="mt-3 text-4xl md:text-5xl font-black text-on-surface tracking-tight leading-[1.1]">{t('home.solution.title')}</h2>
-        </div>
-        <p class="text-on-surface-variant text-lg leading-relaxed">{t('home.solution.subtitle')}</p>
-        <div class="flex flex-col gap-6">
-          {[
-            { title: t('home.solution.item1.title'), text: t('home.solution.item1.text') },
-            { title: t('home.solution.item2.title'), text: t('home.solution.item2.text') },
-            { title: t('home.solution.item3.title'), text: t('home.solution.item3.text') },
-          ].map(item => (
-            <div class="flex gap-4 items-start">
-              <div class="w-6 h-6 rounded-full bg-primary flex items-center justify-center flex-shrink-0 mt-0.5">
-                <span class="material-symbols-outlined text-on-primary" style="font-size:14px;font-variation-settings:'FILL' 1,'wght' 700,'GRAD' 0,'opsz' 24;">check</span>
-              </div>
-              <div>
-                <h4 class="font-bold text-on-surface mb-1">{item.title}</h4>
-                <p class="text-on-surface-variant text-sm leading-relaxed">{item.text}</p>
-              </div>
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-4xl md:text-5xl font-black text-on-surface tracking-tight leading-[1.1] mb-5">Todo lo que hace crecer tus ingresos &mdash; gestionado por nosotros</h2>
+        <p class="text-on-surface-variant text-lg leading-relaxed">Nos encargamos de todo lo que pasa detr&aacute;s &mdash; para que tu p&aacute;gina se convierta en una m&aacute;quina de ingresos constante.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+        {[
+          {
+            icon: 'chat',
+            title: 'Monetizaci\u00f3n 24/7',
+            text: 'Nuestro equipo interno de chatting vende por ti 24/7 &mdash; en ingl\u00e9s y espa\u00f1ol &mdash; con estrategias probadas adaptadas a tu personalidad, para que ganes m\u00e1s sin estar online todo el d\u00eda.',
+          },
+          {
+            icon: 'trending_up',
+            title: 'Marketing y Crecimiento',
+            text: 'Escalamos tu cuenta con estrategias enfocadas en Instagram, sistemas multi-cuenta y contenido basado en datos &mdash; atrayendo tr\u00e1fico de calidad que convierte en fans que pagan.',
+          },
+          {
+            icon: 'payments',
+            title: 'Optimizaci\u00f3n de Ingresos',
+            text: 'Optimizamos tu pricing, contenido y flujo de ventas para aumentar cu\u00e1nto gasta cada fan &mdash; convirtiendo tu p\u00e1gina en un flujo de ingresos predecible.',
+          },
+          {
+            icon: 'shield',
+            title: 'Protecci\u00f3n DMCA y Leaks',
+            text: 'Monitorizamos y eliminamos contenido filtrado proactivamente, protegiendo tus cuentas &mdash; para que tus ingresos sigan seguros mientras creces.',
+          },
+        ].map(card => (
+          <div class="bg-surface-container-lowest p-10 rounded-xl border border-outline-variant/20 hover:shadow-md transition-shadow flex flex-col gap-5">
+            <div class="w-12 h-12 rounded-xl bg-primary flex items-center justify-center flex-shrink-0">
+              <span class="material-symbols-outlined text-on-primary" style="font-size:22px;" set:html={card.icon} />
             </div>
-          ))}
-        </div>
+            <div>
+              <h3 class="text-xl font-bold text-on-surface mb-3">{card.title}</h3>
+              <p class="text-on-surface-variant text-sm leading-relaxed" set:html={card.text}></p>
+            </div>
+          </div>
+        ))}
       </div>
-      <div class="relative">
-        <img src="/assets/03c0cffb3453db98c7fe27e573661a58.png" alt="MANGO Infrastructure" class="w-full aspect-square object-cover rounded-2xl shadow-2xl" />
-      </div>
+
+      <p class="text-center text-on-surface text-lg md:text-xl font-semibold mt-14">
+        T&uacute; te centras en crear contenido. Nosotros en todo lo que te hace ganar dinero.
+      </p>
     </div>
   </section>
 
-  <!-- 4. HOW IT WORKS -->
+  <!-- 4. PROCESS SECTION -->
   <section id="how-it-works" class="py-28 bg-white px-6">
     <div class="max-w-7xl mx-auto">
       <div class="text-center mb-20">
-        <h2 class="text-4xl md:text-5xl font-black text-on-surface tracking-tight">{t('home.process.title')}</h2>
-        <p class="mt-4 text-on-surface-variant text-lg max-w-xl mx-auto">{t('home.process.subtitle')}</p>
+        <h2 class="text-4xl md:text-5xl font-black text-on-surface tracking-tight">Qu&eacute; pasa cuando te unes</h2>
+        <p class="mt-4 text-on-surface-variant text-lg max-w-xl mx-auto">Un proceso simple y r&aacute;pido para empezar a escalar tus ingresos.</p>
       </div>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 divide-y lg:divide-y-0 lg:divide-x divide-outline-variant/20">
         {[
-          { num: '01', title: t('home.process.step1.title'), text: t('home.process.step1.text') },
-          { num: '02', title: t('home.process.step2.title'), text: t('home.process.step2.text') },
-          { num: '03', title: t('home.process.step3.title'), text: t('home.process.step3.text') },
-          { num: '04', title: t('home.process.step4.title'), text: t('home.process.step4.text') },
+          { num: '01', title: 'Evaluaci\u00f3n r\u00e1pida', text: 'Revisamos tu cuenta, contenido y potencial para identificar d\u00f3nde puedes crecer m\u00e1s r\u00e1pido.' },
+          { num: '02', title: 'Estrategia y setup', text: 'Construimos un plan personalizado e integramos nuestros sistemas en tu cuenta \u2014 chatting, marketing y monetizaci\u00f3n.' },
+          { num: '03', title: 'Activaci\u00f3n completa', text: 'Activamos todos los sistemas de crecimiento y monetizaci\u00f3n en tu cuenta \u2014 listos para escalar desde el primer d\u00eda.' },
+          { num: '04', title: 'Escalar y optimizar', text: 'Optimizamos todo continuamente para aumentar tus ingresos mes tras mes.' },
         ].map(step => (
           <div class="flex flex-col gap-4 px-8 py-10">
             <span class="text-7xl font-black text-outline-variant/30 leading-none">{step.num}</span>
@@ -161,6 +175,9 @@ const serviceSchema = {
           </div>
         ))}
       </div>
+      <p class="text-center text-on-surface text-lg font-semibold mt-14">
+        Sin complicaciones. Sin tiempo perdido. Solo crecimiento.
+      </p>
     </div>
   </section>
 
