@@ -6,7 +6,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
-  const { name, instagram, contact, income } = req.body || {};
+  const { name, instagram, contact, goal, income } = req.body || {};
 
   if (!name || !instagram || !contact) {
     return res.status(400).json({ error: 'Required fields missing' });
@@ -40,6 +40,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
             ${row('Name', name)}
             ${row('Instagram', instagram)}
             ${row('Contact', contact)}
+            ${row('Biggest Goal', (goal || 'Not provided').replace(/\n/g, '<br>'))}
             ${row('Monthly Income', income || 'Not provided')}
           </table>
           <div style="margin-top: 24px; padding: 16px; background: #f9f9fb; border-radius: 8px; font-size: 12px; color: #777;">
@@ -47,7 +48,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
           </div>
         </div>
       `,
-      text: `New Application\nName: ${name}\nInstagram: ${instagram}\nContact: ${contact}\nIncome: ${income || 'Not provided'}`,
+      text: `New Application\nName: ${name}\nInstagram: ${instagram}\nContact: ${contact}\nGoal: ${goal || 'Not provided'}\nIncome: ${income || 'Not provided'}`,
     });
 
     if (error) {

@@ -47,14 +47,14 @@ const serviceSchema = {
       style="background-image: url('/assets/hero.jpg');"
     ></div>
     <div class="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-transparent"></div>
-    <div class="relative z-10 max-w-3xl flex flex-col gap-8">
-      <h1 class="text-5xl md:text-7xl font-black text-white leading-[1.05] tracking-tight max-w-3xl">
+    <div class="relative z-10 flex flex-col gap-8">
+      <h1 class="text-5xl md:text-7xl font-black text-white leading-[1.05] tracking-tight">
         Para creadores<br />por creadores
       </h1>
-      <p class="text-white/70 text-lg md:text-xl max-w-xl leading-relaxed">
-        Una agencia de OnlyFans basada en sistemas para creadores listos para escalar.<br />
-        Construimos los sistemas &mdash; para que t&uacute; te centres en crear y escalar tus ingresos.
-      </p>
+      <div class="text-white/70 text-base md:text-lg leading-relaxed flex flex-col gap-1">
+        <p>Una agencia de OnlyFans basada en sistemas para creadores listos para escalar.</p>
+        <p>Construimos los sistemas &mdash; para que te centres en crear y escalar tus ingresos.</p>
+      </div>
       <div>
         <a href="#apply" class="bg-white text-black font-bold px-8 py-4 rounded-xl text-sm tracking-wide hover:bg-white/90 transition-all shadow-lg">
           Quiero aplicar
@@ -137,13 +137,13 @@ const serviceSchema = {
           },
         ].map(card => (
           <div class="bg-surface-container-lowest p-10 rounded-xl border border-outline-variant/20 hover:shadow-md transition-shadow flex flex-col gap-5">
-            <div class="w-12 h-12 rounded-xl bg-primary flex items-center justify-center flex-shrink-0">
-              <span class="material-symbols-outlined text-on-primary" style="font-size:22px;" set:html={card.icon} />
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 rounded-xl bg-primary flex items-center justify-center flex-shrink-0">
+                <span class="material-symbols-outlined text-on-primary" style="font-size:22px;" set:html={card.icon} />
+              </div>
+              <h3 class="text-xl font-bold text-on-surface">{card.title}</h3>
             </div>
-            <div>
-              <h3 class="text-xl font-bold text-on-surface mb-3">{card.title}</h3>
-              <p class="text-on-surface-variant text-sm leading-relaxed" set:html={card.text}></p>
-            </div>
+            <p class="text-on-surface-variant text-sm leading-relaxed" set:html={card.text}></p>
           </div>
         ))}
       </div>

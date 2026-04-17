@@ -9,11 +9,13 @@ const t = {
   en: {
     title: 'Ready to scale?',
     subtitle: 'Apply to see if you\'re a fit.',
-    intro: 'We work with both established creators and high-potential profiles.',
     name: 'Name / Stage Name',
-    instagram: 'Instagram @',
-    contact: 'Telegram @ (preferred) or WhatsApp number',
+    instagram: 'Instagram',
+    contact: 'Telegram / WhatsApp number',
+    contactPlaceholder: '@username or +1234567890',
     contactHint: 'We\'ll contact you here to confirm your application',
+    goal: 'Your biggest goal',
+    goalHint: 'Tell us what you want to achieve \u2014 we\'re here to listen and build it with you',
     income: 'Current monthly income (optional)',
     incomeHint: 'Don\'t worry if you\'re just starting \u2014 we also work with creators with high potential',
     submit: 'Apply now',
@@ -31,11 +33,13 @@ const t = {
   es: {
     title: '\u00bfListo para escalar?',
     subtitle: 'Aplica para ver si encajamos.',
-    intro: 'Trabajamos tanto con creadores establecidos como con perfiles de alto potencial.',
     name: 'Nombre / Nombre art\u00edstico',
-    instagram: 'Instagram @',
-    contact: 'Telegram @ (preferido) o n\u00famero de WhatsApp',
+    instagram: 'Instagram',
+    contact: 'Telegram / N\u00famero de WhatsApp',
+    contactPlaceholder: '@usuario o +34 600 000 000',
     contactHint: 'Te contactaremos aqu\u00ed para confirmar tu solicitud',
+    goal: 'Tu mayor objetivo',
+    goalHint: 'Cu\u00e9ntanos qu\u00e9 quieres lograr \u2014 estamos aqu\u00ed para escucharte y construirlo contigo',
     income: 'Ingresos mensuales actuales (opcional)',
     incomeHint: 'No te preocupes si est\u00e1s empezando \u2014 tambi\u00e9n trabajamos con creadores con alto potencial',
     submit: 'Aplicar ahora',
@@ -67,20 +71,27 @@ const t = {
         <div>
           <label for="name" class="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-2 block">{t.name}</label>
           <input type="text" id="name" name="name" required
-            class="w-full bg-surface-container-low border border-outline-variant/30 rounded-lg px-4 py-3 text-sm text-on-surface placeholder:text-outline focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all" />
+            class="w-full bg-surface-container-low border border-outline-variant/30 rounded-lg px-4 py-3 text-sm text-on-surface focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all" />
         </div>
 
         <div>
           <label for="instagram" class="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-2 block">{t.instagram}</label>
-          <input type="text" id="instagram" name="instagram" placeholder="@" required
-            class="w-full bg-surface-container-low border border-outline-variant/30 rounded-lg px-4 py-3 text-sm text-on-surface placeholder:text-outline focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all" />
+          <input type="text" id="instagram" name="instagram" required
+            class="w-full bg-surface-container-low border border-outline-variant/30 rounded-lg px-4 py-3 text-sm text-on-surface focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all" />
         </div>
 
         <div>
           <label for="contact" class="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-2 block">{t.contact}</label>
-          <input type="text" id="contact" name="contact" placeholder="@username or +1234567890" required
+          <input type="text" id="contact" name="contact" placeholder={t.contactPlaceholder} required
             class="w-full bg-surface-container-low border border-outline-variant/30 rounded-lg px-4 py-3 text-sm text-on-surface placeholder:text-outline focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all" />
           <p class="text-xs text-outline mt-1.5">{t.contactHint}</p>
+        </div>
+
+        <div>
+          <label for="goal" class="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-2 block">{t.goal}</label>
+          <textarea id="goal" name="goal" rows="3"
+            class="w-full bg-surface-container-low border border-outline-variant/30 rounded-lg px-4 py-3 text-sm text-on-surface focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all resize-none"></textarea>
+          <p class="text-xs text-outline mt-1.5">{t.goalHint}</p>
         </div>
 
         <div>
@@ -139,6 +150,7 @@ const t = {
       name: form.name.value,
       instagram: form.instagram.value,
       contact: form.contact.value,
+      goal: form.goal.value,
       income: form.income.value,
     };
 
