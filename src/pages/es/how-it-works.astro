@@ -4,295 +4,105 @@ import Layout from '../../layouts/Layout.astro';
 
 <Layout title="Cómo Funciona | MANGO Agency" activeNav="how-it-works" lang="es">
 
-  <!-- 1. HERO SECTION -->
-  <section class="relative h-[819px] flex items-center bg-surface overflow-hidden">
-    <div class="max-w-7xl mx-auto px-6 w-full">
-      <div class="grid grid-cols-12 gap-8 items-center">
-
-        <!-- Left: 7 cols -->
-        <div class="col-span-7 space-y-8">
-          <h1 class="text-6xl md:text-8xl font-black tracking-tighter uppercase leading-none">
-            Proceso simple.<br />
-            <span class="text-stroke">Resultados serios.</span>
-          </h1>
-          <p class="text-lg text-on-surface-variant max-w-lg leading-relaxed">
-            Nos encargamos de los sistemas detrás de tu crecimiento para que puedas centrarte en el contenido. Infraestructura profesional para creadoras premium.
-          </p>
-          <a
-            href="/es/apply"
-            class="inline-block bg-primary text-on-primary px-8 py-4 rounded-lg font-bold text-lg hover:opacity-90 transition-opacity"
-          >
-            Quiero aplicar
-          </a>
-        </div>
-
-        <!-- Right: 5 cols -->
-        <div class="col-span-5 relative">
-          <div class="aspect-[4/5] rounded-xl overflow-hidden shadow-2xl">
-            <img
-              src="/assets/0970cc91493dd063496de4ad6cdacbdf.png"
-              alt="Espacio de trabajo de creadora"
-              class="w-full h-full object-cover"
-            />
-          </div>
-
-          <!-- Floating stat card -->
-          <div class="absolute -bottom-6 -left-6 p-6 bg-surface-container-lowest shadow-xl rounded-lg min-w-[180px]">
-            <p class="text-xs font-semibold uppercase tracking-widest text-secondary mb-1">Datos en Vivo</p>
-            <p class="text-3xl font-black tracking-tight text-on-surface">4.8X ESCALA</p>
-          </div>
-        </div>
-
+  <!-- 1. HERO -->
+  <section class="pt-32 pb-32 bg-white">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="max-w-4xl">
+        <span class="text-xs font-bold tracking-widest uppercase text-outline mb-6 block">C&oacute;mo funciona</span>
+        <h1 class="text-5xl md:text-7xl font-black text-on-surface tracking-tight leading-[1.05] mb-6">
+          C&oacute;mo escalamos cuentas de OnlyFans
+        </h1>
+        <p class="text-lg md:text-xl text-on-surface-variant leading-relaxed max-w-2xl">
+          Un sistema dise&ntilde;ado para generar ingresos consistentes &mdash; no crecimiento aleatorio ni suerte viral.
+        </p>
       </div>
     </div>
   </section>
 
+  <!-- 2. INTRO BLOCK (BLACK) -->
+  <section class="py-32 md:py-40 bg-black text-white">
+    <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center flex flex-col gap-6">
+      <p class="text-2xl md:text-4xl font-black tracking-tight leading-[1.2]">
+        La mayor&iacute;a de creadoras se enfocan en una sola cosa &mdash; contenido, tr&aacute;fico o chatting.
+      </p>
+      <p class="text-white/60 text-xl md:text-3xl font-bold tracking-tight leading-tight">
+        Por eso los resultados siguen siendo inconsistentes.
+      </p>
+      <p class="text-white text-2xl md:text-4xl font-black tracking-tight leading-[1.2] mt-4">
+        Nosotros combinamos las tres en un solo sistema.
+      </p>
+    </div>
+  </section>
 
-  <!-- 2. PROCESS STEPS - "The Blueprint" -->
-  <section class="py-32 bg-surface-container-low">
-    <div class="max-w-7xl mx-auto px-6">
-
-      <!-- Header -->
-      <div class="mb-16 space-y-4">
-        <p class="text-xs uppercase tracking-[0.2em] font-semibold text-secondary">El Plan</p>
-        <h2 class="text-5xl font-black uppercase tracking-tight">Cuatro pasos hacia el dominio del mercado.</h2>
+  <!-- 3. CORE SYSTEM -->
+  <section class="py-32 bg-white">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="max-w-3xl mb-20">
+        <span class="text-xs font-bold tracking-widest uppercase text-outline mb-4 block">Sistema central</span>
+        <h2 class="text-4xl md:text-5xl font-black text-on-surface tracking-tight leading-[1.1]">Tres pilares. Un sistema.</h2>
       </div>
-
-      <!-- Steps grid -->
-      <div class="grid grid-cols-4 gap-1">
-
-        <!-- Step 1 -->
-        <div class="group bg-surface-container-lowest p-10 hover:bg-primary hover:text-on-primary transition-colors duration-500 cursor-default">
-          <p class="text-sm font-bold opacity-30 group-hover:opacity-100 transition-opacity duration-500">01</p>
-          <div class="mt-16">
-            <span class="material-symbols-outlined text-4xl mb-4 block">assignment_add</span>
-            <h3 class="text-xl font-black uppercase mb-3">Aplicar</h3>
-            <p class="text-sm leading-relaxed opacity-70 group-hover:opacity-90">
-              Envía las métricas actuales de tu perfil y tus objetivos a largo plazo para revisión preliminar.
-            </p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+        {[
+          { num: '01', title: 'Tr\u00e1fico', text: 'Generamos tr\u00e1fico consistente y de calidad a trav\u00e9s de sistemas multi-plataforma (Instagram, Reddit y m\u00e1s).' },
+          { num: '02', title: 'Monetizaci\u00f3n', text: 'Convertimos ese tr\u00e1fico en ingresos con chatting estructurado, upsells y sistemas de retenci\u00f3n.' },
+          { num: '03', title: 'Optimizaci\u00f3n', text: 'Analizamos el rendimiento cada semana y mejoramos lo que funciona &mdash; eliminando suposiciones.' },
+        ].map(p => (
+          <div class="bg-surface-container-lowest p-10 md:p-12 rounded-2xl border border-outline-variant/20 flex flex-col gap-8 hover:shadow-lg transition-shadow min-h-[340px]">
+            <span class="text-6xl font-black text-outline-variant/40 leading-none">{p.num}</span>
+            <div class="flex flex-col gap-4 mt-auto">
+              <h3 class="text-3xl md:text-4xl font-black text-on-surface tracking-tight">{p.title}</h3>
+              <p class="text-on-surface-variant text-base leading-relaxed" set:html={p.text}></p>
+            </div>
           </div>
-        </div>
-
-        <!-- Step 2 -->
-        <div class="group bg-surface-container-lowest p-10 hover:bg-primary hover:text-on-primary transition-colors duration-500 cursor-default">
-          <p class="text-sm font-bold opacity-30 group-hover:opacity-100 transition-opacity duration-500">02</p>
-          <div class="mt-16">
-            <span class="material-symbols-outlined text-4xl mb-4 block">video_call</span>
-            <h3 class="text-xl font-black uppercase mb-3">Llamada de evaluación</h3>
-            <p class="text-sm leading-relaxed opacity-70 group-hover:opacity-90">
-              Una sesión estratégica para identificar los cuellos de botella en tu embudo actual y el potencial de escalado.
-            </p>
-          </div>
-        </div>
-
-        <!-- Step 3 -->
-        <div class="group bg-surface-container-lowest p-10 hover:bg-primary hover:text-on-primary transition-colors duration-500 cursor-default">
-          <p class="text-sm font-bold opacity-30 group-hover:opacity-100 transition-opacity duration-500">03</p>
-          <div class="mt-16">
-            <span class="material-symbols-outlined text-4xl mb-4 block">settings_account_box</span>
-            <h3 class="text-xl font-black uppercase mb-3">Configuración del sistema</h3>
-            <p class="text-sm leading-relaxed opacity-70 group-hover:opacity-90">
-              Integramos nuestro software propietario de chatting y seguimiento en tu flujo de trabajo.
-            </p>
-          </div>
-        </div>
-
-        <!-- Step 4 -->
-        <div class="group bg-surface-container-lowest p-10 hover:bg-primary hover:text-on-primary transition-colors duration-500 cursor-default">
-          <p class="text-sm font-bold opacity-30 group-hover:opacity-100 transition-opacity duration-500">04</p>
-          <div class="mt-16">
-            <span class="material-symbols-outlined text-4xl mb-4 block">trending_up</span>
-            <h3 class="text-xl font-black uppercase mb-3">Escalar</h3>
-            <p class="text-sm leading-relaxed opacity-70 group-hover:opacity-90">
-              Ejecución de marketing agresivo y chatting optimizado 24/7 para el máximo ROI.
-            </p>
-          </div>
-        </div>
-
+        ))}
       </div>
     </div>
   </section>
 
-
-  <!-- 3. SERVICES SECTION - "Comprehensive Infrastructure" -->
-  <section class="py-32">
-    <div class="max-w-7xl mx-auto px-6">
-      <div class="grid grid-cols-12 gap-16">
-
-        <!-- Left sidebar: 5 cols, sticky -->
-        <div class="col-span-5">
-          <div class="sticky top-32 space-y-8">
-            <h2 class="text-6xl font-black uppercase tracking-tight leading-none">
-              Infraestructura Completa.
-            </h2>
-            <p class="text-on-surface-variant leading-relaxed">
-              No solo "gestionamos"; arquitectamos un negocio en torno a tu persona, utilizando herramientas de nivel empresarial y capital humano de élite.
-            </p>
-            <div class="space-y-3">
-              <p class="text-sm font-semibold text-on-surface flex items-center gap-2">
-                <span class="text-secondary">—</span> Totalmente Automatizado
-              </p>
-              <p class="text-sm font-semibold text-on-surface flex items-center gap-2">
-                <span class="text-secondary">—</span> Orientado al Rendimiento
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Right: 7 cols, scrolling services -->
-        <div class="col-span-7 space-y-32">
-
-          <!-- Service 1: Chatting -->
-          <div class="space-y-6">
-            <div class="aspect-video rounded-lg overflow-hidden">
-              <img
-                src="/assets/72174661538591c9d9702e3e5d7a1049.png"
-                alt="Servicio de chatting"
-                class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
-              />
-            </div>
-            <div class="space-y-4">
-              <h3 class="text-3xl font-black uppercase">
-                Chatting <em class="font-normal not-italic text-on-surface-variant text-2xl">— Cobertura 24/7</em>
-              </h3>
-              <ul class="space-y-3">
-                <li class="flex items-start gap-3 text-on-surface-variant">
-                  <span class="material-symbols-outlined text-secondary text-base mt-0.5 shrink-0">check_circle</span>
-                  <span>Equipo dedicado entrenado en tu voz y personalidad específicas.</span>
-                </li>
-                <li class="flex items-start gap-3 text-on-surface-variant">
-                  <span class="material-symbols-outlined text-secondary text-base mt-0.5 shrink-0">check_circle</span>
-                  <span>Marcos de ventas avanzados diseñados para maximizar la conversión de pago por vista.</span>
-                </li>
-                <li class="flex items-start gap-3 text-on-surface-variant">
-                  <span class="material-symbols-outlined text-secondary text-base mt-0.5 shrink-0">check_circle</span>
-                  <span>La interacción continua garantiza que no se pierda ningún ingreso.</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <!-- Service 2: Marketing -->
-          <div class="space-y-6">
-            <div class="aspect-video rounded-lg overflow-hidden">
-              <img
-                src="/assets/5f3aa15c413dbbe63d3b67596052a919.png"
-                alt="Servicio de marketing"
-                class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
-              />
-            </div>
-            <div class="space-y-4">
-              <h3 class="text-3xl font-black uppercase">
-                Marketing <em class="font-normal not-italic text-on-surface-variant text-2xl">— Crecimiento agresivo</em>
-              </h3>
-              <ul class="space-y-3">
-                <li class="flex items-start gap-3 text-on-surface-variant">
-                  <span class="material-symbols-outlined text-secondary text-base mt-0.5 shrink-0">check_circle</span>
-                  <span>Bucles de crecimiento propietarios en IG y estrategia de contenido viral.</span>
-                </li>
-                <li class="flex items-start gap-3 text-on-surface-variant">
-                  <span class="material-symbols-outlined text-secondary text-base mt-0.5 shrink-0">check_circle</span>
-                  <span>Optimización de tráfico multiplataforma para captar fans de alto valor.</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <!-- Service 3: Operations -->
-          <div class="space-y-6">
-            <div class="aspect-video rounded-lg overflow-hidden">
-              <img
-                src="/assets/5fd237e6b061d044b2e1ab0d9ab76a1d.png"
-                alt="Servicio de operaciones"
-                class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
-              />
-            </div>
-            <div class="space-y-4">
-              <h3 class="text-3xl font-black uppercase">
-                Operaciones <em class="font-normal not-italic text-on-surface-variant text-2xl">— Precisión técnica</em>
-              </h3>
-              <ul class="space-y-3">
-                <li class="flex items-start gap-3 text-on-surface-variant">
-                  <span class="material-symbols-outlined text-secondary text-base mt-0.5 shrink-0">check_circle</span>
-                  <span>Seguimiento avanzado con Infloww para atribución de ingresos granular.</span>
-                </li>
-                <li class="flex items-start gap-3 text-on-surface-variant">
-                  <span class="material-symbols-outlined text-secondary text-base mt-0.5 shrink-0">check_circle</span>
-                  <span>Informes de análisis semanales y llamadas estratégicas de dirección de contenido.</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- 4. SAFETY & TRUST SECTION -->
-  <section class="py-32 bg-primary text-on-primary">
-    <div class="max-w-7xl mx-auto px-6">
-
-      <div class="text-center mb-16 space-y-4">
-        <p class="text-xs uppercase tracking-[0.2em] font-semibold opacity-60">Confianza y Seguridad</p>
-        <h2 class="text-5xl font-black uppercase tracking-tight">Construido sobre la transparencia.</h2>
-      </div>
-
-      <div class="grid grid-cols-3 gap-6">
-
-        <!-- Card 1: Full Control -->
-        <div class="bg-primary-container p-12 rounded-xl space-y-4">
-          <span class="material-symbols-outlined text-4xl">shield</span>
-          <h3 class="text-xl font-black uppercase">Control Total</h3>
-          <p class="leading-relaxed opacity-80 text-sm">
-            Mantienes el 100% de la propiedad de tus cuentas. Operamos como una extensión de tu marca, no como sus dueños.
-          </p>
-        </div>
-
-        <!-- Card 2: No Credentials Needed -->
-        <div class="bg-primary-container p-12 rounded-xl space-y-4">
-          <span class="material-symbols-outlined text-4xl">key</span>
-          <h3 class="text-xl font-black uppercase">Sin Credenciales</h3>
-          <p class="leading-relaxed opacity-80 text-sm">
-            Utilizamos sistemas de acceso seguro para empleados que nunca requieren compartir tu contraseña maestra ni tu ID personal.
-          </p>
-        </div>
-
-        <!-- Card 3: Fast Onboarding -->
-        <div class="bg-primary-container p-12 rounded-xl space-y-4">
-          <span class="material-symbols-outlined text-4xl">bolt</span>
-          <h3 class="text-xl font-black uppercase">Onboarding Rápido</h3>
-          <p class="leading-relaxed opacity-80 text-sm">
-            Nuestra configuración técnica estandarizada nos permite estar operativos y comenzar a escalar en 48 horas tras la firma del contrato.
-          </p>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-
-  <!-- 5. FINAL CTA -->
-  <section class="py-40 text-center bg-surface">
-    <div class="max-w-7xl mx-auto px-6 space-y-12">
-      <h2 class="text-6xl md:text-8xl font-black uppercase tracking-tight leading-none">
-        ¿Lista para crecer de forma sistemática?
+  <!-- 4. DIFFERENTIATION (BLACK) -->
+  <section class="py-40 md:py-52 bg-black text-white">
+    <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center flex flex-col gap-8">
+      <h2 class="text-4xl md:text-7xl font-black tracking-tight leading-[1.05]">
+        La mayor&iacute;a hace una de estas bien <span class="text-white/60">&mdash; nosotros combinamos las tres.</span>
       </h2>
-      <a
-        href="/es/apply"
-        class="inline-block bg-primary text-on-primary px-12 py-6 rounded-full font-black tracking-widest text-xl uppercase hover:scale-105 transition-transform duration-300 shadow-2xl"
-      >
-        Quiero aplicar
-      </a>
+      <p class="text-white/70 text-lg md:text-xl leading-relaxed">Eso es lo que crea ingresos predecibles.</p>
+    </div>
+  </section>
+
+  <!-- 5. PROCESS FLOW -->
+  <section class="py-32 bg-white">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="max-w-3xl mb-20">
+        <span class="text-xs font-bold tracking-widest uppercase text-outline mb-4 block">Proceso</span>
+        <h2 class="text-4xl md:text-5xl font-black text-on-surface tracking-tight leading-[1.1]">Del audit al escalado.</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-outline-variant/30">
+        {[
+          { num: '01', title: 'Audit', text: 'Analizamos tu cuenta actual, tu tr\u00e1fico y tu monetizaci\u00f3n.' },
+          { num: '02', title: 'Construimos sistemas', text: 'Implementamos sistemas de tr\u00e1fico e ingresos adaptados a tu perfil.' },
+          { num: '03', title: 'Optimizamos', text: 'Medimos cada semana y mejoramos los resultados de forma continua.' },
+        ].map(step => (
+          <div class="flex flex-col gap-5 px-0 md:px-10 py-10 first:pt-0 md:first:pt-10 md:first:pl-0 md:last:pr-0">
+            <span class="text-5xl md:text-6xl font-black text-on-surface tracking-tight leading-none">{step.num}</span>
+            <h3 class="text-2xl md:text-3xl font-black text-on-surface tracking-tight">{step.title}</h3>
+            <p class="text-on-surface-variant text-base leading-relaxed">{step.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. FINAL CTA (BLACK) -->
+  <section class="py-32 md:py-40 bg-black text-white">
+    <div class="max-w-3xl mx-auto px-6 lg:px-8 text-center flex flex-col gap-8">
+      <h2 class="text-4xl md:text-6xl font-black tracking-tight leading-[1.05]">Esto solo funciona cuando todo est&aacute; alineado.</h2>
+      <p class="text-white/70 text-lg md:text-xl leading-relaxed">Eso es lo que construimos.</p>
+      <div>
+        <a href="/es/#apply" class="inline-block bg-white text-black font-bold px-10 py-5 rounded-xl text-sm tracking-wide hover:bg-white/90 transition-all">
+          Aplicar Ahora
+        </a>
+      </div>
     </div>
   </section>
 
 </Layout>
-
-<style>
-  .text-stroke {
-    -webkit-text-stroke: 2px currentColor;
-    color: transparent;
-  }
-</style>
