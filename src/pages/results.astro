@@ -2,314 +2,112 @@
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title="Results | MANGO Agency" activeNav="results">
+<Layout title="Results | MANGO Agency" activeNav="results" lang="en">
 
-  <!-- ─── 1. HERO ─── -->
-  <section class="pt-40 pb-24 px-8 max-w-7xl mx-auto text-center">
-    <span class="inline-block px-3 py-1 bg-surface-container-high text-secondary text-[10px] font-bold tracking-[0.2em] uppercase rounded-full mb-8">
-      Performance Metrics
-    </span>
-
-    <h1 class="text-5xl md:text-7xl font-black tracking-tighter leading-[1.05] mb-6 max-w-4xl mx-auto">
-      Real performance.<br />
-      <span class="text-outline">Not theory.</span>
-    </h1>
-
-    <p class="text-lg md:text-xl text-secondary max-w-2xl mx-auto mb-10 leading-relaxed">
-      We combine traffic, chatting and systems to generate consistent revenue — not random spikes.
-    </p>
-
-    <a
-      href="#apply"
-      class="inline-block bg-gradient-to-br from-primary to-primary-container text-on-primary px-8 py-4 rounded-xl font-bold text-sm tracking-wide hover:opacity-90 transition-all"
-    >
-      Apply to work with us
-    </a>
-  </section>
-
-  <!-- ─── 2. TRAFFIC ─── -->
-  <section class="bg-surface-container-low py-24 px-8">
-    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
-
-      <!-- Left text -->
-      <div class="lg:col-span-5 space-y-6">
-        <span class="text-[10px] font-bold tracking-[0.25em] uppercase text-outline">Stage 01: Attention</span>
-        <h2 class="text-4xl md:text-5xl font-black tracking-tighter leading-tight">
-          Traffic is not the problem
-        </h2>
-        <p class="text-secondary text-base md:text-lg leading-relaxed">
-          Most creators can get views. Very few know how to turn that into revenue. We specialize in the bridge between attention and capital.
-        </p>
-
-        <!-- Feature pill -->
-        <div class="inline-flex items-center gap-2 bg-surface-container-high border border-outline-variant rounded-full px-4 py-2">
-          <span class="material-symbols-outlined text-[20px] text-on-surface" style="font-variation-settings:'FILL' 1,'wght' 600,'GRAD' 0,'opsz' 20">trending_up</span>
-          <span class="text-sm font-semibold text-on-surface">4M+ views on a single reel</span>
-        </div>
-
-        <!-- Blockquote -->
-        <blockquote class="border-l-2 border-primary pl-4 italic text-on-surface-variant text-sm leading-relaxed">
-          "Traffic without monetization = wasted potential"
-        </blockquote>
-      </div>
-
-      <!-- Right image -->
-      <div class="lg:col-span-7 relative">
-        <div class="aspect-[4/5] rounded-3xl overflow-hidden bg-surface-container-highest">
-          <img
-            src="/assets/df7cff07c6a515fd3f1de6a3e3095c77.png"
-            alt="Traffic analytics"
-            class="w-full h-full object-cover"
-          />
-          <!-- Overlay -->
-          <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent rounded-3xl flex flex-col justify-end p-8">
-            <span class="text-[10px] font-bold tracking-[0.25em] uppercase text-white/60 mb-2">
-              <span class="inline-block px-2 py-0.5 border border-white/30 rounded-full mr-2">LIVE METRICS</span>
-            </span>
-            <p class="text-white text-xs font-semibold uppercase tracking-widest mb-1 opacity-60">Total Reach</p>
-            <p class="text-white text-4xl font-black tracking-tighter">4,289,102</p>
-          </div>
-        </div>
-      </div>
-
+  <!-- 1. HERO -->
+  <section class="pt-32 pb-24 bg-white">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 text-center">
+      <span class="inline-block text-xs font-bold tracking-widest uppercase text-outline mb-6">Results</span>
+      <h1 class="text-5xl md:text-7xl font-black text-on-surface tracking-tight leading-[1.05] mb-6 max-w-4xl mx-auto">
+        System-driven results, not luck
+      </h1>
+      <p class="text-lg md:text-xl text-on-surface-variant max-w-2xl mx-auto leading-relaxed">
+        We don&rsquo;t rely on viral moments &mdash; we build predictable revenue systems that scale consistently.
+      </p>
     </div>
   </section>
 
-  <!-- ─── 3. MONETIZATION ─── -->
-  <section class="py-32 px-8">
-    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
-
-      <!-- Left: earnings card -->
-      <div class="lg:col-span-7">
-        <div class="bg-on-surface rounded-3xl p-8 md:p-10 text-on-primary space-y-8">
-
-          <!-- Header -->
-          <div class="flex items-start justify-between">
-            <div>
-              <p class="text-xs text-on-primary/50 uppercase tracking-widest mb-1">Monthly Earnings Report</p>
-              <p class="text-5xl font-black tracking-tighter">$24,182<span class="text-2xl font-bold text-on-primary/70">.44</span></p>
-            </div>
-            <span class="px-3 py-1 bg-white/10 text-on-primary/70 text-[10px] font-bold tracking-[0.2em] uppercase rounded-full">Verified</span>
+  <!-- 2. FEATURED RESULT -->
+  <section class="pb-24 bg-white">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+        <div class="lg:col-span-5 flex flex-col gap-7">
+          <span class="text-xs font-bold tracking-widest uppercase text-outline">Featured result</span>
+          <div class="flex items-baseline gap-3 flex-wrap">
+            <span class="text-6xl md:text-8xl font-black text-on-surface tracking-tight leading-none">$24,586</span>
+            <span class="text-2xl md:text-3xl font-bold text-on-surface-variant">/month</span>
           </div>
-
-          <!-- Progress bars -->
-          <div class="space-y-4">
-            <div>
-              <div class="flex justify-between text-xs text-on-primary/60 mb-1.5">
-                <span class="font-semibold">Direct Messages (PPV)</span>
-                <span>74%</span>
-              </div>
-              <div class="h-2 bg-white/10 rounded-full overflow-hidden">
-                <div class="h-full bg-on-primary rounded-full" style="width:74%"></div>
-              </div>
-            </div>
-            <div>
-              <div class="flex justify-between text-xs text-on-primary/60 mb-1.5">
-                <span class="font-semibold">Subscriptions</span>
-                <span>18%</span>
-              </div>
-              <div class="h-2 bg-white/10 rounded-full overflow-hidden">
-                <div class="h-full bg-on-primary/70 rounded-full" style="width:18%"></div>
-              </div>
-            </div>
-            <div>
-              <div class="flex justify-between text-xs text-on-primary/60 mb-1.5">
-                <span class="font-semibold">Tips & Custom</span>
-                <span>8%</span>
-              </div>
-              <div class="h-2 bg-white/10 rounded-full overflow-hidden">
-                <div class="h-full bg-on-primary/40 rounded-full" style="width:8%"></div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Bottom stats -->
-          <div class="grid grid-cols-2 gap-4 pt-4 border-t border-white/10">
-            <div>
-              <p class="text-xs text-on-primary/40 uppercase tracking-widest mb-0.5">Revenue Growth</p>
-              <p class="text-2xl font-black text-green-400">+312%</p>
-            </div>
-            <div>
-              <p class="text-xs text-on-primary/40 uppercase tracking-widest mb-0.5">Avg Order Value</p>
-              <p class="text-2xl font-black">$184.20</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Right text -->
-      <div class="lg:col-span-5 space-y-6">
-        <span class="text-[10px] font-bold tracking-[0.25em] uppercase text-outline">Stage 02: Extraction</span>
-        <h2 class="text-4xl md:text-5xl font-black tracking-tighter leading-tight">
-          This is where most creators fail
-        </h2>
-        <p class="text-secondary text-base md:text-lg leading-relaxed">
-          Revenue doesn't come from subscribers. It comes from how well you monetize them.
-        </p>
-
-        <!-- Technical insight box -->
-        <div class="flex items-start gap-3 bg-surface-container-high rounded-2xl p-5 border border-outline-variant">
-          <span class="material-symbols-outlined text-[22px] text-outline mt-0.5 shrink-0">info</span>
-          <p class="text-sm text-on-surface-variant leading-relaxed">
-            Most creators earn less than 12% of their potential revenue. Our chatting systems are designed to close that gap systematically — every single day.
+          <p class="text-xl md:text-2xl text-on-surface font-semibold leading-tight">Built through structured monetization systems.</p>
+          <p class="text-on-surface-variant text-base leading-relaxed max-w-lg">
+            This account was already posting consistently but not converting. We implemented structured chatting, upsells, and retention systems &mdash; and revenue compounded from there.
           </p>
         </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ─── 4. CONSISTENCY ─── -->
-  <section class="bg-primary text-on-primary py-24 px-8">
-    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-
-      <!-- Left -->
-      <div class="space-y-8">
-        <h2 class="text-4xl md:text-5xl font-black tracking-tighter leading-tight">
-          Not a lucky spike.<br />A system.
-        </h2>
-        <p class="text-on-primary/70 text-base md:text-lg leading-relaxed">
-          Every top earner on our roster shares one thing in common: daily structure. We install that structure from day one — then optimize it weekly with real data.
-        </p>
-
-        <!-- Stats -->
-        <div class="grid grid-cols-2 gap-6">
-          <div class="bg-white/10 rounded-2xl p-5">
-            <p class="text-xs text-on-primary/50 uppercase tracking-widest mb-1">Daily Consistency Rate</p>
-            <p class="text-3xl font-black">98.4%</p>
-          </div>
-          <div class="bg-white/10 rounded-2xl p-5">
-            <p class="text-xs text-on-primary/50 uppercase tracking-widest mb-1">System Uptime</p>
-            <p class="text-3xl font-black">98.4%</p>
-          </div>
+        <div class="lg:col-span-7 rounded-2xl overflow-hidden border border-outline-variant/20 shadow-xl aspect-[5/3] bg-white">
+          <img src="/assets/results/main-feature-block.jpeg" alt="$24,586 in a single month" class="w-full h-full object-cover object-top block" loading="lazy" />
         </div>
-
-        <blockquote class="border-l-2 border-on-primary/30 pl-4 italic text-on-primary/60 text-sm leading-relaxed">
-          "A creator who earns consistently at $15K/month beats one who spikes at $40K and disappears."
-        </blockquote>
-      </div>
-
-      <!-- Right: revenue graph card -->
-      <div class="bg-zinc-900 rounded-3xl overflow-hidden aspect-[4/3]">
-        <img
-          src="/assets/ac0b9a4b877fc377d9a21f3b8a9a979a.png"
-          alt="Revenue graph"
-          class="w-full h-full object-cover"
-        />
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ─── 5. REVENUE BREAKDOWN ─── -->
-  <section class="bg-surface py-32 px-8">
-    <div class="max-w-7xl mx-auto">
-
-      <div class="text-center mb-16 space-y-4">
-        <h2 class="text-4xl md:text-5xl font-black tracking-tighter">
-          Where the money actually comes from
-        </h2>
-        <p class="text-secondary text-base md:text-lg max-w-xl mx-auto leading-relaxed">
-          Subscriptions are only the beginning. The real money lives in the layers below.
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-
-        <!-- Card 1: Messages -->
-        <div class="p-12 rounded-3xl border border-outline-variant hover:border-primary hover:shadow-lg transition-all duration-300 bg-surface-container-lowest group">
-          <span class="material-symbols-outlined text-[40px] text-primary mb-6 block" style="font-variation-settings:'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 40">chat_bubble</span>
-          <h3 class="text-xl font-black tracking-tight mb-3">Messages (PPV)</h3>
-          <p class="text-secondary text-sm leading-relaxed">Pay-per-view content delivered through direct conversations. The highest-converting revenue channel when executed with our scripted frameworks.</p>
-          <p class="text-3xl font-black mt-6">74%<span class="text-sm font-normal text-outline ml-1">of revenue</span></p>
-        </div>
-
-        <!-- Card 2: Tips -->
-        <div class="p-12 rounded-3xl border border-outline-variant hover:border-primary hover:shadow-lg transition-all duration-300 bg-surface-container-lowest group">
-          <span class="material-symbols-outlined text-[40px] text-primary mb-6 block" style="font-variation-settings:'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 40">volunteer_activism</span>
-          <h3 class="text-xl font-black tracking-tight mb-3">Tips</h3>
-          <p class="text-secondary text-sm leading-relaxed">Spontaneous but engineered. Our chatters are trained to create moments that make tipping feel natural — and frequent.</p>
-          <p class="text-3xl font-black mt-6">18%<span class="text-sm font-normal text-outline ml-1">of revenue</span></p>
-        </div>
-
-        <!-- Card 3: Custom -->
-        <div class="p-12 rounded-3xl border border-outline-variant hover:border-primary hover:shadow-lg transition-all duration-300 bg-surface-container-lowest group">
-          <span class="material-symbols-outlined text-[40px] text-primary mb-6 block" style="font-variation-settings:'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 40">workspace_premium</span>
-          <h3 class="text-xl font-black tracking-tight mb-3">Custom Content</h3>
-          <p class="text-secondary text-sm leading-relaxed">High-ticket orders negotiated directly. We identify and qualify the top spenders in every fanbase and move them up the value ladder.</p>
-          <p class="text-3xl font-black mt-6">8%<span class="text-sm font-normal text-outline ml-1">of revenue</span></p>
-        </div>
-
       </div>
     </div>
   </section>
 
-  <!-- ─── 6. WHY THIS WORKS ─── -->
-  <section class="py-24 px-8 border-t border-outline-variant/20">
-    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-
-      <!-- Left -->
-      <div class="space-y-6">
-        <span class="text-[10px] font-bold tracking-[0.25em] uppercase text-outline">The infrastructure</span>
-        <h2 class="text-4xl md:text-5xl font-black tracking-tighter leading-tight">
-          Results don't come<br />from content alone
-        </h2>
-        <p class="text-secondary text-base md:text-lg leading-relaxed">
-          Content gets attention. Systems convert it. We've built the operational layer that most agencies skip entirely.
-        </p>
-        <p class="text-on-surface font-bold text-lg">
-          This is what turns traffic into revenue.
-        </p>
-      </div>
-
-      <!-- Right: hover list -->
-      <div class="space-y-2">
+  <!-- 3. RESULTS GRID -->
+  <section class="pb-32 bg-white">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
         {[
-          { icon: "forum", label: "Structured chatting systems" },
-          { icon: "groups", label: "Dedicated team" },
-          { icon: "trending_up", label: "Sales frameworks" },
-          { icon: "autorenew", label: "Weekly optimization" },
-          { icon: "analytics", label: "Data tracking" },
-        ].map((item) => (
-          <div class="group flex items-center justify-between px-6 py-5 rounded-2xl border border-outline-variant hover:border-primary hover:bg-surface-container-high transition-all duration-200 cursor-default">
-            <div class="flex items-center gap-4">
-              <span class="material-symbols-outlined text-[22px] text-outline group-hover:text-primary transition-colors">{item.icon}</span>
-              <span class="text-base font-semibold text-on-surface">{item.label}</span>
+          { value: '$19,025', unit: '/month', text: 'Driven by optimized chatting systems and better monetization.', img: '/assets/results/results-grid1.jpeg' },
+          { value: '$13,098', unit: '/month', text: 'Growth achieved by aligning content strategy with conversion systems.', img: '/assets/results/results-grid2.jpeg' },
+          { value: '+558%', unit: 'growth', text: 'From inconsistent revenue to structured and predictable income.', img: '/assets/results/results-grid3.jpeg' },
+        ].map(card => (
+          <div class="bg-surface-container-lowest p-8 rounded-xl border border-outline-variant/20 flex flex-col gap-6">
+            <div class="flex items-baseline gap-2 flex-wrap">
+              <span class="text-5xl md:text-6xl font-black text-on-surface tracking-tight leading-none">{card.value}</span>
+              <span class="text-on-surface-variant text-base">{card.unit}</span>
             </div>
-            <span class="material-symbols-outlined text-[20px] text-outline-variant opacity-0 group-hover:opacity-100 group-hover:text-primary transition-all duration-200">chevron_right</span>
+            <p class="text-on-surface-variant text-sm leading-relaxed">{card.text}</p>
+            <div class="rounded-lg overflow-hidden border border-outline-variant/20 mt-auto aspect-[5/3] bg-white">
+              <img src={card.img} alt={card.value} class="w-full h-full object-cover object-top block" loading="lazy" />
+            </div>
           </div>
         ))}
       </div>
-
     </div>
   </section>
 
-  <!-- ─── 7. FINAL CTA ─── -->
-  <section id="apply" class="py-32 px-8">
-    <div class="max-w-5xl mx-auto">
-      <div class="bg-primary rounded-[3rem] p-16 md:p-24 text-center">
-        <span class="inline-block px-3 py-1 bg-white/10 text-on-primary/60 text-[10px] font-bold tracking-[0.2em] uppercase rounded-full mb-8">
-          Limited Spots Available
-        </span>
+  <!-- 4. KEY INSIGHT (BLACK, FULL WIDTH) -->
+  <section class="py-40 md:py-52 bg-black text-white">
+    <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center flex flex-col gap-8">
+      <h2 class="text-4xl md:text-7xl font-black tracking-tight leading-[1.05]">
+        Most creators don&rsquo;t have a traffic problem. <span class="text-white/60">They have a monetization problem.</span>
+      </h2>
+      <p class="text-white/70 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
+        Traffic without systems doesn&rsquo;t convert. We focus on what actually makes money.
+      </p>
+    </div>
+  </section>
 
-        <h2 class="text-4xl md:text-6xl font-black tracking-tighter leading-tight text-on-primary mb-6 max-w-2xl mx-auto">
-          If you already have traffic, you're sitting on money
-        </h2>
+  <!-- 5. DAILY PERFORMANCE -->
+  <section class="py-32 bg-white">
+    <div class="max-w-5xl mx-auto px-6 lg:px-8">
+      <div class="flex flex-col gap-14 items-center text-center">
+        <div>
+          <h2 class="text-5xl md:text-7xl font-black text-on-surface tracking-tight leading-[0.95]">Consistent high-performing days</h2>
+          <p class="mt-5 text-on-surface-variant text-xl md:text-2xl font-semibold">Revenue spikes driven by structured systems &mdash; not randomness.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
+          <div class="rounded-2xl overflow-hidden border border-outline-variant/20 shadow-lg aspect-[5/3] bg-white">
+            <img src="/assets/results/daily-performance-block1.jpeg" alt="Single-day earnings over $2k" class="w-full h-full object-cover object-top block" loading="lazy" />
+          </div>
+          <div class="rounded-2xl overflow-hidden border border-outline-variant/20 shadow-lg aspect-[5/3] bg-white">
+            <img src="/assets/results/daily-performance-block2.jpeg" alt="Single-day earnings over $2k" class="w-full h-full object-cover object-top block" loading="lazy" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        <p class="text-on-primary/60 text-base md:text-lg max-w-xl mx-auto mb-10 leading-relaxed">
-          We don't work with everyone. We work with creators who are ready to build infrastructure — not just post content.
-        </p>
-
-        <a
-          href="https://forms.gle/apply"
-          class="inline-block bg-surface-container-lowest text-primary px-10 py-4 rounded-full font-black text-sm tracking-wide hover:bg-white transition-all"
-        >
-          Apply to work with us
+  <!-- 6. FINAL CTA (BLACK) -->
+  <section class="py-32 md:py-40 bg-black text-white">
+    <div class="max-w-3xl mx-auto px-6 lg:px-8 text-center flex flex-col gap-8">
+      <h2 class="text-4xl md:text-6xl font-black tracking-tight leading-[1.05]">
+        If your page isn&rsquo;t performing like this, there&rsquo;s a reason.
+      </h2>
+      <p class="text-white/70 text-lg md:text-xl leading-relaxed">
+        We&rsquo;ll show you exactly what&rsquo;s missing.
+      </p>
+      <div>
+        <a href="/#apply" class="inline-block bg-white text-black font-bold px-10 py-5 rounded-xl text-sm tracking-wide hover:bg-white/90 transition-all">
+          Apply Now
         </a>
-
-        <p class="text-on-primary/30 text-xs font-bold tracking-[0.2em] uppercase mt-8">
-          Elite Creators Only &nbsp;•&nbsp; Technical Precision
-        </p>
       </div>
     </div>
   </section>
