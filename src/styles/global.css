@@ -60,10 +60,42 @@ details[open] summary .expand-icon {
   transform: rotate(45deg);
 }
 
-/* Glass nav */
+/* Glass nav: transparent by default, fades to blurred white on hover or scroll */
 .glass-nav {
-  background: rgba(255, 255, 255, 0.8);
+  background: transparent;
+  backdrop-filter: none;
+  border-bottom: 1px solid transparent;
+  transition: background 300ms ease, backdrop-filter 300ms ease, border-color 300ms ease;
+}
+.glass-nav:hover,
+.glass-nav.scrolled {
+  background: rgba(255, 255, 255, 0.9);
   backdrop-filter: blur(20px);
+  border-bottom-color: rgba(0, 0, 0, 0.08);
+}
+
+/* Nav children react to the same parent states */
+.glass-nav .nav-logo {
+  filter: invert(1) brightness(2);
+  transition: filter 300ms ease;
+}
+.glass-nav:hover .nav-logo,
+.glass-nav.scrolled .nav-logo {
+  filter: none;
+}
+
+.glass-nav .nav-link {
+  color: rgba(255, 255, 255, 0.92);
+  transition: color 300ms ease;
+}
+.glass-nav:hover .nav-link,
+.glass-nav.scrolled .nav-link {
+  color: var(--mat-sys-secondary, #5a5f63);
+}
+.glass-nav .nav-link:hover,
+.glass-nav.scrolled .nav-link:hover,
+.glass-nav:hover .nav-link:hover {
+  color: var(--mat-sys-primary, #1a1c1d);
 }
 
 /* Text stroke for hero outlines */
