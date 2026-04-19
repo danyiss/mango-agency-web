@@ -80,84 +80,119 @@ const serviceSchema = {
     </div>
   </section>
 
-  <!-- 3. RESULTS SECTION -->
-  <section id="results" class="py-28 bg-white">
+  <!-- 3a. RESULTS HEADER + MAIN FEATURE (WHITE) -->
+  <section id="results" class="pt-32 pb-20 bg-white">
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
-      <!-- Header -->
-      <div class="max-w-3xl mb-20">
-        <h2 class="text-4xl md:text-5xl font-black text-on-surface tracking-tight leading-[1.1]">Real Results</h2>
-        <p class="mt-4 text-on-surface-variant text-lg">We focus on what actually matters: revenue.</p>
+      <div class="max-w-3xl mb-24">
+        <span class="text-xs font-bold tracking-widest uppercase text-outline">Real Results</span>
+        <h2 class="mt-4 text-4xl md:text-6xl font-black text-on-surface tracking-tight leading-[1.05]">Revenue is all that matters.</h2>
+        <p class="mt-5 text-on-surface-variant text-lg">We focus on what actually moves your income forward.</p>
       </div>
 
-      <!-- Main feature block -->
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center mb-28">
-        <div class="flex flex-col gap-6">
-          <span class="text-xs font-bold tracking-widest uppercase text-outline">Featured month</span>
-          <h3 class="text-6xl md:text-7xl font-black text-on-surface tracking-tight leading-[0.95]">$24,586</h3>
-          <p class="text-on-surface-variant text-lg leading-relaxed max-w-md">
-            In a single month. Built through structured chatting, content systems, and traffic strategy.
+      <!-- Featured hero proof -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+        <div class="lg:col-span-5 flex flex-col gap-7">
+          <div class="flex items-baseline gap-3 flex-wrap">
+            <span class="text-6xl md:text-8xl font-black text-on-surface tracking-tight leading-none">$24,586</span>
+            <span class="text-2xl md:text-3xl font-bold text-on-surface-variant">/month</span>
+          </div>
+          <p class="text-xl md:text-2xl text-on-surface font-semibold leading-tight">Without relying on subscriptions.</p>
+          <p class="text-on-surface-variant text-base leading-relaxed max-w-lg">
+            Before working with us, this account was underperforming despite consistent posting. The issue wasn&rsquo;t content &mdash; it was lack of monetization systems.
           </p>
         </div>
-        <div class="rounded-2xl overflow-hidden border border-outline-variant/20 shadow-lg aspect-[3/2] bg-surface-container">
+        <div class="lg:col-span-7 rounded-2xl overflow-hidden border border-outline-variant/20 shadow-xl aspect-[5/3] bg-white">
           <img src="/assets/results/main-feature-block.jpeg" alt="$24,586 in a single month" class="w-full h-full object-cover object-top block" loading="lazy" />
         </div>
       </div>
+    </div>
+  </section>
 
-      <!-- Results grid (3 cards) -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mb-28">
+  <!-- 3b. RESULTS GRID (WHITE) -->
+  <section class="pb-32 bg-white">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
         {[
-          { value: '$19,025', unit: '/month', text: 'Consistent revenue through optimized monetization systems.', img: '/assets/results/results-grid1.jpeg' },
-          { value: '$13,098', unit: '/month', text: 'Scaling through content and chatting integration.', img: '/assets/results/results-grid2.jpeg' },
-          { value: '+558%', unit: 'growth', text: 'From $7,820 to structured growth in weeks.', img: '/assets/results/results-grid3.jpeg' },
+          { value: '$19,025', unit: '/month', text: 'Built through consistent monetization systems \u2014 not just traffic.', img: '/assets/results/results-grid1.jpeg' },
+          { value: '$13,098', unit: '/month', text: 'Scaling with structured content + chatting integration.', img: '/assets/results/results-grid2.jpeg' },
+          { value: '+558%', unit: 'growth', text: 'From underperforming to structured revenue in weeks.', img: '/assets/results/results-grid3.jpeg' },
         ].map(card => (
           <div class="bg-surface-container-lowest p-8 rounded-xl border border-outline-variant/20 flex flex-col gap-6">
             <div class="flex items-baseline gap-2 flex-wrap">
-              <span class="text-4xl md:text-5xl font-black text-on-surface tracking-tight">{card.value}</span>
+              <span class="text-5xl md:text-6xl font-black text-on-surface tracking-tight leading-none">{card.value}</span>
               <span class="text-on-surface-variant text-base">{card.unit}</span>
             </div>
             <p class="text-on-surface-variant text-sm leading-relaxed">{card.text}</p>
-            <div class="rounded-lg overflow-hidden border border-outline-variant/20 mt-auto aspect-[3/2] bg-surface-container">
+            <div class="rounded-lg overflow-hidden border border-outline-variant/20 mt-auto aspect-[5/3] bg-white">
               <img src={card.img} alt={card.value} class="w-full h-full object-cover object-top block" loading="lazy" />
             </div>
           </div>
         ))}
       </div>
+    </div>
+  </section>
 
-      <!-- Insight block -->
-      <div class="max-w-3xl mx-auto text-center mb-28">
-        <h3 class="text-3xl md:text-5xl font-black text-on-surface tracking-tight leading-[1.15]">
-          Most revenue doesn&rsquo;t come from subscriptions.
-        </h3>
-        <p class="mt-5 text-on-surface-variant text-lg leading-relaxed">
-          Up to 70&ndash;85% comes from DMs, upsells, and chatting systems.
-        </p>
-      </div>
+  <!-- 3c. INSIGHT BLOCK (BLACK, FULL-WIDTH, HIGH CONTRAST) -->
+  <section class="py-40 md:py-52 bg-black text-white">
+    <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center flex flex-col gap-8">
+      <h3 class="text-4xl md:text-7xl font-black tracking-tight leading-[1.05]">Most revenue doesn&rsquo;t come from subscriptions.</h3>
+      <p class="text-white/70 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
+        Up to 70&ndash;85% comes from DMs, upsells, and structured chatting systems.
+      </p>
+    </div>
+  </section>
 
-      <!-- Daily performance -->
-      <div class="flex flex-col gap-12 items-center text-center">
+  <!-- 3d. DAILY PERFORMANCE (WHITE) -->
+  <section class="py-32 bg-white">
+    <div class="max-w-5xl mx-auto px-6 lg:px-8">
+      <div class="flex flex-col gap-14 items-center text-center">
         <div>
-          <h3 class="text-5xl md:text-7xl font-black text-on-surface tracking-tight leading-none">$2k+ days</h3>
-          <p class="mt-4 text-on-surface-variant text-lg max-w-xl mx-auto">
-            Daily spikes driven by sales systems and execution.
-          </p>
+          <h3 class="text-5xl md:text-7xl font-black text-on-surface tracking-tight leading-[0.95]">$2k+ days &mdash; consistently</h3>
+          <p class="mt-5 text-on-surface-variant text-xl md:text-2xl font-semibold">Not luck. Systems.</p>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-5 max-w-4xl w-full">
-          <div class="rounded-2xl overflow-hidden border border-outline-variant/20 shadow-md aspect-[3/2] bg-surface-container">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
+          <div class="rounded-2xl overflow-hidden border border-outline-variant/20 shadow-lg aspect-[5/3] bg-white">
             <img src="/assets/results/daily-performance-block1.jpeg" alt="Single-day earnings over $2k" class="w-full h-full object-cover object-top block" loading="lazy" />
           </div>
-          <div class="rounded-2xl overflow-hidden border border-outline-variant/20 shadow-md aspect-[3/2] bg-surface-container">
+          <div class="rounded-2xl overflow-hidden border border-outline-variant/20 shadow-lg aspect-[5/3] bg-white">
             <img src="/assets/results/daily-performance-block2.jpeg" alt="Single-day earnings over $2k" class="w-full h-full object-cover object-top block" loading="lazy" />
           </div>
         </div>
       </div>
+    </div>
+  </section>
 
-      <!-- CTA -->
-      <div class="text-center max-w-2xl mx-auto mt-28 pt-16 border-t border-outline-variant/20">
-        <h3 class="text-3xl md:text-4xl font-black text-on-surface tracking-tight leading-[1.15]">Ready to scale your page like this?</h3>
-        <p class="mt-4 text-on-surface-variant text-base leading-relaxed">
-          We only work with a limited number of creators to keep our management hands-on and performance-focused.
-        </p>
-        <a href="#apply" class="inline-block mt-8 bg-primary text-on-primary font-bold px-8 py-4 rounded-xl text-sm tracking-wide hover:bg-primary-container transition-all">
+  <!-- 3e. SYSTEM EXPLANATION (SURFACE) -->
+  <section class="py-32 bg-surface">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="max-w-3xl mb-20">
+        <h3 class="text-4xl md:text-5xl font-black text-on-surface tracking-tight leading-[1.1]">What&rsquo;s behind these results?</h3>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+        {[
+          { n: '01', title: 'Dedicated chatting team per model', text: 'Every creator gets a trained, in-house team focused on their account \u2014 not shared across dozens.' },
+          { n: '02', title: 'Structured sales systems', text: 'DMs, upsells, and retention flows engineered to maximize revenue per fan.' },
+          { n: '03', title: 'Weekly performance analysis', text: 'We analyze, optimize, and iterate every week to compound your growth.' },
+        ].map(item => (
+          <div class="bg-surface-container-lowest p-10 rounded-xl border border-outline-variant/20 flex flex-col gap-5">
+            <span class="text-6xl font-black text-outline-variant/40 leading-none">{item.n}</span>
+            <h4 class="text-xl font-bold text-on-surface">{item.title}</h4>
+            <p class="text-on-surface-variant text-sm leading-relaxed">{item.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 3f. FINAL CTA (BLACK) -->
+  <section class="py-32 md:py-40 bg-black text-white">
+    <div class="max-w-3xl mx-auto px-6 lg:px-8 text-center flex flex-col gap-8">
+      <h3 class="text-4xl md:text-6xl font-black tracking-tight leading-[1.05]">Ready to scale your OnlyFans like this?</h3>
+      <p class="text-white/70 text-lg md:text-xl leading-relaxed">
+        We only work with a limited number of creators to keep our approach hands-on and performance-driven.
+      </p>
+      <div>
+        <a href="#apply" class="inline-block bg-white text-black font-bold px-10 py-5 rounded-xl text-sm tracking-wide hover:bg-white/90 transition-all">
           Apply Now
         </a>
       </div>
