@@ -1,5 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import AgencyApplyForm from '../../components/AgencyApplyForm.astro';
 ---
 
 <Layout title="Para Agencias | MANGO Agency" activeNav="for-agencies" lang="es">
@@ -15,7 +16,7 @@ import Layout from '../../layouts/Layout.astro';
         <p class="text-lg md:text-xl text-on-surface-variant leading-relaxed max-w-2xl mb-8">
           Nos encargamos del chatting, la monetizaci&oacute;n y los sistemas de venta, para que te centres en el tr&aacute;fico, el contenido y el crecimiento.
         </p>
-        <div class="border-l-2 border-primary pl-5 max-w-xl">
+        <div class="border-l-2 border-primary pl-5 max-w-xl mb-10">
           <p class="text-base md:text-lg text-on-surface font-semibold leading-snug">
             T&uacute; mantienes la modelo, la marca y la relaci&oacute;n.
           </p>
@@ -23,6 +24,9 @@ import Layout from '../../layouts/Layout.astro';
             Nosotros subimos los ingresos.
           </p>
         </div>
+        <a href="#agency-apply" class="inline-block bg-primary text-on-primary font-bold px-8 py-4 rounded-xl text-sm tracking-wide hover:bg-primary-container transition-all">
+          Solicitar ahora
+        </a>
       </div>
     </div>
   </section>
@@ -130,19 +134,17 @@ import Layout from '../../layouts/Layout.astro';
     </div>
   </section>
 
-  <!-- 7. FINAL CTA (BLACK) -->
-  <section class="py-32 md:py-40 bg-black text-white">
-    <div class="max-w-3xl mx-auto px-6 lg:px-8 text-center flex flex-col gap-8">
-      <h2 class="text-4xl md:text-6xl font-black tracking-tight leading-[1.05]">
+  <!-- 7. PRE-FORM CTA (BLACK) -->
+  <section class="py-28 md:py-32 bg-black text-white">
+    <div class="max-w-3xl mx-auto px-6 lg:px-8 text-center flex flex-col gap-6">
+      <h2 class="text-4xl md:text-5xl font-black tracking-tight leading-[1.1]">
         Si tus modelos tienen tr&aacute;fico pero no convierten &mdash; ah&iacute; es donde se pierde el dinero.
       </h2>
       <p class="text-white/70 text-lg md:text-xl leading-relaxed">Vamos a arreglarlo.</p>
-      <div>
-        <a href="/es/#apply" class="inline-block bg-white text-black font-bold px-10 py-5 rounded-xl text-sm tracking-wide hover:bg-white/90 transition-all">
-          Aplicar Ahora
-        </a>
-      </div>
     </div>
   </section>
+
+  <!-- 8. AGENCY APPLICATION FORM -->
+  <AgencyApplyForm lang="es" />
 
 </Layout>

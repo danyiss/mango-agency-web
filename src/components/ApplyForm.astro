@@ -24,7 +24,6 @@ const t = {
     situation2: 'Growing but inconsistent',
     situation3: '$5k\u2013$20k/month',
     situation4: '$20k+/month',
-    situation5: 'Agency',
     goal: 'What\u2019s your current situation and what\u2019s holding you back?',
     income: 'Current monthly revenue (optional)',
     incomeHint: 'Helps us understand how to scale your account',
@@ -54,7 +53,6 @@ const t = {
     situation2: 'Creciendo pero inconsistente',
     situation3: '$5k\u2013$20k/mes',
     situation4: '$20k+/mes',
-    situation5: 'Agencia',
     goal: '\u00bfCu\u00e1l es tu situaci\u00f3n actual y qu\u00e9 te est\u00e1 frenando?',
     income: 'Ingresos mensuales actuales (opcional)',
     incomeHint: 'Nos ayuda a entender c\u00f3mo escalar tu cuenta',
@@ -118,7 +116,6 @@ const t = {
             <option value="growing-inconsistent">{t.situation2}</option>
             <option value="5k-20k">{t.situation3}</option>
             <option value="20k-plus">{t.situation4}</option>
-            <option value="agency">{t.situation5}</option>
           </select>
         </div>
 
@@ -130,7 +127,7 @@ const t = {
 
         <div>
           <label for="income" class="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-2 block">{t.income}</label>
-          <input type="text" id="income" name="income" placeholder={t.incomePlaceholder}
+          <input type="text" id="income" name="income"
             class="w-full bg-surface-container-low border border-outline-variant/30 rounded-lg px-4 py-3 text-sm text-on-surface placeholder:text-outline focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all" />
           <p class="text-xs text-outline mt-1.5">{t.incomeHint}</p>
         </div>

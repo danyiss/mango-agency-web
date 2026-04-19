@@ -1,0 +1,201 @@
+---
+interface Props {
+  lang?: 'en' | 'es';
+}
+
+const { lang = 'en' } = Astro.props;
+
+const t = {
+  en: {
+    preLabel: 'Agency application',
+    headline: 'Start scaling your agency without growing your team',
+    subheadline: 'Apply to work with our chatting team and increase your revenue without adding internal complexity.',
+    formTitle: 'Partner application',
+    agencyName: 'Agency name / brand',
+    models: 'Number of models',
+    modelsPlaceholder: 'Select range',
+    models1: '1\u20133',
+    models2: '4\u201310',
+    models3: '10+',
+    revenue: 'Current monthly revenue (optional)',
+    handle: 'What do you currently handle?',
+    handlePlaceholder: 'Select one',
+    handle1: 'Traffic',
+    handle2: 'Chatting',
+    handle3: 'Both',
+    looking: 'What are you looking for?',
+    lookingHint: 'A short description of what you need from us',
+    contact: 'Telegram / WhatsApp',
+    submit: 'Apply now',
+    check1: 'Applications reviewed within 24\u201348h',
+    check2: 'We only work with a limited number of partners',
+    success: 'Application sent! We\u2019ll reach out within 24\u201348h if there\u2019s a fit.',
+    error: 'Something went wrong. Try again or reach us at hello@mangova.agency',
+  },
+  es: {
+    preLabel: 'Solicitud de agencia',
+    headline: 'Empieza a escalar tu agencia sin hacer crecer tu equipo',
+    subheadline: 'Solicita trabajar con nuestro equipo de chatting y aumenta tus ingresos sin a\u00f1adir complejidad interna.',
+    formTitle: 'Solicitud de partner',
+    agencyName: 'Nombre / marca de la agencia',
+    models: 'N\u00famero de modelos',
+    modelsPlaceholder: 'Selecciona rango',
+    models1: '1\u20133',
+    models2: '4\u201310',
+    models3: '10+',
+    revenue: 'Ingresos mensuales actuales (opcional)',
+    handle: '\u00bfDe qu\u00e9 te encargas actualmente?',
+    handlePlaceholder: 'Selecciona una',
+    handle1: 'Tr\u00e1fico',
+    handle2: 'Chatting',
+    handle3: 'Ambos',
+    looking: '\u00bfQu\u00e9 est\u00e1s buscando?',
+    lookingHint: 'Una breve descripci\u00f3n de lo que necesitas de nosotros',
+    contact: 'Telegram / WhatsApp',
+    submit: 'Solicitar ahora',
+    check1: 'Las solicitudes se revisan en 24\u201348h',
+    check2: 'Solo trabajamos con un n\u00famero limitado de partners',
+    success: '\u00a1Solicitud enviada! Te contactaremos en 24\u201348h si encajamos.',
+    error: 'Algo sali\u00f3 mal. Int\u00e9ntalo de nuevo o escr\u00edbenos a hello@mangova.agency',
+  },
+}[lang];
+---
+
+<!-- Intro block (pre-form CTA) -->
+<section class="pt-32 pb-20 bg-white">
+  <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center flex flex-col gap-6">
+    <span class="text-xs font-bold tracking-widest uppercase text-outline">{t.preLabel}</span>
+    <h2 class="text-4xl md:text-6xl font-black text-on-surface tracking-tight leading-[1.05]">{t.headline}</h2>
+    <p class="text-on-surface-variant text-lg md:text-xl leading-relaxed max-w-2xl mx-auto">{t.subheadline}</p>
+    <div class="mt-2">
+      <a href="#agency-apply" class="inline-block bg-primary text-on-primary font-bold px-10 py-5 rounded-xl text-sm tracking-wide hover:bg-primary-container transition-all">
+        {t.submit}
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Form -->
+<section id="agency-apply" class="pb-32 bg-white">
+  <div class="max-w-3xl mx-auto px-6 lg:px-8">
+    <div class="bg-surface-container-lowest border border-outline-variant/20 rounded-2xl p-8 md:p-10">
+      <h3 class="text-xs font-bold uppercase tracking-widest text-outline mb-6">{t.formTitle}</h3>
+      <form id="agency-apply-form" class="flex flex-col gap-5">
+        <div>
+          <label for="agencyName" class="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-2 block">{t.agencyName}</label>
+          <input type="text" id="agencyName" name="agencyName" required
+            class="w-full bg-surface-container-low border border-outline-variant/30 rounded-lg px-4 py-3 text-sm text-on-surface focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all" />
+        </div>
+
+        <div>
+          <label for="models" class="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-2 block">{t.models}</label>
+          <select id="models" name="models" required
+            class="w-full bg-surface-container-low border border-outline-variant/30 rounded-lg px-4 py-3 text-sm text-on-surface focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all appearance-none cursor-pointer">
+            <option value="" disabled selected>{t.modelsPlaceholder}</option>
+            <option value="1-3">{t.models1}</option>
+            <option value="4-10">{t.models2}</option>
+            <option value="10-plus">{t.models3}</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="revenue" class="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-2 block">{t.revenue}</label>
+          <input type="text" id="revenue" name="revenue"
+            class="w-full bg-surface-container-low border border-outline-variant/30 rounded-lg px-4 py-3 text-sm text-on-surface focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all" />
+        </div>
+
+        <div>
+          <label for="handle" class="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-2 block">{t.handle}</label>
+          <select id="handle" name="handle" required
+            class="w-full bg-surface-container-low border border-outline-variant/30 rounded-lg px-4 py-3 text-sm text-on-surface focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all appearance-none cursor-pointer">
+            <option value="" disabled selected>{t.handlePlaceholder}</option>
+            <option value="traffic">{t.handle1}</option>
+            <option value="chatting">{t.handle2}</option>
+            <option value="both">{t.handle3}</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="looking" class="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-2 block">{t.looking}</label>
+          <textarea id="looking" name="looking" rows="3" required
+            class="w-full bg-surface-container-low border border-outline-variant/30 rounded-lg px-4 py-3 text-sm text-on-surface focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all resize-none"></textarea>
+          <p class="text-xs text-outline mt-1.5">{t.lookingHint}</p>
+        </div>
+
+        <div>
+          <label for="contact" class="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-2 block">{t.contact}</label>
+          <input type="text" id="contact" name="contact" required
+            class="w-full bg-surface-container-low border border-outline-variant/30 rounded-lg px-4 py-3 text-sm text-on-surface focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all" />
+        </div>
+
+        <button type="submit" id="agency-submit-btn"
+          class="bg-primary text-on-primary font-bold py-4 rounded-xl text-sm tracking-wide hover:bg-primary-container transition-all w-full mt-2">
+          {t.submit}
+        </button>
+
+        <div class="flex flex-col gap-2 mt-2">
+          <div class="flex items-center gap-2 text-xs text-on-surface-variant">
+            <span class="material-symbols-outlined text-primary" style="font-size:16px;font-variation-settings:'FILL' 1;">check_circle</span>
+            {t.check1}
+          </div>
+          <div class="flex items-center gap-2 text-xs text-on-surface-variant">
+            <span class="material-symbols-outlined text-primary" style="font-size:16px;font-variation-settings:'FILL' 1;">check_circle</span>
+            {t.check2}
+          </div>
+        </div>
+      </form>
+
+      <div id="agency-form-success" class="hidden text-center py-12">
+        <span class="material-symbols-outlined text-primary mb-4 block" style="font-size:48px;font-variation-settings:'FILL' 1;">check_circle</span>
+        <p class="text-on-surface font-bold text-lg">{t.success}</p>
+      </div>
+
+      <div id="agency-form-error" class="hidden text-center py-4">
+        <p class="text-error text-sm">{t.error}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script is:inline>
+  document.getElementById('agency-apply-form')?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const btn = document.getElementById('agency-submit-btn');
+    const originalLabel = btn.textContent;
+    const successEl = document.getElementById('agency-form-success');
+    const errorEl = document.getElementById('agency-form-error');
+
+    btn.disabled = true;
+    btn.textContent = '...';
+    errorEl.classList.add('hidden');
+
+    const data = {
+      agencyName: form.agencyName.value,
+      models: form.models.value,
+      revenue: form.revenue.value,
+      handle: form.handle.value,
+      looking: form.looking.value,
+      contact: form.contact.value,
+    };
+
+    try {
+      const res = await fetch('/api/apply-agency', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
+
+      if (res.ok) {
+        form.classList.add('hidden');
+        successEl.classList.remove('hidden');
+      } else {
+        throw new Error('Request failed');
+      }
+    } catch {
+      errorEl.classList.remove('hidden');
+      btn.disabled = false;
+      btn.textContent = originalLabel;
+    }
+  });
+</script>
