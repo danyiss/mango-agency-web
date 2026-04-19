@@ -6,11 +6,20 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
-  const { name, instagram, contact, goal, income } = req.body || {};
+  const { name, instagram, contact, situation, goal, income } = req.body || {};
 
-  if (!name || !instagram || !contact) {
+  if (!name || !instagram || !contact || !situation) {
     return res.status(400).json({ error: 'Required fields missing' });
   }
+
+  const situationLabels: Record<string, string> = {
+    'just-starting': 'Just starting',
+    'growing-inconsistent': 'Growing but inconsistent',
+    '5k-20k': '$5k–$20k/month',
+    '20k-plus': '$20k+/month',
+    'agency': 'Agency',
+  };
+  const situationText = situationLabels[situation] || situation;
 
   if (!process.env.RESEND_API_KEY) {
     console.error('RESEND_API_KEY not configured');
@@ -29,7 +38,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     const { data, error } = await resend.emails.send({
       from: 'MANGO Agency <onboarding@resend.dev>',
       to: [process.env.CONTACT_TO || 'mangova.agency@gmail.com'],
-      subject: `New Application — ${name} ${income ? `(${income})` : ''}`.trim(),
+      subject: `New Application — ${name} (${situationText})`.trim(),
       html: `
         <div style="font-family: -apple-system, BlinkMacSystemFont, 'Inter', sans-serif; max-width: 560px; margin: 0 auto; color: #1a1c1d;">
           <div style="border-bottom: 2px solid #000; padding-bottom: 16px; margin-bottom: 24px;">
@@ -40,15 +49,16 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
             ${row('Name', name)}
             ${row('Instagram', instagram)}
             ${row('Contact', contact)}
-            ${row('Biggest Goal', (goal || 'Not provided').replace(/\n/g, '<br>'))}
-            ${row('Monthly Income', income || 'Not provided')}
+            ${row('Situation', situationText)}
+            ${row('Situation & blockers', (goal || 'Not provided').replace(/\n/g, '<br>'))}
+            ${row('Monthly Revenue', income || 'Not provided')}
           </table>
           <div style="margin-top: 24px; padding: 16px; background: #f9f9fb; border-radius: 8px; font-size: 12px; color: #777;">
             Received ${new Date().toISOString()}
           </div>
         </div>
       `,
-      text: `New Application\nName: ${name}\nInstagram: ${instagram}\nContact: ${contact}\nGoal: ${goal || 'Not provided'}\nIncome: ${income || 'Not provided'}`,
+      text: `New Application\nName: ${name}\nInstagram: ${instagram}\nContact: ${contact}\nSituation: ${situationText}\nContext: ${goal || 'Not provided'}\nMonthly Revenue: ${income || 'Not provided'}`,
     });
 
     if (error) {

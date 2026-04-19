@@ -15,26 +15,26 @@ const t = {
     formTitle: 'Apply for management',
     name: 'Name / Stage Name',
     instagram: 'Instagram',
-    instagramHint: 'We review your profile before accepting new creators',
+    instagramHint: 'We\u2019ll review your profile to understand your potential',
     contact: 'Telegram / WhatsApp',
-    contactPlaceholder: '@username or +1234567890',
-    contactHint: 'We\u2019ll contact you within 24\u201348h if selected',
-    goal: 'Your biggest goal',
-    goalHint: 'What\u2019s your target monthly income, and what\u2019s currently holding you back?',
-    income: 'Current monthly income (optional)',
-    incomeHint: 'Helps us understand where you are and how we can scale you',
-    submit: 'Apply to scale',
+    contactHint: 'We\u2019ll contact you here if there\u2019s a fit',
+    situation: 'What best describes your situation?',
+    situationPlaceholder: 'Select one',
+    situation1: 'Just starting',
+    situation2: 'Growing but inconsistent',
+    situation3: '$5k\u2013$20k/month',
+    situation4: '$20k+/month',
+    situation5: 'Agency',
+    goal: 'What\u2019s your current situation and what\u2019s holding you back?',
+    income: 'Current monthly revenue (optional)',
+    incomeHint: 'Helps us understand how to scale your account',
+    incomePlaceholder: 'e.g. $3,200',
+    submit: 'Apply for review',
     check1: 'Applications reviewed within 24\u201348h',
     check2: 'Only selected creators will be contacted',
     privacy: 'Your data is treated confidentially.',
     success: 'Application sent! We\u2019ll reach out within 24\u201348h if selected.',
     error: 'Something went wrong. Try again or reach us at hello@mangova.agency',
-    income0: '$0',
-    income1: '$0 \u2013 $1k',
-    income2: '$1k \u2013 $5k',
-    income3: '$5k \u2013 $10k',
-    income4: '$10k+',
-    incomePlaceholder: 'Select range',
   },
   es: {
     headline: 'Ayudamos a creadoras de OnlyFans a escalar a meses consistentes de 5 y 6 cifras',
@@ -45,26 +45,26 @@ const t = {
     formTitle: 'Solicita gesti\u00f3n',
     name: 'Nombre / Nombre art\u00edstico',
     instagram: 'Instagram',
-    instagramHint: 'Revisamos tu perfil antes de aceptar nuevas creadoras',
+    instagramHint: 'Revisaremos tu perfil para entender tu potencial',
     contact: 'Telegram / WhatsApp',
-    contactPlaceholder: '@usuario o +34 600 000 000',
-    contactHint: 'Te contactaremos en 24\u201348h si eres seleccionada',
-    goal: 'Tu mayor objetivo',
-    goalHint: '\u00bfCu\u00e1l es tu objetivo de ingresos mensuales y qu\u00e9 te est\u00e1 frenando ahora?',
+    contactHint: 'Te contactaremos por aqu\u00ed si encajamos',
+    situation: '\u00bfQu\u00e9 describe mejor tu situaci\u00f3n?',
+    situationPlaceholder: 'Selecciona una',
+    situation1: 'Empezando',
+    situation2: 'Creciendo pero inconsistente',
+    situation3: '$5k\u2013$20k/mes',
+    situation4: '$20k+/mes',
+    situation5: 'Agencia',
+    goal: '\u00bfCu\u00e1l es tu situaci\u00f3n actual y qu\u00e9 te est\u00e1 frenando?',
     income: 'Ingresos mensuales actuales (opcional)',
-    incomeHint: 'Nos ayuda a entender d\u00f3nde est\u00e1s y c\u00f3mo podemos escalarte',
-    submit: 'Solicitar para escalar',
+    incomeHint: 'Nos ayuda a entender c\u00f3mo escalar tu cuenta',
+    incomePlaceholder: 'ej. $3.200',
+    submit: 'Solicitar revisi\u00f3n',
     check1: 'Las solicitudes se revisan en 24\u201348h',
     check2: 'Solo las creadoras seleccionadas ser\u00e1n contactadas',
     privacy: 'Tus datos se tratan de forma confidencial.',
     success: '\u00a1Solicitud enviada! Te contactaremos en 24\u201348h si eres seleccionada.',
     error: 'Algo sali\u00f3 mal. Int\u00e9ntalo de nuevo o escr\u00edbenos a hello@mangova.agency',
-    income0: '$0',
-    income1: '$0 \u2013 $1k',
-    income2: '$1k \u2013 $5k',
-    income3: '$5k \u2013 $10k',
-    income4: '$10k+',
-    incomePlaceholder: 'Selecciona rango',
   },
 }[lang];
 ---
@@ -104,29 +104,34 @@ const t = {
 
         <div>
           <label for="contact" class="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-2 block">{t.contact}</label>
-          <input type="text" id="contact" name="contact" placeholder={t.contactPlaceholder} required
-            class="w-full bg-surface-container-low border border-outline-variant/30 rounded-lg px-4 py-3 text-sm text-on-surface placeholder:text-outline focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all" />
+          <input type="text" id="contact" name="contact" required
+            class="w-full bg-surface-container-low border border-outline-variant/30 rounded-lg px-4 py-3 text-sm text-on-surface focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all" />
           <p class="text-xs text-outline mt-1.5">{t.contactHint}</p>
+        </div>
+
+        <div>
+          <label for="situation" class="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-2 block">{t.situation}</label>
+          <select id="situation" name="situation" required
+            class="w-full bg-surface-container-low border border-outline-variant/30 rounded-lg px-4 py-3 text-sm text-on-surface focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all appearance-none cursor-pointer">
+            <option value="" disabled selected>{t.situationPlaceholder}</option>
+            <option value="just-starting">{t.situation1}</option>
+            <option value="growing-inconsistent">{t.situation2}</option>
+            <option value="5k-20k">{t.situation3}</option>
+            <option value="20k-plus">{t.situation4}</option>
+            <option value="agency">{t.situation5}</option>
+          </select>
         </div>
 
         <div>
           <label for="goal" class="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-2 block">{t.goal}</label>
           <textarea id="goal" name="goal" rows="3"
             class="w-full bg-surface-container-low border border-outline-variant/30 rounded-lg px-4 py-3 text-sm text-on-surface focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all resize-none"></textarea>
-          <p class="text-xs text-outline mt-1.5">{t.goalHint}</p>
         </div>
 
         <div>
           <label for="income" class="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-2 block">{t.income}</label>
-          <select id="income" name="income"
-            class="w-full bg-surface-container-low border border-outline-variant/30 rounded-lg px-4 py-3 text-sm text-on-surface focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all appearance-none cursor-pointer">
-            <option value="" disabled selected>{t.incomePlaceholder}</option>
-            <option value="0">{t.income0}</option>
-            <option value="0-1k">{t.income1}</option>
-            <option value="1k-5k">{t.income2}</option>
-            <option value="5k-10k">{t.income3}</option>
-            <option value="10k+">{t.income4}</option>
-          </select>
+          <input type="text" id="income" name="income" placeholder={t.incomePlaceholder}
+            class="w-full bg-surface-container-low border border-outline-variant/30 rounded-lg px-4 py-3 text-sm text-on-surface placeholder:text-outline focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all" />
           <p class="text-xs text-outline mt-1.5">{t.incomeHint}</p>
         </div>
 
@@ -184,6 +189,7 @@ const t = {
       name: form.name.value,
       instagram: form.instagram.value,
       contact: form.contact.value,
+      situation: form.situation.value,
       goal: form.goal.value,
       income: form.income.value,
     };
