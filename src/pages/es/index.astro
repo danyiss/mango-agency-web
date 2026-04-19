@@ -80,7 +80,91 @@ const serviceSchema = {
     </div>
   </section>
 
-  <!-- 3. PROBLEM SECTION -->
+  <!-- 3. RESULTS SECTION -->
+  <section id="results" class="py-28 bg-white">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <!-- Header -->
+      <div class="max-w-3xl mb-20">
+        <h2 class="text-4xl md:text-5xl font-black text-on-surface tracking-tight leading-[1.1]">Resultados reales</h2>
+        <p class="mt-4 text-on-surface-variant text-lg">Nos centramos en lo que de verdad importa: los ingresos.</p>
+      </div>
+
+      <!-- Main feature block -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center mb-28">
+        <div class="flex flex-col gap-6">
+          <span class="text-xs font-bold tracking-widest uppercase text-outline">Mes destacado</span>
+          <h3 class="text-6xl md:text-7xl font-black text-on-surface tracking-tight leading-[0.95]">$24,586</h3>
+          <p class="text-on-surface-variant text-lg leading-relaxed max-w-md">
+            En un solo mes. Construido con chatting estructurado, sistemas de contenido y estrategia de tr&aacute;fico.
+          </p>
+        </div>
+        <div class="rounded-2xl overflow-hidden border border-outline-variant/20 shadow-lg">
+          <img src="/assets/results/main-feature-block.jpeg" alt="$24,586 en un solo mes" class="w-full h-auto block" loading="lazy" />
+        </div>
+      </div>
+
+      <!-- Results grid (3 cards) -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mb-28">
+        {[
+          { value: '$19,025', unit: '/mes', text: 'Ingresos consistentes con sistemas de monetizaci\u00f3n optimizados.', img: '/assets/results/results-grid1.jpeg' },
+          { value: '$13,098', unit: '/mes', text: 'Escalando con integraci\u00f3n de contenido y chatting.', img: '/assets/results/results-grid2.jpeg' },
+          { value: '+558%', unit: 'crecimiento', text: 'De $7,820 a crecimiento estructurado en semanas.', img: '/assets/results/results-grid3.jpeg' },
+        ].map(card => (
+          <div class="bg-surface-container-lowest p-8 rounded-xl border border-outline-variant/20 flex flex-col gap-6">
+            <div class="flex items-baseline gap-2 flex-wrap">
+              <span class="text-4xl md:text-5xl font-black text-on-surface tracking-tight">{card.value}</span>
+              <span class="text-on-surface-variant text-base">{card.unit}</span>
+            </div>
+            <p class="text-on-surface-variant text-sm leading-relaxed">{card.text}</p>
+            <div class="rounded-lg overflow-hidden border border-outline-variant/20 mt-auto">
+              <img src={card.img} alt={card.value} class="w-full h-auto block" loading="lazy" />
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <!-- Insight block -->
+      <div class="max-w-3xl mx-auto text-center mb-28">
+        <h3 class="text-3xl md:text-5xl font-black text-on-surface tracking-tight leading-[1.15]">
+          La mayor&iacute;a de los ingresos no vienen de las suscripciones.
+        </h3>
+        <p class="mt-5 text-on-surface-variant text-lg leading-relaxed">
+          Hasta el 70&ndash;85% viene de DMs, upsells y sistemas de chatting.
+        </p>
+      </div>
+
+      <!-- Daily performance -->
+      <div class="flex flex-col gap-12 items-center text-center">
+        <div>
+          <h3 class="text-5xl md:text-7xl font-black text-on-surface tracking-tight leading-none">D&iacute;as de $2k+</h3>
+          <p class="mt-4 text-on-surface-variant text-lg max-w-xl mx-auto">
+            Picos diarios impulsados por sistemas de venta y ejecuci&oacute;n.
+          </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5 max-w-4xl w-full">
+          <div class="rounded-2xl overflow-hidden border border-outline-variant/20 shadow-md">
+            <img src="/assets/results/daily-performance-block1.jpeg" alt="Ingresos de un solo d\u00eda superiores a $2k" class="w-full h-auto block" loading="lazy" />
+          </div>
+          <div class="rounded-2xl overflow-hidden border border-outline-variant/20 shadow-md">
+            <img src="/assets/results/daily-performance-block2.jpeg" alt="Ingresos de un solo d\u00eda superiores a $2k" class="w-full h-auto block" loading="lazy" />
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="text-center max-w-2xl mx-auto mt-28 pt-16 border-t border-outline-variant/20">
+        <h3 class="text-3xl md:text-4xl font-black text-on-surface tracking-tight leading-[1.15]">&iquest;Listo para escalar tu p&aacute;gina as&iacute;?</h3>
+        <p class="mt-4 text-on-surface-variant text-base leading-relaxed">
+          Solo trabajamos con un n&uacute;mero limitado de creadores para mantener una gesti&oacute;n cercana y enfocada en el rendimiento.
+        </p>
+        <a href="#apply" class="inline-block mt-8 bg-primary text-on-primary font-bold px-8 py-4 rounded-xl text-sm tracking-wide hover:bg-primary-container transition-all">
+          Aplicar Ahora
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. PROBLEM SECTION -->
   <section class="py-28 bg-surface">
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
       <div class="mb-16">
