@@ -7,21 +7,27 @@ const { lang = 'en' } = Astro.props;
 
 const t = {
   en: {
-    title: 'Ready to scale?',
-    subtitle: 'We only take a limited number of creators each month.\nApply to see if we\u2019re the right fit.',
+    headline: 'We help OnlyFans creators scale to consistent 5 and 6-figure months',
+    subheadline: 'We build the systems behind high-earning creators \u2014 so you can focus on content while we handle growth, monetization, and optimization.',
+    supporting: 'Most creators don\u2019t struggle with content \u2014 they struggle with inconsistent income, poor monetization, and lack of systems. That\u2019s what we fix.',
+    scarcity: 'We only accept a small number of creators each month to keep our approach hands-on and results-driven.',
+    credibility: 'Our systems are already being used by creators generating consistent 5-figure monthly revenue.',
+    formTitle: 'Apply for management',
     name: 'Name / Stage Name',
     instagram: 'Instagram',
-    contact: 'Telegram / WhatsApp number',
+    instagramHint: 'We review your profile before accepting new creators',
+    contact: 'Telegram / WhatsApp',
     contactPlaceholder: '@username or +1234567890',
-    contactHint: 'We\'ll contact you here to confirm your application',
+    contactHint: 'We\u2019ll contact you within 24\u201348h if selected',
     goal: 'Your biggest goal',
-    goalHint: 'Tell us what you want to achieve \u2014 we\'re here to listen and build it with you',
+    goalHint: 'What\u2019s your target monthly income, and what\u2019s currently holding you back?',
     income: 'Current monthly income (optional)',
-    incomeHint: 'Don\'t worry if you\'re just starting \u2014 we also work with creators with high potential',
-    submit: 'Apply now',
+    incomeHint: 'Helps us understand where you are and how we can scale you',
+    submit: 'Apply to scale',
+    check1: 'Applications reviewed within 24\u201348h',
+    check2: 'Only selected creators will be contacted',
     privacy: 'Your data is treated confidentially.',
-    reviewed: 'Applications are reviewed within 24\u201348h',
-    success: 'Application sent! We\'ll reach out within 24\u201348h.',
+    success: 'Application sent! We\u2019ll reach out within 24\u201348h if selected.',
     error: 'Something went wrong. Try again or reach us at hello@mangova.agency',
     income0: '$0',
     income1: '$0 \u2013 $1k',
@@ -31,21 +37,27 @@ const t = {
     incomePlaceholder: 'Select range',
   },
   es: {
-    title: '\u00bfListo para escalar?',
-    subtitle: 'Solo aceptamos un n\u00famero limitado de creadores cada mes.\nAplica para ver si encajamos.',
+    headline: 'Ayudamos a creadoras de OnlyFans a escalar a meses consistentes de 5 y 6 cifras',
+    subheadline: 'Construimos los sistemas detr\u00e1s de las creadoras de altos ingresos \u2014 para que t\u00fa te centres en el contenido mientras nosotros nos encargamos del crecimiento, la monetizaci\u00f3n y la optimizaci\u00f3n.',
+    supporting: 'La mayor\u00eda de las creadoras no tienen problema con el contenido \u2014 lo tienen con los ingresos inconsistentes, la mala monetizaci\u00f3n y la falta de sistemas. Eso es lo que nosotros arreglamos.',
+    scarcity: 'Solo aceptamos un n\u00famero reducido de creadoras cada mes para mantener un enfoque cercano y orientado a resultados.',
+    credibility: 'Nuestros sistemas ya los usan creadoras que generan ingresos mensuales consistentes de 5 cifras.',
+    formTitle: 'Solicita gesti\u00f3n',
     name: 'Nombre / Nombre art\u00edstico',
     instagram: 'Instagram',
-    contact: 'Telegram / N\u00famero de WhatsApp',
+    instagramHint: 'Revisamos tu perfil antes de aceptar nuevas creadoras',
+    contact: 'Telegram / WhatsApp',
     contactPlaceholder: '@usuario o +34 600 000 000',
-    contactHint: 'Te contactaremos aqu\u00ed para confirmar tu solicitud',
+    contactHint: 'Te contactaremos en 24\u201348h si eres seleccionada',
     goal: 'Tu mayor objetivo',
-    goalHint: 'Cu\u00e9ntanos qu\u00e9 quieres lograr \u2014 estamos aqu\u00ed para escucharte y construirlo contigo',
+    goalHint: '\u00bfCu\u00e1l es tu objetivo de ingresos mensuales y qu\u00e9 te est\u00e1 frenando ahora?',
     income: 'Ingresos mensuales actuales (opcional)',
-    incomeHint: 'No te preocupes si est\u00e1s empezando \u2014 tambi\u00e9n trabajamos con creadores con alto potencial',
-    submit: 'Aplicar ahora',
+    incomeHint: 'Nos ayuda a entender d\u00f3nde est\u00e1s y c\u00f3mo podemos escalarte',
+    submit: 'Solicitar para escalar',
+    check1: 'Las solicitudes se revisan en 24\u201348h',
+    check2: 'Solo las creadoras seleccionadas ser\u00e1n contactadas',
     privacy: 'Tus datos se tratan de forma confidencial.',
-    reviewed: 'Las solicitudes se revisan en 24\u201348h',
-    success: '\u00a1Solicitud enviada! Te contactaremos en 24\u201348h.',
+    success: '\u00a1Solicitud enviada! Te contactaremos en 24\u201348h si eres seleccionada.',
     error: 'Algo sali\u00f3 mal. Int\u00e9ntalo de nuevo o escr\u00edbenos a hello@mangova.agency',
     income0: '$0',
     income1: '$0 \u2013 $1k',
@@ -57,17 +69,25 @@ const t = {
 }[lang];
 ---
 
-<section id="apply" class="py-28 bg-surface">
+<section id="apply" class="py-32 bg-surface">
   <div class="max-w-7xl mx-auto px-6 lg:px-8">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
-    <!-- Left: Header -->
-    <div class="lg:sticky lg:top-28">
-      <h2 class="text-4xl md:text-5xl font-black text-on-surface tracking-tight mb-4">{t.title}</h2>
-      <p class="text-on-surface-variant text-lg whitespace-pre-line">{t.subtitle}</p>
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+    <!-- Left: Copy -->
+    <div class="lg:sticky lg:top-28 flex flex-col gap-7">
+      <h2 class="text-4xl md:text-5xl font-black text-on-surface tracking-tight leading-[1.1]">{t.headline}</h2>
+      <p class="text-on-surface-variant text-lg leading-relaxed">{t.subheadline}</p>
+      <div class="h-px bg-outline-variant/30"></div>
+      <p class="text-on-surface text-base leading-relaxed"><strong class="font-semibold">{t.supporting}</strong></p>
+      <p class="text-on-surface-variant text-base leading-relaxed">{t.scarcity}</p>
+      <div class="flex items-start gap-3 pt-2">
+        <span class="material-symbols-outlined text-primary flex-shrink-0 mt-0.5" style="font-size:20px;font-variation-settings:'FILL' 1;">verified</span>
+        <p class="text-on-surface-variant text-sm leading-relaxed">{t.credibility}</p>
+      </div>
     </div>
 
     <!-- Right: Form -->
     <div class="bg-surface-container-lowest border border-outline-variant/20 rounded-2xl p-8 md:p-10">
+      <h3 class="text-xs font-bold uppercase tracking-widest text-outline mb-6">{t.formTitle}</h3>
       <form id="apply-form" class="flex flex-col gap-5">
         <div>
           <label for="name" class="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-2 block">{t.name}</label>
@@ -79,6 +99,7 @@ const t = {
           <label for="instagram" class="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-2 block">{t.instagram}</label>
           <input type="text" id="instagram" name="instagram" required
             class="w-full bg-surface-container-low border border-outline-variant/30 rounded-lg px-4 py-3 text-sm text-on-surface focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all" />
+          <p class="text-xs text-outline mt-1.5">{t.instagramHint}</p>
         </div>
 
         <div>
@@ -114,11 +135,21 @@ const t = {
           {t.submit}
         </button>
 
-        <div class="flex items-center justify-center gap-1 text-xs text-outline">
+        <div class="flex flex-col gap-2 mt-2">
+          <div class="flex items-center gap-2 text-xs text-on-surface-variant">
+            <span class="material-symbols-outlined text-primary" style="font-size:16px;font-variation-settings:'FILL' 1;">check_circle</span>
+            {t.check1}
+          </div>
+          <div class="flex items-center gap-2 text-xs text-on-surface-variant">
+            <span class="material-symbols-outlined text-primary" style="font-size:16px;font-variation-settings:'FILL' 1;">check_circle</span>
+            {t.check2}
+          </div>
+        </div>
+
+        <div class="flex items-center justify-center gap-1 text-xs text-outline mt-1">
           <span class="material-symbols-outlined" style="font-size:14px;">lock</span>
           {t.privacy}
         </div>
-        <p class="text-xs text-outline text-center">{t.reviewed}</p>
       </form>
 
       <!-- Success state -->
@@ -141,6 +172,7 @@ const t = {
     e.preventDefault();
     const form = e.target;
     const btn = document.getElementById('submit-btn');
+    const originalLabel = btn.textContent;
     const successEl = document.getElementById('form-success');
     const errorEl = document.getElementById('form-error');
 
@@ -172,7 +204,7 @@ const t = {
     } catch {
       errorEl.classList.remove('hidden');
       btn.disabled = false;
-      btn.textContent = 'Apply now';
+      btn.textContent = originalLabel;
     }
   });
 </script>
