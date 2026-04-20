@@ -103,3 +103,11 @@ details[open] summary .expand-icon {
   -webkit-text-stroke: 1px #1a1c1d;
   color: transparent;
 }
+
+/* Natural line breaks: prevent orphan words in headings/paragraphs */
+h1, h2, h3, h4 {
+  text-wrap: balance;
+}
+p {
+  text-wrap: pretty;
+}
