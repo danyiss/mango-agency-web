@@ -2,17 +2,21 @@
 import Layout from '../../layouts/Layout.astro';
 ---
 
-<Layout title="Resultados | MANGO Agency" activeNav="results" lang="es">
+<Layout title="Resultados | MANGO Agency" activeNav="results" lang="es" transparentTop={true}>
 
   <!-- 1. HERO -->
-  <section class="pt-32 pb-24 bg-white">
-    <div class="max-w-7xl mx-auto px-6 lg:px-8 text-center">
-      <h1 class="text-5xl md:text-7xl font-black text-on-surface tracking-tight leading-[1.05] mb-6 max-w-4xl mx-auto">
-        Resultados por sistemas, no por suerte
-      </h1>
-      <p class="text-lg md:text-xl text-on-surface-variant max-w-2xl mx-auto leading-relaxed">
-        No dependemos de momentos virales &mdash; construimos sistemas de ingresos predecibles que escalan de forma consistente.
-      </p>
+  <section class="relative h-screen -mt-16 w-full overflow-hidden">
+    <div class="absolute inset-0 bg-cover bg-center bg-no-repeat" style="background-image: url('/assets/hero-results.webp');"></div>
+    <div class="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/30"></div>
+    <div class="absolute inset-0 flex items-center">
+      <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 w-full text-center">
+        <h1 class="text-5xl md:text-7xl font-black text-white tracking-tight leading-[1.05] mb-6 max-w-4xl mx-auto">
+          Resultados por sistemas, no por suerte
+        </h1>
+        <p class="text-white/80 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
+          No dependemos de momentos virales &mdash; construimos sistemas de ingresos predecibles que escalan de forma consistente.
+        </p>
+      </div>
     </div>
   </section>
 
