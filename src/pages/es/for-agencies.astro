@@ -3,29 +3,35 @@ import Layout from '../../layouts/Layout.astro';
 import AgencyApplyForm from '../../components/AgencyApplyForm.astro';
 ---
 
-<Layout title="Para Agencias | MANGO Agency" activeNav="for-agencies" lang="es">
+<Layout title="Para Agencias | MANGO Agency" activeNav="for-agencies" lang="es" transparentTop={true}>
 
   <!-- 1. HERO -->
-  <section class="pt-32 pb-32 bg-white">
-    <div class="max-w-7xl mx-auto px-6 lg:px-8">
-      <div class="max-w-4xl">
-        <h1 class="text-5xl md:text-7xl font-black text-on-surface tracking-tight leading-[1.05] mb-6">
-          Aumenta los ingresos de tu modelo &mdash; sin cambiar tu sistema
-        </h1>
-        <p class="text-lg md:text-xl text-on-surface-variant leading-relaxed max-w-2xl mb-8">
-          Nos encargamos del chatting, la monetizaci&oacute;n y los sistemas de venta, para que te centres en el tr&aacute;fico, el contenido y el crecimiento.
-        </p>
-        <div class="border-l-2 border-primary pl-5 max-w-xl mb-10">
-          <p class="text-base md:text-lg text-on-surface font-semibold leading-snug">
-            T&uacute; mantienes la modelo, la marca y la relaci&oacute;n.
+  <section class="relative h-screen -mt-16 w-full overflow-hidden">
+    <div class="absolute inset-0 bg-cover bg-center bg-no-repeat" style="background-image: url('/assets/hero-agencies.webp');"></div>
+    <div class="absolute inset-0 bg-gradient-to-r from-black/75 via-black/50 to-black/20"></div>
+    <div class="absolute inset-0 flex items-center">
+      <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 w-full">
+        <div class="max-w-4xl flex flex-col gap-6 md:gap-8">
+          <h1 class="text-5xl md:text-7xl font-black text-white tracking-tight leading-[1.05]">
+            Aumenta los ingresos de tu modelo &mdash; sin cambiar tu sistema
+          </h1>
+          <p class="text-white/80 text-lg md:text-xl leading-relaxed max-w-2xl">
+            Nos encargamos del chatting, la monetizaci&oacute;n y los sistemas de venta, para que te centres en el tr&aacute;fico, el contenido y el crecimiento.
           </p>
-          <p class="text-base md:text-lg text-on-surface-variant leading-snug">
-            Nosotros subimos los ingresos.
-          </p>
+          <div class="border-l-2 border-white/60 pl-5 max-w-xl">
+            <p class="text-base md:text-lg text-white font-semibold leading-snug">
+              T&uacute; mantienes la modelo, la marca y la relaci&oacute;n.
+            </p>
+            <p class="text-base md:text-lg text-white/70 leading-snug">
+              Nosotros subimos los ingresos.
+            </p>
+          </div>
+          <div>
+            <a href="#agency-apply" class="inline-block bg-white text-black font-bold px-8 py-4 rounded-xl text-sm tracking-wide hover:bg-white/90 transition-all shadow-lg">
+              Solicitar ahora
+            </a>
+          </div>
         </div>
-        <a href="#agency-apply" class="inline-block bg-primary text-on-primary font-bold px-8 py-4 rounded-xl text-sm tracking-wide hover:bg-primary-container transition-all">
-          Solicitar ahora
-        </a>
       </div>
     </div>
   </section>
