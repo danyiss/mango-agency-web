@@ -8,26 +8,23 @@ import AgencyApplyForm from '../components/AgencyApplyForm.astro';
   <!-- 1. HERO -->
   <section class="relative h-screen -mt-16 w-full overflow-hidden">
     <div class="absolute inset-0 bg-cover bg-right bg-no-repeat" style="background-image: url('/assets/hero-agencies-v2.webp');"></div>
-    <div class="absolute inset-0 bg-gradient-to-r from-black/75 via-black/50 to-black/20"></div>
+    <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/20"></div>
     <div class="absolute inset-0 pointer-events-none" style="background: radial-gradient(ellipse 320px 220px at 96% 88%, rgba(0,0,0,0.55), transparent 70%);"></div>
     <div class="absolute inset-0 flex items-center">
       <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 w-full">
-        <div class="max-w-4xl flex flex-col gap-6 md:gap-8">
+        <div class="max-w-[620px] flex flex-col gap-6">
+          <span class="text-xs font-semibold tracking-[0.25em] uppercase text-white/60">For agencies</span>
           <h1 class="text-5xl md:text-7xl font-black text-white tracking-tight leading-[1.05]">
-            Increase your model&rsquo;s revenue &mdash; without changing your system
+            Built for OnlyFans agencies
           </h1>
-          <p class="text-white/80 text-lg md:text-xl leading-relaxed max-w-2xl">
-            We handle chatting, monetization, and sales systems so you can focus on traffic, content, and growth.
+          <p class="text-white/85 text-lg md:text-xl leading-relaxed">
+            We handle chatting and monetization so you can focus on traffic and growth &mdash; without building the team yourself.
           </p>
-          <div class="border-l-2 border-white/60 pl-5 max-w-xl">
-            <p class="text-base md:text-lg text-white font-semibold leading-snug">
-              You keep the model, the brand, and the relationship.
-            </p>
-            <p class="text-base md:text-lg text-white/70 leading-snug">
-              We increase the revenue.
-            </p>
+          <div class="border-l-2 border-white/50 pl-5 text-sm md:text-base text-white/70 leading-snug">
+            <p>You keep the model, the brand, and the relationship.</p>
+            <p>We increase the revenue.</p>
           </div>
-          <div>
+          <div class="mt-2">
             <a href="#agency-apply" class="inline-block bg-white text-black font-bold px-8 py-4 rounded-xl text-sm tracking-wide hover:bg-white/90 transition-all shadow-lg">
               Apply now
             </a>
@@ -37,76 +34,63 @@ import AgencyApplyForm from '../components/AgencyApplyForm.astro';
     </div>
   </section>
 
-  <!-- 2. TARGET CLARITY -->
+  <!-- 2. PROBLEM (BLACK) -->
+  <section class="py-32 md:py-40 bg-black text-white">
+    <div class="max-w-5xl mx-auto px-6 lg:px-8 flex flex-col gap-10">
+      <h2 class="text-4xl md:text-6xl font-black tracking-tight leading-[1.1]">
+        Most agencies don&rsquo;t have a growth problem <span class="text-white/60">&mdash; they have a monetization problem.</span>
+      </h2>
+      <div class="flex flex-col gap-3 text-xl md:text-2xl font-semibold text-white/80 border-l-2 border-white/30 pl-6">
+        <p>You can get models.</p>
+        <p>You can get traffic.</p>
+        <p class="text-white">But revenue per model is inconsistent.</p>
+      </div>
+      <p class="text-xl md:text-2xl font-bold text-white leading-snug mt-4">
+        Chatting is where most of the money is made <span class="text-white/60">&mdash; and where most agencies lose it.</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- 3. SOLUTION (WHITE) -->
+  <section class="py-32 bg-white">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <h2 class="text-4xl md:text-5xl font-black text-on-surface tracking-tight leading-[1.1] mb-14 max-w-3xl">
+        We become your monetization system.
+      </h2>
+      <ul class="flex flex-col gap-5 mb-14 max-w-3xl">
+        {[
+          'Dedicated chatters assigned per model — trained to match tone, personality, and boundaries.',
+          'Structured sales flows (warm-up → engagement → upsell → retention), not random chatting.',
+          'Daily tracking of revenue, conversion, and spender behavior.',
+          'Weekly performance reviews with clear adjustments and improvements.',
+          'Internal QA system to maintain consistency and avoid revenue leaks.',
+        ].map(item => (
+          <li class="flex items-start gap-4">
+            <span class="material-symbols-outlined text-primary flex-shrink-0 mt-1" style="font-size:22px;font-variation-settings:'FILL' 1;">check_circle</span>
+            <p class="text-on-surface text-lg leading-relaxed">{item}</p>
+          </li>
+        ))}
+      </ul>
+      <div class="border-t border-outline-variant/30 pt-10 max-w-3xl">
+        <p class="text-xl md:text-2xl text-on-surface font-semibold leading-snug">This is not outsourcing.</p>
+        <p class="text-xl md:text-2xl text-on-surface-variant font-semibold leading-snug mt-1">This is a structured revenue system integrated into your agency.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. HOW IT WORKS (SURFACE) -->
   <section class="py-32 bg-surface">
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
-      <div class="max-w-3xl mb-14">
-        <h2 class="text-4xl md:text-5xl font-black text-on-surface tracking-tight leading-[1.1]">This is for</h2>
-      </div>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+      <h2 class="text-4xl md:text-5xl font-black text-on-surface tracking-tight leading-[1.1] mb-16 max-w-3xl">How it works.</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
         {[
-          'Agencies managing models but lacking strong monetization.',
-          'Agencies that want to increase revenue without hiring and training chatters.',
-          'High-performing creators who want to delegate chatting without losing control.',
-        ].map(t => (
-          <div class="bg-surface-container-lowest p-10 rounded-2xl border border-outline-variant/20 flex flex-col gap-5">
-            <span class="material-symbols-outlined text-primary" style="font-size:28px;font-variation-settings:'FILL' 1;">check_circle</span>
-            <p class="text-on-surface text-lg font-semibold leading-snug">{t}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- 3. CORE VALUE -->
-  <section class="py-32 bg-white">
-    <div class="max-w-7xl mx-auto px-6 lg:px-8">
-      <div class="max-w-3xl mb-20">
-        <h2 class="text-4xl md:text-5xl font-black text-on-surface tracking-tight leading-[1.1]">
-          We don&rsquo;t just handle chatting &mdash; we build revenue systems.
-        </h2>
-      </div>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
-        {[
-          { num: '01', title: 'Dedicated chatting team', text: 'A trained team assigned to your model, working in their tone and style.' },
-          { num: '02', title: 'Sales systems', text: 'Structured upsells, retention, and messaging systems designed to maximize revenue.' },
-          { num: '03', title: 'Performance optimization', text: 'We track results, analyze performance, and continuously improve conversion.' },
-        ].map(p => (
-          <div class="bg-surface-container-lowest p-10 md:p-12 rounded-2xl border border-outline-variant/20 flex flex-col gap-8 hover:shadow-lg transition-shadow min-h-[320px]">
-            <span class="text-6xl font-black text-outline-variant/40 leading-none">{p.num}</span>
-            <div class="flex flex-col gap-4 mt-auto">
-              <h3 class="text-2xl md:text-3xl font-black text-on-surface tracking-tight">{p.title}</h3>
-              <p class="text-on-surface-variant text-base leading-relaxed">{p.text}</p>
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- 4. DIFFERENTIATION (BLACK) -->
-  <section class="py-40 md:py-52 bg-black text-white">
-    <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center flex flex-col gap-8">
-      <h2 class="text-4xl md:text-7xl font-black tracking-tight leading-[1.05]">
-        Most chatting services just reply to messages. <span class="text-white/60">We focus on converting conversations into revenue.</span>
-      </h2>
-    </div>
-  </section>
-
-  <!-- 5. HOW IT WORKS -->
-  <section class="py-32 bg-white">
-    <div class="max-w-7xl mx-auto px-6 lg:px-8">
-      <div class="max-w-3xl mb-20">
-        <h2 class="text-4xl md:text-5xl font-black text-on-surface tracking-tight leading-[1.1]">Plug in. Scale revenue.</h2>
-      </div>
-      <div class="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-outline-variant/30">
-        {[
-          { num: '01', title: 'Integrate', text: 'We integrate with your existing setup.' },
-          { num: '02', title: 'Take over', text: 'We take over chatting and monetization.' },
-          { num: '03', title: 'Scale', text: 'We optimize performance and scale revenue.' },
+          { num: '01', title: 'Integration', text: 'We connect with your current setup and understand each model\u2019s positioning, pricing, and audience.' },
+          { num: '02', title: 'Setup', text: 'We build the chatting structure, sales flows, and assign dedicated chatters per model.' },
+          { num: '03', title: 'Execution', text: 'We handle daily conversations, upsells, retention, and fan segmentation.' },
+          { num: '04', title: 'Optimization', text: 'We analyze performance weekly and continuously improve conversion and revenue per fan.' },
         ].map(step => (
-          <div class="flex flex-col gap-5 px-0 md:px-10 py-10 first:pt-0 md:first:pt-10 md:first:pl-0 md:last:pr-0">
-            <span class="text-5xl md:text-6xl font-black text-on-surface tracking-tight leading-none">{step.num}</span>
+          <div class="bg-surface-container-lowest p-10 md:p-12 rounded-2xl border border-outline-variant/20 flex flex-col gap-5">
+            <span class="text-5xl md:text-6xl font-black text-outline-variant/40 leading-none">{step.num}</span>
             <h3 class="text-2xl md:text-3xl font-black text-on-surface tracking-tight">{step.title}</h3>
             <p class="text-on-surface-variant text-base leading-relaxed">{step.text}</p>
           </div>
@@ -115,38 +99,117 @@ import AgencyApplyForm from '../components/AgencyApplyForm.astro';
     </div>
   </section>
 
-  <!-- 6. BENEFITS -->
-  <section class="py-32 bg-surface">
+  <!-- 5. DIFFERENTIATION (BLACK) -->
+  <section class="py-32 md:py-40 bg-black text-white">
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
-      <div class="max-w-3xl mb-16">
-        <h2 class="text-4xl md:text-5xl font-black text-on-surface tracking-tight leading-[1.1]">What you get.</h2>
-      </div>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+      <h2 class="text-4xl md:text-6xl font-black tracking-tight leading-[1.05] mb-14 max-w-4xl">
+        Why top agencies work with us.
+      </h2>
+      <ul class="flex flex-col gap-5 mb-14 max-w-3xl">
         {[
-          'Higher revenue per model.',
-          'No need to hire or manage chatters.',
-          'Scalable systems without operational complexity.',
-        ].map(b => (
-          <div class="bg-surface-container-lowest p-10 rounded-2xl border border-outline-variant/20 flex items-start gap-4">
-            <span class="material-symbols-outlined text-primary flex-shrink-0 mt-0.5" style="font-size:24px;font-variation-settings:'FILL' 1;">trending_up</span>
-            <p class="text-on-surface text-lg font-semibold leading-snug">{b}</p>
-          </div>
+          'Dedicated chatters per model — trained, monitored, and optimized as part of a structured system.',
+          'We track real performance metrics: revenue per fan, conversion rates, and spender behavior.',
+          'Every conversation follows a defined sales structure — not guesswork or random chatting.',
+          'We plug into your operation without disrupting your workflows or model relationships.',
+          'Built to scale across multiple models without losing consistency or control.',
+        ].map(item => (
+          <li class="flex items-start gap-4">
+            <span class="material-symbols-outlined text-white flex-shrink-0 mt-1" style="font-size:22px;font-variation-settings:'FILL' 1;">check_circle</span>
+            <p class="text-white/85 text-lg leading-relaxed">{item}</p>
+          </li>
+        ))}
+      </ul>
+      <div class="border-t border-white/20 pt-10 max-w-3xl">
+        <p class="text-xl md:text-2xl text-white/60 font-semibold leading-snug">Most agencies grow accounts.</p>
+        <p class="text-xl md:text-2xl text-white font-bold leading-snug mt-1">We turn them into predictable revenue systems.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. POSITIONING (WHITE) -->
+  <section class="py-32 bg-white">
+    <div class="max-w-5xl mx-auto px-6 lg:px-8 flex flex-col gap-10">
+      <h2 class="text-4xl md:text-5xl font-black text-on-surface tracking-tight leading-[1.1]">Built for agencies ready to scale.</h2>
+      <p class="text-on-surface-variant text-lg md:text-xl leading-relaxed max-w-3xl">
+        We don&rsquo;t work with early-stage or low-traffic accounts. We partner with agencies that:
+      </p>
+      <ul class="flex flex-col gap-4 max-w-3xl">
+        {[
+          'Have active models generating daily traffic.',
+          'Already produce consistent monthly revenue.',
+          'Want to increase revenue per model, not just grow accounts.',
+        ].map(item => (
+          <li class="flex items-start gap-4">
+            <span class="material-symbols-outlined text-primary flex-shrink-0 mt-1" style="font-size:22px;font-variation-settings:'FILL' 1;">check_circle</span>
+            <p class="text-on-surface text-lg leading-relaxed">{item}</p>
+          </li>
+        ))}
+      </ul>
+      <div class="border-t border-outline-variant/30 pt-10 max-w-3xl">
+        <p class="text-xl md:text-2xl text-on-surface font-bold leading-snug">If your models are already moving, we&rsquo;ll scale them.</p>
+        <p class="text-xl md:text-2xl text-on-surface-variant font-semibold leading-snug mt-1">If not, we&rsquo;re not the right fit.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. FAQ (SURFACE) -->
+  <section class="py-32 bg-surface">
+    <div class="max-w-4xl mx-auto px-6 lg:px-8">
+      <h2 class="text-4xl md:text-5xl font-black text-on-surface tracking-tight leading-[1.1] mb-14">Frequently asked questions.</h2>
+      <div class="flex flex-col gap-3">
+        {[
+          {
+            q: 'Do you work directly with my models?',
+            a: 'No. We operate as your backend system. You keep full ownership of the relationship, the brand, and the communication. We simply handle monetization behind the scenes.',
+          },
+          {
+            q: 'Will my models notice the difference?',
+            a: 'No. Everything is adapted to each model\u2019s tone, personality, and boundaries. From the outside, nothing changes. From the inside, revenue improves.',
+          },
+          {
+            q: 'How do you ensure quality in chatting?',
+            a: 'We use structured systems, not guesswork: dedicated chatters per model, internal QA and monitoring, performance tracking per chatter, and continuous optimization.',
+          },
+          {
+            q: 'How fast can we start?',
+            a: 'Once aligned, setup can be completed in 24 hours and we start optimizing immediately.',
+          },
+          {
+            q: 'How do you get paid?',
+            a: 'Performance-based. Each setup is different depending on your models, current revenue, and structure. We only make money if your revenue increases \u2014 that\u2019s how we stay aligned.',
+          },
+          {
+            q: 'Why work with you instead of building this in-house?',
+            a: 'You can. But it requires time, hiring, training, management, and constant optimization. We give you a system that already works \u2014 without the operational complexity.',
+          },
+        ].map(faq => (
+          <details class="bg-surface-container-lowest rounded-2xl group border border-outline-variant/20">
+            <summary class="p-8 flex items-center justify-between cursor-pointer list-none select-none">
+              <span class="font-semibold text-on-surface text-base md:text-lg pr-6">{faq.q}</span>
+              <span class="material-symbols-outlined expand-icon text-on-surface-variant flex-shrink-0 transition-transform duration-300">add</span>
+            </summary>
+            <div class="px-8 pb-8 text-on-surface-variant text-sm md:text-base leading-relaxed">{faq.a}</div>
+          </details>
         ))}
       </div>
     </div>
   </section>
 
-  <!-- 7. PRE-FORM CTA (BLACK) -->
-  <section class="py-28 md:py-32 bg-black text-white">
-    <div class="max-w-3xl mx-auto px-6 lg:px-8 text-center flex flex-col gap-6">
-      <h2 class="text-4xl md:text-5xl font-black tracking-tight leading-[1.1]">
-        If your models have traffic but aren&rsquo;t converting &mdash; this is where the money is lost.
+  <!-- 8. FINAL CTA (BLACK) -->
+  <section class="py-28 md:py-36 bg-black text-white">
+    <div class="max-w-3xl mx-auto px-6 lg:px-8 text-center flex flex-col gap-8">
+      <h2 class="text-4xl md:text-6xl font-black tracking-tight leading-[1.05]">
+        Ready to scale your agency without operational chaos?
       </h2>
-      <p class="text-white/70 text-lg md:text-xl leading-relaxed">Let&rsquo;s fix it.</p>
+      <div>
+        <a href="#agency-apply" class="inline-block bg-white text-black font-bold px-10 py-5 rounded-xl text-sm tracking-wide hover:bg-white/90 transition-all">
+          Apply now
+        </a>
+      </div>
     </div>
   </section>
 
-  <!-- 8. AGENCY APPLICATION FORM -->
+  <!-- 9. AGENCY APPLICATION FORM -->
   <AgencyApplyForm lang="en" />
 
 </Layout>
