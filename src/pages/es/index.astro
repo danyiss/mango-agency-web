@@ -19,6 +19,8 @@ const faqSchema = {
     { "@type": "Question", "name": t('home.faq.q8'), "acceptedAnswer": { "@type": "Answer", "text": t('home.faq.a8') }},
     { "@type": "Question", "name": t('home.faq.q9'), "acceptedAnswer": { "@type": "Answer", "text": t('home.faq.a9') }},
     { "@type": "Question", "name": t('home.faq.q10'), "acceptedAnswer": { "@type": "Answer", "text": t('home.faq.a10') }},
+    { "@type": "Question", "name": t('home.faq.q11'), "acceptedAnswer": { "@type": "Answer", "text": t('home.faq.a11') }},
+    { "@type": "Question", "name": t('home.faq.q12'), "acceptedAnswer": { "@type": "Answer", "text": t('home.faq.a12') }},
   ]
 };
 
@@ -381,31 +383,69 @@ const serviceSchema = {
   <section class="py-28 bg-white">
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
       <div class="max-w-3xl mx-auto">
-      <div class="mb-14">
-        <h2 class="text-4xl md:text-5xl font-black text-on-surface tracking-tight">{t('home.faq.title')}</h2>
-      </div>
-      <div class="flex flex-col gap-3">
-        {[
-          { q: t('home.faq.q1'), a: t('home.faq.a1') },
-          { q: t('home.faq.q2'), a: t('home.faq.a2') },
-          { q: t('home.faq.q3'), a: t('home.faq.a3') },
-          { q: t('home.faq.q4'), a: t('home.faq.a4') },
-          { q: t('home.faq.q5'), a: t('home.faq.a5') },
-          { q: t('home.faq.q6'), a: t('home.faq.a6') },
-          { q: t('home.faq.q7'), a: t('home.faq.a7') },
-          { q: t('home.faq.q8'), a: t('home.faq.a8') },
-          { q: t('home.faq.q9'), a: t('home.faq.a9') },
-          { q: t('home.faq.q10'), a: t('home.faq.a10') },
-        ].map(faq => (
-          <details class="bg-surface-container-low rounded-2xl group">
-            <summary class="p-8 flex items-center justify-between cursor-pointer list-none select-none">
-              <span class="font-semibold text-on-surface text-base pr-6">{faq.q}</span>
-              <span class="material-symbols-outlined expand-icon text-on-surface-variant flex-shrink-0 transition-transform duration-300">add</span>
-            </summary>
-            <div class="px-8 pb-8 text-on-surface-variant text-sm leading-relaxed">{faq.a}</div>
-          </details>
-        ))}
-      </div>
+        <div class="mb-14">
+          <h2 class="text-4xl md:text-5xl font-black text-on-surface tracking-tight">Preguntas Frecuentes</h2>
+        </div>
+        <div class="flex flex-col gap-3">
+          {[
+            {
+              q: "¿Qué os diferencia de otras agencias?",
+              a: `<p>La mayoría de agencias se basan en volumen — más contenido, más publicaciones, más mensajes.</p><p>Nosotros nos enfocamos en rendimiento.</p><p>Combinamos:</p><ul class="list-disc pl-5 space-y-1 mt-1"><li>Un equipo de marketing enfocado en generar tráfico consistente</li><li>Un equipo de chatting dedicado por modelo (no compartido entre cuentas)</li><li>Sistemas de ventas estructurados (dripping, upsells, retención)</li><li>Optimización semanal basada en datos reales de rendimiento (ingresos, conversión, LTV)</li></ul><p>No trabajamos con todo el mundo. Seleccionamos a las creadoras adecuadas y nos centramos en escalarlas correctamente.</p>`,
+            },
+            {
+              q: "¿Por qué debería trabajar con una agencia?",
+              a: `<p>Porque la mayoría de creadoras dejan dinero en la mesa — por ambos lados.</p><p>Tráfico sin monetización no escala.<br />Monetización sin tráfico no crece.</p><p>Nosotros nos encargamos de ambas.</p><p>El marketing trae tráfico consistente.<br />El chatting convierte ese tráfico en ingresos.</p><p>Para que puedas centrarte en el contenido mientras todo lo que hay detrás se optimiza.</p>`,
+            },
+            {
+              q: "¿Cuánto puedo esperar crecer?",
+              a: `<p>Depende de tu punto de partida.</p><p>La mayoría de creadoras con las que trabajamos ven:</p><ul class="list-disc pl-5 space-y-1 mt-1"><li>Mayor ingreso por suscriptor</li><li>Mejor conversión de fans a compradores</li><li>Ingresos diarios más consistentes</li></ul><p>En muchos casos, las creadoras pasan de ingresos inestables a ingresos mensuales predecibles mejorando tanto el tráfico como la monetización.</p>`,
+            },
+            {
+              q: "¿Es seguro dar acceso a mi cuenta?",
+              a: `<p>Sí.</p><p>Solo necesitamos tus credenciales una vez para conectar de forma segura tu cuenta a nuestro CRM.</p><p>Después, nuestro equipo trabaja a través de la plataforma sin necesitar acceso directo a tus datos de inicio de sesión.</p><p>Tu cuenta permanece protegida y tú mantienes el control total en todo momento.</p>`,
+            },
+            {
+              q: "¿Vais a cambiar mi personalidad o cómo interactúo con los fans?",
+              a: `<p>No.</p><p>Nos adaptamos a tu personalidad — no al revés.</p><p>Antes de empezar, recopilamos información detallada sobre tu tono, preferencias y límites para replicar tu estilo con la mayor precisión posible.</p>`,
+            },
+            {
+              q: "¿Ayudáis con la creación de contenido?",
+              a: `<p>Sí.</p><p>Proporcionamos estrategias de contenido claras, referencias y dirección basadas en lo que mejor funciona.</p><p>No tienes que adivinar qué publicar — te guiamos sobre lo que realmente convierte.</p>`,
+            },
+            {
+              q: "¿Cómo funciona el proceso?",
+              a: `<p>Aplica &rarr; Llamada de evaluación &rarr; Setup del sistema &rarr; Lanzamiento y optimización</p><p>Una vez alineado todo, podemos empezar rápidamente y mejorar tus ingresos desde el primer día.</p>`,
+            },
+            {
+              q: "¿Mantengo el control de mi cuenta?",
+              a: `<p>Siempre.</p><p>Mantienes la propiedad, visibilidad y control total en todo momento.</p>`,
+            },
+            {
+              q: "¿Cómo mantenéis la calidad del chatting?",
+              a: `<p>Usamos un enfoque basado en sistemas:</p><ul class="list-disc pl-5 space-y-1 mt-1"><li>Monitorización 24/7</li><li>Equipo de QA dedicado</li><li>Seguimiento de rendimiento por chatter</li><li>Optimización continua</li></ul><p>Todo se mide y se mejora constantemente.</p>`,
+            },
+            {
+              q: "¿Puedo parar cuando quiera?",
+              a: `<p>Sí.</p><p>No atamos a las creadoras con contratos a largo plazo.</p><p>Solo trabajamos juntos si tiene sentido para ambas partes.</p>`,
+            },
+            {
+              q: "¿Cómo funcionan los pagos?",
+              a: `<p>Trabajamos con un modelo basado en rendimiento.</p><p>Eso significa que solo ganamos dinero si tú ganas más.</p><p>Los detalles se discuten durante la llamada de evaluación para adaptarse a tu situación específica.</p>`,
+            },
+            {
+              q: "¿Para quién NO es esto?",
+              a: `<p>Para creadoras que no son consistentes, no se toman esto en serio o están empezando.</p><p>No trabajamos con todo el mundo.</p><p>Trabajamos con creadoras que ya tienen tracción y quieren escalar sus ingresos correctamente.<br />Nos centramos en construir sistemas — no en perseguir picos a corto plazo.</p>`,
+            },
+          ].map(faq => (
+            <details class="bg-surface-container-low rounded-2xl group">
+              <summary class="p-8 flex items-center justify-between cursor-pointer list-none select-none">
+                <span class="font-semibold text-on-surface text-base pr-6">{faq.q}</span>
+                <span class="material-symbols-outlined expand-icon text-on-surface-variant flex-shrink-0 transition-transform duration-300">add</span>
+              </summary>
+              <div class="px-8 pb-8 text-on-surface-variant text-sm leading-relaxed flex flex-col gap-3" set:html={faq.a}></div>
+            </details>
+          ))}
+        </div>
       </div>
     </div>
   </section>
