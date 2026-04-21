@@ -25,6 +25,9 @@
   --color-inverse-surface: #2f3132;
   --color-inverse-on-surface: #f0f0f2;
 
+  /* Accent: soft Playboy-inspired yellow — not neon, not gold */
+  --color-accent: #EDD94C;
+
   --font-headline: 'Inter', sans-serif;
   --font-body: 'Inter', sans-serif;
   --font-label: 'Inter', sans-serif;
@@ -42,8 +45,8 @@
   }
 
   ::selection {
-    background-color: var(--color-primary);
-    color: var(--color-on-primary);
+    background-color: var(--color-accent);
+    color: #111111;
   }
 }
 
@@ -58,6 +61,9 @@ details > summary::-webkit-details-marker {
 }
 details[open] summary .expand-icon {
   transform: rotate(45deg);
+}
+details summary .expand-icon {
+  color: var(--color-accent);
 }
 
 /* Glass nav: transparent by default, fades to blurred white on hover or scroll */
