@@ -130,8 +130,8 @@ const serviceSchema = {
               </div>
               <p class="text-on-surface-variant text-base md:text-lg leading-relaxed max-w-xl">{card.text}</p>
             </div>
-            <div class="aspect-[16/7] overflow-hidden border-t border-outline-variant/10">
-              <img src={card.img} alt={card.value} class="w-full h-full object-cover object-top block" loading="lazy" />
+            <div class="bg-surface-container border-t border-outline-variant/10 p-5 flex items-center justify-center">
+              <img src={card.img} alt={card.value} class="w-full h-auto block" loading="lazy" />
             </div>
           </div>
         ))}
