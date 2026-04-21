@@ -113,22 +113,24 @@ const serviceSchema = {
     </div>
   </section>
 
-  <!-- 3b. RESULTS GRID (WHITE) -->
+  <!-- 3b. RESULTS STACK (WHITE) -->
   <section class="pb-32 bg-white">
-    <div class="max-w-7xl mx-auto px-6 lg:px-8">
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+    <div class="max-w-5xl mx-auto px-6 lg:px-8">
+      <div class="flex flex-col gap-8">
         {[
           { value: '$19,025', unit: '/mes', text: 'Construido con sistemas de monetizaci\u00f3n consistentes \u2014 no solo tr\u00e1fico.', img: '/assets/results/results-grid1.jpeg' },
           { value: '$13,098', unit: '/mes', text: 'Escalando con contenido estructurado + integraci\u00f3n de chatting.', img: '/assets/results/results-grid2.jpeg' },
           { value: '+558%', unit: 'crecimiento', text: 'De cuenta estancada a ingresos estructurados en semanas.', img: '/assets/results/results-grid3-v2.jpeg' },
         ].map(card => (
-          <div class="bg-surface-container-lowest p-8 rounded-xl border border-outline-variant/20 flex flex-col gap-6">
-            <div class="flex items-baseline gap-2 flex-wrap">
-              <span class="text-5xl md:text-6xl font-black text-on-surface tracking-tight leading-none">{card.value}</span>
-              <span class="text-on-surface-variant text-base">{card.unit}</span>
+          <div class="bg-surface-container-lowest rounded-2xl border border-outline-variant/20 shadow-lg overflow-hidden">
+            <div class="p-10 md:p-14 flex flex-col gap-4">
+              <div class="flex items-baseline gap-3 flex-wrap">
+                <span class="text-7xl md:text-9xl font-black text-on-surface tracking-tight leading-none">{card.value}</span>
+                <span class="text-xl md:text-2xl font-bold text-on-surface-variant">{card.unit}</span>
+              </div>
+              <p class="text-on-surface-variant text-base md:text-lg leading-relaxed max-w-xl">{card.text}</p>
             </div>
-            <p class="text-on-surface-variant text-sm leading-relaxed">{card.text}</p>
-            <div class="rounded-lg overflow-hidden border border-outline-variant/20 mt-auto aspect-[5/3] bg-white">
+            <div class="aspect-[16/7] overflow-hidden border-t border-outline-variant/10">
               <img src={card.img} alt={card.value} class="w-full h-full object-cover object-top block" loading="lazy" />
             </div>
           </div>
