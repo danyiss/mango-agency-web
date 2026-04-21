@@ -37,14 +37,14 @@ const serviceSchema = {
 
 <Layout title="MANGO | For Creators, By Creators" activeNav="home" lang="en" transparentTop={true}>
   <Fragment slot="head">
-    <link rel="preload" as="image" href="/assets/hero.webp" type="image/webp" />
+    <link rel="preload" as="image" href="/assets/hero-home.png" type="image/png" />
     <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
     <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
   </Fragment>
 
   <!-- 1. HERO SECTION -->
   <section class="relative h-screen -mt-16 w-full overflow-hidden">
-    <div class="absolute inset-0 bg-cover bg-center bg-no-repeat" style="background-image: url('/assets/hero.webp');"></div>
+    <div class="absolute inset-0 bg-cover bg-center bg-no-repeat" style="background-image: url('/assets/hero-home.png');"></div>
     <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/20"></div>
     <div class="absolute inset-0 flex items-center">
       <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 w-full">
