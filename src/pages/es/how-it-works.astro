@@ -14,11 +14,6 @@ import Layout from '../../layouts/Layout.astro';
         <p class="text-white/70 text-lg md:text-xl leading-relaxed">
           Un enfoque estructurado al tr&aacute;fico, la monetizaci&oacute;n y el escalado &mdash; construido para un crecimiento consistente.
         </p>
-        <div class="mt-2">
-          <a href="/es/#apply" class="inline-block bg-accent text-black font-bold px-8 py-4 rounded-xl text-sm tracking-wide hover:brightness-95 transition-all">
-            Aplicar ahora
-          </a>
-        </div>
       </div>
     </div>
   </section>
@@ -45,16 +40,19 @@ import Layout from '../../layouts/Layout.astro';
         <h2 class="text-4xl md:text-5xl font-black text-on-surface tracking-tight leading-[1.1]">Tres pilares. Un sistema.</h2>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
-        {[
-          { num: '01', title: 'Tr\u00e1fico', text: 'Generamos tr\u00e1fico consistente y de calidad a trav\u00e9s de sistemas multi-plataforma (Instagram, Reddit y m\u00e1s).' },
-          { num: '02', title: 'Monetizaci\u00f3n', text: 'Convertimos ese tr\u00e1fico en ingresos con chatting estructurado, upsells y sistemas de retenci\u00f3n.' },
-          { num: '03', title: 'Optimizaci\u00f3n', text: 'Analizamos el rendimiento cada semana y mejoramos lo que funciona &mdash; eliminando suposiciones.' },
-        ].map(p => (
-          <div class="bg-surface-container-lowest p-10 md:p-12 rounded-2xl border border-outline-variant/20 flex flex-col gap-8 hover:shadow-lg transition-shadow min-h-[340px]">
-            <span class="text-6xl font-black text-outline-variant/40 leading-none">{p.num}</span>
-            <div class="flex flex-col gap-4 mt-auto">
+        {([
+          { num: '01', icon: 'trending_up', title: 'Tr\u00e1fico', text: 'Tr\u00e1fico consistente y de calidad \u2014 multi-plataforma, construido para crecer.', featured: false },
+          { num: '02', icon: 'payments', title: 'Monetizaci\u00f3n', text: 'El tr\u00e1fico convertido en ingresos \u2014 chatting estructurado, upsells y retenci\u00f3n. Aqu\u00ed est\u00e1 el dinero.', featured: true },
+          { num: '03', icon: 'tune', title: 'Optimizaci\u00f3n', text: 'An\u00e1lisis semanal de rendimiento. Eliminamos lo que no funciona. Potenciamos lo que s\u00ed.', featured: false },
+        ] as const).map(p => (
+          <div class={`${p.featured ? 'bg-surface-container border-accent/30' : 'bg-surface-container-lowest border-outline-variant/20'} p-10 md:p-12 rounded-2xl border flex flex-col gap-6 hover:shadow-xl hover:-translate-y-1 transition-all duration-200 min-h-[340px]`}>
+            <div class="flex items-start justify-between">
+              <span class="text-6xl font-black text-on-surface/55 leading-none">{p.num}</span>
+              <span class="material-symbols-outlined text-accent flex-shrink-0" style="font-size:28px;font-variation-settings:'FILL' 1;">{p.icon}</span>
+            </div>
+            <div class="flex flex-col gap-3 mt-auto">
               <h3 class="text-3xl md:text-4xl font-black text-on-surface tracking-tight">{p.title}</h3>
-              <p class="text-on-surface-variant text-base leading-relaxed" set:html={p.text}></p>
+              <p class="text-on-surface-variant text-base leading-relaxed">{p.text}</p>
             </div>
           </div>
         ))}
@@ -100,7 +98,7 @@ import Layout from '../../layouts/Layout.astro';
       <h2 class="text-4xl md:text-6xl font-black tracking-tight leading-[1.05]">Esto solo funciona cuando todo est&aacute; alineado.</h2>
       <p class="text-white/70 text-lg md:text-xl leading-relaxed">Eso es lo que construimos.</p>
       <div>
-        <a href="/es/#apply" class="inline-block bg-accent text-black font-bold px-10 py-5 rounded-xl text-sm tracking-wide hover:brightness-95 transition-all">
+        <a href="/es/#apply" class="inline-block bg-accent text-black font-bold px-10 py-5 rounded-[7px] text-sm tracking-wide hover:brightness-95 hover:scale-[1.02] transition-all">
           Aplicar Ahora
         </a>
       </div>

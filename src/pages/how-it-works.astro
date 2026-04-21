@@ -14,11 +14,6 @@ import Layout from '../layouts/Layout.astro';
         <p class="text-white/70 text-lg md:text-xl leading-relaxed">
           A structured approach to traffic, monetization, and scaling &mdash; built for consistent growth.
         </p>
-        <div class="mt-2">
-          <a href="/#apply" class="inline-block bg-accent text-black font-bold px-8 py-4 rounded-xl text-sm tracking-wide hover:brightness-95 transition-all">
-            Apply now
-          </a>
-        </div>
       </div>
     </div>
   </section>
@@ -45,16 +40,19 @@ import Layout from '../layouts/Layout.astro';
         <h2 class="text-4xl md:text-5xl font-black text-on-surface tracking-tight leading-[1.1]">Three pillars. One system.</h2>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
-        {[
-          { num: '01', title: 'Traffic', text: 'We bring consistent, high-quality traffic through multi-platform systems (Instagram, Reddit, and more).' },
-          { num: '02', title: 'Monetization', text: 'We convert that traffic into revenue through structured chatting, upsells, and retention systems.' },
-          { num: '03', title: 'Optimization', text: 'We analyze performance weekly and continuously improve what works &mdash; removing guesswork.' },
-        ].map(p => (
-          <div class="bg-surface-container-lowest p-10 md:p-12 rounded-2xl border border-outline-variant/20 flex flex-col gap-8 hover:shadow-lg transition-shadow min-h-[340px]">
-            <span class="text-6xl font-black text-outline-variant/40 leading-none">{p.num}</span>
-            <div class="flex flex-col gap-4 mt-auto">
+        {([
+          { num: '01', icon: 'trending_up', title: 'Traffic', text: 'Consistent, high-quality traffic — multi-platform, built to compound.', featured: false },
+          { num: '02', icon: 'payments', title: 'Monetization', text: 'Traffic converted into revenue — structured chatting, upsells, and retention. This is where the money is made.', featured: true },
+          { num: '03', icon: 'tune', title: 'Optimization', text: 'Weekly performance analysis. Remove what doesn\'t work. Double down on what does.', featured: false },
+        ] as const).map(p => (
+          <div class={`${p.featured ? 'bg-surface-container border-accent/30' : 'bg-surface-container-lowest border-outline-variant/20'} p-10 md:p-12 rounded-2xl border flex flex-col gap-6 hover:shadow-xl hover:-translate-y-1 transition-all duration-200 min-h-[340px]`}>
+            <div class="flex items-start justify-between">
+              <span class="text-6xl font-black text-on-surface/55 leading-none">{p.num}</span>
+              <span class="material-symbols-outlined text-accent flex-shrink-0" style="font-size:28px;font-variation-settings:'FILL' 1;">{p.icon}</span>
+            </div>
+            <div class="flex flex-col gap-3 mt-auto">
               <h3 class="text-3xl md:text-4xl font-black text-on-surface tracking-tight">{p.title}</h3>
-              <p class="text-on-surface-variant text-base leading-relaxed" set:html={p.text}></p>
+              <p class="text-on-surface-variant text-base leading-relaxed">{p.text}</p>
             </div>
           </div>
         ))}
@@ -100,7 +98,7 @@ import Layout from '../layouts/Layout.astro';
       <h2 class="text-4xl md:text-6xl font-black tracking-tight leading-[1.05]">This only works when everything is aligned.</h2>
       <p class="text-white/70 text-lg md:text-xl leading-relaxed">That&rsquo;s what we build.</p>
       <div>
-        <a href="/#apply" class="inline-block bg-accent text-black font-bold px-10 py-5 rounded-xl text-sm tracking-wide hover:brightness-95 transition-all">
+        <a href="/#apply" class="inline-block bg-accent text-black font-bold px-10 py-5 rounded-[7px] text-sm tracking-wide hover:brightness-95 hover:scale-[1.02] transition-all">
           Apply Now
         </a>
       </div>
