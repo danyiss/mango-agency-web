@@ -35,8 +35,8 @@
   /* Accent: soft champagne gold */
   --color-accent: #C8A96A;
 
-  --font-display: 'Cormorant Garamond', Georgia, serif;
-  --font-headline: 'Cormorant Garamond', Georgia, serif;
+  --font-display: 'DM Serif Display', Georgia, serif;
+  --font-headline: 'DM Serif Display', Georgia, serif;
   --font-body: 'Inter', sans-serif;
   --font-label: 'Inter', sans-serif;
 }
@@ -56,8 +56,8 @@
 
   h1, h2, h3, h4 {
     font-family: var(--font-display);
-    font-weight: 500;
-    letter-spacing: -0.005em;
+    font-weight: 400;
+    letter-spacing: -0.015em;
   }
 
   ::selection {
@@ -123,8 +123,8 @@ details summary .expand-icon {
 /* Editorial helpers */
 .font-display {
   font-family: var(--font-display);
-  font-weight: 500;
-  letter-spacing: -0.005em;
+  font-weight: 400;
+  letter-spacing: -0.015em;
 }
 .font-body {
   font-family: var(--font-body);
