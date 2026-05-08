@@ -11,7 +11,6 @@ export const translations = {
     // Nav
     'nav.home': 'Home',
     'nav.results': 'Results',
-    'nav.howItWorks': 'System',
     'nav.forAgencies': 'For Agencies',
     'nav.applyNow': 'Apply Now',
 
@@ -117,7 +116,6 @@ export const translations = {
     // Nav
     'nav.home': 'Inicio',
     'nav.results': 'Resultados',
-    'nav.howItWorks': 'Sistema',
     'nav.forAgencies': 'Para Agencias',
     'nav.applyNow': 'Aplicar',
 
