@@ -1,5 +1,32 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+
+const slides = [
+  {
+    value: '$24,586',
+    unit: '/mes',
+    text: 'Esta cuenta ya publicaba de forma constante pero no convertía. Implementamos chatting estructurado, upsells y sistemas de retención — y los ingresos se compusieron desde ahí.',
+    img: '/assets/results/main-feature-block.jpeg',
+  },
+  {
+    value: '$19,025',
+    unit: '/mes',
+    text: 'Impulsado por sistemas de chatting optimizados y mejor monetización.',
+    img: '/assets/results/results-grid1.jpeg',
+  },
+  {
+    value: '$13,098',
+    unit: '/mes',
+    text: 'Crecimiento alineando la estrategia de contenido con los sistemas de conversión.',
+    img: '/assets/results/results-grid2.jpeg',
+  },
+  {
+    value: '+558%',
+    unit: 'crecimiento',
+    text: 'De ingresos inconsistentes a ingresos estructurados y predecibles.',
+    img: '/assets/results/results-grid3-v2.jpeg',
+  },
+];
 ---
 
 <Layout title="Resultados | MANGO Agency" activeNav="results" lang="es" transparentTop={true}>
@@ -7,118 +34,119 @@ import Layout from '../../layouts/Layout.astro';
   <!-- 1. HERO -->
   <section class="relative h-screen -mt-16 w-full overflow-hidden">
     <div class="absolute inset-0 bg-cover bg-center bg-no-repeat" style="background-image: url('/assets/hero-results.webp');"></div>
-    <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/20"></div>
+    <div class="absolute inset-0 bg-gradient-to-r from-black/55 via-black/30 to-black/10"></div>
     <div class="absolute inset-0 flex items-center">
       <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 w-full">
-        <div class="max-w-[620px] flex flex-col gap-6">
-          <h1 class="text-5xl md:text-7xl font-black text-white tracking-tight leading-[1.1] max-w-[580px]">
-            Resultados por sistemas<br />
-            <span class="text-white/70 text-4xl md:text-6xl font-bold">No por suerte</span>
+        <div class="max-w-[640px] flex flex-col gap-7">
+          <h1 class="font-display text-5xl sm:text-6xl md:text-7xl text-white leading-[1.05]">
+            Resultados por sistemas <span class="text-white/65">&mdash; no por suerte.</span>
           </h1>
-          <p class="text-white/85 text-lg md:text-xl leading-relaxed">
-            Ingresos predecibles.<br />Construidos sobre sistemas.
+          <p class="text-white/85 text-lg md:text-xl leading-relaxed font-body max-w-lg">
+            Ingresos predecibles, construidos sobre sistemas. Ni viralidad. Ni suerte. Solo sistemas estructurados.
           </p>
-          <div class="border-l-2 border-white/50 pl-5 text-sm md:text-base text-white/70 leading-snug">
-            <p>Ni viralidad. Ni suerte.</p>
-            <p>Solo sistemas estructurados.</p>
-          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 2. FEATURED RESULT -->
-  <section class="pt-32 pb-24 bg-white">
-    <div class="max-w-7xl mx-auto px-6 lg:px-8">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
-        <div class="lg:col-span-5 flex flex-col gap-7">
-          <div class="flex items-baseline gap-3 flex-nowrap whitespace-nowrap">
-            <span class="text-6xl md:text-8xl font-black text-on-surface tracking-tight leading-none">$24,586</span>
-            <span class="text-2xl md:text-3xl font-bold text-on-surface-variant">/mes</span>
-          </div>
-          <p class="text-xl md:text-2xl text-on-surface font-semibold leading-tight">Construido con sistemas estructurados de monetizaci&oacute;n.</p>
-          <p class="text-on-surface-variant text-base leading-relaxed max-w-lg">
-            Esta cuenta ya publicaba de forma constante pero no converti&iacute;a. Implementamos chatting estructurado, upsells y sistemas de retenci&oacute;n &mdash; y los ingresos se compusieron desde ah&iacute;.
-          </p>
-        </div>
-        <div class="lg:col-span-7 rounded-2xl overflow-hidden border border-outline-variant/20 shadow-xl aspect-[5/3] bg-white">
-          <img src="/assets/results/main-feature-block.jpeg" alt="$24,586 en un solo mes" class="w-full h-full object-cover object-top block" loading="lazy" />
-        </div>
-      </div>
+  <!-- 2. PREMIUM CASE STUDY SLIDER -->
+  <section class="py-28 md:py-40 bg-white">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 mb-14 md:mb-20 text-center">
+      <h2 class="font-display text-4xl md:text-6xl text-on-surface leading-[1.05]">Casos seleccionados.</h2>
     </div>
-  </section>
 
-  <!-- 3. RESULTS GRID -->
-  <section class="pb-32 bg-white">
-    <div class="max-w-7xl mx-auto px-6 lg:px-8">
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
-        {[
-          { value: '$19,025', unit: '/mes', text: 'Impulsado por sistemas de chatting optimizados y mejor monetizaci\u00f3n.', img: '/assets/results/results-grid1.jpeg' },
-          { value: '$13,098', unit: '/mes', text: 'Crecimiento alineando la estrategia de contenido con los sistemas de conversi\u00f3n.', img: '/assets/results/results-grid2.jpeg' },
-          { value: '+558%', unit: 'crecimiento', text: 'De ingresos inconsistentes a ingresos estructurados y predecibles.', img: '/assets/results/results-grid3-v2.jpeg' },
-        ].map(card => (
-          <div class="bg-surface-container-lowest p-8 rounded-xl border border-outline-variant/20 flex flex-col gap-6">
-            <div class="flex items-baseline gap-2 flex-wrap">
-              <span class="text-5xl md:text-6xl font-black text-on-surface tracking-tight leading-none">{card.value}</span>
-              <span class="text-on-surface-variant text-base">{card.unit}</span>
+    <div class="relative" data-slider>
+      <!-- Prev arrow -->
+      <button data-slider-prev
+        class="hidden md:flex absolute left-4 lg:left-10 top-1/2 -translate-y-1/2 z-20 w-12 h-12 lg:w-14 lg:h-14 items-center justify-center bg-white hover:bg-on-surface text-on-surface hover:text-white rounded-full border border-on-surface/15 transition-all duration-300"
+        style="box-shadow: 0 8px 24px -8px rgba(17,17,17,0.18);"
+        aria-label="Caso anterior">
+        <span class="material-symbols-outlined" style="font-size:26px;">chevron_left</span>
+      </button>
+
+      <!-- Track -->
+      <div class="results-slider-track flex overflow-x-auto snap-x snap-mandatory scroll-smooth">
+        {slides.map((slide, idx) => (
+          <article class="flex-none w-full snap-center px-6 md:px-12 lg:px-20" role="group" aria-roledescription="slide" aria-label={`Caso ${idx + 1} de ${slides.length}`}>
+            <div class="max-w-5xl mx-auto flex flex-col gap-10 md:gap-14 items-center">
+              <!-- Top: oversized metric + short text -->
+              <div class="text-center flex flex-col gap-5">
+                <div class="flex items-baseline gap-3 justify-center flex-nowrap whitespace-nowrap">
+                  <span class="font-display text-7xl md:text-9xl text-on-surface leading-none tracking-tight">{slide.value}</span>
+                  <span class="font-body text-xl md:text-2xl text-on-surface-variant">{slide.unit}</span>
+                </div>
+                <p class="text-on-surface-variant text-base md:text-lg max-w-2xl mx-auto leading-relaxed">{slide.text}</p>
+              </div>
+              <!-- Screenshot dominant -->
+              <div class="w-full p-3 md:p-5 bg-surface-container-low" style="box-shadow: 0 24px 60px -24px rgba(17,17,17,0.18);">
+                <img src={slide.img} alt={slide.value} class="w-full h-auto block" loading="lazy" />
+              </div>
             </div>
-            <p class="text-on-surface-variant text-sm leading-relaxed">{card.text}</p>
-            <div class="rounded-lg overflow-hidden border border-outline-variant/20 mt-auto aspect-[5/3] bg-white">
-              <img src={card.img} alt={card.value} class="w-full h-full object-cover object-top block" loading="lazy" />
-            </div>
-          </div>
+          </article>
         ))}
       </div>
+
+      <!-- Next arrow -->
+      <button data-slider-next
+        class="hidden md:flex absolute right-4 lg:right-10 top-1/2 -translate-y-1/2 z-20 w-12 h-12 lg:w-14 lg:h-14 items-center justify-center bg-white hover:bg-on-surface text-on-surface hover:text-white rounded-full border border-on-surface/15 transition-all duration-300"
+        style="box-shadow: 0 8px 24px -8px rgba(17,17,17,0.18);"
+        aria-label="Caso siguiente">
+        <span class="material-symbols-outlined" style="font-size:26px;">chevron_right</span>
+      </button>
     </div>
   </section>
 
-  <!-- 4. KEY INSIGHT (BLACK) -->
-  <section class="py-40 md:py-52 bg-black text-white">
-    <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center flex flex-col gap-8">
-      <h2 class="text-4xl md:text-7xl font-black tracking-tight leading-[1.05]">
-        La mayor&iacute;a de creadoras no tienen un problema de tr&aacute;fico. <span class="text-white/60">Tienen un problema de monetizaci&oacute;n.</span>
-      </h2>
-      <p class="text-white/70 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
-        El tr&aacute;fico sin sistemas no convierte. Nos centramos en lo que de verdad genera dinero.
-      </p>
-    </div>
-  </section>
-
-  <!-- 5. DAILY PERFORMANCE -->
-  <section class="py-32 bg-white">
-    <div class="max-w-5xl mx-auto px-6 lg:px-8">
-      <div class="flex flex-col gap-14 items-center text-center">
-        <div>
-          <h2 class="text-5xl md:text-7xl font-black text-on-surface tracking-tight leading-[0.95]">D&iacute;as consistentes de alto rendimiento</h2>
-          <p class="mt-5 text-on-surface-variant text-xl md:text-2xl font-semibold">Picos de ingresos impulsados por sistemas estructurados &mdash; no por azar.</p>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
-          <div class="rounded-2xl overflow-hidden border border-outline-variant/20 shadow-lg aspect-[5/3] bg-white">
-            <img src="/assets/results/daily-performance-block1.jpeg" alt="Ingresos de un solo d&iacute;a superiores a $2k" class="w-full h-full object-cover object-top block" loading="lazy" />
-          </div>
-          <div class="rounded-2xl overflow-hidden border border-outline-variant/20 shadow-lg aspect-[5/3] bg-white">
-            <img src="/assets/results/daily-performance-block2.jpeg" alt="Ingresos de un solo d&iacute;a superiores a $2k" class="w-full h-full object-cover object-top block" loading="lazy" />
-          </div>
-        </div>
+  <!-- 3. PREDICTABLE REVENUE (single screenshot, centered) -->
+  <section class="py-32 md:py-44 bg-white">
+    <div class="max-w-5xl mx-auto px-6 lg:px-8 flex flex-col gap-16 md:gap-20 items-center text-center">
+      <div class="flex flex-col gap-5">
+        <h2 class="font-display text-5xl md:text-7xl text-on-surface leading-[1.05]">Ingresos predecibles. Construidos sobre sistemas.</h2>
+        <p class="text-on-surface-variant text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">Rendimiento consistente impulsado por monetizaci&oacute;n estructurada.</p>
+      </div>
+      <div class="w-full max-w-4xl p-3 md:p-5 bg-surface-container-low" style="box-shadow: 0 24px 60px -24px rgba(17,17,17,0.18);">
+        <img src="/assets/results/daily-performance-block1.jpeg" alt="Rendimiento consistente de ingresos" class="w-full h-auto block" loading="lazy" />
       </div>
     </div>
   </section>
 
-  <!-- 6. FINAL CTA (BLACK) -->
-  <section class="py-32 md:py-40 bg-black text-white">
-    <div class="max-w-3xl mx-auto px-6 lg:px-8 text-center flex flex-col gap-8">
-      <h2 class="text-4xl md:text-6xl font-black tracking-tight leading-[1.05]">
-        Si tu p&aacute;gina no rinde as&iacute;, hay una raz&oacute;n.
-      </h2>
-      <p class="text-white/70 text-lg md:text-xl leading-relaxed">
-        Te mostramos exactamente qu&eacute; est&aacute; faltando.
-      </p>
-      <div>
-        <a href="/es/#apply" class="inline-block bg-accent text-black font-bold px-10 py-5 rounded-[7px] text-sm tracking-wide hover:brightness-95 hover:scale-[1.02] transition-all">
-          Aplicar Ahora
+  <!-- 4. FINAL CTA "Mango te sienta bien." -->
+  <section class="py-32 md:py-44 bg-white">
+    <div class="max-w-2xl mx-auto px-6 lg:px-8 text-center flex flex-col gap-8 items-center">
+      <h2 class="font-display text-5xl md:text-7xl text-on-surface leading-[1.05]">Mango te sienta bien.</h2>
+      <p class="text-on-surface-variant text-lg md:text-xl leading-relaxed">&iquest;Lista para tu siguiente nivel?</p>
+      <div class="mt-2">
+        <a href="/es/#apply" class="inline-block bg-accent text-black font-bold px-9 py-4 rounded-[7px] text-sm tracking-wide hover:brightness-95 hover:scale-[1.02] transition-all">
+          Aplicar para trabajar con nosotros
         </a>
       </div>
     </div>
   </section>
 
 </Layout>
+
+<style>
+  .results-slider-track {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .results-slider-track::-webkit-scrollbar {
+    display: none;
+  }
+</style>
+
+<script is:inline>
+  (function(){
+    const slider = document.querySelector('[data-slider]');
+    if (!slider) return;
+    const track = slider.querySelector('.results-slider-track');
+    const prev = slider.querySelector('[data-slider-prev]');
+    const next = slider.querySelector('[data-slider-next]');
+    if (!track) return;
+    function scrollByOne(direction) {
+      const w = track.clientWidth;
+      track.scrollBy({ left: direction * w, behavior: 'smooth' });
+    }
+    prev && prev.addEventListener('click', () => scrollByOne(-1));
+    next && next.addEventListener('click', () => scrollByOne(1));
+  })();
+</script>
