@@ -7,165 +7,146 @@ const { lang = 'en' } = Astro.props;
 
 const t = {
   en: {
-    headline: 'We help OnlyFans creators scale to consistent 5 and 6-figure months',
-    subheadline: 'We build the systems behind high-earning creators \u2014 so you can focus on content while we handle growth, monetization, and optimization.',
-    supporting: 'Most creators don\u2019t struggle with content \u2014 they struggle with inconsistent income, poor monetization, and lack of systems. That\u2019s what we fix.',
-    scarcity: 'We only accept a small number of creators each month to keep our approach hands-on and results-driven.',
-    credibility: 'Our systems are already being used by creators generating consistent 5-figure monthly revenue.',
-    formTitle: 'Apply for management',
+    headline: 'Ready for your next level?',
+    subheadline: 'Apply to work with Mango. If we believe there’s potential together, we’ll invite you to a private evaluation call to see if we’re the right fit for each other.',
+    formTitle: 'Application',
     name: 'Name / Stage Name',
     instagram: 'Instagram',
-    instagramHint: 'We\u2019ll review your profile to understand your potential',
+    instagramHint: 'We’ll review your profile to understand your potential',
     contact: 'Telegram / WhatsApp',
-    contactHint: 'We\u2019ll contact you here if there\u2019s a fit',
+    contactHint: 'We’ll contact you here if there’s a fit',
     situation: 'What best describes your situation?',
     situationPlaceholder: 'Select one',
     situation1: 'Just starting',
     situation2: 'Growing but inconsistent',
-    situation3: '$5k\u2013$20k/month',
+    situation3: '$5k–$20k/month',
     situation4: '$20k+/month',
-    goal: 'What\u2019s your current situation and what\u2019s holding you back?',
+    goal: 'What’s your current situation and what’s holding you back?',
     income: 'Current monthly revenue (optional)',
     incomeHint: 'Helps us understand how to scale your account',
     incomePlaceholder: 'e.g. $3,200',
     submit: 'Apply for review',
-    check1: 'Applications reviewed within 24\u201348h',
+    check1: 'Applications reviewed within 24–48h',
     check2: 'Only selected creators will be contacted',
     privacy: 'Your data is treated confidentially.',
-    success: 'Application sent! We\u2019ll reach out within 24\u201348h if selected.',
+    success: 'Application sent. We’ll reach out within 24–48h if selected.',
     error: 'Something went wrong. Try again or reach us at hello@mangova.agency',
   },
   es: {
-    headline: 'Ayudamos a creadoras de OnlyFans a escalar a meses consistentes de 5 y 6 cifras',
-    subheadline: 'Construimos los sistemas detr\u00e1s de las creadoras de altos ingresos \u2014 para que t\u00fa te centres en el contenido mientras nosotros nos encargamos del crecimiento, la monetizaci\u00f3n y la optimizaci\u00f3n.',
-    supporting: 'La mayor\u00eda de las creadoras no tienen problema con el contenido \u2014 lo tienen con los ingresos inconsistentes, la mala monetizaci\u00f3n y la falta de sistemas. Eso es lo que nosotros arreglamos.',
-    scarcity: 'Solo aceptamos un n\u00famero reducido de creadoras cada mes para mantener un enfoque cercano y orientado a resultados.',
-    credibility: 'Nuestros sistemas ya los usan creadoras que generan ingresos mensuales consistentes de 5 cifras.',
-    formTitle: 'Solicita gesti\u00f3n',
-    name: 'Nombre / Nombre art\u00edstico',
+    headline: '¿Lista para tu siguiente nivel?',
+    subheadline: 'Aplica para trabajar con Mango. Si creemos que hay potencial juntos, te invitaremos a una llamada privada de evaluación para ver si encajamos.',
+    formTitle: 'Solicitud',
+    name: 'Nombre / Nombre artístico',
     instagram: 'Instagram',
     instagramHint: 'Revisaremos tu perfil para entender tu potencial',
     contact: 'Telegram / WhatsApp',
-    contactHint: 'Te contactaremos por aqu\u00ed si encajamos',
-    situation: '\u00bfQu\u00e9 describe mejor tu situaci\u00f3n?',
+    contactHint: 'Te contactaremos por aquí si encajamos',
+    situation: '¿Qué describe mejor tu situación?',
     situationPlaceholder: 'Selecciona una',
     situation1: 'Empezando',
     situation2: 'Creciendo pero inconsistente',
-    situation3: '$5k\u2013$20k/mes',
+    situation3: '$5k–$20k/mes',
     situation4: '$20k+/mes',
-    goal: '\u00bfCu\u00e1l es tu situaci\u00f3n actual y qu\u00e9 te est\u00e1 frenando?',
+    goal: '¿Cuál es tu situación actual y qué te está frenando?',
     income: 'Ingresos mensuales actuales (opcional)',
-    incomeHint: 'Nos ayuda a entender c\u00f3mo escalar tu cuenta',
+    incomeHint: 'Nos ayuda a entender cómo escalar tu cuenta',
     incomePlaceholder: 'ej. $3.200',
-    submit: 'Solicitar revisi\u00f3n',
-    check1: 'Las solicitudes se revisan en 24\u201348h',
-    check2: 'Solo las creadoras seleccionadas ser\u00e1n contactadas',
+    submit: 'Solicitar revisión',
+    check1: 'Las solicitudes se revisan en 24–48h',
+    check2: 'Solo las creadoras seleccionadas serán contactadas',
     privacy: 'Tus datos se tratan de forma confidencial.',
-    success: '\u00a1Solicitud enviada! Te contactaremos en 24\u201348h si eres seleccionada.',
-    error: 'Algo sali\u00f3 mal. Int\u00e9ntalo de nuevo o escr\u00edbenos a hello@mangova.agency',
+    success: 'Solicitud enviada. Te contactaremos en 24–48h si eres seleccionada.',
+    error: 'Algo salió mal. Inténtalo de nuevo o escríbenos a hello@mangova.agency',
   },
 }[lang];
 ---
 
-<section id="apply" class="py-32 bg-surface">
-  <div class="max-w-7xl mx-auto px-6 lg:px-8">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
-    <!-- Left: Copy -->
-    <div class="lg:sticky lg:top-28 flex flex-col gap-7">
-      <h2 class="text-4xl md:text-5xl font-black text-on-surface tracking-tight leading-[1.1]">{t.headline}</h2>
-      <p class="text-on-surface-variant text-lg leading-relaxed">{t.subheadline}</p>
-      <div class="h-px bg-outline-variant/30"></div>
-      <p class="text-on-surface text-base leading-relaxed"><strong class="font-semibold">{t.supporting}</strong></p>
-      <p class="text-on-surface-variant text-base leading-relaxed">{t.scarcity}</p>
-      <div class="flex items-start gap-3 pt-2">
-        <span class="material-symbols-outlined text-primary flex-shrink-0 mt-0.5" style="font-size:20px;font-variation-settings:'FILL' 1;">verified</span>
-        <p class="text-on-surface-variant text-sm leading-relaxed">{t.credibility}</p>
-      </div>
+<section id="apply" class="py-32 md:py-44 bg-white">
+  <div class="max-w-2xl mx-auto px-6 lg:px-8 flex flex-col items-center gap-10 md:gap-14">
+
+    <!-- Editorial header -->
+    <div class="flex flex-col items-center gap-6 text-center">
+      <span class="text-[11px] font-semibold tracking-[0.3em] uppercase text-on-surface-variant">{t.formTitle}</span>
+      <h2 class="font-display text-5xl md:text-7xl text-on-surface leading-[1.05]">{t.headline}</h2>
+      <p class="text-on-surface-variant text-base md:text-lg leading-relaxed max-w-xl">{t.subheadline}</p>
     </div>
 
-    <!-- Right: Form -->
-    <div class="bg-surface-container-lowest border border-outline-variant/20 rounded-2xl p-8 md:p-10">
-      <h3 class="text-xs font-bold uppercase tracking-widest text-outline mb-6">{t.formTitle}</h3>
-      <form id="apply-form" class="flex flex-col gap-5">
-        <div>
-          <label for="name" class="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-2 block">{t.name}</label>
-          <input type="text" id="name" name="name" required
-            class="w-full bg-surface-container-low border border-outline-variant/30 rounded-lg px-4 py-3 text-sm text-on-surface focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all" />
-        </div>
+    <!-- Hairline divider -->
+    <div class="w-16 h-px" style="background-color:#C8A96A;"></div>
 
-        <div>
-          <label for="instagram" class="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-2 block">{t.instagram}</label>
-          <input type="text" id="instagram" name="instagram" required
-            class="w-full bg-surface-container-low border border-outline-variant/30 rounded-lg px-4 py-3 text-sm text-on-surface focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all" />
-          <p class="text-xs text-outline mt-1.5">{t.instagramHint}</p>
-        </div>
+    <!-- Form (no card, open layout) -->
+    <form id="apply-form" class="flex flex-col gap-7 w-full max-w-xl">
+      <div>
+        <label for="name" class="text-[10px] font-semibold uppercase tracking-[0.22em] text-on-surface-variant mb-2 block">{t.name}</label>
+        <input type="text" id="name" name="name" required
+          class="w-full bg-transparent border-0 border-b border-outline-variant/60 px-0 py-3 text-base text-on-surface focus:outline-none focus:border-on-surface transition-colors" />
+      </div>
 
-        <div>
-          <label for="contact" class="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-2 block">{t.contact}</label>
-          <input type="text" id="contact" name="contact" required
-            class="w-full bg-surface-container-low border border-outline-variant/30 rounded-lg px-4 py-3 text-sm text-on-surface focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all" />
-          <p class="text-xs text-outline mt-1.5">{t.contactHint}</p>
-        </div>
+      <div>
+        <label for="instagram" class="text-[10px] font-semibold uppercase tracking-[0.22em] text-on-surface-variant mb-2 block">{t.instagram}</label>
+        <input type="text" id="instagram" name="instagram" required
+          class="w-full bg-transparent border-0 border-b border-outline-variant/60 px-0 py-3 text-base text-on-surface focus:outline-none focus:border-on-surface transition-colors" />
+        <p class="text-xs text-outline mt-2">{t.instagramHint}</p>
+      </div>
 
-        <div>
-          <label for="situation" class="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-2 block">{t.situation}</label>
-          <select id="situation" name="situation" required
-            class="w-full bg-surface-container-low border border-outline-variant/30 rounded-lg px-4 py-3 text-sm text-on-surface focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all appearance-none cursor-pointer">
-            <option value="" disabled selected>{t.situationPlaceholder}</option>
-            <option value="just-starting">{t.situation1}</option>
-            <option value="growing-inconsistent">{t.situation2}</option>
-            <option value="5k-20k">{t.situation3}</option>
-            <option value="20k-plus">{t.situation4}</option>
-          </select>
-        </div>
+      <div>
+        <label for="contact" class="text-[10px] font-semibold uppercase tracking-[0.22em] text-on-surface-variant mb-2 block">{t.contact}</label>
+        <input type="text" id="contact" name="contact" required
+          class="w-full bg-transparent border-0 border-b border-outline-variant/60 px-0 py-3 text-base text-on-surface focus:outline-none focus:border-on-surface transition-colors" />
+        <p class="text-xs text-outline mt-2">{t.contactHint}</p>
+      </div>
 
-        <div>
-          <label for="goal" class="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-2 block">{t.goal}</label>
-          <textarea id="goal" name="goal" rows="3"
-            class="w-full bg-surface-container-low border border-outline-variant/30 rounded-lg px-4 py-3 text-sm text-on-surface focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all resize-none"></textarea>
-        </div>
+      <div>
+        <label for="situation" class="text-[10px] font-semibold uppercase tracking-[0.22em] text-on-surface-variant mb-2 block">{t.situation}</label>
+        <select id="situation" name="situation" required
+          class="w-full bg-transparent border-0 border-b border-outline-variant/60 px-0 py-3 text-base text-on-surface focus:outline-none focus:border-on-surface transition-colors appearance-none cursor-pointer">
+          <option value="" disabled selected>{t.situationPlaceholder}</option>
+          <option value="just-starting">{t.situation1}</option>
+          <option value="growing-inconsistent">{t.situation2}</option>
+          <option value="5k-20k">{t.situation3}</option>
+          <option value="20k-plus">{t.situation4}</option>
+        </select>
+      </div>
 
-        <div>
-          <label for="income" class="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-2 block">{t.income}</label>
-          <input type="text" id="income" name="income"
-            class="w-full bg-surface-container-low border border-outline-variant/30 rounded-lg px-4 py-3 text-sm text-on-surface placeholder:text-outline focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all" />
-          <p class="text-xs text-outline mt-1.5">{t.incomeHint}</p>
-        </div>
+      <div>
+        <label for="goal" class="text-[10px] font-semibold uppercase tracking-[0.22em] text-on-surface-variant mb-2 block">{t.goal}</label>
+        <textarea id="goal" name="goal" rows="3"
+          class="w-full bg-transparent border-0 border-b border-outline-variant/60 px-0 py-3 text-base text-on-surface focus:outline-none focus:border-on-surface transition-colors resize-none"></textarea>
+      </div>
 
-        <button type="submit" id="submit-btn"
-          class="bg-accent text-black font-bold py-4 rounded-[7px] text-sm tracking-wide hover:brightness-95 hover:scale-[1.02] transition-all w-full mt-2">
-          {t.submit}
-        </button>
+      <div>
+        <label for="income" class="text-[10px] font-semibold uppercase tracking-[0.22em] text-on-surface-variant mb-2 block">{t.income}</label>
+        <input type="text" id="income" name="income" placeholder={t.incomePlaceholder}
+          class="w-full bg-transparent border-0 border-b border-outline-variant/60 px-0 py-3 text-base text-on-surface placeholder:text-outline focus:outline-none focus:border-on-surface transition-colors" />
+        <p class="text-xs text-outline mt-2">{t.incomeHint}</p>
+      </div>
 
-        <div class="flex flex-col gap-2 mt-2">
-          <div class="flex items-center gap-2 text-xs text-on-surface-variant">
-            <span class="material-symbols-outlined text-primary" style="font-size:16px;font-variation-settings:'FILL' 1;">check_circle</span>
-            {t.check1}
-          </div>
-          <div class="flex items-center gap-2 text-xs text-on-surface-variant">
-            <span class="material-symbols-outlined text-primary" style="font-size:16px;font-variation-settings:'FILL' 1;">check_circle</span>
-            {t.check2}
-          </div>
-        </div>
+      <button type="submit" id="submit-btn"
+        class="bg-accent text-black font-bold py-4 rounded-[7px] text-sm tracking-wide hover:brightness-95 hover:scale-[1.02] transition-all w-full mt-4">
+        {t.submit}
+      </button>
 
-        <div class="flex items-center justify-center gap-1 text-xs text-outline mt-1">
+      <div class="flex flex-col gap-2 mt-2 items-center text-center">
+        <p class="text-xs text-on-surface-variant">{t.check1}</p>
+        <p class="text-xs text-on-surface-variant">{t.check2}</p>
+        <p class="flex items-center justify-center gap-1.5 text-xs text-outline mt-1">
           <span class="material-symbols-outlined" style="font-size:14px;">lock</span>
           {t.privacy}
-        </div>
-      </form>
-
-      <!-- Success state -->
-      <div id="form-success" class="hidden text-center py-12">
-        <span class="material-symbols-outlined text-primary mb-4 block" style="font-size:48px;font-variation-settings:'FILL' 1;">check_circle</span>
-        <p class="text-on-surface font-bold text-lg">{t.success}</p>
+        </p>
       </div>
+    </form>
 
-      <!-- Error state -->
-      <div id="form-error" class="hidden text-center py-4">
-        <p class="text-error text-sm">{t.error}</p>
-      </div>
+    <!-- Success state -->
+    <div id="form-success" class="hidden text-center py-12 max-w-xl">
+      <span class="material-symbols-outlined mb-4 block" style="font-size:48px;font-variation-settings:'FILL' 1; color:#C8A96A;">check_circle</span>
+      <p class="text-on-surface text-lg md:text-xl">{t.success}</p>
     </div>
+
+    <!-- Error state -->
+    <div id="form-error" class="hidden text-center py-4">
+      <p class="text-error text-sm">{t.error}</p>
     </div>
+
   </div>
 </section>
 

@@ -45,22 +45,18 @@ const serviceSchema = {
   <!-- 1. HERO SECTION -->
   <section class="relative h-screen -mt-16 w-full overflow-hidden">
     <div class="absolute inset-0 bg-cover bg-center bg-no-repeat" style="background-image: url('/assets/hero-home.png');"></div>
-    <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/20"></div>
+    <div class="absolute inset-0 bg-gradient-to-r from-black/55 via-black/30 to-black/10"></div>
     <div class="absolute inset-0 flex items-center">
       <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 w-full">
-        <div class="max-w-[620px] flex flex-col gap-6">
-          <span class="text-xs font-semibold tracking-[0.25em] uppercase text-white/60">Para creadoras, por creadoras</span>
-          <h1 class="text-4xl sm:text-5xl md:text-6xl font-black text-white tracking-tight leading-[1.1]">
-            <span class="whitespace-nowrap">Escala tu OnlyFans a meses</span><br />de 5&ndash;6 cifras
+        <div class="max-w-[640px] flex flex-col gap-7">
+          <span class="text-[11px] font-semibold tracking-[0.3em] uppercase text-white/70">Para creadoras, por creadoras</span>
+          <h1 class="font-display text-5xl sm:text-6xl md:text-7xl text-white leading-[1.05]">
+            Escala tu OnlyFans a meses de 5&ndash;6 cifras
           </h1>
-          <p class="text-white/85 text-lg md:text-xl leading-relaxed">
+          <p class="text-white/85 text-lg md:text-xl leading-relaxed font-body max-w-lg">
             Construimos los sistemas detr&aacute;s de las top creadoras &mdash; para que t&uacute; te centres en el contenido mientras nosotros nos encargamos del crecimiento y la monetizaci&oacute;n.
           </p>
-          <div class="border-l-2 border-white/50 pl-5 text-sm md:text-base text-white/70 leading-snug">
-            <p>T&uacute; te centras en el contenido.</p>
-            <p>Nosotros construimos los ingresos.</p>
-          </div>
-          <div class="mt-2">
+          <div class="mt-3">
             <a href="#apply" class="inline-block bg-accent text-black font-bold px-8 py-4 rounded-[7px] text-sm tracking-wide hover:brightness-95 hover:scale-[1.02] transition-all shadow-lg">
               Aplicar ahora
             </a>
@@ -68,365 +64,157 @@ const serviceSchema = {
         </div>
       </div>
     </div>
-    <div class="absolute bottom-6 md:bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/40">
-      <span class="text-xs font-medium tracking-widest uppercase">{t('home.hero.scroll')}</span>
+    <div class="absolute bottom-6 md:bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/50">
+      <span class="text-[10px] font-medium tracking-[0.3em] uppercase">{t('home.hero.scroll')}</span>
       <span class="material-symbols-outlined animate-bounce">keyboard_arrow_down</span>
     </div>
   </section>
 
-  <!-- 2. STATEMENT SECTION (black) -->
-  <section class="py-28 md:py-36 bg-black text-white">
-    <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center flex flex-col gap-8">
-      <h2 class="text-4xl md:text-5xl font-black tracking-tight leading-[1.15]">
-        La mayor&iacute;a de creadores ganan el 20% de lo que podr&iacute;an. <span class="text-white/60">Nosotros arreglamos el otro 80%.</span>
-      </h2>
-      <p class="text-white/70 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
-        El problema no suele ser el esfuerzo &mdash; es la falta de sistemas, monetizaci&oacute;n y ejecuci&oacute;n.
-      </p>
+  <!-- 2. FULL-WIDTH EDITORIAL #1 -->
+  <section class="relative w-full overflow-hidden" style="height:min(80vh,720px);">
+    <!-- TODO: Replace with image provided by user -->
+    <div class="absolute inset-0 bg-cover bg-center bg-no-repeat" style="background-image: url('/assets/hero-system.webp');"></div>
+    <div class="absolute inset-0" style="background-color: rgba(17,17,17,0.55);"></div>
+    <div class="absolute inset-0 flex items-center justify-center">
+      <div class="relative z-10 max-w-3xl mx-auto px-6 lg:px-8 text-center flex flex-col gap-8 items-center">
+        <h2 class="font-display text-4xl md:text-6xl text-white leading-[1.05]">El siguiente nivel de tu carrera empieza aqu&iacute;.</h2>
+        <p class="text-white/80 text-lg md:text-xl leading-relaxed max-w-2xl">Ayudamos a creadoras a construir influencia, audiencia e ingresos a largo plazo.</p>
+        <div class="mt-2">
+          <a href="#apply" class="inline-block bg-accent text-black font-bold px-9 py-4 rounded-[7px] text-sm tracking-wide hover:brightness-95 hover:scale-[1.02] transition-all">
+            Aplicar para trabajar con nosotros
+          </a>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- 3a. RESULTS HEADER + MAIN FEATURE (WHITE) -->
-  <section id="results" class="pt-32 pb-32 bg-white">
+  <!-- 3. SERVICES SPLIT EDITORIAL -->
+  <section class="py-32 md:py-40 bg-white">
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
-      <div class="max-w-3xl mb-24">
-        <h2 class="text-4xl md:text-6xl font-black text-on-surface tracking-tight leading-[1.05]">Los ingresos son lo &uacute;nico que importa.</h2>
-        <p class="mt-5 text-on-surface-variant text-lg">Nos centramos en lo que de verdad hace crecer tu dinero.</p>
-      </div>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
 
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
-        <div class="lg:col-span-5 flex flex-col gap-7">
-          <div class="flex items-baseline gap-3 flex-nowrap whitespace-nowrap">
-            <span class="text-6xl md:text-8xl font-black text-on-surface tracking-tight leading-none">$24,586</span>
-            <span class="text-2xl md:text-3xl font-bold text-on-surface-variant">/mes</span>
+        <!-- Left: Copy -->
+        <div class="flex flex-col gap-10 order-2 lg:order-1">
+          <div class="flex flex-col gap-6">
+            <span class="text-[11px] font-semibold tracking-[0.3em] uppercase" style="color:#707B66;">Lo que hacemos</span>
+            <h2 class="font-display text-4xl md:text-6xl text-on-surface leading-[1.05]">Todo lo que tu marca de creadora necesita &mdash; gestionado por nosotros.</h2>
+            <p class="text-on-surface-variant text-lg leading-relaxed max-w-lg">Un equipo discreto y cercano construido alrededor de tu carrera. Tres pilares, ejecutados cada d&iacute;a, para que t&uacute; te centres en crear.</p>
           </div>
-          <p class="text-xl md:text-2xl text-on-surface font-semibold leading-tight">Sin depender de suscripciones.</p>
-          <div class="flex flex-col gap-1 text-on-surface-variant text-base leading-relaxed">
-            <p>Antes: publicaciones constantes, ingresos bajos</p>
-            <p>Despu&eacute;s: monetizaci&oacute;n estructurada &rarr; ingresos predecibles</p>
-          </div>
-          <div>
-            <a href="/es/results" class="inline-block bg-accent text-black font-bold px-8 py-4 rounded-[7px] text-sm tracking-wide hover:brightness-95 hover:scale-[1.02] transition-all">
-              Ver c&oacute;mo lo hicimos
-            </a>
-          </div>
-        </div>
-        <div class="lg:col-span-7 rounded-2xl overflow-hidden border border-outline-variant/20 shadow-xl bg-surface-container">
-          <img src="/assets/results/main-feature-block.jpeg" alt="$24,586 en un solo mes" class="w-full h-auto block" loading="lazy" />
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- 3c. INSIGHT BLOCK (BLACK, FULL-WIDTH) -->
-  <section class="py-40 md:py-52 bg-black text-white">
-    <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center flex flex-col gap-8">
-      <h3 class="text-4xl md:text-7xl font-black tracking-tight leading-[1.05]">La mayor&iacute;a de los ingresos no vienen de las suscripciones.</h3>
-      <p class="text-white/70 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
-        Hasta el 70&ndash;85% viene de DMs, upsells y sistemas estructurados de chatting.
-      </p>
-    </div>
-  </section>
-
-  <!-- 3d. DAILY PERFORMANCE (WHITE) -->
-  <section class="py-32 bg-white">
-    <div class="max-w-5xl mx-auto px-6 lg:px-8">
-      <div class="flex flex-col gap-14 items-center text-center">
-        <div>
-          <h3 class="text-5xl md:text-7xl font-black text-on-surface tracking-tight leading-[0.95]">D&iacute;as de $2k+ &mdash; de forma consistente</h3>
-          <p class="mt-5 text-on-surface-variant text-xl md:text-2xl font-semibold">No es suerte. Son sistemas.</p>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
-          <div class="rounded-2xl overflow-hidden border border-outline-variant/20 shadow-lg aspect-[5/3] bg-white">
-            <img src="/assets/results/daily-performance-block1.jpeg" alt="Ingresos de un solo d&iacute;a superiores a $2k" class="w-full h-full object-cover object-top block" loading="lazy" />
-          </div>
-          <div class="rounded-2xl overflow-hidden border border-outline-variant/20 shadow-lg aspect-[5/3] bg-white">
-            <img src="/assets/results/daily-performance-block2.jpeg" alt="Ingresos de un solo d&iacute;a superiores a $2k" class="w-full h-full object-cover object-top block" loading="lazy" />
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 3e. SYSTEM EXPLANATION (SURFACE) -->
-  <section class="py-32 bg-surface">
-    <div class="max-w-7xl mx-auto px-6 lg:px-8">
-      <div class="max-w-3xl mb-20">
-        <h3 class="text-4xl md:text-5xl font-black text-on-surface tracking-tight leading-[1.1]">&iquest;Qu&eacute; hay detr&aacute;s de estos resultados?</h3>
-      </div>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
-        {[
-          { n: '01', title: 'Equipo de chatting dedicado por creadora', text: 'Cada creadora tiene su propio equipo interno entrenado \u2014 no compartido entre docenas.' },
-          { n: '02', title: 'Sistemas de venta estructurados', text: 'DMs, upsells y flujos de retenci\u00f3n dise\u00f1ados para maximizar los ingresos por fan.' },
-          { n: '03', title: 'An\u00e1lisis semanal de rendimiento', text: 'Analizamos, optimizamos e iteramos cada semana para componer tu crecimiento.' },
-        ].map(item => (
-          <div class="bg-surface-container-lowest p-10 rounded-xl border border-outline-variant/20 flex flex-col gap-5">
-            <span class="text-6xl font-black text-outline-variant/40 leading-none">{item.n}</span>
-            <h4 class="text-xl font-bold text-on-surface">{item.title}</h4>
-            <p class="text-on-surface-variant text-sm leading-relaxed">{item.text}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- 3f. FINAL CTA (BLACK) -->
-  <section class="py-32 md:py-40 bg-black text-white">
-    <div class="max-w-3xl mx-auto px-6 lg:px-8 text-center flex flex-col gap-8">
-      <h3 class="text-4xl md:text-6xl font-black tracking-tight leading-[1.05]">&iquest;Listo para escalar tu OnlyFans as&iacute;?</h3>
-      <p class="text-white/70 text-lg md:text-xl leading-relaxed">
-        Solo trabajamos con un n&uacute;mero limitado de creadoras para mantener un enfoque cercano y orientado al rendimiento.
-      </p>
-      <div>
-        <a href="#apply" class="inline-block bg-accent text-black font-bold px-10 py-5 rounded-[7px] text-sm tracking-wide hover:brightness-95 hover:scale-[1.02] transition-all">
-          Aplicar Ahora
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- 4. PROBLEM SECTION -->
-  <section class="py-28 bg-surface">
-    <div class="max-w-7xl mx-auto px-6 lg:px-8">
-      <div class="mb-16">
-        <h2 class="text-4xl md:text-5xl font-black text-on-surface tracking-tight">Por qu&eacute; est&aacute;s estancado</h2>
-      </div>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div class="bg-surface-container-lowest p-10 rounded-xl flex flex-col gap-6 border border-outline-variant/20 hover:shadow-md transition-shadow">
-          <div class="w-12 h-12 rounded-full bg-surface-container-high flex items-center justify-center">
-            <span class="material-symbols-outlined text-on-surface" style="font-size:22px;">trending_down</span>
-          </div>
-          <div>
-            <h3 class="text-xl font-bold text-on-surface mb-3">Publicas pero no creces</h3>
-            <p class="text-on-surface-variant text-sm leading-relaxed">Publicas de forma constante, pero nada se mueve. Sin alcance, sin tracci&oacute;n — porque no tienes un sistema de tr&aacute;fico real detr&aacute;s.</p>
-          </div>
-        </div>
-        <div class="bg-surface-container-lowest p-10 rounded-xl flex flex-col gap-6 border border-outline-variant/20 hover:shadow-md transition-shadow">
-          <div class="w-12 h-12 rounded-full bg-surface-container-high flex items-center justify-center">
-            <span class="material-symbols-outlined text-on-surface" style="font-size:22px;">payments</span>
-          </div>
-          <div>
-            <h3 class="text-xl font-bold text-on-surface mb-3">Tus subs no gastan</h3>
-            <p class="text-on-surface-variant text-sm leading-relaxed">Tienes suscriptores... pero no compran. Chatting d&eacute;bil, sin estructura, sin estrategia — est&aacute;s dejando dinero en la mesa cada d&iacute;a.</p>
-          </div>
-        </div>
-        <div class="bg-surface-container-lowest p-10 rounded-xl flex flex-col gap-6 border border-outline-variant/20 hover:shadow-md transition-shadow">
-          <div class="w-12 h-12 rounded-full bg-surface-container-high flex items-center justify-center">
-            <span class="material-symbols-outlined text-on-surface" style="font-size:22px;">bolt</span>
-          </div>
-          <div>
-            <h3 class="text-xl font-bold text-on-surface mb-3">Quemado haci&eacute;ndolo todo</h3>
-            <p class="text-on-surface-variant text-sm leading-relaxed">Contenido, publicaciones, respuestas, planificaci&oacute;n... todo. Sin sistemas, no est&aacute;s escalando — solo trabajas m&aacute;s por los mismos resultados.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 3. SERVICES SECTION -->
-  <section class="py-28 bg-surface-container">
-    <div class="max-w-7xl mx-auto px-6 lg:px-8">
-      <div class="text-center max-w-3xl mx-auto mb-16">
-        <h2 class="text-4xl md:text-5xl font-black text-on-surface tracking-tight leading-[1.1] mb-5">Todo lo que hace crecer tus ingresos &mdash; gestionado por nosotros</h2>
-        <p class="text-on-surface-variant text-lg leading-relaxed">Nos encargamos de todo lo que pasa detr&aacute;s &mdash; para que tu p&aacute;gina se convierta en una m&aacute;quina de ingresos constante.</p>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-        {[
-          {
-            icon: 'chat',
-            title: 'Monetizaci\u00f3n 24/7',
-            text: 'Nuestro equipo interno de chatting vende por ti 24/7 &mdash; en ingl\u00e9s y espa\u00f1ol &mdash; con estrategias probadas adaptadas a tu personalidad, para que ganes m\u00e1s sin estar online todo el d\u00eda.',
-          },
-          {
-            icon: 'trending_up',
-            title: 'Marketing y Crecimiento',
-            text: 'Escalamos tu cuenta con estrategias enfocadas en Instagram, sistemas multi-cuenta y contenido basado en datos &mdash; atrayendo tr\u00e1fico de calidad que convierte en fans que pagan.',
-          },
-          {
-            icon: 'payments',
-            title: 'Optimizaci\u00f3n de Ingresos',
-            text: 'Optimizamos tu pricing, contenido y flujo de ventas para aumentar cu\u00e1nto gasta cada fan &mdash; convirtiendo tu p\u00e1gina en un flujo de ingresos predecible.',
-          },
-          {
-            icon: 'shield',
-            title: 'Protecci\u00f3n DMCA y Leaks',
-            text: 'Monitorizamos y eliminamos contenido filtrado proactivamente, protegiendo tus cuentas &mdash; para que tus ingresos sigan seguros mientras creces.',
-          },
-        ].map(card => (
-          <div class="bg-surface-container-lowest p-10 rounded-xl border border-outline-variant/20 hover:shadow-md transition-shadow flex flex-col gap-5">
-            <div class="flex items-center gap-4">
-              <div class="w-12 h-12 rounded-xl bg-primary flex items-center justify-center flex-shrink-0">
-                <span class="material-symbols-outlined text-on-primary" style="font-size:22px;" set:html={card.icon} />
+          <div class="flex flex-col divide-y divide-outline-variant/40">
+            {[
+              { num: '01', title: 'Monetización', text: 'Chatting 24/7 enfocado en construir conexiones reales con los fans, relaciones más fuertes y fans que gastan más.' },
+              { num: '02', title: 'Crecimiento', text: 'Sistemas de crecimiento en Instagram y tráfico de alta intención para ampliar tu audiencia y atraer fans que pagan.' },
+              { num: '03', title: 'Protección', text: 'Eliminación de filtraciones y soporte DMCA continuo para proteger tu contenido y tu marca.' },
+            ].map(p => (
+              <div class="py-8 flex gap-6 items-start">
+                <span class="font-display text-2xl md:text-3xl flex-shrink-0" style="color:#C8A96A;">{p.num}</span>
+                <div class="flex flex-col gap-2">
+                  <h3 class="font-display text-2xl md:text-3xl text-on-surface">{p.title}</h3>
+                  <p class="text-on-surface-variant text-base leading-relaxed">{p.text}</p>
+                </div>
               </div>
-              <h3 class="text-xl font-bold text-on-surface">{card.title}</h3>
-            </div>
-            <p class="text-on-surface-variant text-sm leading-relaxed" set:html={card.text}></p>
+            ))}
           </div>
-        ))}
-      </div>
+        </div>
 
-      <p class="text-center text-on-surface text-lg md:text-xl font-semibold mt-14">
-        T&uacute; te centras en crear contenido. Nosotros en todo lo que te hace ganar dinero.
-      </p>
+        <!-- Right: Editorial image -->
+        <!-- TODO: Replace with lifestyle image provided by user -->
+        <div class="order-1 lg:order-2 w-full overflow-hidden" style="aspect-ratio: 4/5;">
+          <img src="/assets/hero-agencies-v3.png" alt="Visual de marca para creadora" class="w-full h-full object-cover block" loading="lazy" />
+        </div>
+
+      </div>
     </div>
   </section>
 
-  <!-- 4. WHY TOP CREATORS WORK WITH US -->
-  <section class="py-28 bg-surface">
-    <div class="max-w-7xl mx-auto px-6 lg:px-8">
-      <div class="text-center max-w-3xl mx-auto mb-16">
-        <h2 class="text-4xl md:text-5xl font-black text-on-surface tracking-tight leading-[1.1]">Por qu&eacute; los mejores creadores trabajan con nosotros</h2>
+  <!-- 4. FULL-WIDTH EDITORIAL #2 -->
+  <section class="relative w-full overflow-hidden" style="height:min(75vh,680px);">
+    <!-- TODO: Replace with image provided by user -->
+    <div class="absolute inset-0 bg-cover bg-center bg-no-repeat" style="background-image: url('/assets/hero-results.webp');"></div>
+    <div class="absolute inset-0" style="background-color: rgba(17,17,17,0.5);"></div>
+    <div class="absolute inset-0 flex items-center justify-center">
+      <div class="relative z-10 max-w-3xl mx-auto px-6 lg:px-8 text-center flex flex-col gap-8 items-center">
+        <h2 class="font-display text-5xl md:text-7xl text-white leading-[1.05]">Mango te sienta bien.</h2>
+        <p class="text-white/85 text-lg md:text-xl leading-relaxed">&iquest;Lista para tu siguiente nivel?</p>
+        <div class="mt-2">
+          <a href="#apply" class="inline-block bg-accent text-black font-bold px-9 py-4 rounded-[7px] text-sm tracking-wide hover:brightness-95 hover:scale-[1.02] transition-all">
+            Aplicar para trabajar con nosotros
+          </a>
+        </div>
       </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-        {[
-          {
-            icon: 'settings_suggest',
-            title: 'Sistemas, no suposiciones',
-            text: 'No dependemos de tendencias ni suerte \u2014 conectamos sistemas probados a tu cuenta para generar ingresos constantes.',
-          },
-          {
-            icon: 'groups',
-            title: 'Equipo interno, totalmente controlado',
-            text: 'Nuestros chatters, managers y equipo de marketing est\u00e1n formados y gestionados internamente \u2014 asegurando consistencia y rendimiento.',
-          },
-          {
-            icon: 'language',
-            title: 'Monetizaci\u00f3n en ingl\u00e9s y espa\u00f1ol',
-            text: 'Vendemos a una audiencia global con chatting a nivel nativo \u2014 aumentando conversiones y maximizando tus ingresos.',
-          },
-          {
-            icon: 'trending_up',
-            title: 'Enfocados en ingresos, no en m\u00e9tricas vanidosas',
-            text: 'Nos centramos en cu\u00e1nto ganas y c\u00f3mo aumentarlo cada mes \u2014 no en likes o followers.',
-          },
-          {
-            icon: 'lock_open',
-            title: 'Sin contratos a largo plazo',
-            text: 'Te quedas porque funciona \u2014 no porque est\u00e9s atado. Ganamos nuestro sitio cada mes.',
-          },
-          {
-            icon: 'tune',
-            title: 'Totalmente adaptado a ti',
-            text: 'Cada estrategia se ajusta a tu personalidad, contenido y audiencia \u2014 sin enfoques gen\u00e9ricos.',
-          },
-        ].map(card => (
-          <div class="bg-surface-container-lowest p-10 rounded-xl border border-outline-variant/20 hover:shadow-md transition-shadow flex flex-col gap-5">
-            <div class="flex items-center gap-4">
-              <div class="w-12 h-12 rounded-xl bg-primary flex items-center justify-center flex-shrink-0">
-                <span class="material-symbols-outlined text-on-primary" style="font-size:22px;" set:html={card.icon} />
-              </div>
-              <h3 class="text-xl font-bold text-on-surface">{card.title}</h3>
-            </div>
-            <p class="text-on-surface-variant text-sm leading-relaxed">{card.text}</p>
-          </div>
-        ))}
-      </div>
-
-      <p class="text-center text-on-surface text-lg md:text-xl font-semibold mt-14">
-        Esto no es gesti&oacute;n. Esto es infraestructura.
-      </p>
     </div>
   </section>
 
-  <!-- 5. PROCESS SECTION -->
-  <section id="how-it-works" class="py-28 bg-white">
-    <div class="max-w-7xl mx-auto px-6 lg:px-8">
-      <div class="text-center mb-20">
-        <h2 class="text-4xl md:text-5xl font-black text-on-surface tracking-tight">Qu&eacute; pasa cuando te unes</h2>
-        <p class="mt-4 text-on-surface-variant text-lg max-w-xl mx-auto">Un proceso simple y r&aacute;pido para empezar a escalar tus ingresos.</p>
-      </div>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 divide-y lg:divide-y-0 lg:divide-x divide-outline-variant/20">
-        {[
-          { num: '01', title: 'Evaluaci\u00f3n r\u00e1pida', text: 'Revisamos tu cuenta, contenido y potencial para identificar d\u00f3nde puedes crecer m\u00e1s r\u00e1pido.' },
-          { num: '02', title: 'Estrategia y setup', text: 'Construimos un plan personalizado e integramos nuestros sistemas en tu cuenta \u2014 chatting, marketing y monetizaci\u00f3n.' },
-          { num: '03', title: 'Activaci\u00f3n completa', text: 'Activamos todos los sistemas de crecimiento y monetizaci\u00f3n en tu cuenta \u2014 listos para escalar desde el primer d\u00eda.' },
-          { num: '04', title: 'Escalar y optimizar', text: 'Optimizamos todo continuamente para aumentar tus ingresos mes tras mes.' },
-        ].map(step => (
-          <div class="flex flex-col gap-4 px-8 py-10">
-            <span class="text-7xl font-black text-outline-variant/30 leading-none">{step.num}</span>
-            <h3 class="text-xl font-black text-on-surface">{step.title}</h3>
-            <p class="text-on-surface-variant text-sm leading-relaxed">{step.text}</p>
-          </div>
-        ))}
-      </div>
-      <p class="text-center text-on-surface text-lg font-semibold mt-14">
-        Sin complicaciones. Sin tiempo perdido. Solo crecimiento.
-      </p>
-    </div>
-  </section>
-
-  <!-- 6. APPLY FORM -->
+  <!-- 5. APPLY FORM (centered editorial) -->
   <ApplyForm lang="es" />
 
-  <!-- 7. FAQ SECTION -->
-  <section class="py-28 bg-white">
-    <div class="max-w-7xl mx-auto px-6 lg:px-8">
-      <div class="max-w-3xl mx-auto">
-        <div class="mb-14">
-          <h2 class="text-4xl md:text-5xl font-black text-on-surface tracking-tight">Preguntas Frecuentes</h2>
-        </div>
-        <div class="flex flex-col gap-3">
-          {[
-            {
-              q: "¿Qué os diferencia de otras agencias?",
-              a: `<p>La mayoría de agencias se basan en volumen — más contenido, más publicaciones, más mensajes.</p><p>Nosotros nos enfocamos en rendimiento.</p><p>Combinamos:</p><ul class="list-disc pl-5 space-y-1 mt-1"><li>Un equipo de marketing enfocado en generar tráfico consistente</li><li>Un equipo de chatting dedicado por modelo (no compartido entre cuentas)</li><li>Sistemas de ventas estructurados (dripping, upsells, retención)</li><li>Optimización semanal basada en datos reales de rendimiento (ingresos, conversión, LTV)</li></ul><p>No trabajamos con todo el mundo. Seleccionamos a las creadoras adecuadas y nos centramos en escalarlas correctamente.</p>`,
-            },
-            {
-              q: "¿Por qué debería trabajar con una agencia?",
-              a: `<p>Porque la mayoría de creadoras dejan dinero en la mesa — por ambos lados.</p><p>Tráfico sin monetización no escala.<br />Monetización sin tráfico no crece.</p><p>Nosotros nos encargamos de ambas.</p><p>El marketing trae tráfico consistente.<br />El chatting convierte ese tráfico en ingresos.</p><p>Para que puedas centrarte en el contenido mientras todo lo que hay detrás se optimiza.</p>`,
-            },
-            {
-              q: "¿Cuánto puedo esperar crecer?",
-              a: `<p>Depende de tu punto de partida.</p><p>La mayoría de creadoras con las que trabajamos ven:</p><ul class="list-disc pl-5 space-y-1 mt-1"><li>Mayor ingreso por suscriptor</li><li>Mejor conversión de fans a compradores</li><li>Ingresos diarios más consistentes</li></ul><p>En muchos casos, las creadoras pasan de ingresos inestables a ingresos mensuales predecibles mejorando tanto el tráfico como la monetización.</p>`,
-            },
-            {
-              q: "¿Es seguro dar acceso a mi cuenta?",
-              a: `<p>Sí.</p><p>Solo necesitamos tus credenciales una vez para conectar de forma segura tu cuenta a nuestro CRM.</p><p>Después, nuestro equipo trabaja a través de la plataforma sin necesitar acceso directo a tus datos de inicio de sesión.</p><p>Tu cuenta permanece protegida y tú mantienes el control total en todo momento.</p>`,
-            },
-            {
-              q: "¿Vais a cambiar mi personalidad o cómo interactúo con los fans?",
-              a: `<p>No.</p><p>Nos adaptamos a tu personalidad — no al revés.</p><p>Antes de empezar, recopilamos información detallada sobre tu tono, preferencias y límites para replicar tu estilo con la mayor precisión posible.</p>`,
-            },
-            {
-              q: "¿Ayudáis con la creación de contenido?",
-              a: `<p>Sí.</p><p>Proporcionamos estrategias de contenido claras, referencias y dirección basadas en lo que mejor funciona.</p><p>No tienes que adivinar qué publicar — te guiamos sobre lo que realmente convierte.</p>`,
-            },
-            {
-              q: "¿Cómo funciona el proceso?",
-              a: `<p>Aplica &rarr; Llamada de evaluación &rarr; Setup del sistema &rarr; Lanzamiento y optimización</p><p>Una vez alineado todo, podemos empezar rápidamente y mejorar tus ingresos desde el primer día.</p>`,
-            },
-            {
-              q: "¿Mantengo el control de mi cuenta?",
-              a: `<p>Siempre.</p><p>Mantienes la propiedad, visibilidad y control total en todo momento.</p>`,
-            },
-            {
-              q: "¿Cómo mantenéis la calidad del chatting?",
-              a: `<p>Usamos un enfoque basado en sistemas:</p><ul class="list-disc pl-5 space-y-1 mt-1"><li>Monitorización 24/7</li><li>Equipo de QA dedicado</li><li>Seguimiento de rendimiento por chatter</li><li>Optimización continua</li></ul><p>Todo se mide y se mejora constantemente.</p>`,
-            },
-            {
-              q: "¿Puedo parar cuando quiera?",
-              a: `<p>Sí.</p><p>No atamos a las creadoras con contratos a largo plazo.</p><p>Solo trabajamos juntos si tiene sentido para ambas partes.</p>`,
-            },
-            {
-              q: "¿Cómo funcionan los pagos?",
-              a: `<p>Trabajamos con un modelo basado en rendimiento.</p><p>Eso significa que solo ganamos dinero si tú ganas más.</p><p>Los detalles se discuten durante la llamada de evaluación para adaptarse a tu situación específica.</p>`,
-            },
-            {
-              q: "¿Para quién NO es esto?",
-              a: `<p>Para creadoras que no son consistentes, no se toman esto en serio o están empezando.</p><p>No trabajamos con todo el mundo.</p><p>Trabajamos con creadoras que ya tienen tracción y quieren escalar sus ingresos correctamente.<br />Nos centramos en construir sistemas — no en perseguir picos a corto plazo.</p>`,
-            },
-          ].map(faq => (
-            <details class="bg-surface-container-low rounded-2xl group">
-              <summary class="p-8 flex items-center justify-between cursor-pointer list-none select-none">
-                <span class="font-semibold text-on-surface text-base pr-6">{faq.q}</span>
-                <span class="material-symbols-outlined expand-icon text-on-surface-variant flex-shrink-0 transition-transform duration-300">add</span>
-              </summary>
-              <div class="px-8 pb-8 text-on-surface-variant text-sm leading-relaxed flex flex-col gap-3" set:html={faq.a}></div>
-            </details>
-          ))}
-        </div>
+  <!-- 6. FAQ SECTION -->
+  <section class="py-32 md:py-40" style="background-color:#D8C8B8;">
+    <div class="max-w-3xl mx-auto px-6 lg:px-8">
+      <div class="mb-16 text-center flex flex-col gap-4 items-center">
+        <span class="text-[11px] font-semibold tracking-[0.3em] uppercase" style="color:#707B66;">Preguntas</span>
+        <h2 class="font-display text-4xl md:text-6xl text-on-surface leading-[1.05]">Frecuentes.</h2>
+      </div>
+      <div class="flex flex-col">
+        {[
+          {
+            q: "¿Qué os diferencia de otras agencias?",
+            a: `<p>La mayoría de agencias se basan en volumen — más contenido, más publicaciones, más mensajes.</p><p>Nosotros nos enfocamos en rendimiento.</p><p>Combinamos:</p><ul class="list-disc pl-5 space-y-1 mt-1"><li>Un equipo de marketing enfocado en generar tráfico consistente</li><li>Un equipo de chatting dedicado por modelo (no compartido entre cuentas)</li><li>Sistemas de ventas estructurados (dripping, upsells, retención)</li><li>Optimización semanal basada en datos reales de rendimiento (ingresos, conversión, LTV)</li></ul><p>No trabajamos con todo el mundo. Seleccionamos a las creadoras adecuadas y nos centramos en escalarlas correctamente.</p>`,
+          },
+          {
+            q: "¿Por qué debería trabajar con una agencia?",
+            a: `<p>Porque la mayoría de creadoras dejan dinero en la mesa — por ambos lados.</p><p>Tráfico sin monetización no escala.<br />Monetización sin tráfico no crece.</p><p>Nosotros nos encargamos de ambas.</p><p>El marketing trae tráfico consistente.<br />El chatting convierte ese tráfico en ingresos.</p><p>Para que puedas centrarte en el contenido mientras todo lo que hay detrás se optimiza.</p>`,
+          },
+          {
+            q: "¿Cuánto puedo esperar crecer?",
+            a: `<p>Depende de tu punto de partida.</p><p>La mayoría de creadoras con las que trabajamos ven:</p><ul class="list-disc pl-5 space-y-1 mt-1"><li>Mayor ingreso por suscriptor</li><li>Mejor conversión de fans a compradores</li><li>Ingresos diarios más consistentes</li></ul><p>En muchos casos, las creadoras pasan de ingresos inestables a ingresos mensuales predecibles mejorando tanto el tráfico como la monetización.</p>`,
+          },
+          {
+            q: "¿Es seguro dar acceso a mi cuenta?",
+            a: `<p>Sí.</p><p>Solo necesitamos tus credenciales una vez para conectar de forma segura tu cuenta a nuestro CRM.</p><p>Después, nuestro equipo trabaja a través de la plataforma sin necesitar acceso directo a tus datos de inicio de sesión.</p><p>Tu cuenta permanece protegida y tú mantienes el control total en todo momento.</p>`,
+          },
+          {
+            q: "¿Vais a cambiar mi personalidad o cómo interactúo con los fans?",
+            a: `<p>No.</p><p>Nos adaptamos a tu personalidad — no al revés.</p><p>Antes de empezar, recopilamos información detallada sobre tu tono, preferencias y límites para replicar tu estilo con la mayor precisión posible.</p>`,
+          },
+          {
+            q: "¿Ayudáis con la creación de contenido?",
+            a: `<p>Sí.</p><p>Proporcionamos estrategias de contenido claras, referencias y dirección basadas en lo que mejor funciona.</p><p>No tienes que adivinar qué publicar — te guiamos sobre lo que realmente convierte.</p>`,
+          },
+          {
+            q: "¿Cómo funciona el proceso?",
+            a: `<p>Aplica &rarr; Llamada de evaluación &rarr; Setup del sistema &rarr; Lanzamiento y optimización</p><p>Una vez alineado todo, podemos empezar rápidamente y mejorar tus ingresos desde el primer día.</p>`,
+          },
+          {
+            q: "¿Mantengo el control de mi cuenta?",
+            a: `<p>Siempre.</p><p>Mantienes la propiedad, visibilidad y control total en todo momento.</p>`,
+          },
+          {
+            q: "¿Cómo mantenéis la calidad del chatting?",
+            a: `<p>Usamos un enfoque basado en sistemas:</p><ul class="list-disc pl-5 space-y-1 mt-1"><li>Monitorización 24/7</li><li>Equipo de QA dedicado</li><li>Seguimiento de rendimiento por chatter</li><li>Optimización continua</li></ul><p>Todo se mide y se mejora constantemente.</p>`,
+          },
+          {
+            q: "¿Puedo parar cuando quiera?",
+            a: `<p>Sí.</p><p>No atamos a las creadoras con contratos a largo plazo.</p><p>Solo trabajamos juntos si tiene sentido para ambas partes.</p>`,
+          },
+          {
+            q: "¿Cómo funcionan los pagos?",
+            a: `<p>Trabajamos con un modelo basado en rendimiento.</p><p>Eso significa que solo ganamos dinero si tú ganas más.</p><p>Los detalles se discuten durante la llamada de evaluación para adaptarse a tu situación específica.</p>`,
+          },
+          {
+            q: "¿Para quién NO es esto?",
+            a: `<p>Para creadoras que no son consistentes, no se toman esto en serio o están empezando.</p><p>No trabajamos con todo el mundo.</p><p>Trabajamos con creadoras que ya tienen tracción y quieren escalar sus ingresos correctamente.<br />Nos centramos en construir sistemas — no en perseguir picos a corto plazo.</p>`,
+          },
+        ].map(faq => (
+          <details class="group border-b border-on-surface/15">
+            <summary class="py-7 flex items-center justify-between cursor-pointer list-none select-none">
+              <span class="font-display text-lg md:text-xl text-on-surface pr-6">{faq.q}</span>
+              <span class="material-symbols-outlined expand-icon flex-shrink-0 transition-transform duration-300" style="color:#707B66;">add</span>
+            </summary>
+            <div class="pb-8 text-on-surface-variant text-sm md:text-base leading-relaxed flex flex-col gap-3 max-w-2xl" set:html={faq.a}></div>
+          </details>
+        ))}
       </div>
     </div>
   </section>

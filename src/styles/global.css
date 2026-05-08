@@ -1,34 +1,42 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #000000;
-  --color-primary-container: #3b3b3b;
-  --color-on-primary: #e2e2e2;
+  /* New editorial palette */
+  --color-primary: #111111;
+  --color-primary-container: #2a2a2a;
+  --color-on-primary: #ffffff;
   --color-on-primary-container: #ffffff;
   --color-secondary: #5e5e63;
   --color-secondary-container: #d5d4d9;
   --color-on-secondary: #ffffff;
-  --color-tertiary: #3b3b3b;
-  --color-tertiary-container: #747474;
-  --color-surface: #f9f9fb;
-  --color-surface-container: #eeeef0;
-  --color-surface-container-low: #f3f3f5;
-  --color-surface-container-high: #e8e8ea;
-  --color-surface-container-highest: #e2e2e4;
+  --color-tertiary: #707B66;
+  --color-tertiary-container: #d8c8b8;
+  --color-surface: #ffffff;
+  --color-surface-container: #d8c8b8;
+  --color-surface-container-low: #f7f3ee;
+  --color-surface-container-high: #c8b8a8;
+  --color-surface-container-highest: #b8a898;
   --color-surface-container-lowest: #ffffff;
-  --color-on-surface: #1a1c1d;
-  --color-on-surface-variant: #474747;
+  --color-on-surface: #111111;
+  --color-on-surface-variant: #4a4a4a;
   --color-outline: #777777;
-  --color-outline-variant: #c6c6c6;
+  --color-outline-variant: #d8d8d8;
   --color-error: #ba1a1a;
   --color-on-error: #ffffff;
-  --color-inverse-surface: #2f3132;
-  --color-inverse-on-surface: #f0f0f2;
+  --color-inverse-surface: #111111;
+  --color-inverse-on-surface: #ffffff;
 
-  /* Accent: soft Playboy-inspired yellow — not neon, not gold */
-  --color-accent: #D3A04D;
+  /* Editorial palette tokens */
+  --color-beige: #D8C8B8;
+  --color-beige-soft: #f0e9e0;
+  --color-editorial-green: #707B66;
+  --color-soft-black: #111111;
 
-  --font-headline: 'Inter', sans-serif;
+  /* Accent: soft champagne gold */
+  --color-accent: #C8A96A;
+
+  --font-display: 'Bodoni Moda', Georgia, serif;
+  --font-headline: 'Bodoni Moda', Georgia, serif;
   --font-body: 'Inter', sans-serif;
   --font-label: 'Inter', sans-serif;
 }
@@ -42,6 +50,14 @@
 
   body {
     font-family: var(--font-body);
+    background: #ffffff;
+    color: #111111;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    font-weight: 500;
+    letter-spacing: -0.01em;
   }
 
   ::selection {
@@ -75,9 +91,9 @@ details summary .expand-icon {
 }
 .glass-nav:hover,
 .glass-nav.scrolled {
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.92);
   backdrop-filter: blur(20px);
-  border-bottom-color: rgba(0, 0, 0, 0.08);
+  border-bottom-color: rgba(0, 0, 0, 0.06);
 }
 
 /* Nav children react to the same parent states */
@@ -96,17 +112,25 @@ details summary .expand-icon {
 }
 .glass-nav:hover .nav-link,
 .glass-nav.scrolled .nav-link {
-  color: var(--mat-sys-secondary, #5a5f63);
+  color: #4a4a4a;
 }
 .glass-nav .nav-link:hover,
 .glass-nav.scrolled .nav-link:hover,
 .glass-nav:hover .nav-link:hover {
-  color: var(--mat-sys-primary, #1a1c1d);
+  color: #111111;
+}
+
+/* Editorial helpers */
+.font-display {
+  font-family: var(--font-display);
+}
+.font-body {
+  font-family: var(--font-body);
 }
 
 /* Text stroke for hero outlines */
 .text-stroke {
-  -webkit-text-stroke: 1px #1a1c1d;
+  -webkit-text-stroke: 1px #111111;
   color: transparent;
 }
 
