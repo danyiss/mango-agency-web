@@ -194,33 +194,42 @@ const orgSchema = {
       <slot />
     </main>
 
-    <!-- Footer (editorial, Playboy-inspired) -->
-    <footer class="py-24 md:py-28" style="background-color:#111111;">
-      <div class="px-6 lg:px-8 max-w-5xl mx-auto flex flex-col items-center gap-10 text-center">
+    <!-- Footer (premium editorial, fashion-inspired) -->
+    <footer class="pt-20 md:pt-28 pb-16 md:pb-20" style="background-color:#111111;">
+      <!-- Subtle divider above -->
+      <div class="max-w-5xl mx-auto px-6 lg:px-8 mb-20 md:mb-28">
+        <div class="h-px" style="background-color:rgba(255,255,255,0.12);"></div>
+      </div>
+
+      <div class="px-6 lg:px-8 max-w-5xl mx-auto flex flex-col items-center gap-14 md:gap-16 text-center">
         <a href={localPath('/')} class="flex items-center" aria-label="MANGO Talent Management">
-          <img src="/logo.png" alt="MANGO Talent Management" class="h-9 w-auto" style="filter:invert(1) brightness(2);" />
+          <img src="/logo.png" alt="MANGO Talent Management" class="h-12 md:h-14 w-auto" style="filter:invert(1) brightness(2);" />
         </a>
-        <p class="font-display text-white/85 text-base md:text-lg italic tracking-wide">For creators, by creators.</p>
-        <div class="flex flex-wrap items-center justify-center gap-6 md:gap-10 text-[11px] uppercase tracking-[0.22em] text-white/55 font-medium">
-          <a class="hover:text-white transition-colors" href={localPath('/results')}>{t('nav.results')}</a>
-          <a class="hover:text-white transition-colors" href={localPath('/how-it-works')}>{t('nav.howItWorks')}</a>
-          <a class="hover:text-white transition-colors" href={localPath('/for-agencies')}>{t('nav.forAgencies')}</a>
-          <a class="hover:text-white transition-colors" href={localPath('/legal')}>{t('footer.privacy')}</a>
+
+        <p class="font-display text-white text-2xl md:text-4xl italic leading-tight tracking-tight max-w-2xl">For creators, by creators.</p>
+
+        <div class="flex flex-wrap items-center justify-center gap-8 md:gap-12 text-[11px] uppercase tracking-[0.28em] text-white/60 font-medium">
+          <a class="hover:text-white transition-colors duration-300" href={localPath('/results')}>{t('nav.results')}</a>
+          <a class="hover:text-white transition-colors duration-300" href={localPath('/how-it-works')}>{t('nav.howItWorks')}</a>
+          <a class="hover:text-white transition-colors duration-300" href={localPath('/for-agencies')}>{t('nav.forAgencies')}</a>
+          <a class="hover:text-white transition-colors duration-300" href={localPath('/legal')}>{t('footer.privacy')}</a>
         </div>
+
         <a
           href="https://instagram.com/mango.creators"
           target="_blank"
           rel="noopener"
           aria-label="Instagram"
-          class="inline-flex items-center justify-center text-white/55 hover:text-white transition-colors"
+          class="inline-flex items-center justify-center text-white/55 hover:text-white transition-colors duration-300"
         >
-          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <rect x="3" y="3" width="18" height="18" rx="5" />
             <circle cx="12" cy="12" r="4" />
             <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
           </svg>
         </a>
-        <p class="text-[10px] text-white/30 tracking-[0.25em] uppercase">&copy; {currentYear} {t('footer.copyright')}</p>
+
+        <p class="text-[10px] text-white/30 tracking-[0.3em] uppercase mt-2">&copy; {currentYear} {t('footer.copyright')}</p>
       </div>
     </footer>
   </body>

@@ -42,14 +42,13 @@ const serviceSchema = {
     <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
   </Fragment>
 
-  <!-- 1. HERO SECTION -->
+  <!-- 1. HERO -->
   <section class="relative h-screen -mt-16 w-full overflow-hidden">
     <div class="absolute inset-0 bg-cover bg-center bg-no-repeat" style="background-image: url('/assets/hero-home.png');"></div>
     <div class="absolute inset-0 bg-gradient-to-r from-black/55 via-black/30 to-black/10"></div>
     <div class="absolute inset-0 flex items-center">
       <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 w-full">
         <div class="max-w-[640px] flex flex-col gap-7">
-          <span class="text-[11px] font-semibold tracking-[0.3em] uppercase text-white/70">Para creadoras, por creadoras</span>
           <h1 class="font-display text-5xl sm:text-6xl md:text-7xl text-white leading-[1.05]">
             Escala tu OnlyFans a meses de 5&ndash;6 cifras
           </h1>
@@ -70,15 +69,47 @@ const serviceSchema = {
     </div>
   </section>
 
-  <!-- 2. FULL-WIDTH EDITORIAL #1 -->
-  <section class="relative w-full overflow-hidden" style="height:min(80vh,720px);">
+  <!-- 2. TRANSITION (white, centered) -->
+  <section class="py-32 md:py-44 bg-white">
+    <div class="max-w-3xl mx-auto px-6 lg:px-8 text-center flex flex-col gap-7">
+      <h2 class="font-display text-4xl md:text-6xl text-on-surface leading-[1.1]">Una agencia moderna de OnlyFans para creadoras que siempre quieren m&aacute;s.</h2>
+      <p class="text-on-surface-variant text-lg md:text-xl leading-relaxed max-w-2xl mx-auto">Gesti&oacute;n integral que cubre chatting, crecimiento en redes sociales y creator branding.</p>
+    </div>
+  </section>
+
+  <!-- 3. SERVICES (editorial green) -->
+  <section class="py-28 md:py-40" style="background-color:#707B66;">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="mb-20 md:mb-28 max-w-3xl">
+        <h2 class="font-display text-4xl md:text-6xl text-white leading-[1.05]">Todo lo que tu marca de creadora necesita &mdash; gestionado.</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3" style="row-gap:1px;column-gap:1px;background-color:rgba(255,255,255,0.18);">
+        {[
+          { icon: 'forum', title: 'Chatting', text: 'Nuestro equipo interno de chatting se centra en relaciones, retención y fans que gastan más — creando conexiones más fuertes que aumentan los ingresos a largo plazo, no solo las ventas a corto plazo.' },
+          { icon: 'trending_up', title: 'Crecimiento', text: 'Sistemas multiplataforma de crecimiento que combinan Instagram, estrategia de contenido viral y tráfico externo, diseñados para traer fans nuevos a tu ecosistema de forma constante.' },
+          { icon: 'shield', title: 'Protección', text: 'Protección frente a filtraciones, soporte DMCA y seguridad de cuenta diseñados para que las creadoras crezcan con confianza sin perder el control de su contenido.' },
+        ].map(s => (
+          <div class="px-10 md:px-12 py-14 md:py-20 flex flex-col gap-10 transition-colors duration-300 hover:bg-white/[0.04]" style="background-color:#707B66;">
+            <span class="material-symbols-outlined text-white/85" style="font-size:30px;font-variation-settings:'FILL' 0,'wght' 300;">{s.icon}</span>
+            <div class="flex flex-col gap-5">
+              <h3 class="font-display text-3xl md:text-4xl text-white leading-tight">{s.title}</h3>
+              <p class="text-white/75 text-base leading-relaxed">{s.text}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. FULL-WIDTH EDITORIAL #1 -->
+  <section class="relative w-full overflow-hidden" style="height:min(82vh,720px);">
     <!-- TODO: Replace with image provided by user -->
     <div class="absolute inset-0 bg-cover bg-center bg-no-repeat" style="background-image: url('/assets/hero-system.webp');"></div>
     <div class="absolute inset-0" style="background-color: rgba(17,17,17,0.55);"></div>
     <div class="absolute inset-0 flex items-center justify-center">
       <div class="relative z-10 max-w-3xl mx-auto px-6 lg:px-8 text-center flex flex-col gap-8 items-center">
-        <h2 class="font-display text-4xl md:text-6xl text-white leading-[1.05]">El siguiente nivel de tu carrera empieza aqu&iacute;.</h2>
-        <p class="text-white/80 text-lg md:text-xl leading-relaxed max-w-2xl">Ayudamos a creadoras a construir influencia, audiencia e ingresos a largo plazo.</p>
+        <h2 class="font-display text-4xl md:text-6xl text-white leading-[1.05]">Hecho para creadoras listas para llegar al top 1%.</h2>
+        <p class="text-white/85 text-lg md:text-xl leading-relaxed">Donde la ambici&oacute;n se encuentra con la estrategia correcta.</p>
         <div class="mt-2">
           <a href="#apply" class="inline-block bg-accent text-black font-bold px-9 py-4 rounded-[7px] text-sm tracking-wide hover:brightness-95 hover:scale-[1.02] transition-all">
             Aplicar para trabajar con nosotros
@@ -88,73 +119,36 @@ const serviceSchema = {
     </div>
   </section>
 
-  <!-- 3. SERVICES SPLIT EDITORIAL -->
-  <section class="py-32 md:py-40 bg-white">
-    <div class="max-w-7xl mx-auto px-6 lg:px-8">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-
-        <!-- Left: Copy -->
-        <div class="flex flex-col gap-10 order-2 lg:order-1">
-          <div class="flex flex-col gap-6">
-            <span class="text-[11px] font-semibold tracking-[0.3em] uppercase" style="color:#707B66;">Lo que hacemos</span>
-            <h2 class="font-display text-4xl md:text-6xl text-on-surface leading-[1.05]">Todo lo que tu marca de creadora necesita &mdash; gestionado por nosotros.</h2>
-            <p class="text-on-surface-variant text-lg leading-relaxed max-w-lg">Un equipo discreto y cercano construido alrededor de tu carrera. Tres pilares, ejecutados cada d&iacute;a, para que t&uacute; te centres en crear.</p>
+  <!-- 5. DIFFERENTIATION (white, editorial rows) -->
+  <section class="py-32 md:py-44 bg-white">
+    <div class="max-w-3xl mx-auto px-6 lg:px-8">
+      <div class="mb-16 md:mb-24 text-center">
+        <h2 class="font-display text-4xl md:text-6xl text-on-surface leading-[1.05]">Por qu&eacute; las creadoras eligen Mango</h2>
+      </div>
+      <div class="flex flex-col">
+        {[
+          { title: 'Equipo dedicado para cada creadora', sub: 'Trabajas con un equipo que entiende tu contenido, tu audiencia y tu marca personal.' },
+          { title: 'Sin contratos a largo plazo', sub: 'Las creadoras se quedan porque funciona — no porque estén atadas.' },
+          { title: 'Crecimiento enfocado en fans reales', sub: 'Construido para atraer fans leales y crecimiento a largo plazo, no métricas de vanidad.' },
+          { title: 'Estrategia personalizada', sub: 'Todo se adapta a tu personalidad, tu contenido y tus objetivos.' },
+        ].map((row, idx) => (
+          <div class={`py-10 md:py-14 ${idx === 0 ? 'border-y' : 'border-b'}`} style="border-color:rgba(17,17,17,0.12);">
+            <h3 class="font-display text-2xl md:text-4xl text-on-surface mb-3 md:mb-4 leading-tight">{row.title}</h3>
+            <p class="text-on-surface-variant text-base md:text-lg leading-relaxed max-w-2xl">{row.sub}</p>
           </div>
-
-          <div class="flex flex-col divide-y divide-outline-variant/40">
-            {[
-              { num: '01', title: 'Monetización', text: 'Chatting 24/7 enfocado en construir conexiones reales con los fans, relaciones más fuertes y fans que gastan más.' },
-              { num: '02', title: 'Crecimiento', text: 'Sistemas de crecimiento en Instagram y tráfico de alta intención para ampliar tu audiencia y atraer fans que pagan.' },
-              { num: '03', title: 'Protección', text: 'Eliminación de filtraciones y soporte DMCA continuo para proteger tu contenido y tu marca.' },
-            ].map(p => (
-              <div class="py-8 flex gap-6 items-start">
-                <span class="font-display text-2xl md:text-3xl flex-shrink-0" style="color:#C8A96A;">{p.num}</span>
-                <div class="flex flex-col gap-2">
-                  <h3 class="font-display text-2xl md:text-3xl text-on-surface">{p.title}</h3>
-                  <p class="text-on-surface-variant text-base leading-relaxed">{p.text}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <!-- Right: Editorial image -->
-        <!-- TODO: Replace with lifestyle image provided by user -->
-        <div class="order-1 lg:order-2 w-full overflow-hidden" style="aspect-ratio: 4/5;">
-          <img src="/assets/hero-agencies-v3.png" alt="Visual de marca para creadora" class="w-full h-full object-cover block" loading="lazy" />
-        </div>
-
+        ))}
       </div>
     </div>
   </section>
 
-  <!-- 4. FULL-WIDTH EDITORIAL #2 -->
-  <section class="relative w-full overflow-hidden" style="height:min(75vh,680px);">
-    <!-- TODO: Replace with image provided by user -->
-    <div class="absolute inset-0 bg-cover bg-center bg-no-repeat" style="background-image: url('/assets/hero-results.webp');"></div>
-    <div class="absolute inset-0" style="background-color: rgba(17,17,17,0.5);"></div>
-    <div class="absolute inset-0 flex items-center justify-center">
-      <div class="relative z-10 max-w-3xl mx-auto px-6 lg:px-8 text-center flex flex-col gap-8 items-center">
-        <h2 class="font-display text-5xl md:text-7xl text-white leading-[1.05]">Mango te sienta bien.</h2>
-        <p class="text-white/85 text-lg md:text-xl leading-relaxed">&iquest;Lista para tu siguiente nivel?</p>
-        <div class="mt-2">
-          <a href="#apply" class="inline-block bg-accent text-black font-bold px-9 py-4 rounded-[7px] text-sm tracking-wide hover:brightness-95 hover:scale-[1.02] transition-all">
-            Aplicar para trabajar con nosotros
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 5. APPLY FORM (centered editorial) -->
+  <!-- 6. APPLY -->
   <ApplyForm lang="es" />
 
-  <!-- 6. FAQ SECTION -->
-  <section class="py-32 md:py-40" style="background-color:#D8C8B8;">
+  <!-- 7. FAQ (white) -->
+  <section class="py-32 md:py-40 bg-white">
     <div class="max-w-3xl mx-auto px-6 lg:px-8">
-      <div class="mb-16 text-center flex flex-col gap-4 items-center">
-        <span class="text-[11px] font-semibold tracking-[0.3em] uppercase" style="color:#707B66;">Preguntas</span>
-        <h2 class="font-display text-4xl md:text-6xl text-on-surface leading-[1.05]">Frecuentes.</h2>
+      <div class="mb-16 md:mb-20 text-center">
+        <h2 class="font-display text-4xl md:text-6xl text-on-surface leading-[1.05]">Preguntas frecuentes.</h2>
       </div>
       <div class="flex flex-col">
         {[
@@ -206,8 +200,8 @@ const serviceSchema = {
             q: "¿Para quién NO es esto?",
             a: `<p>Para creadoras que no son consistentes, no se toman esto en serio o están empezando.</p><p>No trabajamos con todo el mundo.</p><p>Trabajamos con creadoras que ya tienen tracción y quieren escalar sus ingresos correctamente.<br />Nos centramos en construir sistemas — no en perseguir picos a corto plazo.</p>`,
           },
-        ].map(faq => (
-          <details class="group border-b border-on-surface/15">
+        ].map((faq, idx) => (
+          <details class={`group ${idx === 0 ? 'border-y' : 'border-b'} hover:bg-on-surface/[0.02] transition-colors`} style="border-color:rgba(17,17,17,0.12);">
             <summary class="py-7 flex items-center justify-between cursor-pointer list-none select-none">
               <span class="font-display text-lg md:text-xl text-on-surface pr-6">{faq.q}</span>
               <span class="material-symbols-outlined expand-icon flex-shrink-0 transition-transform duration-300" style="color:#707B66;">add</span>
