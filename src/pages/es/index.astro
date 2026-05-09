@@ -35,22 +35,31 @@ const serviceSchema = {
 };
 ---
 
-<Layout title="MANGO | Para Creadores, Por Creadores" activeNav="home" lang="es" transparentTop={false}>
+<Layout title="MANGO | Para Creadores, Por Creadores" activeNav="home" lang="es" transparentTop={true}>
   <Fragment slot="head">
+    <link rel="preload" as="image" href="/assets/hero-home.png" type="image/png" />
     <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
     <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
   </Fragment>
 
-  <!-- 1. HERO (minimal editorial, white) -->
-  <section class="py-32 md:py-44 lg:py-56 bg-white">
-    <div class="max-w-5xl mx-auto px-6 lg:px-8 text-center flex flex-col items-center gap-10 md:gap-14">
-      <h1 class="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-on-surface leading-[0.98] max-w-4xl">
-        Una agencia de gesti&oacute;n de OnlyFans hecha para creadoras que quieren m&aacute;s.
-      </h1>
-      <p class="text-on-surface-variant text-base md:text-lg leading-relaxed max-w-md font-medium">
-        Crecimiento, monetizaci&oacute;n y gesti&oacute;n dise&ntilde;ados para escalar creadoras a largo plazo.
-      </p>
-      <p class="text-[10px] uppercase tracking-[0.3em] text-on-surface/40 font-medium mt-2">Para creadoras, por creadoras.</p>
+  <!-- 1. HERO -->
+  <section class="relative h-screen -mt-16 w-full overflow-hidden">
+    <div class="absolute inset-0 bg-cover bg-center bg-no-repeat" style="background-image: url('/assets/hero-home.png');"></div>
+    <div class="absolute inset-0 bg-black/45"></div>
+    <div class="absolute inset-0 flex items-center justify-center">
+      <div class="relative z-10 max-w-5xl mx-auto px-6 lg:px-8 w-full text-center flex flex-col items-center gap-10 md:gap-14">
+        <h1 class="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-white leading-[1.05] max-w-4xl">
+          Una agencia de gesti&oacute;n de OnlyFans hecha para creadoras que quieren m&aacute;s.
+        </h1>
+        <p class="text-white/85 text-lg md:text-xl leading-relaxed font-body max-w-2xl">
+          Crecimiento, monetizaci&oacute;n y gesti&oacute;n dise&ntilde;ados para escalar creadoras a largo plazo.
+        </p>
+        <p class="text-[11px] md:text-xs uppercase tracking-[0.3em] text-white/65 font-medium">Para creadoras, por creadoras.</p>
+      </div>
+    </div>
+    <div class="absolute bottom-6 md:bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/50">
+      <span class="text-[10px] font-medium tracking-[0.3em] uppercase">{t('home.hero.scroll')}</span>
+      <span class="material-symbols-outlined animate-bounce">keyboard_arrow_down</span>
     </div>
   </section>
 
