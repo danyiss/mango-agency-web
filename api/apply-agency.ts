@@ -6,24 +6,39 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
-  const { agencyName, models, revenue, handle, looking, contact } = req.body || {};
+  const { agencyName, instagram, contact, accounts, revenue, challenge } = req.body || {};
 
-  if (!agencyName || !models || !handle || !looking || !contact) {
+  if (!agencyName || !instagram || !contact || !accounts || !revenue || !challenge) {
     return res.status(400).json({ error: 'Required fields missing' });
   }
 
-  const modelsLabels: Record<string, string> = {
-    '1-3': '1–3 models',
-    '4-10': '4–10 models',
-    '10-plus': '10+ models',
+  const accountLabels: Record<string, string> = {
+    '1': '1 account',
+    '2-5': '2–5 accounts',
+    '5-10': '5–10 accounts',
+    '10-plus': '10+ accounts',
   };
-  const handleLabels: Record<string, string> = {
-    'traffic': 'Traffic',
-    'chatting': 'Chatting',
-    'both': 'Both',
+  const revenueLabels: Record<string, string> = {
+    'under-5k': 'Under $5k/month',
+    '5k-20k': '$5k–$20k/month',
+    '20k-50k': '$20k–$50k/month',
+    '50k-100k': '$50k–$100k/month',
+    '100k-plus': '$100k+/month',
   };
-  const modelsText = modelsLabels[models] || models;
-  const handleText = handleLabels[handle] || handle;
+  const challengeLabels: Record<string, string> = {
+    'low-revenue': 'Low revenue per model',
+    'no-spend': 'Fans subscribe but don’t spend',
+    'stop-spending': 'Buyers stop spending too quickly',
+    'inconsistent': 'Inconsistent chatting quality',
+    'weak-retention': 'Weak retention and renewals',
+    'no-system': 'No structured chatting system',
+    'scaling': 'Scaling monetization across multiple models',
+    'no-control': 'Lack of control over chatting performance',
+    'other': 'Other',
+  };
+  const accountsText = accountLabels[accounts] || accounts;
+  const revenueText = revenueLabels[revenue] || revenue;
+  const challengeText = challengeLabels[challenge] || challenge;
 
   if (!process.env.RESEND_API_KEY) {
     console.error('RESEND_API_KEY not configured');
@@ -42,27 +57,27 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     const { data, error } = await resend.emails.send({
       from: 'MANGO Agency <onboarding@resend.dev>',
       to: [process.env.CONTACT_TO || 'mangova.agency@gmail.com'],
-      subject: `Agency Application — ${agencyName} (${modelsText})`,
+      subject: `Agency Partnership — ${agencyName} (${accountsText}, ${revenueText})`,
       html: `
-        <div style="font-family: -apple-system, BlinkMacSystemFont, 'Inter', sans-serif; max-width: 560px; margin: 0 auto; color: #1a1c1d;">
+        <div style="font-family: -apple-system, BlinkMacSystemFont, 'Inter', sans-serif; max-width: 580px; margin: 0 auto; color: #1a1c1d;">
           <div style="border-bottom: 2px solid #000; padding-bottom: 16px; margin-bottom: 24px;">
             <h1 style="font-size: 18px; font-weight: 900; letter-spacing: -0.5px; margin: 0;">MANGO</h1>
-            <p style="font-size: 11px; text-transform: uppercase; letter-spacing: 2px; color: #777; margin: 4px 0 0;">New Agency Application</p>
+            <p style="font-size: 11px; text-transform: uppercase; letter-spacing: 2px; color: #777; margin: 4px 0 0;">New Agency Partnership Application</p>
           </div>
           <table style="width: 100%; border-collapse: collapse;">
-            ${row('Agency', agencyName)}
-            ${row('Models', modelsText)}
-            ${row('Monthly Revenue', revenue || 'Not provided')}
-            ${row('Currently handles', handleText)}
-            ${row('Looking for', (looking || '').replace(/\n/g, '<br>'))}
+            ${row('Agency / Brand', agencyName)}
+            ${row('Instagram / Page', instagram)}
             ${row('Contact', contact)}
+            ${row('Accounts to scale', accountsText)}
+            ${row('Avg revenue / account', revenueText)}
+            ${row('Biggest challenge', challengeText)}
           </table>
           <div style="margin-top: 24px; padding: 16px; background: #f9f9fb; border-radius: 8px; font-size: 12px; color: #777;">
             Received ${new Date().toISOString()}
           </div>
         </div>
       `,
-      text: `New Agency Application\nAgency: ${agencyName}\nModels: ${modelsText}\nRevenue: ${revenue || 'Not provided'}\nHandles: ${handleText}\nLooking for: ${looking}\nContact: ${contact}`,
+      text: `New Agency Partnership Application\nAgency: ${agencyName}\nInstagram: ${instagram}\nContact: ${contact}\nAccounts: ${accountsText}\nAvg revenue/account: ${revenueText}\nBiggest challenge: ${challengeText}`,
     });
 
     if (error) {
