@@ -150,13 +150,44 @@ const orgSchema = {
     <script is:inline>
       (function(){
         const nav = document.querySelector('.glass-nav');
-        if (nav && nav.dataset.transparentTop === 'true') {
-          function sync(){
-            if (window.scrollY > 20) nav.classList.add('scrolled');
-            else nav.classList.remove('scrolled');
+        if (nav) {
+          // Glass effect (only when transparentTop=true)
+          if (nav.dataset.transparentTop === 'true') {
+            function syncGlass(){
+              if (window.scrollY > 20) nav.classList.add('scrolled');
+              else nav.classList.remove('scrolled');
+            }
+            syncGlass();
+            window.addEventListener('scroll', syncGlass, { passive: true });
           }
-          sync();
-          window.addEventListener('scroll', sync, { passive: true });
+
+          // Hide on scroll down, show on scroll up (nude-project pattern)
+          let lastY = window.scrollY;
+          let ticking = false;
+          const HIDE_AFTER = 80;   // start hiding only after this scroll position
+          const DELTA = 6;          // ignore tiny scroll jitter
+          function syncHide(){
+            const y = window.scrollY;
+            const dy = y - lastY;
+            if (Math.abs(dy) < DELTA) { ticking = false; return; }
+            // Don't hide while mobile menu is open
+            const menuEl = document.getElementById('mobile-menu');
+            const menuOpen = menuEl && !menuEl.classList.contains('hidden');
+            if (menuOpen) { lastY = y; ticking = false; return; }
+            if (dy > 0 && y > HIDE_AFTER) {
+              nav.classList.add('nav-hidden');
+            } else if (dy < 0) {
+              nav.classList.remove('nav-hidden');
+            }
+            lastY = y;
+            ticking = false;
+          }
+          window.addEventListener('scroll', () => {
+            if (!ticking) {
+              window.requestAnimationFrame(syncHide);
+              ticking = true;
+            }
+          }, { passive: true });
         }
 
         const menu = document.getElementById('mobile-menu');

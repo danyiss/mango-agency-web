@@ -87,7 +87,11 @@ details summary .expand-icon {
   background: transparent;
   backdrop-filter: none;
   border-bottom: 1px solid transparent;
-  transition: background 300ms ease, backdrop-filter 300ms ease, border-color 300ms ease;
+  transition: background 300ms ease, backdrop-filter 300ms ease, border-color 300ms ease, transform 350ms ease;
+  will-change: transform;
+}
+.glass-nav.nav-hidden {
+  transform: translateY(-100%);
 }
 .glass-nav:hover,
 .glass-nav.scrolled {
