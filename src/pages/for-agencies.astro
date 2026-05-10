@@ -1,6 +1,55 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import AgencyApplyForm from '../components/AgencyApplyForm.astro';
+
+const lossCards = [
+  { title: 'Weak monetization structure', text: 'Fans subscribe, chat a little, and disappear without entering any real sales flow.' },
+  { title: 'Burned buyers', text: 'Aggressive PPV pushes kill long-term spending and reduce fan retention.' },
+  { title: 'Inconsistent chatting', text: 'Different chatters create different experiences, making the page feel unstable and disconnected.' },
+  { title: 'No monetization visibility', text: 'Most agencies see the revenue drop after it already happened — without knowing why.' },
+];
+
+const solutionBullets = [
+  { title: 'Dedicated chatters per model.', text: 'Consistent tone, pacing and relationship-building across every shift.' },
+  { title: 'Native English & Spanish monetization teams.', text: 'Built to maximize conversion, retention and fan spend across different audiences.' },
+  { title: 'Structured monetization flows.', text: 'Warm-up, emotional engagement, upsell, retention and reactivation systems.' },
+  { title: 'Advanced fan segmentation.', text: 'Different monetization strategies for whales, buyers, subscribers and dormant fans.' },
+  { title: 'Long-term spender development.', text: 'Built to increase retention, repeat purchases and overall fan LTV — not just short-term PPV spikes.' },
+  { title: 'Internal QA and conversation reviews.', text: 'Chats are constantly reviewed to maintain quality, consistency, fan experience and lifetime value across conversations.' },
+];
+
+const mapSteps = [
+  { title: 'Fan Acquisition', text: 'Fans enter through the traffic systems.' },
+  { title: 'Fan Qualification', text: 'Fans are identified based on spending potential, engagement level and behavior patterns.' },
+  { title: 'Relationship Building', text: 'Conversations designed to build engagement, emotional investment and long-term retention.' },
+  { title: 'Monetization Systems', text: 'Structured upsells, controlled PPV pacing, fan reactivation and long-term spender development.' },
+  { title: 'Revenue Optimization', text: 'Continuous analysis of chatting performance, conversion flow, spending behavior and monetization results.' },
+  { title: 'Quality Control', text: 'Conversation reviews, performance tracking and weekly monetization adjustments.' },
+];
+
+const howSteps = [
+  { num: '01', title: 'Monetization Audit', text: 'We analyze the current chatting structure, fan behavior, spending patterns and monetization leaks across the page.' },
+  { num: '02', title: 'System Integration', text: 'We implement the monetization workflows, segmentation systems, QA structure and chatting operations.' },
+  { num: '03', title: 'Revenue Execution', text: 'We handle daily conversations, upsells, retention, fan relationships and long-term spender development.' },
+  { num: '04', title: 'Analysis & Optimization', text: 'We continuously review chatting performance, conversion flow, fan spending behavior and monetization results.' },
+];
+
+const whyBullets = [
+  { title: 'Dedicated monetization teams per model.', text: 'Continuously trained through structured sales systems, QA reviews and ongoing performance analysis.' },
+  { title: 'Monetization built around retention and LTV.', text: 'Focused on increasing repeat spending, fan relationships and long-term revenue stability.' },
+  { title: 'Conversations designed to preserve immersion and emotional investment.', text: 'Because once the fan feels the page is fake or inconsistent, long-term spending drops fast.' },
+  { title: 'Operational control over the monetization process.', text: 'QA reviews, performance tracking and continuous optimization — not blind delegation.' },
+  { title: 'Structured monetization systems designed to scale.', text: 'Consistent execution, repeatable performance and reduced dependency on individual chatters.' },
+];
+
+const faqs = [
+  { q: 'Do you work directly with my models?', a: 'No. We operate as your backend system. You keep full ownership of the relationship, the brand, and the communication. We simply handle monetization behind the scenes.' },
+  { q: 'Will my models notice the difference?', a: 'No. Everything is adapted to each model’s tone, personality, and boundaries. From the outside, nothing changes. From the inside, revenue improves.' },
+  { q: 'How do you ensure quality in chatting?', a: 'We use structured systems, not guesswork: dedicated chatters per model, internal QA and monitoring, performance tracking per chatter, and continuous optimization.' },
+  { q: 'How fast can we start?', a: 'Once aligned, setup can be completed in 24 hours and we start optimizing immediately.' },
+  { q: 'How do you get paid?', a: 'Performance-based. Each setup is different depending on your models, current revenue, and structure. We only make money if your revenue increases — that’s how we stay aligned.' },
+  { q: 'Why work with you instead of building this in-house?', a: 'You can. But it requires time, hiring, training, management, and constant optimization. We give you a system that already works — without the operational complexity.' },
+];
 ---
 
 <Layout title="For Agencies | MANGO Agency" activeNav="for-agencies" lang="en" transparentTop={true}>
@@ -10,173 +59,140 @@ import AgencyApplyForm from '../components/AgencyApplyForm.astro';
     <div class="absolute inset-0 bg-cover bg-center bg-no-repeat" style="background-image: url('/assets/hero-agencies-v3.png');"></div>
     <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/20"></div>
     <div class="absolute inset-0 pointer-events-none" style="background: radial-gradient(ellipse 320px 220px at 96% 88%, rgba(0,0,0,0.55), transparent 70%);"></div>
-    <div class="absolute inset-0 flex items-center">
+    <div class="absolute inset-0 flex items-start pt-[20vh] md:items-center md:pt-0">
       <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 w-full">
-        <div class="max-w-[620px] flex flex-col gap-6">
+        <div class="max-w-[640px] flex flex-col gap-6">
           <span class="text-xs font-semibold tracking-[0.25em] uppercase text-white/60">For agencies</span>
           <h1 class="font-display text-5xl md:text-6xl lg:text-7xl text-white leading-[1.0]">
-            Chatting systems<br />built for OnlyFans agencies.
+            Built for OnlyFans agencies.
           </h1>
           <p class="text-white/85 text-lg md:text-xl leading-relaxed font-body max-w-xl">
-            We handle the chatting so you can focus on traffic &mdash; without building the team yourself.
+            We handle chatting and monetization so you can focus on traffic and growth.
           </p>
+          <div class="border-l-2 border-white/50 pl-5 text-sm md:text-base text-white/70 leading-snug">
+            <p>You keep the model, the brand, and the relationship.</p>
+            <p>We increase the revenue.</p>
+          </div>
+          <div class="mt-2">
+            <a href="#agency-apply" class="inline-block bg-accent text-black font-bold px-8 py-4 rounded-[7px] text-sm tracking-wide hover:brightness-95 hover:scale-[1.02] transition-all shadow-lg">
+              Apply now
+            </a>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 2. PROBLEM (BLACK) -->
-  <section class="py-32 md:py-40 bg-black text-white">
-    <div class="max-w-5xl mx-auto px-6 lg:px-8 flex flex-col gap-10">
-      <h2 class="text-4xl md:text-6xl font-black tracking-tight leading-[1.1]">
-        Most agencies don&rsquo;t have a growth problem <span class="text-white/60">&mdash; they have a monetization problem.</span>
-      </h2>
-      <div class="flex flex-col gap-3 text-xl md:text-2xl font-semibold text-white/80 border-l-2 border-white/30 pl-6">
-        <p>You can get models.</p>
-        <p>You can get traffic.</p>
-        <p class="text-white">But revenue per model is inconsistent.</p>
-      </div>
-      <p class="text-xl md:text-2xl font-bold text-white leading-snug mt-4">
-        Chatting is where most of the money is made <span class="text-white/60">&mdash; and where most agencies lose it.</span>
-      </p>
+  <!-- 2. PROBLEM (BLACK) — minimal editorial -->
+  <section class="py-32 md:py-44 bg-black text-white">
+    <div class="max-w-4xl mx-auto px-6 lg:px-8 flex flex-col gap-6 text-center">
+      <p class="font-display text-3xl md:text-5xl text-white leading-[1.15]">You know how to generate traffic.</p>
+      <p class="font-display text-3xl md:text-5xl text-white/65 leading-[1.15]">We know how to maximize the monetization behind it.</p>
     </div>
   </section>
 
-  <!-- 3. SOLUTION (WHITE) -->
-  <section class="py-32 bg-white">
+  <!-- 3. WHERE AGENCIES LOSE REVENUE (white) -->
+  <section class="py-32 md:py-44 bg-white">
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
-      <h2 class="text-4xl md:text-5xl font-black text-on-surface tracking-tight leading-[1.1] mb-14 max-w-3xl">
-        We become your monetization system.
-      </h2>
-      <ul class="flex flex-col gap-5 mb-14 max-w-3xl">
-        {[
-          'Dedicated chatters assigned per model — trained to match tone, personality, and boundaries.',
-          'Structured sales flows (warm-up → engagement → upsell → retention), not random chatting.',
-          'Daily tracking of revenue, conversion, and spender behavior.',
-          'Weekly performance reviews with clear adjustments and improvements.',
-          'Internal QA system to maintain consistency and avoid revenue leaks.',
-        ].map(item => (
-          <li class="flex items-start gap-4">
-            <span class="material-symbols-outlined text-primary flex-shrink-0 mt-1" style="font-size:22px;font-variation-settings:'FILL' 1;">check_circle</span>
-            <p class="text-on-surface text-lg leading-relaxed">{item}</p>
-          </li>
-        ))}
-      </ul>
-      <div class="border-t border-outline-variant/30 pt-10 max-w-3xl">
-        <p class="text-xl md:text-2xl text-on-surface font-semibold leading-snug">This is not outsourcing.</p>
-        <p class="text-xl md:text-2xl text-on-surface-variant font-semibold leading-snug mt-1">This is a structured revenue system integrated into your agency.</p>
+      <div class="mb-20 md:mb-24 max-w-3xl">
+        <h2 class="font-display text-4xl md:text-6xl text-on-surface leading-[1.05]">Where agencies lose revenue.</h2>
       </div>
-    </div>
-  </section>
-
-  <!-- 4. HOW IT WORKS (SURFACE) -->
-  <section class="py-32 bg-surface">
-    <div class="max-w-7xl mx-auto px-6 lg:px-8">
-      <h2 class="text-4xl md:text-5xl font-black text-on-surface tracking-tight leading-[1.1] mb-16 max-w-3xl">How it works.</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-        {[
-          { num: '01', title: 'Integration', text: 'We connect with your current setup and understand each model\u2019s positioning, pricing, and audience.' },
-          { num: '02', title: 'Setup', text: 'We build the chatting structure, sales flows, and assign dedicated chatters per model.' },
-          { num: '03', title: 'Execution', text: 'We handle daily conversations, upsells, retention, and fan segmentation.' },
-          { num: '04', title: 'Optimization', text: 'We analyze performance weekly and continuously improve conversion and revenue per fan.' },
-        ].map(step => (
-          <div class="bg-surface-container-lowest p-10 md:p-12 rounded-2xl border border-outline-variant/20 flex flex-col gap-5">
-            <span class="text-5xl md:text-6xl font-black text-outline-variant/40 leading-none">{step.num}</span>
-            <h3 class="text-2xl md:text-3xl font-black text-on-surface tracking-tight">{step.title}</h3>
-            <p class="text-on-surface-variant text-base leading-relaxed">{step.text}</p>
+      <div class="grid grid-cols-1 md:grid-cols-2" style="row-gap:1px;column-gap:1px;background-color:rgba(17,17,17,0.08);">
+        {lossCards.map(card => (
+          <div class="bg-white px-8 md:px-12 py-12 md:py-16 flex flex-col gap-4 transition-colors duration-300 hover:bg-on-surface/[0.015]">
+            <h3 class="font-display text-2xl md:text-3xl text-on-surface leading-tight">{card.title}</h3>
+            <p class="text-on-surface-variant text-base leading-relaxed max-w-md">{card.text}</p>
           </div>
         ))}
       </div>
     </div>
   </section>
 
-  <!-- 5. DIFFERENTIATION (BLACK) -->
-  <section class="py-32 md:py-40 bg-black text-white">
-    <div class="max-w-7xl mx-auto px-6 lg:px-8">
-      <h2 class="text-4xl md:text-6xl font-black tracking-tight leading-[1.05] mb-14 max-w-4xl">
-        Why top agencies work with us.
+  <!-- 4. SOLUTION (WHITE) — We become your monetization system -->
+  <section class="py-32 md:py-44 bg-white border-t border-on-surface/10">
+    <div class="max-w-4xl mx-auto px-6 lg:px-8">
+      <h2 class="font-display text-4xl md:text-6xl text-on-surface leading-[1.05] mb-14 max-w-3xl">
+        We become your monetization system.
       </h2>
-      <ul class="flex flex-col gap-5 mb-14 max-w-3xl">
-        {[
-          'Dedicated chatters per model — trained, monitored, and optimized as part of a structured system.',
-          'We track real performance metrics: revenue per fan, conversion rates, and spender behavior.',
-          'Every conversation follows a defined sales structure — not guesswork or random chatting.',
-          'We plug into your operation without disrupting your workflows or model relationships.',
-          'Built to scale across multiple models without losing consistency or control.',
-        ].map(item => (
-          <li class="flex items-start gap-4">
-            <span class="material-symbols-outlined text-white flex-shrink-0 mt-1" style="font-size:22px;font-variation-settings:'FILL' 1;">check_circle</span>
-            <p class="text-white/85 text-lg leading-relaxed">{item}</p>
-          </li>
-        ))}
-      </ul>
-      <div class="border-t border-white/20 pt-10 max-w-3xl">
-        <p class="text-xl md:text-2xl text-white/60 font-semibold leading-snug">Most agencies grow accounts.</p>
-        <p class="text-xl md:text-2xl text-white font-bold leading-snug mt-1">We turn them into predictable revenue systems.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- 6. POSITIONING (WHITE) -->
-  <section class="py-32 bg-white">
-    <div class="max-w-5xl mx-auto px-6 lg:px-8 flex flex-col gap-10">
-      <h2 class="text-4xl md:text-5xl font-black text-on-surface tracking-tight leading-[1.1]">Built for agencies ready to scale.</h2>
-      <p class="text-on-surface-variant text-lg md:text-xl leading-relaxed max-w-3xl">
-        We don&rsquo;t work with early-stage or low-traffic accounts. We partner with agencies that:
-      </p>
-      <ul class="flex flex-col gap-4 max-w-3xl">
-        {[
-          'Have active models generating daily traffic.',
-          'Already produce consistent monthly revenue.',
-          'Want to increase revenue per model, not just grow accounts.',
-        ].map(item => (
+      <ul class="flex flex-col gap-7">
+        {solutionBullets.map(item => (
           <li class="flex items-start gap-4">
             <span class="material-symbols-outlined text-primary flex-shrink-0 mt-1" style="font-size:22px;font-variation-settings:'FILL' 1;">check_circle</span>
-            <p class="text-on-surface text-lg leading-relaxed">{item}</p>
+            <div class="flex flex-col gap-1.5">
+              <p class="font-semibold text-on-surface text-lg leading-tight">{item.title}</p>
+              <p class="text-on-surface-variant text-base leading-relaxed">{item.text}</p>
+            </div>
           </li>
         ))}
       </ul>
-      <div class="border-t border-outline-variant/30 pt-10 max-w-3xl">
-        <p class="text-xl md:text-2xl text-on-surface font-bold leading-snug">If your models are already moving, we&rsquo;ll scale them.</p>
-        <p class="text-xl md:text-2xl text-on-surface-variant font-semibold leading-snug mt-1">If not, we&rsquo;re not the right fit.</p>
+
+      <!-- Monetization system map -->
+      <div class="mt-24 md:mt-32 pt-16 md:pt-20 border-t border-on-surface/10">
+        <p class="text-[11px] font-semibold uppercase tracking-[0.3em] text-on-surface/55 mb-12 md:mb-14 text-center">The monetization system map</p>
+        <div class="max-w-xl mx-auto">
+          {mapSteps.map((step, i) => (
+            <div>
+              <div class={`text-center py-7 md:py-9 ${i === 0 ? '' : 'border-t border-on-surface/10'}`}>
+                <p class="font-display text-2xl md:text-3xl text-on-surface leading-tight">{step.title}</p>
+                <p class="text-on-surface-variant text-sm md:text-base leading-relaxed mt-2 max-w-md mx-auto">{step.text}</p>
+              </div>
+              {i < mapSteps.length - 1 && (
+                <div class="flex justify-center py-1">
+                  <span class="material-symbols-outlined text-on-surface/35" style="font-size:22px;">arrow_downward</span>
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- 7. AGENCY APPLICATION FORM -->
+  <!-- 5. HOW IT WORKS (SURFACE) — tighter pacing -->
+  <section class="py-24 md:py-32 bg-surface">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <h2 class="font-display text-4xl md:text-5xl text-on-surface leading-[1.1] mb-12 md:mb-16 max-w-3xl">How it works.</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
+        {howSteps.map(step => (
+          <div class="bg-surface-container-lowest p-8 md:p-10 rounded-2xl border border-outline-variant/20 flex flex-col gap-4">
+            <span class="font-display text-4xl md:text-5xl text-outline-variant/55 leading-none">{step.num}</span>
+            <h3 class="font-display text-xl md:text-2xl text-on-surface leading-tight">{step.title}</h3>
+            <p class="text-on-surface-variant text-sm md:text-base leading-relaxed">{step.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. WHY TOP AGENCIES WORK WITH US (BLACK) -->
+  <section class="py-32 md:py-40 bg-black text-white">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <h2 class="font-display text-4xl md:text-6xl text-white leading-[1.05] mb-14 max-w-4xl">
+        Why top agencies work with us.
+      </h2>
+      <ul class="flex flex-col gap-7 max-w-3xl">
+        {whyBullets.map(item => (
+          <li class="flex items-start gap-4">
+            <span class="material-symbols-outlined text-white flex-shrink-0 mt-1" style="font-size:22px;font-variation-settings:'FILL' 1;">check_circle</span>
+            <div class="flex flex-col gap-1.5">
+              <p class="font-semibold text-white text-lg leading-tight">{item.title}</p>
+              <p class="text-white/70 text-base leading-relaxed">{item.text}</p>
+            </div>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <!-- 7. AGENCY APPLICATION FORM (incl. final CTA copy from component) -->
   <AgencyApplyForm lang="en" />
 
   <!-- 8. FAQ (SURFACE) -->
   <section class="py-32 bg-surface">
     <div class="max-w-4xl mx-auto px-6 lg:px-8">
-      <h2 class="text-4xl md:text-5xl font-black text-on-surface tracking-tight leading-[1.1] mb-14">Frequently asked questions.</h2>
+      <h2 class="font-display text-4xl md:text-5xl text-on-surface leading-[1.1] mb-14">Frequently asked questions.</h2>
       <div class="flex flex-col gap-3">
-        {[
-          {
-            q: 'Do you work directly with my models?',
-            a: 'No. We operate as your backend system. You keep full ownership of the relationship, the brand, and the communication. We simply handle monetization behind the scenes.',
-          },
-          {
-            q: 'Will my models notice the difference?',
-            a: 'No. Everything is adapted to each model\u2019s tone, personality, and boundaries. From the outside, nothing changes. From the inside, revenue improves.',
-          },
-          {
-            q: 'How do you ensure quality in chatting?',
-            a: 'We use structured systems, not guesswork: dedicated chatters per model, internal QA and monitoring, performance tracking per chatter, and continuous optimization.',
-          },
-          {
-            q: 'How fast can we start?',
-            a: 'Once aligned, setup can be completed in 24 hours and we start optimizing immediately.',
-          },
-          {
-            q: 'How do you get paid?',
-            a: 'Performance-based. Each setup is different depending on your models, current revenue, and structure. We only make money if your revenue increases \u2014 that\u2019s how we stay aligned.',
-          },
-          {
-            q: 'Why work with you instead of building this in-house?',
-            a: 'You can. But it requires time, hiring, training, management, and constant optimization. We give you a system that already works \u2014 without the operational complexity.',
-          },
-        ].map(faq => (
+        {faqs.map(faq => (
           <details class="bg-surface-container-lowest rounded-2xl group border border-outline-variant/20">
             <summary class="p-8 flex items-center justify-between cursor-pointer list-none select-none">
               <span class="font-semibold text-on-surface text-base md:text-lg pr-6">{faq.q}</span>
