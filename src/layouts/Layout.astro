@@ -151,33 +151,39 @@ const orgSchema = {
       (function(){
         const nav = document.querySelector('.glass-nav');
         if (nav) {
-          // Glass effect (only when transparentTop=true)
-          if (nav.dataset.transparentTop === 'true') {
+          const isTransparent = nav.dataset.transparentTop === 'true';
+
+          // Glass effect (only when transparentTop=true) — and only while nav is visible
+          if (isTransparent) {
             function syncGlass(){
-              if (window.scrollY > 20) nav.classList.add('scrolled');
-              else nav.classList.remove('scrolled');
+              const visible = !nav.classList.contains('nav-hidden');
+              if (window.scrollY > 20 && visible) nav.classList.add('scrolled');
+              else if (window.scrollY <= 20) nav.classList.remove('scrolled');
             }
             syncGlass();
             window.addEventListener('scroll', syncGlass, { passive: true });
           }
 
-          // Hide on scroll down, show on scroll up (nude-project pattern)
+          // Hide on scroll down, show on scroll up
           let lastY = window.scrollY;
           let ticking = false;
-          const HIDE_AFTER = 80;   // start hiding only after this scroll position
-          const DELTA = 6;          // ignore tiny scroll jitter
+          const HIDE_AFTER = 20;   // hide as soon as user leaves the very top
+          const DELTA = 6;         // ignore tiny scroll jitter
           function syncHide(){
             const y = window.scrollY;
             const dy = y - lastY;
             if (Math.abs(dy) < DELTA) { ticking = false; return; }
-            // Don't hide while mobile menu is open
             const menuEl = document.getElementById('mobile-menu');
             const menuOpen = menuEl && !menuEl.classList.contains('hidden');
             if (menuOpen) { lastY = y; ticking = false; return; }
             if (dy > 0 && y > HIDE_AFTER) {
               nav.classList.add('nav-hidden');
+              // On transparent-top pages also drop .scrolled so we don't
+              // flash the frosted background while the bar slides off.
+              if (isTransparent) nav.classList.remove('scrolled');
             } else if (dy < 0) {
               nav.classList.remove('nav-hidden');
+              if (isTransparent && y > 20) nav.classList.add('scrolled');
             }
             lastY = y;
             ticking = false;
