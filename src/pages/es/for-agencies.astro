@@ -91,15 +91,15 @@ const faqs = [
     </div>
   </section>
 
-  <!-- 3. WHERE AGENCIES LOSE REVENUE (white) -->
-  <section class="py-32 md:py-44 bg-white">
+  <!-- 3. WHERE AGENCIES LOSE REVENUE (charcoal) -->
+  <section class="py-32 md:py-44 section-dark">
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
       <div class="mb-20 md:mb-24 max-w-3xl">
         <h2 class="font-display text-4xl md:text-6xl text-on-surface leading-[1.05]">D&oacute;nde las agencias pierden ingresos.</h2>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-2" style="row-gap:1px;column-gap:1px;background-color:rgba(17,17,17,0.08);">
+      <div class="grid grid-cols-1 md:grid-cols-2" style="row-gap:1px;column-gap:1px;background-color:rgba(255,255,255,0.14);">
         {lossCards.map(card => (
-          <div class="bg-white px-8 md:px-12 py-12 md:py-16 flex flex-col gap-4 transition-colors duration-300 hover:bg-on-surface/[0.015]">
+          <div class="px-8 md:px-12 py-12 md:py-16 flex flex-col gap-4 transition-colors duration-300 hover:bg-white/[0.04]" style="background-color:#161616;">
             <h3 class="font-display text-2xl md:text-3xl text-on-surface leading-tight">{card.title}</h3>
             <p class="text-on-surface-variant text-base leading-relaxed max-w-md">{card.text}</p>
           </div>
@@ -148,8 +148,8 @@ const faqs = [
     </div>
   </section>
 
-  <!-- 5. HOW IT WORKS (SURFACE) — tighter pacing -->
-  <section class="py-24 md:py-32 bg-surface">
+  <!-- 5. HOW IT WORKS (charcoal) — tighter pacing -->
+  <section class="py-24 md:py-32 section-dark">
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
       <h2 class="font-display text-4xl md:text-5xl text-on-surface leading-[1.1] mb-12 md:mb-16 max-w-3xl">C&oacute;mo funciona.</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">

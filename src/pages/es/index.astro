@@ -110,8 +110,8 @@ const serviceSchema = {
     </div>
   </section>
 
-  <!-- 5. DIFFERENTIATION (white, editorial rows) -->
-  <section class="py-32 md:py-44 bg-white">
+  <!-- 5. DIFFERENTIATION (charcoal, editorial rows) -->
+  <section class="py-32 md:py-44 section-dark">
     <div class="max-w-3xl mx-auto px-6 lg:px-8">
       <div class="mb-16 md:mb-24 text-center">
         <h2 class="font-display text-4xl md:text-6xl text-on-surface leading-[1.05]">Por qu&eacute; las creadoras eligen Mango</h2>
@@ -123,7 +123,7 @@ const serviceSchema = {
           { title: 'Crecimiento enfocado en fans reales', sub: 'Construido para atraer fans leales y crecimiento a largo plazo, no métricas de vanidad.' },
           { title: 'Estrategia personalizada', sub: 'Todo se adapta a tu personalidad, tu contenido y tus objetivos.' },
         ].map((row, idx) => (
-          <div class={`py-10 md:py-14 ${idx === 0 ? 'border-y' : 'border-b'}`} style="border-color:rgba(17,17,17,0.12);">
+          <div class={`py-10 md:py-14 ${idx === 0 ? 'border-y' : 'border-b'}`} style="border-color:rgba(255,255,255,0.14);">
             <h3 class="font-display text-2xl md:text-4xl text-on-surface mb-3 md:mb-4 leading-tight">{row.title}</h3>
             <p class="text-on-surface-variant text-base md:text-lg leading-relaxed max-w-2xl">{row.sub}</p>
           </div>

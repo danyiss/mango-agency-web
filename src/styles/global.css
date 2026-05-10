@@ -147,3 +147,35 @@ h1, h2, h3, h4 {
 p {
   text-wrap: pretty;
 }
+
+/* ---------------------------------------------------------- */
+/* Black-dominant section helper (warm charcoal)              */
+/* Applies dark bg and auto-inverts text/borders/sub-bgs.     */
+/* ---------------------------------------------------------- */
+.section-dark {
+  background-color: #161616;
+  color: #ffffff;
+}
+.section-dark .text-on-surface { color: #ffffff; }
+.section-dark .text-on-surface-variant { color: rgba(255,255,255,0.72); }
+.section-dark .text-on-surface\/40 { color: rgba(255,255,255,0.4); }
+.section-dark .text-on-surface\/45 { color: rgba(255,255,255,0.45); }
+.section-dark .text-on-surface\/50 { color: rgba(255,255,255,0.5); }
+.section-dark .text-on-surface\/55 { color: rgba(255,255,255,0.55); }
+.section-dark .text-on-surface\/60 { color: rgba(255,255,255,0.6); }
+.section-dark .text-on-surface\/65 { color: rgba(255,255,255,0.65); }
+.section-dark .text-outline { color: rgba(255,255,255,0.5); }
+.section-dark .text-outline-variant\/40 { color: rgba(255,255,255,0.3); }
+.section-dark .text-outline-variant\/50 { color: rgba(255,255,255,0.38); }
+.section-dark .text-outline-variant\/55 { color: rgba(255,255,255,0.42); }
+.section-dark .border-on-surface\/10 { border-color: rgba(255,255,255,0.1); }
+.section-dark .border-on-surface\/12 { border-color: rgba(255,255,255,0.12); }
+.section-dark .border-on-surface\/15 { border-color: rgba(255,255,255,0.15); }
+.section-dark .border-outline-variant\/20 { border-color: rgba(255,255,255,0.12); }
+.section-dark .border-outline-variant\/30 { border-color: rgba(255,255,255,0.18); }
+.section-dark .border-outline-variant\/40 { border-color: rgba(255,255,255,0.2); }
+.section-dark .divide-outline-variant\/40 > * + * { border-color: rgba(255,255,255,0.15); }
+.section-dark .bg-surface-container { background-color: rgba(255,255,255,0.04); }
+.section-dark .bg-surface-container-low { background-color: rgba(255,255,255,0.05); }
+.section-dark .bg-surface-container-lowest { background-color: rgba(255,255,255,0.04); }
+.section-dark .bg-white { background-color: #161616; }
