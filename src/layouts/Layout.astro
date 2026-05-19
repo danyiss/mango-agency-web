@@ -34,11 +34,11 @@ function localPath(path: string) {
 const orgSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  "name": "MANGO Agency",
-  "alternateName": "Mangova Agency",
+  "name": "MANGO",
+  "alternateName": ["Mangova Agency", "MANGO Agency"],
   "url": siteUrl,
-  "logo": `${siteUrl}/favicon.svg`,
-  "description": "System-driven talent management agency for content creators. Strategy, chatting, marketing, and operations infrastructure.",
+  "logo": `${siteUrl}/logo.png`,
+  "description": "OnlyFans management agency. Growth, monetization, chatting and creator branding for OnlyFans creators and agencies.",
   "contactPoint": {
     "@type": "ContactPoint",
     "email": "hello@mangova.agency",
@@ -47,6 +47,16 @@ const orgSchema = {
   "sameAs": [
     "https://instagram.com/mango.creators"
   ]
+};
+
+// WebSite schema — helps Google show "MANGO" as the site name in SERP
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "MANGO",
+  "alternateName": "Mangova Agency",
+  "url": siteUrl,
+  "publisher": { "@type": "Organization", "name": "MANGO" }
 };
 ---
 
@@ -91,8 +101,9 @@ const orgSchema = {
 
     <title>{title}</title>
 
-    <!-- Organization Schema -->
+    <!-- Organization + WebSite Schema -->
     <script type="application/ld+json" set:html={JSON.stringify(orgSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
 
     <!-- Extra head slot for page-specific schema -->
     <slot name="head" />
