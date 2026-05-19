@@ -59,29 +59,19 @@ const serviceSchema = {
     </div>
   </section>
 
-  <!-- 1b. AUTHORITY STRIP (editorial) -->
-  <section class="py-14 md:py-20 bg-white border-b border-on-surface/10">
-    <div class="max-w-7xl mx-auto px-6 lg:px-8">
-      <div class="grid grid-cols-1 md:grid-cols-4 divide-y md:divide-y-0 md:divide-x divide-on-surface/10">
+  <!-- 1b. AUTHORITY STRIP (editorial, quiet confidence) -->
+  <section class="py-24 md:py-36 bg-white">
+    <div class="max-w-6xl mx-auto px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row md:items-baseline md:justify-between gap-y-8 md:gap-x-10 lg:gap-x-14 text-center md:text-left">
         {[
           'Enfocados en el crecimiento a largo plazo.',
           'Millones de visitas generadas.',
           'Detrás de creadoras de alto rendimiento.',
           'Basado en sistemas, no en suposiciones.',
         ].map(line => (
-          <div class="px-4 md:px-6 py-6 md:py-3 flex items-center justify-center text-center">
-            <p class="text-sm md:text-[15px] font-medium text-on-surface/85 leading-relaxed tracking-tight">{line}</p>
-          </div>
+          <p class="text-base md:text-[17px] lg:text-lg text-on-surface/85 font-medium leading-relaxed tracking-tight">{line}</p>
         ))}
       </div>
-    </div>
-  </section>
-
-  <!-- 2. TRANSITION (white, centered) -->
-  <section class="py-32 md:py-44 bg-white">
-    <div class="max-w-3xl mx-auto px-6 lg:px-8 text-center flex flex-col gap-7">
-      <h2 class="font-display text-4xl md:text-6xl text-on-surface leading-[1.1]">Una agencia moderna de OnlyFans para creadoras que siempre quieren m&aacute;s.</h2>
-      <p class="text-on-surface-variant text-lg md:text-xl leading-relaxed max-w-2xl mx-auto">Gesti&oacute;n integral que cubre chatting, crecimiento en redes sociales y creator branding.</p>
     </div>
   </section>
 
