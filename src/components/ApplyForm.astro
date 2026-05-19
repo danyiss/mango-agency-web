@@ -7,8 +7,7 @@ const { lang = 'en' } = Astro.props;
 
 const t = {
   en: {
-    headline: 'Ready for your next level?',
-    sub1: 'Apply to work with Mango.',
+    headline: 'Apply to work with Mango.',
     sub2: 'If there’s a strong fit, our team will contact you personally to see if we’re the right fit for each other.',
     name: 'Name / Stage Name',
     namePlaceholder: 'Your name',
@@ -37,8 +36,7 @@ const t = {
     error: 'Something went wrong. Try again or reach us at hello@mangova.agency',
   },
   es: {
-    headline: '¿Lista para tu siguiente nivel?',
-    sub1: 'Aplica para trabajar con Mango.',
+    headline: 'Aplica para trabajar con Mango.',
     sub2: 'Si vemos un encaje claro, nuestro equipo te contactará personalmente para ver si somos el match adecuado para ambas.',
     name: 'Nombre / Nombre artístico',
     namePlaceholder: 'Tu nombre',
@@ -75,10 +73,7 @@ const t = {
     <!-- Editorial header (no eyebrow) -->
     <div class="flex flex-col items-center gap-6 text-center max-w-xl">
       <h2 class="font-display text-5xl md:text-7xl text-on-surface leading-[1.05]">{t.headline}</h2>
-      <div class="flex flex-col gap-3 text-on-surface-variant text-base md:text-lg leading-relaxed">
-        <p>{t.sub1}</p>
-        <p>{t.sub2}</p>
-      </div>
+      <p class="text-on-surface-variant text-base md:text-lg leading-relaxed">{t.sub2}</p>
     </div>
 
     <!-- Hairline divider in champagne gold -->
