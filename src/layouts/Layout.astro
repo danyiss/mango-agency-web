@@ -239,22 +239,20 @@ const websiteSchema = {
       <slot />
     </main>
 
-    <!-- Footer (tall, premium, Playboy-style breathing room) -->
-    <footer class="pt-48 md:pt-64 pb-32 md:pb-44" style="background-color:#111111;">
-      <div class="px-6 lg:px-8 max-w-5xl mx-auto flex flex-col items-center gap-20 md:gap-32 text-center">
+    <!-- Footer (premium, logo-as-headline) -->
+    <footer class="pt-48 md:pt-64 pb-8 md:pb-10" style="background-color:#111111;">
+      <!-- Center: logo (headline) + statement (subheadline) -->
+      <div class="px-4 sm:px-6 md:px-8 lg:px-10 flex flex-col items-center gap-6 md:gap-8 text-center mb-32 md:mb-44">
         <a href={localPath('/')} class="flex items-center" aria-label="MANGO Talent Management">
           <img src="/logo.png" alt="MANGO Talent Management" class="h-12 md:h-14 w-auto" style="filter:invert(1) brightness(2);" />
         </a>
+        <p class="font-display text-white/60 text-base md:text-lg italic tracking-wide">For creators, by creators.</p>
+      </div>
 
-        <div class="flex flex-wrap items-center justify-center gap-x-9 gap-y-3 md:gap-x-12 text-[12px] uppercase tracking-[0.22em] text-white/75 font-medium">
-          <a class="hover:text-white transition-colors duration-300" href={localPath('/results')}>{t('nav.results')}</a>
-          <a class="hover:text-white transition-colors duration-300" href={localPath('/for-agencies')}>{t('nav.forAgencies')}</a>
-          <a class="hover:text-white transition-colors duration-300" href={localPath('/legal')}>{t('footer.privacy')}</a>
-        </div>
-
-        <p class="font-display text-white/55 text-sm md:text-base italic tracking-wide">For creators, by creators.</p>
-
-        <p class="text-[10px] text-white/30 tracking-[0.3em] uppercase">&copy; {currentYear} {t('footer.copyright')}</p>
+      <!-- Bottom row: copyright bottom-left, privacy bottom-right, aligned with page margins -->
+      <div class="px-4 sm:px-6 md:px-8 lg:px-10 flex flex-col gap-3 text-center md:flex-row md:items-center md:justify-between md:text-left">
+        <p class="text-[10px] text-white/35 tracking-[0.25em] uppercase">&copy; {currentYear} MANGO. ALL RIGHTS RESERVED.</p>
+        <a href={localPath('/legal')} class="text-[10px] text-white/35 tracking-[0.25em] uppercase hover:text-white transition-colors duration-300">{t('footer.privacy')}</a>
       </div>
     </footer>
   </body>
