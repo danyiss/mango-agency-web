@@ -85,6 +85,31 @@ const serviceSchema = {
     </div>
   </section>
 
+  <!-- 2b. PAIN / PROBLEM (beige editorial) -->
+  <section class="py-32 md:py-44" style="background-color:#D8C8B8;">
+    <div class="max-w-4xl mx-auto px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-20 md:mb-24 flex flex-col gap-5">
+        <h2 class="font-display text-4xl md:text-6xl text-on-surface leading-[1.05]">OnlyFans growth is now a systems game.</h2>
+        <p class="text-on-surface/70 text-lg md:text-xl leading-relaxed max-w-2xl mx-auto">The creators scaling fastest today are backed by professional teams.</p>
+      </div>
+
+      <div class="flex flex-col">
+        {[
+          { title: 'Bad chatting kills page growth.', text: 'Aggressive selling, weak conversations and poor execution slowly damage retention, fan trust and long-term spending. Strong monetization requires structure, training and consistency behind every interaction.' },
+          { title: 'Having followers doesn’t always mean making real money.', text: 'Many creators already have views and followers — the real difference comes from monetization behind the page. Long-term growth depends on retention, fan spending and strong execution inside the DMs.' },
+          { title: 'Many creators feel like just another account inside their agency.', text: 'Generic strategies, shared teams and poor communication eventually limit long-term growth. Serious scaling requires personalized strategy and dedicated support behind the page.' },
+          { title: 'Without real systems and quality control, growth becomes inconsistent.', text: 'Strong months become unpredictable, revenue fluctuates and scaling becomes difficult to sustain long-term. Consistency comes from structure, execution and operational support.' },
+          { title: 'Most creators can’t scale alone forever.', text: 'At some point, content, messaging, posting and monetization become too much for one person to manage properly. Real growth requires the right team behind the page.' },
+        ].map((row, idx) => (
+          <div class={`py-9 md:py-12 ${idx === 0 ? 'border-y' : 'border-b'}`} style="border-color:rgba(17,17,17,0.18);">
+            <h3 class="font-display text-2xl md:text-3xl text-on-surface mb-3 md:mb-4 leading-tight">{row.title}</h3>
+            <p class="text-on-surface/75 text-base md:text-lg leading-relaxed max-w-3xl">{row.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
   <!-- 3. SERVICES (editorial green) -->
   <section class="py-28 md:py-40" style="background-color:#707B66;">
     <div class="max-w-7xl mx-auto px-6 lg:px-8">

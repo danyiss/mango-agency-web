@@ -85,6 +85,31 @@ const serviceSchema = {
     </div>
   </section>
 
+  <!-- 2b. PAIN / PROBLEM (beige editorial) -->
+  <section class="py-32 md:py-44" style="background-color:#D8C8B8;">
+    <div class="max-w-4xl mx-auto px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-20 md:mb-24 flex flex-col gap-5">
+        <h2 class="font-display text-4xl md:text-6xl text-on-surface leading-[1.05]">El crecimiento en OnlyFans ahora es un juego de sistemas.</h2>
+        <p class="text-on-surface/70 text-lg md:text-xl leading-relaxed max-w-2xl mx-auto">Las creadoras que escalan más rápido hoy tienen equipos profesionales detrás.</p>
+      </div>
+
+      <div class="flex flex-col">
+        {[
+          { title: 'El mal chatting mata el crecimiento de la página.', text: 'Ventas agresivas, conversaciones débiles y mala ejecución dañan poco a poco la retención, la confianza del fan y el gasto a largo plazo. Una monetización fuerte requiere estructura, formación y consistencia detrás de cada interacción.' },
+          { title: 'Tener seguidores no siempre significa ganar dinero de verdad.', text: 'Muchas creadoras ya tienen visitas y seguidores — la diferencia real viene de la monetización detrás de la página. El crecimiento a largo plazo depende de la retención, el gasto del fan y la ejecución fuerte dentro de los DMs.' },
+          { title: 'Muchas creadoras se sienten como una más dentro de su agencia.', text: 'Estrategias genéricas, equipos compartidos y mala comunicación acaban limitando el crecimiento a largo plazo. Un escalado serio requiere estrategia personalizada y soporte dedicado detrás de la página.' },
+          { title: 'Sin sistemas reales ni control de calidad, el crecimiento se vuelve inconsistente.', text: 'Los meses fuertes se vuelven impredecibles, los ingresos fluctúan y escalar se hace difícil de sostener a largo plazo. La consistencia viene de la estructura, la ejecución y el soporte operativo.' },
+          { title: 'La mayoría de creadoras no pueden escalar solas para siempre.', text: 'En algún punto, el contenido, los mensajes, la publicación y la monetización son demasiado para que una sola persona los gestione bien. El crecimiento real requiere el equipo adecuado detrás de la página.' },
+        ].map((row, idx) => (
+          <div class={`py-9 md:py-12 ${idx === 0 ? 'border-y' : 'border-b'}`} style="border-color:rgba(17,17,17,0.18);">
+            <h3 class="font-display text-2xl md:text-3xl text-on-surface mb-3 md:mb-4 leading-tight">{row.title}</h3>
+            <p class="text-on-surface/75 text-base md:text-lg leading-relaxed max-w-3xl">{row.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
   <!-- 3. SERVICES (editorial green) -->
   <section class="py-28 md:py-40" style="background-color:#707B66;">
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
