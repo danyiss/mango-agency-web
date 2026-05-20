@@ -3,107 +3,137 @@ import Layout from '../../layouts/Layout.astro';
 
 const cases = [
   {
-    label: 'Caso 01',
+    label: 'Caso 01 — Creador masculino',
     headline: 'El tráfico alto por sí solo no se traducía en ingresos.',
     paragraphs: [
-      'Esta creadora ya generaba atención y seguidores de forma constante, pero la monetización detrás de la página era débil.',
-      'Tras implementar chatting estructurado, sistemas de retención y flujos de monetización más fuertes, los ingresos escalaron a meses de 5 cifras consistentes.',
+      'Este creador masculino ya generaba visibilidad fuerte y tráfico constante, pero la monetización por suscriptor seguía por debajo de su potencial.',
+      'Tras reestructurar los flujos de chatting, los sistemas de retención y estrategias de monetización de mayor valor, el gasto por fan y el LTV total aumentaron significativamente — llevando a meses consistentes de 5 cifras pese a una base de suscriptores más pequeña.',
     ],
     image: '/assets/results/main-feature-block.jpeg',
-    imageAlt: 'Screenshot de ingresos mensuales superiores a $24k',
-    reverse: false,
+    imageAlt: 'Screenshot de ingresos mensuales superiores a $24k — creador masculino',
+    layout: 'text-left',
+    theme: 'cream',
   },
   {
-    label: 'Caso 02',
+    label: 'Caso 02 — Creadora lifestyle',
     headline: 'Los ingresos se volvieron más estables una vez que el backend se estructuró bien.',
     paragraphs: [
-      'La página ya tenía fans activos, pero a la monetización le faltaba consistencia y retención a largo plazo.',
-      'Mejorando la estructura del chatting, el gasto de los fans y los sistemas de monetización, los ingresos se volvieron significativamente más predecibles con el tiempo.',
+      'Esta creadora ya tenía fans activos y tráfico regular, pero los ingresos eran inconsistentes mes a mes por una retención y unos sistemas de monetización débiles detrás de la página.',
+      'Tras mejorar la estructura del chatting, los sistemas de retención y la experiencia general del fan, la longevidad de los suscriptores y el LTV aumentaron significativamente — haciendo los ingresos mucho más estables y predecibles con el tiempo.',
     ],
     image: '/assets/results/results-grid1.jpeg',
-    imageAlt: 'Screenshot de ingresos mensuales estabilizados',
-    supporting: '/assets/results/results-grid2.jpeg',
-    supportingAlt: 'Analítica de ingresos como soporte',
-    reverse: true,
+    imageAlt: 'Ingresos mensuales estabilizados — creadora lifestyle',
+    layout: 'image-left',
+    theme: 'dark',
   },
   {
-    label: 'Caso 03',
+    label: 'Caso 03 — Creadora con tatuajes',
+    headline: 'La mayor parte del potencial de ingresos se estaba dejando sobre la mesa.',
+    paragraphs: [
+      'La página ya tenía suscriptores activos y tráfico fuerte, pero la monetización detrás de la cuenta carecía de estructura y consistencia.',
+      'Mejorando la ejecución de upsells, los sistemas de chatting y los flujos de retención, el gasto total del fan y el LTV del cliente aumentaron sustancialmente — generando un rendimiento mensual más fuerte sin depender únicamente de tráfico nuevo.',
+    ],
+    image: '/assets/results/results-grid2.jpeg',
+    imageAlt: 'Subida de ingresos — creadora con tatuajes',
+    layout: 'text-left',
+    theme: 'cream',
+  },
+  {
+    label: 'Caso 04 — Creadora fitness',
     headline: 'Una mejor monetización creó ingresos diarios más fuertes detrás del mismo tráfico.',
     paragraphs: [
-      'Al reestructurar el chatting, la retención y los sistemas de monetización detrás de la página, el gasto total de los fans aumentó significativamente — generando un rendimiento más rentable y consistente.',
+      'En lugar de depender solo del volumen de suscriptores, el foco pasó a la retención de fans, la estructura de monetización y un comportamiento de gasto de mayor valor.',
+      'Esto creó un rendimiento diario de ingresos significativamente más fuerte, un LTV mayor y una monetización más rentable detrás de la misma audiencia.',
     ],
-    image: '/assets/results/daily-performance-block1.jpeg',
-    imageAlt: 'Screenshot de ingresos diarios superiores a $2k',
-    supporting: '/assets/results/daily-performance-block2.jpeg',
-    supportingAlt: 'Prueba adicional de rendimiento diario superior a $2k',
-    reverse: false,
+    image: '/assets/results/results-grid3-v2.jpeg',
+    imageAlt: 'Subida de ingresos diarios — creadora fitness',
+    layout: 'image-left',
+    theme: 'dark',
   },
 ];
+
+const finalCase = {
+  label: 'Caso 05 — Creadora lifestyle',
+  headline: 'Incluso un solo día puede verse completamente diferente con los sistemas backend correctos.',
+  paragraphs: [
+    'La diferencia no estaba en el volumen de tráfico — estaba en la ejecución de la monetización detrás de la página.',
+    'A través de sistemas de chatting más fuertes, estructura de retención y flujos de conversión de fans, el gasto total por fan y el LTV aumentaron significativamente, llevando a picos de ingresos diarios más fuertes y un rendimiento a largo plazo más rentable.',
+  ],
+  image: '/assets/results/daily-performance-block1.jpeg',
+  imageAlt: 'Prueba de un solo día con ingresos superiores a $2k',
+};
 ---
 
 <Layout title="Casos y Resultados OnlyFans | MANGO Agency" description="Resultados reales de ingresos de creadoras de OnlyFans gestionadas por MANGO — casos, ingresos mensuales y métricas de crecimiento basados en sistemas estructurados de monetización." activeNav="results" lang="es" transparentTop={true}>
 
-  <!-- 1. HERO (minimal black editorial) -->
-  <section class="relative h-screen -mt-16 w-full overflow-hidden flex items-center justify-center" style="background-color:#111111;">
-    <div class="relative z-10 max-w-4xl mx-auto px-6 lg:px-8 w-full text-center flex flex-col items-center gap-7 md:gap-10">
-      <h1 class="font-display text-5xl md:text-7xl lg:text-8xl text-white leading-[1.0]">Una agencia OnlyFans basada en sistemas.</h1>
-      <p class="text-white/70 text-lg md:text-xl leading-relaxed max-w-2xl mx-auto">Ingresos predecibles construidos con sistemas estructurados de monetizaci&oacute;n &mdash; sin improvisaciones.</p>
+  <!-- 1. HERO (minimal black, oversized) -->
+  <section class="relative h-screen -mt-16 w-full overflow-hidden flex items-center" style="background-color:#111111;">
+    <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-10 w-full">
+      <div class="flex flex-col items-start gap-9 md:gap-12 max-w-[22ch]">
+        <h1 class="font-display text-[40px] sm:text-6xl md:text-7xl lg:text-8xl xl:text-[120px] text-white leading-[0.92] tracking-[-0.025em] text-left">Una agencia OnlyFans basada en sistemas.</h1>
+        <p class="text-white/65 text-[15px] md:text-base lg:text-lg leading-relaxed max-w-md">Ingresos predecibles construidos con sistemas estructurados de monetizaci&oacute;n &mdash; sin improvisaciones.</p>
+      </div>
     </div>
   </section>
 
-  <!-- 2-4. CASE STUDIES (editorial vertical, staggered text/screenshot) -->
-  {cases.map((c, i) => (
-    <section class="py-24 md:py-36 bg-white">
-      <div class="max-w-6xl mx-auto px-6 lg:px-8">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
-          <!-- Text block -->
-          <div class={`flex flex-col gap-6 lg:col-span-5 ${c.reverse ? 'lg:order-2' : 'lg:order-1'}`}>
-            <span class="text-[11px] uppercase tracking-[0.3em] text-on-surface/45 font-medium">{c.label}</span>
-            <h2 class="font-display text-3xl md:text-4xl lg:text-5xl text-on-surface leading-[1.1]">{c.headline}</h2>
-            <div class="flex flex-col gap-4 text-on-surface/75 text-base md:text-lg leading-relaxed max-w-lg">
-              {c.paragraphs.map(p => <p>{p}</p>)}
+  <!-- 2-5. CASE STUDIES (alternating cream / dark, alternating layout) -->
+  {cases.map((c) => {
+    const isDark = c.theme === 'dark';
+    const isImageLeft = c.layout === 'image-left';
+    const bg = isDark ? '#111111' : '#f5f2ee';
+    const textColor = isDark ? 'text-white' : 'text-on-surface';
+    const labelColor = isDark ? 'text-white/45' : 'text-on-surface/45';
+    const bodyColor = isDark ? 'text-white/70' : 'text-on-surface/70';
+    const imgBorder = isDark ? '1px solid rgba(255,255,255,0.08)' : '1px solid rgba(17,17,17,0.08)';
+    const imgShadow = isDark
+      ? '0 30px 70px -25px rgba(0,0,0,0.6)'
+      : '0 30px 70px -25px rgba(17,17,17,0.2)';
+    return (
+      <section class="py-32 md:py-52" style={`background-color:${bg};`}>
+        <div class="max-w-7xl mx-auto px-6 lg:px-10">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-14 lg:gap-24 items-center">
+            <div class={`flex flex-col gap-7 md:gap-9 lg:col-span-5 ${isImageLeft ? 'lg:order-2' : 'lg:order-1'}`}>
+              <span class={`text-xs md:text-[13px] uppercase tracking-[0.28em] italic ${labelColor}`} style="font-family:Georgia,'Times New Roman',serif;">{c.label}</span>
+              <h2 class={`font-display text-3xl md:text-5xl lg:text-6xl ${textColor} leading-[0.98] tracking-[-0.02em]`}>{c.headline}</h2>
+              <div class={`flex flex-col gap-5 ${bodyColor} text-base md:text-lg leading-relaxed max-w-lg`}>
+                {c.paragraphs.map(p => <p>{p}</p>)}
+              </div>
+            </div>
+            <div class={`lg:col-span-7 ${isImageLeft ? 'lg:order-1' : 'lg:order-2'}`}>
+              <img
+                src={c.image}
+                alt={c.imageAlt}
+                class="w-full h-auto block rounded-sm"
+                style={`box-shadow:${imgShadow}; border:${imgBorder};`}
+                loading="lazy"
+              />
             </div>
           </div>
-
-          <!-- Screenshot block -->
-          <div class={`lg:col-span-7 ${c.reverse ? 'lg:order-1' : 'lg:order-2'}`}>
-            <img
-              src={c.image}
-              alt={c.imageAlt}
-              class="w-full h-auto block"
-              style="box-shadow: 0 20px 50px -20px rgba(17,17,17,0.15);"
-              loading="lazy"
-            />
-          </div>
         </div>
+      </section>
+    );
+  })}
 
-        {c.supporting && i === 2 && (
-          <!-- Soporte bajo el Caso 3 -->
-          <div class="mt-20 md:mt-28 max-w-3xl mx-auto">
-            <img
-              src={c.supporting}
-              alt={c.supportingAlt}
-              class="w-full h-auto block"
-              style="box-shadow: 0 16px 40px -16px rgba(17,17,17,0.12);"
-              loading="lazy"
-            />
-          </div>
-        )}
-
-        {c.supporting && i === 1 && (
-          <!-- Soporte analítico del Caso 2 -->
-          <div class="mt-16 md:mt-20 max-w-3xl ml-auto">
-            <img
-              src={c.supporting}
-              alt={c.supportingAlt}
-              class="w-full h-auto block"
-              style="box-shadow: 0 16px 40px -16px rgba(17,17,17,0.12);"
-              loading="lazy"
-            />
-          </div>
-        )}
+  <!-- 6. CASE 05 (centered editorial proof, cream) -->
+  <section class="py-32 md:py-52" style="background-color:#f5f2ee;">
+    <div class="max-w-3xl mx-auto px-6 lg:px-8 flex flex-col items-center text-center gap-10 md:gap-14">
+      <div class="flex flex-col gap-7 md:gap-9 items-center">
+        <span class="text-xs md:text-[13px] uppercase tracking-[0.28em] italic text-on-surface/45" style="font-family:Georgia,'Times New Roman',serif;">{finalCase.label}</span>
+        <h2 class="font-display text-3xl md:text-5xl lg:text-6xl text-on-surface leading-[0.98] tracking-[-0.02em] max-w-2xl">{finalCase.headline}</h2>
+        <div class="flex flex-col gap-5 text-on-surface/70 text-base md:text-lg leading-relaxed max-w-xl">
+          {finalCase.paragraphs.map(p => <p>{p}</p>)}
+        </div>
       </div>
-    </section>
-  ))}
+      <div class="w-full max-w-2xl mt-6 md:mt-10">
+        <img
+          src={finalCase.image}
+          alt={finalCase.imageAlt}
+          class="w-full h-auto block rounded-sm"
+          style="box-shadow:0 30px 70px -25px rgba(17,17,17,0.2); border:1px solid rgba(17,17,17,0.08);"
+          loading="lazy"
+        />
+      </div>
+    </div>
+  </section>
 
 </Layout>

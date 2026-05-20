@@ -3,107 +3,137 @@ import Layout from '../layouts/Layout.astro';
 
 const cases = [
   {
-    label: 'Case 01',
+    label: 'Case 01 — Male creator',
     headline: 'High traffic alone wasn’t translating into revenue.',
     paragraphs: [
-      'This creator was already generating consistent attention and followers, but monetization behind the page was weak.',
-      'After implementing structured chatting, retention systems and stronger monetization flows, revenue scaled into consistent 5-figure months.',
+      'This male creator was already generating strong visibility and consistent traffic, but monetization per subscriber remained underperforming.',
+      'After restructuring chatting flows, retention systems and higher-value monetization strategies, spending per fan and overall LTV increased significantly — leading to consistent 5-figure months despite a smaller subscriber base.',
     ],
     image: '/assets/results/main-feature-block.jpeg',
-    imageAlt: '$24k+ monthly revenue screenshot',
-    reverse: false,
+    imageAlt: '$24k+ monthly revenue screenshot — male creator',
+    layout: 'text-left',
+    theme: 'cream',
   },
   {
-    label: 'Case 02',
+    label: 'Case 02 — Lifestyle creator',
     headline: 'Revenue became more stable once the backend was structured properly.',
     paragraphs: [
-      'The page already had active fans, but monetization lacked consistency and long-term retention.',
-      'By improving chatting structure, fan spending and monetization systems, revenue became significantly more predictable over time.',
+      'This creator already had active fans and regular traffic, but revenue remained inconsistent month to month due to weak retention and monetization systems behind the page.',
+      'After improving chatting structure, retention systems and overall fan experience, subscriber longevity and LTV increased significantly — making revenue far more stable and predictable over time.',
     ],
     image: '/assets/results/results-grid1.jpeg',
-    imageAlt: 'Stabilized monthly revenue screenshot',
-    supporting: '/assets/results/results-grid2.jpeg',
-    supportingAlt: 'Supporting revenue analytics screenshot',
-    reverse: true,
+    imageAlt: 'Stabilized monthly revenue — lifestyle creator',
+    layout: 'image-left',
+    theme: 'dark',
   },
   {
-    label: 'Case 03',
+    label: 'Case 03 — Tattoo creator',
+    headline: 'Most of the revenue potential was being left on the table.',
+    paragraphs: [
+      'The page already had active subscribers and strong traffic, but monetization behind the account lacked structure and consistency.',
+      'By improving upsell execution, chatting systems and retention flows, overall fan spending and customer LTV increased substantially — creating stronger monthly performance without relying purely on new traffic.',
+    ],
+    image: '/assets/results/results-grid2.jpeg',
+    imageAlt: 'Revenue uplift — tattoo creator',
+    layout: 'text-left',
+    theme: 'cream',
+  },
+  {
+    label: 'Case 04 — Fitness creator',
     headline: 'Better monetization created stronger daily revenue behind the same traffic.',
     paragraphs: [
-      'By restructuring chatting, retention and monetization systems behind the page, overall fan spending increased significantly — leading to more profitable and consistent performance.',
+      'Instead of depending purely on subscriber volume, the focus shifted toward fan retention, monetization structure and higher-value spending behavior.',
+      'This created significantly stronger daily revenue performance, higher LTV and more profitable monetization behind the same audience.',
     ],
-    image: '/assets/results/daily-performance-block1.jpeg',
-    imageAlt: '$2k+ daily revenue screenshot',
-    supporting: '/assets/results/daily-performance-block2.jpeg',
-    supportingAlt: 'Additional $2k+ daily performance proof',
-    reverse: false,
+    image: '/assets/results/results-grid3-v2.jpeg',
+    imageAlt: 'Daily revenue uplift — fitness creator',
+    layout: 'image-left',
+    theme: 'dark',
   },
 ];
+
+const finalCase = {
+  label: 'Case 05 — Lifestyle creator',
+  headline: 'Even a single day can look completely different with the right backend systems.',
+  paragraphs: [
+    'The difference wasn’t traffic volume — it was monetization execution behind the page.',
+    'Through stronger chatting systems, retention structure and fan conversion flows, overall spending per fan and LTV increased significantly, leading to stronger daily revenue spikes and more profitable long-term performance.',
+  ],
+  image: '/assets/results/daily-performance-block1.jpeg',
+  imageAlt: 'Single-day $2k+ revenue proof',
+};
 ---
 
 <Layout title="OnlyFans Case Studies & Revenue Results | MANGO Agency" description="Real revenue results from OnlyFans creators managed by MANGO — case studies, monthly earnings and growth metrics built on structured monetization systems." activeNav="results" lang="en" transparentTop={true}>
 
-  <!-- 1. HERO (minimal black editorial) -->
-  <section class="relative h-screen -mt-16 w-full overflow-hidden flex items-center justify-center" style="background-color:#111111;">
-    <div class="relative z-10 max-w-4xl mx-auto px-6 lg:px-8 w-full text-center flex flex-col items-center gap-7 md:gap-10">
-      <h1 class="font-display text-5xl md:text-7xl lg:text-8xl text-white leading-[1.0]">A system-driven OnlyFans agency.</h1>
-      <p class="text-white/70 text-lg md:text-xl leading-relaxed max-w-2xl mx-auto">Predictable revenue built through structured monetization systems &mdash; no guesswork.</p>
+  <!-- 1. HERO (minimal black, oversized) -->
+  <section class="relative h-screen -mt-16 w-full overflow-hidden flex items-center" style="background-color:#111111;">
+    <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-10 w-full">
+      <div class="flex flex-col items-start gap-9 md:gap-12 max-w-[22ch]">
+        <h1 class="font-display text-[40px] sm:text-6xl md:text-7xl lg:text-8xl xl:text-[120px] text-white leading-[0.92] tracking-[-0.025em] text-left">A system-driven OnlyFans agency.</h1>
+        <p class="text-white/65 text-[15px] md:text-base lg:text-lg leading-relaxed max-w-md">Predictable revenue built through structured monetization systems &mdash; no guesswork.</p>
+      </div>
     </div>
   </section>
 
-  <!-- 2-4. CASE STUDIES (editorial vertical, staggered text/screenshot) -->
-  {cases.map((c, i) => (
-    <section class="py-24 md:py-36 bg-white">
-      <div class="max-w-6xl mx-auto px-6 lg:px-8">
-        <div class={`grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center ${c.reverse ? '' : ''}`}>
-          <!-- Text block -->
-          <div class={`flex flex-col gap-6 lg:col-span-5 ${c.reverse ? 'lg:order-2' : 'lg:order-1'}`}>
-            <span class="text-[11px] uppercase tracking-[0.3em] text-on-surface/45 font-medium">{c.label}</span>
-            <h2 class="font-display text-3xl md:text-4xl lg:text-5xl text-on-surface leading-[1.1]">{c.headline}</h2>
-            <div class="flex flex-col gap-4 text-on-surface/75 text-base md:text-lg leading-relaxed max-w-lg">
-              {c.paragraphs.map(p => <p>{p}</p>)}
+  <!-- 2-5. CASE STUDIES (alternating cream / dark, alternating layout) -->
+  {cases.map((c) => {
+    const isDark = c.theme === 'dark';
+    const isImageLeft = c.layout === 'image-left';
+    const bg = isDark ? '#111111' : '#f5f2ee';
+    const textColor = isDark ? 'text-white' : 'text-on-surface';
+    const labelColor = isDark ? 'text-white/45' : 'text-on-surface/45';
+    const bodyColor = isDark ? 'text-white/70' : 'text-on-surface/70';
+    const imgBorder = isDark ? '1px solid rgba(255,255,255,0.08)' : '1px solid rgba(17,17,17,0.08)';
+    const imgShadow = isDark
+      ? '0 30px 70px -25px rgba(0,0,0,0.6)'
+      : '0 30px 70px -25px rgba(17,17,17,0.2)';
+    return (
+      <section class="py-32 md:py-52" style={`background-color:${bg};`}>
+        <div class="max-w-7xl mx-auto px-6 lg:px-10">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-14 lg:gap-24 items-center">
+            <div class={`flex flex-col gap-7 md:gap-9 lg:col-span-5 ${isImageLeft ? 'lg:order-2' : 'lg:order-1'}`}>
+              <span class={`text-xs md:text-[13px] uppercase tracking-[0.28em] italic ${labelColor}`} style="font-family:Georgia,'Times New Roman',serif;">{c.label}</span>
+              <h2 class={`font-display text-3xl md:text-5xl lg:text-6xl ${textColor} leading-[0.98] tracking-[-0.02em]`}>{c.headline}</h2>
+              <div class={`flex flex-col gap-5 ${bodyColor} text-base md:text-lg leading-relaxed max-w-lg`}>
+                {c.paragraphs.map(p => <p>{p}</p>)}
+              </div>
+            </div>
+            <div class={`lg:col-span-7 ${isImageLeft ? 'lg:order-1' : 'lg:order-2'}`}>
+              <img
+                src={c.image}
+                alt={c.imageAlt}
+                class="w-full h-auto block rounded-sm"
+                style={`box-shadow:${imgShadow}; border:${imgBorder};`}
+                loading="lazy"
+              />
             </div>
           </div>
-
-          <!-- Screenshot block -->
-          <div class={`lg:col-span-7 ${c.reverse ? 'lg:order-1' : 'lg:order-2'}`}>
-            <img
-              src={c.image}
-              alt={c.imageAlt}
-              class="w-full h-auto block"
-              style="box-shadow: 0 20px 50px -20px rgba(17,17,17,0.15);"
-              loading="lazy"
-            />
-          </div>
         </div>
+      </section>
+    );
+  })}
 
-        {c.supporting && i === 2 && (
-          <!-- Supporting proof below CASE 3, smaller, aligned with editorial grid -->
-          <div class="mt-20 md:mt-28 max-w-3xl mx-auto">
-            <img
-              src={c.supporting}
-              alt={c.supportingAlt}
-              class="w-full h-auto block"
-              style="box-shadow: 0 16px 40px -16px rgba(17,17,17,0.12);"
-              loading="lazy"
-            />
-          </div>
-        )}
-
-        {c.supporting && i === 1 && (
-          <!-- Case 2 supporting analytics, secondary visual below -->
-          <div class="mt-16 md:mt-20 max-w-3xl ml-auto">
-            <img
-              src={c.supporting}
-              alt={c.supportingAlt}
-              class="w-full h-auto block"
-              style="box-shadow: 0 16px 40px -16px rgba(17,17,17,0.12);"
-              loading="lazy"
-            />
-          </div>
-        )}
+  <!-- 6. CASE 05 (centered editorial proof, cream) -->
+  <section class="py-32 md:py-52" style="background-color:#f5f2ee;">
+    <div class="max-w-3xl mx-auto px-6 lg:px-8 flex flex-col items-center text-center gap-10 md:gap-14">
+      <div class="flex flex-col gap-7 md:gap-9 items-center">
+        <span class="text-xs md:text-[13px] uppercase tracking-[0.28em] italic text-on-surface/45" style="font-family:Georgia,'Times New Roman',serif;">{finalCase.label}</span>
+        <h2 class="font-display text-3xl md:text-5xl lg:text-6xl text-on-surface leading-[0.98] tracking-[-0.02em] max-w-2xl">{finalCase.headline}</h2>
+        <div class="flex flex-col gap-5 text-on-surface/70 text-base md:text-lg leading-relaxed max-w-xl">
+          {finalCase.paragraphs.map(p => <p>{p}</p>)}
+        </div>
       </div>
-    </section>
-  ))}
+      <div class="w-full max-w-2xl mt-6 md:mt-10">
+        <img
+          src={finalCase.image}
+          alt={finalCase.imageAlt}
+          class="w-full h-auto block rounded-sm"
+          style="box-shadow:0 30px 70px -25px rgba(17,17,17,0.2); border:1px solid rgba(17,17,17,0.08);"
+          loading="lazy"
+        />
+      </div>
+    </div>
+  </section>
 
 </Layout>
