@@ -201,6 +201,71 @@ p {
   background-color: #161616;
   color: #ffffff;
 }
+
+/* ---------------------------------------------------------- */
+/* Luxury dark sections — textured cinematic warm-tinted dark */
+/* Use together with .section-dark for token inversion, OR    */
+/* on their own (they include the same inversion rules).      */
+/* ---------------------------------------------------------- */
+.section-luxury,
+.section-luxury-deep {
+  position: relative;
+  color: #ffffff;
+}
+.section-luxury {
+  background-color: #0d0d0d;
+  background-image:
+    radial-gradient(ellipse 75% 55% at 80% 15%, rgba(186,154,110,0.05), transparent 65%),
+    radial-gradient(ellipse 60% 55% at 18% 90%, rgba(28,22,18,0.6), transparent 75%);
+}
+.section-luxury-deep {
+  background-color: #070707;
+  background-image:
+    radial-gradient(ellipse 65% 50% at 22% 18%, rgba(168,138,98,0.05), transparent 60%),
+    radial-gradient(ellipse 70% 60% at 90% 90%, rgba(24,18,14,0.55), transparent 75%);
+}
+.section-luxury .text-on-surface,
+.section-luxury-deep .text-on-surface { color: #ffffff; }
+.section-luxury .text-on-surface-variant,
+.section-luxury-deep .text-on-surface-variant { color: rgba(255,255,255,0.72); }
+.section-luxury .text-on-surface\/40,
+.section-luxury-deep .text-on-surface\/40 { color: rgba(255,255,255,0.4); }
+.section-luxury .text-on-surface\/45,
+.section-luxury-deep .text-on-surface\/45 { color: rgba(255,255,255,0.45); }
+.section-luxury .text-on-surface\/50,
+.section-luxury-deep .text-on-surface\/50 { color: rgba(255,255,255,0.5); }
+.section-luxury .text-on-surface\/55,
+.section-luxury-deep .text-on-surface\/55 { color: rgba(255,255,255,0.55); }
+.section-luxury .text-on-surface\/60,
+.section-luxury-deep .text-on-surface\/60 { color: rgba(255,255,255,0.6); }
+.section-luxury .text-on-surface\/65,
+.section-luxury-deep .text-on-surface\/65 { color: rgba(255,255,255,0.65); }
+.section-luxury .text-on-surface\/70,
+.section-luxury-deep .text-on-surface\/70 { color: rgba(255,255,255,0.7); }
+.section-luxury .text-on-surface\/75,
+.section-luxury-deep .text-on-surface\/75 { color: rgba(255,255,255,0.72); }
+.section-luxury .text-outline,
+.section-luxury-deep .text-outline { color: rgba(255,255,255,0.5); }
+.section-luxury .border-outline-variant\/20,
+.section-luxury-deep .border-outline-variant\/20 { border-color: rgba(255,255,255,0.1); }
+.section-luxury .border-outline-variant\/30,
+.section-luxury-deep .border-outline-variant\/30 { border-color: rgba(255,255,255,0.12); }
+.section-luxury .border-outline-variant\/40,
+.section-luxury-deep .border-outline-variant\/40 { border-color: rgba(255,255,255,0.16); }
+.section-luxury .border-on-surface\/10,
+.section-luxury-deep .border-on-surface\/10 { border-color: rgba(255,255,255,0.08); }
+.section-luxury .border-on-surface\/12,
+.section-luxury-deep .border-on-surface\/12 { border-color: rgba(255,255,255,0.1); }
+.section-luxury .border-on-surface\/14,
+.section-luxury-deep .border-on-surface\/14 { border-color: rgba(255,255,255,0.12); }
+.section-luxury .border-on-surface\/15,
+.section-luxury-deep .border-on-surface\/15 { border-color: rgba(255,255,255,0.12); }
+.section-luxury .bg-surface-container,
+.section-luxury-deep .bg-surface-container { background-color: rgba(255,255,255,0.04); }
+.section-luxury .bg-surface-container-low,
+.section-luxury-deep .bg-surface-container-low { background-color: rgba(255,255,255,0.04); }
+.section-luxury .bg-surface-container-lowest,
+.section-luxury-deep .bg-surface-container-lowest { background-color: rgba(255,255,255,0.04); }
 .section-dark .text-on-surface { color: #ffffff; }
 .section-dark .text-on-surface-variant { color: rgba(255,255,255,0.72); }
 .section-dark .text-on-surface\/40 { color: rgba(255,255,255,0.4); }

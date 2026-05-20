@@ -77,25 +77,19 @@ const finalCase = {
   </section>
 
   <!-- 2-5. CASE STUDIES (alternating cream / dark, alternating layout) -->
-  {cases.map((c) => {
-    const isDark = c.theme === 'dark';
+  {cases.map((c, i) => {
     const isImageLeft = c.layout === 'image-left';
-    const bg = isDark ? '#111111' : '#f5f2ee';
-    const textColor = isDark ? 'text-white' : 'text-on-surface';
-    const labelColor = isDark ? 'text-white/45' : 'text-on-surface/45';
-    const bodyColor = isDark ? 'text-white/70' : 'text-on-surface/70';
-    const imgBorder = isDark ? '1px solid rgba(255,255,255,0.08)' : '1px solid rgba(17,17,17,0.08)';
-    const imgShadow = isDark
-      ? '0 30px 70px -25px rgba(0,0,0,0.6)'
-      : '0 30px 70px -25px rgba(17,17,17,0.2)';
+    const sectionClass = i % 2 === 0 ? 'section-luxury' : 'section-luxury-deep';
+    const imgBorder = '1px solid rgba(255,255,255,0.08)';
+    const imgShadow = '0 30px 80px -25px rgba(186,154,110,0.16), 0 30px 60px -25px rgba(0,0,0,0.7)';
     return (
-      <section class="py-32 md:py-52" style={`background-color:${bg};`}>
-        <div class="max-w-7xl mx-auto px-6 lg:px-10">
+      <section class={`relative py-32 md:py-52 ${sectionClass} grain`}>
+        <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-10">
           <div class="grid grid-cols-1 lg:grid-cols-12 gap-14 lg:gap-24 items-center">
             <div class={`flex flex-col gap-7 md:gap-9 lg:col-span-6 ${isImageLeft ? 'lg:order-2' : 'lg:order-1'}`}>
-              <span class={`text-xs md:text-[13px] uppercase tracking-[0.28em] italic ${labelColor}`} style="font-family:Georgia,'Times New Roman',serif;">{c.label}</span>
-              <h2 class={`font-display text-3xl md:text-5xl lg:text-6xl ${textColor} leading-[0.98] tracking-[-0.02em]`}>{c.headline}</h2>
-              <div class={`flex flex-col gap-5 ${bodyColor} text-base md:text-lg leading-relaxed max-w-lg`}>
+              <span class="text-xs md:text-[13px] uppercase tracking-[0.28em] italic text-white/45" style="font-family:Georgia,'Times New Roman',serif;">{c.label}</span>
+              <h2 class="font-display text-3xl md:text-5xl lg:text-6xl text-white leading-[0.98] tracking-[-0.02em]">{c.headline}</h2>
+              <div class="flex flex-col gap-5 text-white/70 text-base md:text-lg leading-relaxed max-w-lg">
                 {c.paragraphs.map(p => <p>{p}</p>)}
               </div>
             </div>
@@ -114,13 +108,13 @@ const finalCase = {
     );
   })}
 
-  <!-- 6. CASE 05 (centered editorial proof, cream) -->
-  <section class="py-32 md:py-52" style="background-color:#f5f2ee;">
-    <div class="max-w-3xl mx-auto px-6 lg:px-8 flex flex-col items-center text-center gap-10 md:gap-14">
+  <!-- 6. CASE 05 (centered editorial proof, luxury dark) -->
+  <section class="relative py-32 md:py-52 section-luxury grain">
+    <div class="relative z-10 max-w-3xl mx-auto px-6 lg:px-8 flex flex-col items-center text-center gap-10 md:gap-14">
       <div class="flex flex-col gap-7 md:gap-9 items-center">
-        <span class="text-xs md:text-[13px] uppercase tracking-[0.28em] italic text-on-surface/45" style="font-family:Georgia,'Times New Roman',serif;">{finalCase.label}</span>
-        <h2 class="font-display text-3xl md:text-5xl lg:text-6xl text-on-surface leading-[0.98] tracking-[-0.02em] max-w-2xl">{finalCase.headline}</h2>
-        <div class="flex flex-col gap-5 text-on-surface/70 text-base md:text-lg leading-relaxed max-w-xl">
+        <span class="text-xs md:text-[13px] uppercase tracking-[0.28em] italic text-white/45" style="font-family:Georgia,'Times New Roman',serif;">{finalCase.label}</span>
+        <h2 class="font-display text-3xl md:text-5xl lg:text-6xl text-white leading-[0.98] tracking-[-0.02em] max-w-2xl">{finalCase.headline}</h2>
+        <div class="flex flex-col gap-5 text-white/70 text-base md:text-lg leading-relaxed max-w-xl">
           {finalCase.paragraphs.map(p => <p>{p}</p>)}
         </div>
       </div>
@@ -129,7 +123,7 @@ const finalCase = {
           src={finalCase.image}
           alt={finalCase.imageAlt}
           class="w-full h-auto block rounded-sm"
-          style="box-shadow:0 30px 70px -25px rgba(17,17,17,0.2); border:1px solid rgba(17,17,17,0.08);"
+          style="box-shadow:0 30px 80px -25px rgba(186,154,110,0.16), 0 30px 60px -25px rgba(0,0,0,0.7); border:1px solid rgba(255,255,255,0.08);"
           loading="lazy"
         />
       </div>

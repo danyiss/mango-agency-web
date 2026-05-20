@@ -84,59 +84,59 @@ const faqs = [
     </div>
   </section>
 
-  <!-- 2. PROBLEM (CREAM editorial) -->
-  <section class="py-36 md:py-56" style="background-color:#f5f2ee;">
-    <div class="max-w-5xl mx-auto px-6 lg:px-10 flex flex-col gap-7 md:gap-10 text-center">
-      <p class="font-display text-3xl md:text-5xl lg:text-6xl text-on-surface leading-[1.05] tracking-[-0.015em]">T&uacute; sabes generar tr&aacute;fico.</p>
-      <p class="font-display text-3xl md:text-5xl lg:text-6xl text-on-surface/45 leading-[1.05] tracking-[-0.015em]">Nosotros sabemos maximizar la monetizaci&oacute;n detr&aacute;s.</p>
+  <!-- 2. PROBLEM positioning (luxury dark editorial) -->
+  <section class="relative py-36 md:py-56 section-luxury grain">
+    <div class="relative z-10 max-w-5xl mx-auto px-6 lg:px-10 flex flex-col gap-7 md:gap-10 text-center">
+      <p class="font-display text-3xl md:text-5xl lg:text-6xl text-white leading-[1.05] tracking-[-0.015em]">T&uacute; sabes generar tr&aacute;fico.</p>
+      <p class="font-display text-3xl md:text-5xl lg:text-6xl text-white/45 leading-[1.05] tracking-[-0.015em]">Nosotros sabemos maximizar la monetizaci&oacute;n detr&aacute;s.</p>
     </div>
   </section>
 
-  <!-- 3. WHERE AGENCIES LOSE REVENUE (deep black, editorial 2-col) -->
-  <section class="py-36 md:py-56" style="background-color:#0a0a0a;">
+  <!-- 3. WHERE AGENCIES LOSE REVENUE (warm beige, the problems break) -->
+  <section class="py-36 md:py-56" style="background-color:#D8C8B8;">
     <div class="max-w-7xl mx-auto px-6 lg:px-10">
       <div class="mb-24 md:mb-36 max-w-4xl">
-        <span class="text-xs uppercase tracking-[0.28em] italic text-white/45 mb-6 block" style="font-family:Georgia,'Times New Roman',serif;">Secci&oacute;n 01 &mdash; El problema</span>
-        <h2 class="font-display text-5xl md:text-7xl lg:text-8xl text-white leading-[0.94] tracking-[-0.025em]">D&oacute;nde las agencias pierden ingresos.</h2>
+        <span class="text-xs uppercase tracking-[0.28em] italic text-on-surface/55 mb-6 block" style="font-family:Georgia,'Times New Roman',serif;">Secci&oacute;n 01 &mdash; El problema</span>
+        <h2 class="font-display text-5xl md:text-7xl lg:text-8xl text-on-surface leading-[0.94] tracking-[-0.025em]">D&oacute;nde las agencias pierden ingresos.</h2>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-x-16 lg:gap-x-24 gap-y-14 md:gap-y-20">
         {lossCards.map(card => (
-          <div class="flex flex-col gap-4 pb-10 md:pb-12" style="border-bottom:1px solid rgba(255,255,255,0.1);">
-            <h3 class="font-display text-2xl md:text-3xl lg:text-4xl text-white leading-[1.05] tracking-[-0.015em]">{card.title}</h3>
-            <p class="text-white/55 text-base leading-relaxed max-w-md">{card.text}</p>
+          <div class="flex flex-col gap-4 pb-10 md:pb-12" style="border-bottom:1px solid rgba(17,17,17,0.2);">
+            <h3 class="font-display text-2xl md:text-3xl lg:text-4xl text-on-surface leading-[1.05] tracking-[-0.015em]">{card.title}</h3>
+            <p class="text-on-surface/65 text-base leading-relaxed max-w-md">{card.text}</p>
           </div>
         ))}
       </div>
     </div>
   </section>
 
-  <!-- 4. SOLUTION (CREAM) — operator-level -->
-  <section class="py-36 md:py-56" style="background-color:#f5f2ee;">
-    <div class="max-w-5xl mx-auto px-6 lg:px-10">
+  <!-- 4. SOLUTION (luxury dark) — operator-level -->
+  <section class="relative py-36 md:py-56 section-luxury-deep grain">
+    <div class="relative z-10 max-w-5xl mx-auto px-6 lg:px-10">
       <div class="mb-20 md:mb-28 max-w-3xl">
-        <span class="text-xs uppercase tracking-[0.28em] italic text-on-surface/45 mb-6 block" style="font-family:Georgia,'Times New Roman',serif;">Secci&oacute;n 02 &mdash; La soluci&oacute;n</span>
-        <h2 class="font-display text-5xl md:text-7xl lg:text-8xl text-on-surface leading-[0.94] tracking-[-0.025em]">Nos convertimos en tu sistema de monetizaci&oacute;n.</h2>
+        <span class="text-xs uppercase tracking-[0.28em] italic text-white/45 mb-6 block" style="font-family:Georgia,'Times New Roman',serif;">Secci&oacute;n 02 &mdash; La soluci&oacute;n</span>
+        <h2 class="font-display text-5xl md:text-7xl lg:text-8xl text-white leading-[0.94] tracking-[-0.025em]">Nos convertimos en tu sistema de monetizaci&oacute;n.</h2>
       </div>
 
       <ul class="flex flex-col">
         {solutionBullets.map((item, idx) => (
-          <li class={`py-9 md:py-11 grid grid-cols-1 lg:grid-cols-12 gap-3 lg:gap-12 items-baseline ${idx === 0 ? 'border-y' : 'border-b'}`} style="border-color:rgba(17,17,17,0.12);">
-            <p class="font-display text-xl md:text-2xl text-on-surface leading-tight tracking-[-0.01em] lg:col-span-5">{item.title}</p>
-            <p class="text-on-surface/65 text-base leading-relaxed lg:col-span-7 lg:max-w-lg">{item.text}</p>
+          <li class={`py-9 md:py-11 grid grid-cols-1 lg:grid-cols-12 gap-3 lg:gap-12 items-baseline ${idx === 0 ? 'border-y' : 'border-b'}`} style="border-color:rgba(255,255,255,0.12);">
+            <p class="font-display text-xl md:text-2xl text-white leading-tight tracking-[-0.01em] lg:col-span-5">{item.title}</p>
+            <p class="text-white/65 text-base leading-relaxed lg:col-span-7 lg:max-w-lg">{item.text}</p>
           </li>
         ))}
       </ul>
 
       <!-- Refined monetization system map -->
       <div class="mt-32 md:mt-44">
-        <span class="text-xs uppercase tracking-[0.28em] italic text-on-surface/45 mb-12 md:mb-16 block text-center" style="font-family:Georgia,'Times New Roman',serif;">El mapa del sistema de monetizaci&oacute;n</span>
+        <span class="text-xs uppercase tracking-[0.28em] italic text-white/45 mb-12 md:mb-16 block text-center" style="font-family:Georgia,'Times New Roman',serif;">El mapa del sistema de monetizaci&oacute;n</span>
         <div class="max-w-2xl mx-auto">
           {mapSteps.map((step, i) => (
-            <div class={`py-9 md:py-11 grid grid-cols-12 gap-5 sm:gap-10 items-baseline ${i === 0 ? 'border-y' : 'border-b'}`} style="border-color:rgba(17,17,17,0.12);">
-              <span class="col-span-2 text-xs uppercase tracking-[0.28em] italic text-on-surface/45" style="font-family:Georgia,'Times New Roman',serif;">{String(i+1).padStart(2,'0')}</span>
+            <div class={`py-9 md:py-11 grid grid-cols-12 gap-5 sm:gap-10 items-baseline ${i === 0 ? 'border-y' : 'border-b'}`} style="border-color:rgba(255,255,255,0.12);">
+              <span class="col-span-2 text-xs uppercase tracking-[0.28em] italic text-white/45" style="font-family:Georgia,'Times New Roman',serif;">{String(i+1).padStart(2,'0')}</span>
               <div class="col-span-10 flex flex-col gap-2">
-                <p class="font-display text-xl md:text-2xl text-on-surface leading-tight tracking-[-0.01em]">{step.title}</p>
-                <p class="text-on-surface/65 text-sm md:text-base leading-relaxed max-w-lg">{step.text}</p>
+                <p class="font-display text-xl md:text-2xl text-white leading-tight tracking-[-0.01em]">{step.title}</p>
+                <p class="text-white/65 text-sm md:text-base leading-relaxed max-w-lg">{step.text}</p>
               </div>
             </div>
           ))}
@@ -145,8 +145,8 @@ const faqs = [
     </div>
   </section>
 
-  <!-- 5. HOW IT WORKS (BLACK, editorial workflow, no cards) -->
-  <section class="py-36 md:py-56" style="background-color:#111111;">
+  <!-- 5. HOW IT WORKS (luxury dark, editorial workflow, no cards) -->
+  <section class="relative py-36 md:py-56 section-luxury grain">
     <div class="max-w-7xl mx-auto px-6 lg:px-10">
       <div class="mb-24 md:mb-36 max-w-3xl">
         <span class="text-xs uppercase tracking-[0.28em] italic text-white/45 mb-6 block" style="font-family:Georgia,'Times New Roman',serif;">Secci&oacute;n 03 &mdash; El proceso</span>
@@ -164,18 +164,18 @@ const faqs = [
     </div>
   </section>
 
-  <!-- 6. WHY TOP AGENCIES (CREAM, quiet confidence) -->
-  <section class="py-36 md:py-56" style="background-color:#f5f2ee;">
-    <div class="max-w-5xl mx-auto px-6 lg:px-10">
+  <!-- 6. WHY TOP AGENCIES (luxury dark, quiet confidence) -->
+  <section class="relative py-36 md:py-56 section-luxury-deep grain">
+    <div class="relative z-10 max-w-5xl mx-auto px-6 lg:px-10">
       <div class="mb-20 md:mb-28 max-w-3xl">
-        <span class="text-xs uppercase tracking-[0.28em] italic text-on-surface/45 mb-6 block" style="font-family:Georgia,'Times New Roman',serif;">Secci&oacute;n 04 &mdash; La diferenciaci&oacute;n</span>
-        <h2 class="font-display text-5xl md:text-7xl lg:text-8xl text-on-surface leading-[0.94] tracking-[-0.025em]">Por qu&eacute; las top agencias trabajan con nosotros.</h2>
+        <span class="text-xs uppercase tracking-[0.28em] italic text-white/45 mb-6 block" style="font-family:Georgia,'Times New Roman',serif;">Secci&oacute;n 04 &mdash; La diferenciaci&oacute;n</span>
+        <h2 class="font-display text-5xl md:text-7xl lg:text-8xl text-white leading-[0.94] tracking-[-0.025em]">Por qu&eacute; las top agencias trabajan con nosotros.</h2>
       </div>
       <ul class="flex flex-col max-w-3xl">
         {whyBullets.map((item, idx) => (
-          <li class={`py-9 md:py-11 ${idx === 0 ? 'border-y' : 'border-b'}`} style="border-color:rgba(17,17,17,0.12);">
-            <p class="font-display text-xl md:text-2xl text-on-surface leading-tight tracking-[-0.01em] mb-3">{item.title}</p>
-            <p class="text-on-surface/65 text-base leading-relaxed max-w-xl">{item.text}</p>
+          <li class={`py-9 md:py-11 ${idx === 0 ? 'border-y' : 'border-b'}`} style="border-color:rgba(255,255,255,0.12);">
+            <p class="font-display text-xl md:text-2xl text-white leading-tight tracking-[-0.01em] mb-3">{item.title}</p>
+            <p class="text-white/65 text-base leading-relaxed max-w-xl">{item.text}</p>
           </li>
         ))}
       </ul>
@@ -185,20 +185,20 @@ const faqs = [
   <!-- 7. AGENCY APPLICATION FORM (dark, private application) -->
   <AgencyApplyForm lang="es" />
 
-  <!-- 8. FAQ (CREAM, minimal hairline) -->
-  <section class="py-36 md:py-48" style="background-color:#f5f2ee;">
-    <div class="max-w-4xl mx-auto px-6 lg:px-10">
+  <!-- 8. FAQ (luxury dark, minimal hairline) -->
+  <section class="relative py-36 md:py-48 section-luxury grain">
+    <div class="relative z-10 max-w-4xl mx-auto px-6 lg:px-10">
       <div class="mb-16 md:mb-24 max-w-3xl">
-        <h2 class="font-display text-5xl md:text-7xl text-on-surface leading-[0.94] tracking-[-0.025em]">Preguntas frecuentes.</h2>
+        <h2 class="font-display text-5xl md:text-7xl text-white leading-[0.94] tracking-[-0.025em]">Preguntas frecuentes.</h2>
       </div>
       <div class="flex flex-col">
         {faqs.map((faq, idx) => (
-          <details class={`group ${idx === 0 ? 'border-y' : 'border-b'}`} style="border-color:rgba(17,17,17,0.14);">
+          <details class={`group ${idx === 0 ? 'border-y' : 'border-b'} hover:bg-white/[0.02] transition-colors`} style="border-color:rgba(255,255,255,0.14);">
             <summary class="py-7 md:py-8 flex items-center justify-between cursor-pointer list-none select-none">
-              <span class="font-display text-lg md:text-xl text-on-surface pr-6 tracking-[-0.005em]">{faq.q}</span>
-              <span class="material-symbols-outlined expand-icon text-on-surface/40 flex-shrink-0 transition-transform duration-300">add</span>
+              <span class="font-display text-lg md:text-xl text-white pr-6 tracking-[-0.005em]">{faq.q}</span>
+              <span class="material-symbols-outlined expand-icon flex-shrink-0 transition-transform duration-300" style="color:#C8A96A;">add</span>
             </summary>
-            <div class="pb-8 text-on-surface/65 text-sm md:text-base leading-relaxed max-w-2xl">{faq.a}</div>
+            <div class="pb-8 text-white/65 text-sm md:text-base leading-relaxed max-w-2xl">{faq.a}</div>
           </details>
         ))}
       </div>
