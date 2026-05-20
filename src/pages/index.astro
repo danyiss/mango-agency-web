@@ -41,8 +41,8 @@ const serviceSchema = {
     <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
   </Fragment>
 
-  <!-- 1. HERO (minimal black editorial, asymmetric, oversized) -->
-  <section class="relative h-screen -mt-16 w-full overflow-hidden" style="background-color:#111111;">
+  <!-- 1. HERO (cinematic editorial atmosphere, asymmetric, oversized) -->
+  <section class="relative h-screen -mt-16 w-full overflow-hidden hero-editorial-bg grain">
     <div class="absolute inset-0 flex items-center">
       <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-10 w-full">
         <div class="flex flex-col items-start gap-10 md:gap-14 max-w-[20ch]">
@@ -145,7 +145,7 @@ const serviceSchema = {
   </section>
 
   <!-- 3. SYSTEMS BEHIND THE REVENUE (BLACK, sticky header + staggered systems) -->
-  <section class="py-36 md:py-56" style="background-color:#111111;">
+  <section class="relative py-36 md:py-56 grain" style="background-color:#111111;">
     <div class="max-w-7xl mx-auto px-6 lg:px-10">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24">
         <!-- Sticky headline column -->
