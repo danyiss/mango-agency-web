@@ -67,65 +67,65 @@ const t = {
 }[lang];
 ---
 
-<section id="apply" class="py-28 md:py-36 bg-white">
-  <div class="max-w-2xl mx-auto px-6 lg:px-8 flex flex-col items-center gap-12">
+<section id="apply" class="py-36 md:py-52" style="background-color:#111111;">
+  <div class="max-w-2xl mx-auto px-6 lg:px-8 flex flex-col items-center gap-14">
 
-    <!-- Editorial header (no eyebrow) -->
-    <div class="flex flex-col items-center gap-6 text-center max-w-xl">
-      <h2 class="font-display text-5xl md:text-7xl text-on-surface leading-[1.05]">{t.headline}</h2>
-      <p class="text-on-surface-variant text-base md:text-lg leading-relaxed">{t.sub2}</p>
+    <!-- Editorial header -->
+    <div class="flex flex-col items-center gap-7 text-center max-w-xl">
+      <h2 class="font-display text-5xl md:text-7xl lg:text-8xl text-white leading-[0.94] tracking-[-0.025em]">{t.headline}</h2>
+      <p class="text-white/65 text-base md:text-lg leading-relaxed max-w-md">{t.sub2}</p>
     </div>
 
     <!-- Hairline divider in champagne gold -->
     <div class="w-12 h-px" style="background-color:#C8A96A;"></div>
 
-    <!-- Form (subtle bg contrast, no card aesthetic) -->
-    <div class="w-full" style="background-color:#faf6f1;">
-      <div class="px-8 md:px-14 py-12 md:py-16">
+    <!-- Form (dark glass container) -->
+    <div class="w-full rounded-2xl" style="background-color:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08);">
+      <div class="px-7 md:px-12 py-12 md:py-14">
         <form id="apply-form" class="flex flex-col gap-8 w-full">
           <div>
-            <label for="name" class="text-[11px] font-semibold uppercase tracking-[0.22em] text-on-surface mb-3 block">{t.name}</label>
+            <label for="name" class="text-[11px] font-semibold uppercase tracking-[0.22em] text-white/75 mb-3 block">{t.name}</label>
             <input type="text" id="name" name="name" required placeholder={t.namePlaceholder}
-              class="w-full bg-transparent border-0 border-b border-on-surface/30 px-0 py-2.5 text-base text-on-surface placeholder:text-on-surface/35 focus:outline-none focus:border-on-surface transition-colors" />
+              class="w-full bg-transparent border-0 border-b border-white/25 px-0 py-2.5 text-base text-white placeholder:text-white/30 focus:outline-none focus:border-white/70 transition-colors" />
           </div>
 
           <div>
-            <label for="instagram" class="text-[11px] font-semibold uppercase tracking-[0.22em] text-on-surface mb-3 block">{t.instagram}</label>
+            <label for="instagram" class="text-[11px] font-semibold uppercase tracking-[0.22em] text-white/75 mb-3 block">{t.instagram}</label>
             <input type="text" id="instagram" name="instagram" required placeholder={t.instagramPlaceholder}
-              class="w-full bg-transparent border-0 border-b border-on-surface/30 px-0 py-2.5 text-base text-on-surface placeholder:text-on-surface/35 focus:outline-none focus:border-on-surface transition-colors" />
-            <p class="text-xs text-on-surface/55 mt-2">{t.instagramHint}</p>
+              class="w-full bg-transparent border-0 border-b border-white/25 px-0 py-2.5 text-base text-white placeholder:text-white/30 focus:outline-none focus:border-white/70 transition-colors" />
+            <p class="text-xs text-white/45 mt-2">{t.instagramHint}</p>
           </div>
 
           <div>
-            <label for="contact" class="text-[11px] font-semibold uppercase tracking-[0.22em] text-on-surface mb-3 block">{t.contact}</label>
+            <label for="contact" class="text-[11px] font-semibold uppercase tracking-[0.22em] text-white/75 mb-3 block">{t.contact}</label>
             <input type="text" id="contact" name="contact" required placeholder={t.contactPlaceholder}
-              class="w-full bg-transparent border-0 border-b border-on-surface/30 px-0 py-2.5 text-base text-on-surface placeholder:text-on-surface/35 focus:outline-none focus:border-on-surface transition-colors" />
-            <p class="text-xs text-on-surface/55 mt-2">{t.contactHint}</p>
+              class="w-full bg-transparent border-0 border-b border-white/25 px-0 py-2.5 text-base text-white placeholder:text-white/30 focus:outline-none focus:border-white/70 transition-colors" />
+            <p class="text-xs text-white/45 mt-2">{t.contactHint}</p>
           </div>
 
           <div>
-            <label for="situation" class="text-[11px] font-semibold uppercase tracking-[0.22em] text-on-surface mb-3 block">{t.situation}</label>
+            <label for="situation" class="text-[11px] font-semibold uppercase tracking-[0.22em] text-white/75 mb-3 block">{t.situation}</label>
             <select id="situation" name="situation" required
-              class="w-full bg-transparent border-0 border-b border-on-surface/30 px-0 py-2.5 text-base text-on-surface focus:outline-none focus:border-on-surface transition-colors appearance-none cursor-pointer">
-              <option value="" disabled selected>{t.situationPlaceholder}</option>
-              <option value="just-starting">{t.situation1}</option>
-              <option value="growing-inconsistent">{t.situation2}</option>
-              <option value="5k-20k">{t.situation3}</option>
-              <option value="20k-plus">{t.situation4}</option>
+              class="w-full bg-transparent border-0 border-b border-white/25 px-0 py-2.5 text-base text-white focus:outline-none focus:border-white/70 transition-colors appearance-none cursor-pointer">
+              <option value="" disabled selected style="background-color:#111111;color:rgba(255,255,255,0.5);">{t.situationPlaceholder}</option>
+              <option value="just-starting" style="background-color:#111111;">{t.situation1}</option>
+              <option value="growing-inconsistent" style="background-color:#111111;">{t.situation2}</option>
+              <option value="5k-20k" style="background-color:#111111;">{t.situation3}</option>
+              <option value="20k-plus" style="background-color:#111111;">{t.situation4}</option>
             </select>
           </div>
 
           <div>
-            <label for="goal" class="text-[11px] font-semibold uppercase tracking-[0.22em] text-on-surface mb-3 block">{t.goal}</label>
+            <label for="goal" class="text-[11px] font-semibold uppercase tracking-[0.22em] text-white/75 mb-3 block">{t.goal}</label>
             <textarea id="goal" name="goal" rows="3" placeholder={t.goalPlaceholder}
-              class="w-full bg-transparent border-0 border-b border-on-surface/30 px-0 py-2.5 text-base text-on-surface placeholder:text-on-surface/35 focus:outline-none focus:border-on-surface transition-colors resize-none"></textarea>
+              class="w-full bg-transparent border-0 border-b border-white/25 px-0 py-2.5 text-base text-white placeholder:text-white/30 focus:outline-none focus:border-white/70 transition-colors resize-none"></textarea>
           </div>
 
           <div>
-            <label for="income" class="text-[11px] font-semibold uppercase tracking-[0.22em] text-on-surface mb-3 block">{t.income}</label>
+            <label for="income" class="text-[11px] font-semibold uppercase tracking-[0.22em] text-white/75 mb-3 block">{t.income}</label>
             <input type="text" id="income" name="income" placeholder={t.incomePlaceholder}
-              class="w-full bg-transparent border-0 border-b border-on-surface/30 px-0 py-2.5 text-base text-on-surface placeholder:text-on-surface/35 focus:outline-none focus:border-on-surface transition-colors" />
-            <p class="text-xs text-on-surface/55 mt-2">{t.incomeHint}</p>
+              class="w-full bg-transparent border-0 border-b border-white/25 px-0 py-2.5 text-base text-white placeholder:text-white/30 focus:outline-none focus:border-white/70 transition-colors" />
+            <p class="text-xs text-white/45 mt-2">{t.incomeHint}</p>
           </div>
 
           <button type="submit" id="submit-btn"
@@ -134,16 +134,16 @@ const t = {
           </button>
 
           <div class="flex flex-col gap-1.5 mt-4 items-center text-center">
-            <p class="text-xs text-on-surface/65">{t.note1}</p>
-            <p class="text-xs text-on-surface/65">{t.note2}</p>
-            <p class="text-xs text-on-surface/65">{t.note3}</p>
+            <p class="text-xs text-white/55">{t.note1}</p>
+            <p class="text-xs text-white/55">{t.note2}</p>
+            <p class="text-xs text-white/55">{t.note3}</p>
           </div>
         </form>
 
         <!-- Success state -->
         <div id="form-success" class="hidden text-center py-10">
           <span class="material-symbols-outlined mb-4 block" style="font-size:48px;font-variation-settings:'FILL' 1; color:#C8A96A;">check_circle</span>
-          <p class="text-on-surface text-lg md:text-xl">{t.success}</p>
+          <p class="text-white text-lg md:text-xl">{t.success}</p>
         </div>
 
         <!-- Error state -->

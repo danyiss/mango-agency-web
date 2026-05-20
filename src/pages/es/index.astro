@@ -41,156 +41,153 @@ const serviceSchema = {
     <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
   </Fragment>
 
-  <!-- 1. HERO (minimal black editorial, oversized typography) -->
+  <!-- 1. HERO (minimal black editorial, asymmetric, oversized) -->
   <section class="relative h-screen -mt-16 w-full overflow-hidden" style="background-color:#111111;">
-    <div class="absolute inset-0 flex items-center justify-center">
-      <div class="relative z-10 max-w-7xl mx-auto px-5 sm:px-6 lg:px-10 w-full text-center flex flex-col items-center gap-10 md:gap-14">
-        <h1 class="font-display text-[36px] leading-[0.96] sm:text-5xl md:text-7xl lg:text-8xl xl:text-[112px] text-white tracking-[-0.02em] w-full">
-          Gesti&oacute;n de OnlyFans<br />para creadoras que quieren m&aacute;s.
-        </h1>
-        <p class="text-white/65 text-[15px] md:text-base lg:text-lg leading-relaxed font-body max-w-md">
-          Crecimiento, monetizaci&oacute;n y gesti&oacute;n construidos para escalar creadoras a largo plazo.
-        </p>
-        <p class="text-[10px] uppercase tracking-[0.3em] text-white/35 font-medium mt-2 md:mt-4">Para creadoras, por creadoras.</p>
+    <div class="absolute inset-0 flex items-center">
+      <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-10 w-full">
+        <div class="flex flex-col items-start gap-10 md:gap-14 max-w-[20ch]">
+          <h1 class="font-display text-[40px] sm:text-6xl md:text-7xl lg:text-8xl xl:text-[120px] text-white leading-[0.92] tracking-[-0.025em] text-left">
+            Gesti&oacute;n de OnlyFans<br />para creadoras que quieren m&aacute;s.
+          </h1>
+          <p class="text-white/65 text-[15px] md:text-base lg:text-lg leading-relaxed font-body max-w-md text-left">
+            Crecimiento, monetizaci&oacute;n y gesti&oacute;n construidos para escalar creadoras a largo plazo.
+          </p>
+          <p class="text-[10px] uppercase tracking-[0.3em] text-white/35 font-medium mt-1 md:mt-2">Para creadoras, por creadoras.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- 1b. AUTHORITY STRIP (editorial, quiet confidence) -->
-  <section class="py-24 md:py-36 bg-white">
-    <div class="max-w-6xl mx-auto px-6 lg:px-8">
-      <div class="flex flex-col md:flex-row md:items-baseline md:justify-between gap-y-8 md:gap-x-10 lg:gap-x-14 text-center md:text-left">
+  <!-- 1b. AUTHORITY STRIP (thin editorial, off-white) -->
+  <section class="py-32 md:py-44" style="background-color:#f7f3ee;">
+    <div class="max-w-6xl mx-auto px-6 lg:px-10">
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-y-6 md:gap-x-8 lg:gap-x-12 text-center md:text-left">
         {[
           'Enfocados en el crecimiento a largo plazo.',
           'Millones de visitas generadas.',
           'Detrás de creadoras de alto rendimiento.',
           'Basado en sistemas, no en suposiciones.',
         ].map(line => (
-          <p class="text-base md:text-[17px] lg:text-lg text-on-surface/85 font-medium leading-relaxed tracking-tight">{line}</p>
+          <p class="text-[13px] md:text-sm text-on-surface/70 font-medium leading-relaxed tracking-tight">{line}</p>
         ))}
       </div>
     </div>
   </section>
 
-  <!-- 2b. PAIN / PROBLEM (beige editorial, 2-col magazine) -->
-  <section class="py-36 md:py-52" style="background-color:#D8C8B8;">
-    <div class="max-w-6xl mx-auto px-6 lg:px-10">
-      <div class="mb-24 md:mb-32 max-w-4xl">
-        <h2 class="font-display text-5xl md:text-7xl lg:text-8xl text-on-surface leading-[0.96] tracking-[-0.02em]">El crecimiento en OnlyFans ahora es un juego de sistemas.</h2>
-        <p class="mt-7 md:mt-9 text-on-surface/70 text-lg md:text-xl leading-relaxed max-w-xl">Las creadoras que escalan m&aacute;s r&aacute;pido hoy tienen equipos profesionales detr&aacute;s.</p>
-      </div>
+  <!-- 2b. PAIN / PROBLEM (warm beige, sticky-header magazine) -->
+  <section class="py-36 md:py-56" style="background-color:#D8C8B8;">
+    <div class="max-w-7xl mx-auto px-6 lg:px-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24">
+        <!-- Sticky headline column -->
+        <div class="lg:col-span-5 lg:sticky lg:top-32 lg:self-start">
+          <h2 class="font-display text-5xl md:text-7xl lg:text-7xl xl:text-8xl text-on-surface leading-[0.92] tracking-[-0.025em]">El crecimiento en OnlyFans ahora es un juego de sistemas.</h2>
+          <p class="mt-8 md:mt-10 text-on-surface/65 text-base md:text-lg leading-relaxed max-w-sm">Las creadoras que escalan m&aacute;s r&aacute;pido hoy tienen equipos profesionales detr&aacute;s.</p>
+        </div>
 
-      <div class="flex flex-col">
-        {[
-          { title: 'El mal chatting mata el crecimiento de la página.', text: 'Ventas agresivas, conversaciones débiles y mala ejecución dañan poco a poco la retención, la confianza del fan y el gasto a largo plazo. Una monetización fuerte requiere estructura, formación y consistencia detrás de cada interacción.' },
-          { title: 'Tener seguidores no siempre significa ganar dinero de verdad.', text: 'Muchas creadoras ya tienen visitas y seguidores — la diferencia real viene de la monetización detrás de la página. El crecimiento a largo plazo depende de la retención, el gasto del fan y la ejecución fuerte dentro de los DMs.' },
-          { title: 'Muchas creadoras se sienten como una más dentro de su agencia.', text: 'Estrategias genéricas, equipos compartidos y mala comunicación acaban limitando el crecimiento a largo plazo. Un escalado serio requiere estrategia personalizada y soporte dedicado detrás de la página.' },
-          { title: 'Sin sistemas reales ni control de calidad, el crecimiento se vuelve inconsistente.', text: 'Los meses fuertes se vuelven impredecibles, los ingresos fluctúan y escalar se hace difícil de sostener a largo plazo. La consistencia viene de la estructura, la ejecución y el soporte operativo.' },
-          { title: 'La mayoría de creadoras no pueden escalar solas para siempre.', text: 'En algún punto, el contenido, los mensajes, la publicación y la monetización son demasiado para que una sola persona los gestione bien. El crecimiento real requiere el equipo adecuado detrás de la página.' },
-        ].map((row, idx) => (
-          <div class={`py-12 md:py-16 grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-16 items-start ${idx === 0 ? 'border-y' : 'border-b'}`} style="border-color:rgba(17,17,17,0.2);">
-            <h3 class="font-display text-3xl md:text-4xl lg:text-5xl text-on-surface leading-[1.0] tracking-[-0.01em] lg:col-span-5 lg:pr-4">{row.title}</h3>
-            <p class="text-on-surface/75 text-base md:text-lg leading-relaxed lg:col-span-7 lg:max-w-xl">{row.text}</p>
-          </div>
-        ))}
+        <!-- Pain points column -->
+        <div class="lg:col-span-7 flex flex-col">
+          {[
+            { title: 'El mal chatting mata el crecimiento de la página.', text: 'Ventas agresivas, conversaciones débiles y mala ejecución dañan poco a poco la retención, la confianza del fan y el gasto a largo plazo. Una monetización fuerte requiere estructura, formación y consistencia detrás de cada interacción.' },
+            { title: 'Tener seguidores no siempre significa ganar dinero de verdad.', text: 'Muchas creadoras ya tienen visitas y seguidores — la diferencia real viene de la monetización detrás de la página. El crecimiento a largo plazo depende de la retención, el gasto del fan y la ejecución fuerte dentro de los DMs.' },
+            { title: 'Muchas creadoras se sienten como una más dentro de su agencia.', text: 'Estrategias genéricas, equipos compartidos y mala comunicación acaban limitando el crecimiento a largo plazo. Un escalado serio requiere estrategia personalizada y soporte dedicado detrás de la página.' },
+            { title: 'Sin sistemas reales ni control de calidad, el crecimiento se vuelve inconsistente.', text: 'Los meses fuertes se vuelven impredecibles, los ingresos fluctúan y escalar se hace difícil de sostener a largo plazo. La consistencia viene de la estructura, la ejecución y el soporte operativo.' },
+            { title: 'La mayoría de creadoras no pueden escalar solas para siempre.', text: 'En algún punto, el contenido, los mensajes, la publicación y la monetización son demasiado para que una sola persona los gestione bien. El crecimiento real requiere el equipo adecuado detrás de la página.' },
+          ].map((row, idx) => (
+            <div class={`py-14 md:py-20 ${idx === 0 ? '' : 'border-t'}`} style="border-color:rgba(17,17,17,0.22);">
+              <h3 class="font-display text-3xl md:text-4xl lg:text-5xl text-on-surface leading-[0.98] tracking-[-0.015em] mb-5 md:mb-6">{row.title}</h3>
+              <p class="text-on-surface/65 text-[15px] md:text-base leading-relaxed max-w-lg">{row.text}</p>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- 2c. RESULTS PREVIEW (white, editorial asymmetric) -->
-  <section class="py-32 md:py-44 bg-white">
-    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+  <!-- 2c. RESULTS PREVIEW (off-white, alternating case-study spreads) -->
+  <section class="py-36 md:py-56 bg-white">
+    <div class="max-w-7xl mx-auto px-6 lg:px-10">
       <!-- Header -->
-      <div class="text-center max-w-3xl mx-auto mb-20 md:mb-28 flex flex-col gap-5">
-        <h2 class="font-display text-5xl md:text-7xl lg:text-8xl text-on-surface leading-[0.96] tracking-[-0.02em]">Resultados construidos sobre sistemas.</h2>
-        <p class="text-on-surface/70 text-lg md:text-xl leading-relaxed max-w-2xl mx-auto">El crecimiento solo vale cuando la monetizaci&oacute;n escala detr&aacute;s.</p>
+      <div class="mb-28 md:mb-40 max-w-4xl">
+        <h2 class="font-display text-5xl md:text-7xl lg:text-8xl text-on-surface leading-[0.94] tracking-[-0.025em]">Resultados construidos sobre sistemas.</h2>
+        <p class="mt-7 md:mt-9 text-on-surface/65 text-base md:text-lg leading-relaxed max-w-md">El crecimiento solo vale cuando la monetizaci&oacute;n escala detr&aacute;s.</p>
       </div>
 
-      <!-- Asymmetric pair -->
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-14 lg:gap-20 items-start mb-20 md:mb-24">
-        <!-- Growth — smaller, top-aligned -->
-        <div class="lg:col-span-5 flex flex-col gap-5">
-          <span class="text-[11px] uppercase tracking-[0.3em] text-on-surface/50 font-medium">Crecimiento</span>
-          <p class="font-display text-2xl md:text-3xl text-on-surface leading-tight">+53k seguidores generados en 30 d&iacute;as.</p>
-          <div class="mt-4 overflow-hidden">
-            <img src="/assets/results/growth.jpeg" alt="Anal&iacute;ticas de Instagram — +53k seguidores en 30 d&iacute;as" class="w-full h-auto block" loading="lazy" />
-          </div>
+      <!-- Case 1: text left / screenshot right -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center mb-32 md:mb-44">
+        <div class="lg:col-span-5 flex flex-col gap-6">
+          <span class="text-[11px] uppercase tracking-[0.3em] text-on-surface/45 font-medium">Crecimiento</span>
+          <p class="font-display text-3xl md:text-4xl lg:text-5xl text-on-surface leading-[1.0] tracking-[-0.015em]">+53k seguidores generados en 30 d&iacute;as.</p>
         </div>
-
-        <!-- Monetization — larger, offset down for editorial spread -->
-        <div class="lg:col-span-7 lg:mt-24 flex flex-col gap-5">
-          <span class="text-[11px] uppercase tracking-[0.3em] text-on-surface/50 font-medium">Monetizaci&oacute;n</span>
-          <p class="font-display text-2xl md:text-3xl text-on-surface leading-tight">$24,586/mes.</p>
-          <div class="mt-4 overflow-hidden">
-            <img src="/assets/results/monetization.jpeg" alt="Screenshot de ingresos mensuales — $24,586" class="w-full h-auto block" loading="lazy" />
-          </div>
+        <div class="lg:col-span-7">
+          <img src="/assets/results/growth.jpeg" alt="Anal&iacute;ticas de Instagram — +53k seguidores en 30 d&iacute;as" class="w-full h-auto block" style="box-shadow: 0 24px 60px -24px rgba(17,17,17,0.15);" loading="lazy" />
         </div>
       </div>
 
-      <!-- CTA -->
-      <div class="text-center">
-        <a href="/es/results" class="inline-block bg-accent text-black font-bold px-9 py-4 rounded-[7px] text-sm tracking-wide hover:brightness-95 hover:scale-[1.02] transition-all">
+      <!-- Case 2: screenshot left / text right -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center mb-32 md:mb-40">
+        <div class="lg:col-span-7 lg:order-1">
+          <img src="/assets/results/monetization.jpeg" alt="Screenshot de ingresos mensuales — $24,586" class="w-full h-auto block" style="box-shadow: 0 24px 60px -24px rgba(17,17,17,0.15);" loading="lazy" />
+        </div>
+        <div class="lg:col-span-5 lg:order-2 flex flex-col gap-6">
+          <span class="text-[11px] uppercase tracking-[0.3em] text-on-surface/45 font-medium">Monetizaci&oacute;n</span>
+          <p class="font-display text-3xl md:text-4xl lg:text-5xl text-on-surface leading-[1.0] tracking-[-0.015em]">$24,586/mes.</p>
+        </div>
+      </div>
+
+      <!-- Editorial CTA link -->
+      <div class="flex justify-start lg:justify-end">
+        <a href="/es/results" class="group inline-flex items-baseline gap-4 text-on-surface font-display text-2xl md:text-3xl tracking-[-0.01em] hover:gap-6 transition-all duration-300">
           Ver resultados completos
+          <span class="text-on-surface/55 group-hover:text-on-surface transition-colors">&rarr;</span>
         </a>
       </div>
     </div>
   </section>
 
-  <!-- 3. SYSTEMS BEHIND THE REVENUE (editorial, staggered, no icons) -->
-  <section class="py-32 md:py-44 bg-white">
-    <div class="max-w-6xl mx-auto px-6 lg:px-8">
-      <div class="mb-24 md:mb-32 max-w-4xl">
-        <h2 class="font-display text-5xl md:text-7xl lg:text-8xl text-on-surface leading-[0.96] tracking-[-0.02em]">Los sistemas detr&aacute;s de los ingresos.</h2>
-      </div>
-
-      <div class="flex flex-col gap-24 md:gap-32">
-        <!-- Block 1: aligned left -->
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
-          <div class="lg:col-start-1 lg:col-span-7 flex flex-col gap-5">
-            <span class="text-[11px] uppercase tracking-[0.3em] text-on-surface/50 font-medium">01</span>
-            <h3 class="font-display text-4xl md:text-6xl lg:text-7xl text-on-surface leading-[1.0] tracking-[-0.015em]">Chatting y Monetizaci&oacute;n</h3>
-            <p class="text-on-surface/75 text-lg leading-relaxed max-w-xl">Nuestro equipo interno de chatting se centra en retenci&oacute;n, relaciones con fans y gasto a largo plazo &mdash; construyendo una monetizaci&oacute;n m&aacute;s fuerte detr&aacute;s de la p&aacute;gina, no solo ventas a corto plazo.</p>
-          </div>
+  <!-- 3. SYSTEMS BEHIND THE REVENUE (BLACK, sticky header + staggered systems) -->
+  <section class="py-36 md:py-56" style="background-color:#111111;">
+    <div class="max-w-7xl mx-auto px-6 lg:px-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24">
+        <!-- Sticky headline column -->
+        <div class="lg:col-span-5 lg:sticky lg:top-32 lg:self-start">
+          <h2 class="font-display text-5xl md:text-7xl lg:text-7xl xl:text-8xl text-white leading-[0.92] tracking-[-0.025em]">Los sistemas detr&aacute;s de los ingresos.</h2>
         </div>
 
-        <!-- Block 2: offset right -->
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
-          <div class="lg:col-start-6 lg:col-span-7 flex flex-col gap-5">
-            <span class="text-[11px] uppercase tracking-[0.3em] text-on-surface/50 font-medium">02</span>
-            <h3 class="font-display text-4xl md:text-6xl lg:text-7xl text-on-surface leading-[1.0] tracking-[-0.015em]">Sistemas de Crecimiento</h3>
-            <p class="text-on-surface/75 text-lg leading-relaxed max-w-xl">Sistemas multiplataforma de crecimiento que combinan Instagram, estrategia de contenido viral y fuentes de tr&aacute;fico externo, dise&ntilde;ados para traer fans nuevos al ecosistema de forma constante.</p>
-          </div>
-        </div>
-
-        <!-- Block 3: slight indent right -->
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
-          <div class="lg:col-start-3 lg:col-span-7 flex flex-col gap-5">
-            <span class="text-[11px] uppercase tracking-[0.3em] text-on-surface/50 font-medium">03</span>
-            <h3 class="font-display text-4xl md:text-6xl lg:text-7xl text-on-surface leading-[1.0] tracking-[-0.015em]">Protecci&oacute;n e Infraestructura</h3>
-            <p class="text-on-surface/75 text-lg leading-relaxed max-w-xl">Protecci&oacute;n frente a filtraciones, soporte DMCA y seguridad de cuenta dise&ntilde;ados para que las creadoras escalen con confianza sin perder el control de su contenido.</p>
-          </div>
+        <!-- Systems stacked right -->
+        <div class="lg:col-span-7 flex flex-col gap-24 md:gap-32">
+          {[
+            { num: '01', title: 'Chatting y Monetización', text: 'Nuestro equipo interno de chatting se centra en retención, relaciones con fans y gasto a largo plazo — construyendo una monetización más fuerte detrás de la página, no solo ventas a corto plazo.' },
+            { num: '02', title: 'Sistemas de Crecimiento', text: 'Sistemas multiplataforma de crecimiento que combinan Instagram, estrategia de contenido viral y fuentes de tráfico externo, diseñados para traer fans nuevos al ecosistema de forma constante.' },
+            { num: '03', title: 'Protección e Infraestructura', text: 'Protección frente a filtraciones, soporte DMCA y seguridad de cuenta diseñados para que las creadoras escalen con confianza sin perder el control de su contenido.' },
+          ].map(s => (
+            <div class="flex flex-col gap-6">
+              <span class="text-[11px] uppercase tracking-[0.3em] text-white/40 font-medium">{s.num}</span>
+              <h3 class="font-display text-4xl md:text-5xl lg:text-6xl text-white leading-[1.0] tracking-[-0.02em]">{s.title}</h3>
+              <p class="text-white/65 text-base md:text-lg leading-relaxed max-w-lg">{s.text}</p>
+            </div>
+          ))}
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 4. HOW IT WORKS (charcoal, 4-step editorial) -->
-  <section class="py-32 md:py-44 section-dark">
-    <div class="max-w-7xl mx-auto px-6 lg:px-8">
-      <div class="mb-20 md:mb-28 max-w-3xl">
-        <h2 class="font-display text-5xl md:text-7xl lg:text-8xl text-on-surface leading-[0.96] tracking-[-0.02em]">C&oacute;mo funciona.</h2>
+  <!-- 4. HOW IT WORKS (off-white, oversized step numbers) -->
+  <section class="py-36 md:py-56" style="background-color:#f7f3ee;">
+    <div class="max-w-7xl mx-auto px-6 lg:px-10">
+      <div class="mb-28 md:mb-40 max-w-4xl">
+        <h2 class="font-display text-5xl md:text-7xl lg:text-8xl text-on-surface leading-[0.94] tracking-[-0.025em]">C&oacute;mo funciona.</h2>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 md:gap-10 lg:gap-12">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 md:gap-12 lg:gap-16">
         {[
           { num: '01', title: 'Aplicar', text: 'Aplicación breve para entender tu perfil, contenido y etapa actual.' },
           { num: '02', title: 'Auditoría', text: 'Revisamos tu página, posicionamiento, tráfico y estructura de monetización.' },
           { num: '03', title: 'Setup del Sistema', text: 'Construimos sistemas de crecimiento, chatting y monetización alrededor de tu página.' },
           { num: '04', title: 'Escalar y Optimizar', text: 'Optimización continua enfocada en crecimiento, retención e ingresos a largo plazo.' },
         ].map(step => (
-          <div class="flex flex-col gap-5">
-            <span class="text-[11px] uppercase tracking-[0.3em] text-on-surface/55 font-medium">{step.num}</span>
-            <h3 class="font-display text-2xl md:text-3xl text-on-surface leading-tight">{step.title}</h3>
-            <p class="text-on-surface-variant text-base leading-relaxed">{step.text}</p>
+          <div class="flex flex-col gap-6">
+            <span class="font-display text-6xl md:text-7xl lg:text-8xl text-on-surface/22 leading-[0.85] tracking-[-0.02em]">{step.num}</span>
+            <h3 class="font-display text-2xl md:text-3xl text-on-surface leading-[1.05] tracking-[-0.015em]">{step.title}</h3>
+            <p class="text-on-surface/65 text-base leading-relaxed max-w-xs">{step.text}</p>
           </div>
         ))}
       </div>
@@ -203,8 +200,8 @@ const serviceSchema = {
   <!-- 7. FAQ (white) -->
   <section class="py-32 md:py-40 bg-white">
     <div class="max-w-3xl mx-auto px-6 lg:px-8">
-      <div class="mb-16 md:mb-20 text-center">
-        <h2 class="font-display text-4xl md:text-6xl text-on-surface leading-[1.05]">Preguntas frecuentes.</h2>
+      <div class="mb-20 md:mb-28">
+        <h2 class="font-display text-5xl md:text-7xl text-on-surface leading-[0.96] tracking-[-0.025em]">Preguntas frecuentes.</h2>
       </div>
       <div class="flex flex-col">
         {[
