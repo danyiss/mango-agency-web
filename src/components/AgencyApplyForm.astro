@@ -95,91 +95,86 @@ const t = {
 }[lang];
 ---
 
-<!-- Intro block (pre-form CTA) -->
-<section class="pt-24 md:pt-28 pb-8 bg-white">
-  <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center flex flex-col gap-5">
-    <h2 class="font-display text-4xl md:text-6xl text-on-surface leading-[1.05]">{t.headline}</h2>
-    <p class="text-on-surface-variant text-lg md:text-xl leading-relaxed max-w-2xl mx-auto">{t.subheadline}</p>
+<!-- Intro block (private application) -->
+<section class="pt-36 md:pt-52 pb-10 md:pb-14" style="background-color:#111111;">
+  <div class="max-w-3xl mx-auto px-6 lg:px-8 text-center flex flex-col gap-7">
+    <span class="text-xs uppercase tracking-[0.28em] italic text-white/45" style="font-family:Georgia,'Times New Roman',serif;">Private application</span>
+    <h2 class="font-display text-5xl md:text-7xl lg:text-8xl text-white leading-[0.94] tracking-[-0.025em]">{t.headline}</h2>
+    <p class="text-white/65 text-base md:text-lg leading-relaxed max-w-xl mx-auto">{t.subheadline}</p>
   </div>
 </section>
 
 <!-- Form -->
-<section id="agency-apply" class="pb-24 md:pb-28 bg-white">
-  <div class="max-w-2xl mx-auto px-6 lg:px-8">
-    <div class="bg-surface-container-lowest border border-outline-variant/20 rounded-2xl p-7 md:p-9">
-      <h3 class="text-[11px] font-bold uppercase tracking-[0.22em] text-outline mb-5">{t.formTitle}</h3>
-      <form id="agency-apply-form" class="flex flex-col gap-4">
+<section id="agency-apply" class="pb-36 md:pb-52" style="background-color:#111111;">
+  <div class="max-w-xl mx-auto px-6 lg:px-8">
+    <div class="rounded-2xl px-7 md:px-12 py-12 md:py-14" style="background-color:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08);">
+      <h3 class="text-[11px] uppercase tracking-[0.28em] italic text-white/45 mb-8" style="font-family:Georgia,'Times New Roman',serif;">{t.formTitle}</h3>
+      <form id="agency-apply-form" class="flex flex-col gap-7">
         <div>
-          <label for="agencyName" class="text-[11px] font-bold uppercase tracking-[0.18em] text-on-surface-variant mb-1.5 block">{t.agencyName}</label>
+          <label for="agencyName" class="text-[11px] font-semibold uppercase tracking-[0.22em] text-white/70 mb-3 block">{t.agencyName}</label>
           <input type="text" id="agencyName" name="agencyName" required
-            class="w-full bg-surface-container-low border border-outline-variant/30 rounded-lg px-4 py-2.5 text-sm text-on-surface focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all" />
+            class="w-full bg-transparent border-0 border-b border-white/25 px-0 py-2.5 text-base text-white placeholder:text-white/30 focus:outline-none focus:border-white/70 transition-colors" />
         </div>
 
         <div>
-          <label for="instagram" class="text-[11px] font-bold uppercase tracking-[0.18em] text-on-surface-variant mb-1.5 block">{t.instagram}</label>
+          <label for="instagram" class="text-[11px] font-semibold uppercase tracking-[0.22em] text-white/70 mb-3 block">{t.instagram}</label>
           <input type="text" id="instagram" name="instagram" required
-            class="w-full bg-surface-container-low border border-outline-variant/30 rounded-lg px-4 py-2.5 text-sm text-on-surface focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all" />
+            class="w-full bg-transparent border-0 border-b border-white/25 px-0 py-2.5 text-base text-white placeholder:text-white/30 focus:outline-none focus:border-white/70 transition-colors" />
         </div>
 
         <div>
-          <label for="contact" class="text-[11px] font-bold uppercase tracking-[0.18em] text-on-surface-variant mb-1.5 block">{t.contact}</label>
+          <label for="contact" class="text-[11px] font-semibold uppercase tracking-[0.22em] text-white/70 mb-3 block">{t.contact}</label>
           <input type="text" id="contact" name="contact" required
-            class="w-full bg-surface-container-low border border-outline-variant/30 rounded-lg px-4 py-2.5 text-sm text-on-surface focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all" />
+            class="w-full bg-transparent border-0 border-b border-white/25 px-0 py-2.5 text-base text-white placeholder:text-white/30 focus:outline-none focus:border-white/70 transition-colors" />
         </div>
 
         <div>
-          <label for="accounts" class="text-[11px] font-bold uppercase tracking-[0.18em] text-on-surface-variant mb-1.5 block">{t.accounts}</label>
+          <label for="accounts" class="text-[11px] font-semibold uppercase tracking-[0.22em] text-white/70 mb-3 block">{t.accounts}</label>
           <select id="accounts" name="accounts" required
-            class="w-full bg-surface-container-low border border-outline-variant/30 rounded-lg px-4 py-2.5 text-sm text-on-surface focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all appearance-none cursor-pointer">
-            <option value="" disabled selected>{t.accountsPlaceholder}</option>
+            class="w-full bg-transparent border-0 border-b border-white/25 px-0 py-2.5 text-base text-white focus:outline-none focus:border-white/70 transition-colors appearance-none cursor-pointer">
+            <option value="" disabled selected style="background-color:#111111;color:rgba(255,255,255,0.5);">{t.accountsPlaceholder}</option>
             {t.accountOptions.map(opt => (
-              <option value={opt.value}>{opt.label}</option>
+              <option value={opt.value} style="background-color:#111111;">{opt.label}</option>
             ))}
           </select>
         </div>
 
         <div>
-          <label for="revenue" class="text-[11px] font-bold uppercase tracking-[0.18em] text-on-surface-variant mb-1.5 block">{t.revenue}</label>
+          <label for="revenue" class="text-[11px] font-semibold uppercase tracking-[0.22em] text-white/70 mb-3 block">{t.revenue}</label>
           <select id="revenue" name="revenue" required
-            class="w-full bg-surface-container-low border border-outline-variant/30 rounded-lg px-4 py-2.5 text-sm text-on-surface focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all appearance-none cursor-pointer">
-            <option value="" disabled selected>{t.revenuePlaceholder}</option>
+            class="w-full bg-transparent border-0 border-b border-white/25 px-0 py-2.5 text-base text-white focus:outline-none focus:border-white/70 transition-colors appearance-none cursor-pointer">
+            <option value="" disabled selected style="background-color:#111111;color:rgba(255,255,255,0.5);">{t.revenuePlaceholder}</option>
             {t.revenueOptions.map(opt => (
-              <option value={opt.value}>{opt.label}</option>
+              <option value={opt.value} style="background-color:#111111;">{opt.label}</option>
             ))}
           </select>
         </div>
 
         <div>
-          <label for="challenge" class="text-[11px] font-bold uppercase tracking-[0.18em] text-on-surface-variant mb-1.5 block">{t.challenge}</label>
+          <label for="challenge" class="text-[11px] font-semibold uppercase tracking-[0.22em] text-white/70 mb-3 block">{t.challenge}</label>
           <select id="challenge" name="challenge" required
-            class="w-full bg-surface-container-low border border-outline-variant/30 rounded-lg px-4 py-2.5 text-sm text-on-surface focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all appearance-none cursor-pointer">
-            <option value="" disabled selected>{t.challengePlaceholder}</option>
+            class="w-full bg-transparent border-0 border-b border-white/25 px-0 py-2.5 text-base text-white focus:outline-none focus:border-white/70 transition-colors appearance-none cursor-pointer">
+            <option value="" disabled selected style="background-color:#111111;color:rgba(255,255,255,0.5);">{t.challengePlaceholder}</option>
             {t.challengeOptions.map(opt => (
-              <option value={opt.value}>{opt.label}</option>
+              <option value={opt.value} style="background-color:#111111;">{opt.label}</option>
             ))}
           </select>
         </div>
 
         <button type="submit" id="agency-submit-btn"
-          class="bg-accent text-black font-bold py-3.5 rounded-[7px] text-sm tracking-wide hover:brightness-95 hover:scale-[1.02] transition-all w-full mt-3">
+          class="bg-accent text-black font-bold py-4 rounded-[7px] text-sm tracking-wide hover:brightness-95 hover:scale-[1.02] transition-all w-full mt-5">
           {t.submit}
         </button>
 
-        <div class="flex flex-col gap-1.5 mt-2">
-          <div class="flex items-center gap-2 text-xs text-on-surface-variant">
-            <span class="material-symbols-outlined text-primary" style="font-size:16px;font-variation-settings:'FILL' 1;">check_circle</span>
-            {t.check1}
-          </div>
-          <div class="flex items-center gap-2 text-xs text-on-surface-variant">
-            <span class="material-symbols-outlined text-primary" style="font-size:16px;font-variation-settings:'FILL' 1;">check_circle</span>
-            {t.check2}
-          </div>
+        <div class="flex flex-col gap-1.5 mt-3 items-center text-center">
+          <p class="text-xs text-white/45">{t.check1}</p>
+          <p class="text-xs text-white/45">{t.check2}</p>
         </div>
       </form>
 
       <div id="agency-form-success" class="hidden text-center py-10">
-        <span class="material-symbols-outlined text-primary mb-4 block" style="font-size:48px;font-variation-settings:'FILL' 1;">check_circle</span>
-        <p class="text-on-surface font-bold text-lg">{t.success}</p>
+        <span class="material-symbols-outlined mb-4 block" style="font-size:48px;font-variation-settings:'FILL' 1; color:#C8A96A;">check_circle</span>
+        <p class="text-white text-lg md:text-xl">{t.success}</p>
       </div>
 
       <div id="agency-form-error" class="hidden text-center py-4">

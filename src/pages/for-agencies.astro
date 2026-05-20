@@ -54,28 +54,28 @@ const faqs = [
 
 <Layout title="OnlyFans Chatting Systems for Agencies | MANGO" description="Partner with MANGO to handle chatting and monetization for your OnlyFans agency. Dedicated chatters per model, structured sales flows and monetization systems built to scale." activeNav="for-agencies" lang="en" transparentTop={true}>
 
-  <!-- 1. HERO -->
+  <!-- 1. HERO — cinematic, darker overlay, oversized type -->
   <section class="relative h-screen -mt-16 w-full overflow-hidden">
     <div class="absolute inset-0 bg-cover bg-center bg-no-repeat" style="background-image: url('/assets/hero-agencies-v3.png');"></div>
-    <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/20"></div>
-    <div class="absolute inset-0 pointer-events-none" style="background: radial-gradient(ellipse 320px 220px at 96% 88%, rgba(0,0,0,0.55), transparent 70%);"></div>
-    <div class="absolute inset-0 flex items-start pt-[20vh] md:items-center md:pt-0">
-      <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 w-full">
-        <div class="max-w-[640px] flex flex-col gap-6">
-          <span class="text-xs font-semibold tracking-[0.25em] uppercase text-white/60">For agencies</span>
-          <h1 class="font-display text-5xl md:text-6xl lg:text-7xl text-white leading-[1.0]">
+    <div class="absolute inset-0" style="background-color:rgba(0,0,0,0.72);"></div>
+    <div class="absolute inset-0 pointer-events-none" style="background: linear-gradient(to bottom, rgba(0,0,0,0.35), rgba(0,0,0,0) 30%, rgba(0,0,0,0.55));"></div>
+    <div class="absolute inset-0 flex items-start pt-[18vh] md:items-center md:pt-0">
+      <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-10 w-full">
+        <div class="max-w-[640px] flex flex-col gap-7 md:gap-10">
+          <span class="text-xs uppercase tracking-[0.28em] italic text-white/55" style="font-family:Georgia,'Times New Roman',serif;">For agencies</span>
+          <h1 class="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-[120px] text-white leading-[0.92] tracking-[-0.025em]">
             Built for OnlyFans agencies.
           </h1>
-          <p class="text-white/85 text-lg md:text-xl leading-relaxed font-body max-w-xl">
+          <p class="text-white/70 text-base md:text-lg leading-relaxed font-body max-w-md">
             We handle chatting and monetization so you can focus on traffic and growth.
           </p>
-          <div class="border-l-2 border-white/50 pl-5 text-sm md:text-base text-white/70 leading-snug">
+          <div class="border-l border-white/25 pl-5 text-[13px] md:text-sm text-white/55 leading-snug max-w-xs">
             <p>You keep the model, the brand, and the relationship.</p>
-            <p>We increase the revenue.</p>
+            <p class="mt-1">We increase the revenue.</p>
           </div>
-          <div class="mt-2">
-            <a href="#agency-apply" class="inline-block bg-accent text-black font-bold px-8 py-4 rounded-[7px] text-sm tracking-wide hover:brightness-95 hover:scale-[1.02] transition-all shadow-lg">
-              Apply now
+          <div class="mt-3">
+            <a href="#agency-apply" class="group inline-flex items-baseline gap-3 text-white text-xs md:text-sm uppercase tracking-[0.22em] font-medium border-b border-white/45 pb-2 hover:border-white transition-colors duration-300">
+              Apply now <span class="group-hover:translate-x-1 transition-transform duration-300">&rarr;</span>
             </a>
           </div>
         </div>
@@ -83,64 +83,60 @@ const faqs = [
     </div>
   </section>
 
-  <!-- 2. PROBLEM (BLACK) — minimal editorial -->
-  <section class="py-32 md:py-44 bg-black text-white">
-    <div class="max-w-4xl mx-auto px-6 lg:px-8 flex flex-col gap-6 text-center">
-      <p class="font-display text-3xl md:text-5xl text-white leading-[1.15]">You know how to generate traffic.</p>
-      <p class="font-display text-3xl md:text-5xl text-white/65 leading-[1.15]">We know how to maximize the monetization behind it.</p>
+  <!-- 2. PROBLEM (CREAM editorial) -->
+  <section class="py-36 md:py-56" style="background-color:#f5f2ee;">
+    <div class="max-w-5xl mx-auto px-6 lg:px-10 flex flex-col gap-7 md:gap-10 text-center">
+      <p class="font-display text-3xl md:text-5xl lg:text-6xl text-on-surface leading-[1.05] tracking-[-0.015em]">You know how to generate traffic.</p>
+      <p class="font-display text-3xl md:text-5xl lg:text-6xl text-on-surface/45 leading-[1.05] tracking-[-0.015em]">We know how to maximize the monetization behind it.</p>
     </div>
   </section>
 
-  <!-- 3. WHERE AGENCIES LOSE REVENUE (charcoal) -->
-  <section class="py-32 md:py-44 section-dark">
-    <div class="max-w-7xl mx-auto px-6 lg:px-8">
-      <div class="mb-20 md:mb-24 max-w-3xl">
-        <h2 class="font-display text-4xl md:text-6xl text-on-surface leading-[1.05]">Where agencies lose revenue.</h2>
+  <!-- 3. WHERE AGENCIES LOSE REVENUE (deep black, editorial 2-col) -->
+  <section class="py-36 md:py-56" style="background-color:#0a0a0a;">
+    <div class="max-w-7xl mx-auto px-6 lg:px-10">
+      <div class="mb-24 md:mb-36 max-w-4xl">
+        <span class="text-xs uppercase tracking-[0.28em] italic text-white/45 mb-6 block" style="font-family:Georgia,'Times New Roman',serif;">Section 01 &mdash; The problem</span>
+        <h2 class="font-display text-5xl md:text-7xl lg:text-8xl text-white leading-[0.94] tracking-[-0.025em]">Where agencies lose revenue.</h2>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-2" style="row-gap:1px;column-gap:1px;background-color:rgba(255,255,255,0.14);">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-x-16 lg:gap-x-24 gap-y-14 md:gap-y-20">
         {lossCards.map(card => (
-          <div class="px-8 md:px-12 py-12 md:py-16 flex flex-col gap-4 transition-colors duration-300 hover:bg-white/[0.04]" style="background-color:#161616;">
-            <h3 class="font-display text-2xl md:text-3xl text-on-surface leading-tight">{card.title}</h3>
-            <p class="text-on-surface-variant text-base leading-relaxed max-w-md">{card.text}</p>
+          <div class="flex flex-col gap-4 pb-10 md:pb-12" style="border-bottom:1px solid rgba(255,255,255,0.1);">
+            <h3 class="font-display text-2xl md:text-3xl lg:text-4xl text-white leading-[1.05] tracking-[-0.015em]">{card.title}</h3>
+            <p class="text-white/55 text-base leading-relaxed max-w-md">{card.text}</p>
           </div>
         ))}
       </div>
     </div>
   </section>
 
-  <!-- 4. SOLUTION (WHITE) — We become your monetization system -->
-  <section class="py-32 md:py-44 bg-white border-t border-on-surface/10">
-    <div class="max-w-4xl mx-auto px-6 lg:px-8">
-      <h2 class="font-display text-4xl md:text-6xl text-on-surface leading-[1.05] mb-14 max-w-3xl">
-        We become your monetization system.
-      </h2>
-      <ul class="flex flex-col gap-7">
-        {solutionBullets.map(item => (
-          <li class="flex items-start gap-4">
-            <span class="material-symbols-outlined text-primary flex-shrink-0 mt-1" style="font-size:22px;font-variation-settings:'FILL' 1;">check_circle</span>
-            <div class="flex flex-col gap-1.5">
-              <p class="font-semibold text-on-surface text-lg leading-tight">{item.title}</p>
-              <p class="text-on-surface-variant text-base leading-relaxed">{item.text}</p>
-            </div>
+  <!-- 4. SOLUTION (CREAM) — operator-level, refined system map -->
+  <section class="py-36 md:py-56" style="background-color:#f5f2ee;">
+    <div class="max-w-5xl mx-auto px-6 lg:px-10">
+      <div class="mb-20 md:mb-28 max-w-3xl">
+        <span class="text-xs uppercase tracking-[0.28em] italic text-on-surface/45 mb-6 block" style="font-family:Georgia,'Times New Roman',serif;">Section 02 &mdash; The solution</span>
+        <h2 class="font-display text-5xl md:text-7xl lg:text-8xl text-on-surface leading-[0.94] tracking-[-0.025em]">We become your monetization system.</h2>
+      </div>
+
+      <ul class="flex flex-col">
+        {solutionBullets.map((item, idx) => (
+          <li class={`py-9 md:py-11 grid grid-cols-1 lg:grid-cols-12 gap-3 lg:gap-12 items-baseline ${idx === 0 ? 'border-y' : 'border-b'}`} style="border-color:rgba(17,17,17,0.12);">
+            <p class="font-display text-xl md:text-2xl text-on-surface leading-tight tracking-[-0.01em] lg:col-span-5">{item.title}</p>
+            <p class="text-on-surface/65 text-base leading-relaxed lg:col-span-7 lg:max-w-lg">{item.text}</p>
           </li>
         ))}
       </ul>
 
-      <!-- Monetization system map -->
-      <div class="mt-24 md:mt-32 pt-16 md:pt-20 border-t border-on-surface/10">
-        <p class="text-[11px] font-semibold uppercase tracking-[0.3em] text-on-surface/55 mb-12 md:mb-14 text-center">The monetization system map</p>
-        <div class="max-w-xl mx-auto">
+      <!-- Refined monetization system map -->
+      <div class="mt-32 md:mt-44">
+        <span class="text-xs uppercase tracking-[0.28em] italic text-on-surface/45 mb-12 md:mb-16 block text-center" style="font-family:Georgia,'Times New Roman',serif;">The monetization system map</span>
+        <div class="max-w-2xl mx-auto">
           {mapSteps.map((step, i) => (
-            <div>
-              <div class={`text-center py-7 md:py-9 ${i === 0 ? '' : 'border-t border-on-surface/10'}`}>
-                <p class="font-display text-2xl md:text-3xl text-on-surface leading-tight">{step.title}</p>
-                <p class="text-on-surface-variant text-sm md:text-base leading-relaxed mt-2 max-w-md mx-auto">{step.text}</p>
+            <div class={`py-9 md:py-11 grid grid-cols-12 gap-5 sm:gap-10 items-baseline ${i === 0 ? 'border-y' : 'border-b'}`} style="border-color:rgba(17,17,17,0.12);">
+              <span class="col-span-2 text-xs uppercase tracking-[0.28em] italic text-on-surface/45" style="font-family:Georgia,'Times New Roman',serif;">{String(i+1).padStart(2,'0')}</span>
+              <div class="col-span-10 flex flex-col gap-2">
+                <p class="font-display text-xl md:text-2xl text-on-surface leading-tight tracking-[-0.01em]">{step.title}</p>
+                <p class="text-on-surface/65 text-sm md:text-base leading-relaxed max-w-lg">{step.text}</p>
               </div>
-              {i < mapSteps.length - 1 && (
-                <div class="flex justify-center py-1">
-                  <span class="material-symbols-outlined text-on-surface/35" style="font-size:22px;">arrow_downward</span>
-                </div>
-              )}
             </div>
           ))}
         </div>
@@ -148,57 +144,60 @@ const faqs = [
     </div>
   </section>
 
-  <!-- 5. HOW IT WORKS (charcoal) — tighter pacing -->
-  <section class="py-24 md:py-32 section-dark">
-    <div class="max-w-7xl mx-auto px-6 lg:px-8">
-      <h2 class="font-display text-4xl md:text-5xl text-on-surface leading-[1.1] mb-12 md:mb-16 max-w-3xl">How it works.</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
+  <!-- 5. HOW IT WORKS (BLACK, editorial workflow, no cards) -->
+  <section class="py-36 md:py-56" style="background-color:#111111;">
+    <div class="max-w-7xl mx-auto px-6 lg:px-10">
+      <div class="mb-24 md:mb-36 max-w-3xl">
+        <span class="text-xs uppercase tracking-[0.28em] italic text-white/45 mb-6 block" style="font-family:Georgia,'Times New Roman',serif;">Section 03 &mdash; The process</span>
+        <h2 class="font-display text-5xl md:text-7xl lg:text-8xl text-white leading-[0.94] tracking-[-0.025em]">How it works.</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 md:gap-12 lg:gap-16">
         {howSteps.map(step => (
-          <div class="bg-surface-container-lowest p-8 md:p-10 rounded-2xl border border-outline-variant/20 flex flex-col gap-4">
-            <span class="font-display text-4xl md:text-5xl text-outline-variant/55 leading-none">{step.num}</span>
-            <h3 class="font-display text-xl md:text-2xl text-on-surface leading-tight">{step.title}</h3>
-            <p class="text-on-surface-variant text-sm md:text-base leading-relaxed">{step.text}</p>
+          <div class="flex flex-col gap-6">
+            <span class="font-display leading-[0.85] tracking-[-0.02em]" style="font-size:clamp(56px, 8vw, 96px); color:rgba(255,255,255,0.18);">{step.num}</span>
+            <h3 class="font-display text-xl md:text-2xl text-white leading-[1.1] tracking-[-0.01em]">{step.title}</h3>
+            <p class="text-white/55 text-sm md:text-base leading-relaxed">{step.text}</p>
           </div>
         ))}
       </div>
     </div>
   </section>
 
-  <!-- 6. WHY TOP AGENCIES WORK WITH US (BLACK) -->
-  <section class="py-32 md:py-40 bg-black text-white">
-    <div class="max-w-7xl mx-auto px-6 lg:px-8">
-      <h2 class="font-display text-4xl md:text-6xl text-white leading-[1.05] mb-14 max-w-4xl">
-        Why top agencies work with us.
-      </h2>
-      <ul class="flex flex-col gap-7 max-w-3xl">
-        {whyBullets.map(item => (
-          <li class="flex items-start gap-4">
-            <span class="material-symbols-outlined text-white flex-shrink-0 mt-1" style="font-size:22px;font-variation-settings:'FILL' 1;">check_circle</span>
-            <div class="flex flex-col gap-1.5">
-              <p class="font-semibold text-white text-lg leading-tight">{item.title}</p>
-              <p class="text-white/70 text-base leading-relaxed">{item.text}</p>
-            </div>
+  <!-- 6. WHY TOP AGENCIES (CREAM, quiet confidence) -->
+  <section class="py-36 md:py-56" style="background-color:#f5f2ee;">
+    <div class="max-w-5xl mx-auto px-6 lg:px-10">
+      <div class="mb-20 md:mb-28 max-w-3xl">
+        <span class="text-xs uppercase tracking-[0.28em] italic text-on-surface/45 mb-6 block" style="font-family:Georgia,'Times New Roman',serif;">Section 04 &mdash; The differentiation</span>
+        <h2 class="font-display text-5xl md:text-7xl lg:text-8xl text-on-surface leading-[0.94] tracking-[-0.025em]">Why top agencies work with us.</h2>
+      </div>
+      <ul class="flex flex-col max-w-3xl">
+        {whyBullets.map((item, idx) => (
+          <li class={`py-9 md:py-11 ${idx === 0 ? 'border-y' : 'border-b'}`} style="border-color:rgba(17,17,17,0.12);">
+            <p class="font-display text-xl md:text-2xl text-on-surface leading-tight tracking-[-0.01em] mb-3">{item.title}</p>
+            <p class="text-on-surface/65 text-base leading-relaxed max-w-xl">{item.text}</p>
           </li>
         ))}
       </ul>
     </div>
   </section>
 
-  <!-- 7. AGENCY APPLICATION FORM (incl. final CTA copy from component) -->
+  <!-- 7. AGENCY APPLICATION FORM (dark, private application) -->
   <AgencyApplyForm lang="en" />
 
-  <!-- 8. FAQ (SURFACE) -->
-  <section class="py-32 bg-surface">
-    <div class="max-w-4xl mx-auto px-6 lg:px-8">
-      <h2 class="font-display text-4xl md:text-5xl text-on-surface leading-[1.1] mb-14">Frequently asked questions.</h2>
-      <div class="flex flex-col gap-3">
-        {faqs.map(faq => (
-          <details class="bg-surface-container-lowest rounded-2xl group border border-outline-variant/20">
-            <summary class="p-8 flex items-center justify-between cursor-pointer list-none select-none">
-              <span class="font-semibold text-on-surface text-base md:text-lg pr-6">{faq.q}</span>
-              <span class="material-symbols-outlined expand-icon text-on-surface-variant flex-shrink-0 transition-transform duration-300">add</span>
+  <!-- 8. FAQ (CREAM, minimal hairline) -->
+  <section class="py-36 md:py-48" style="background-color:#f5f2ee;">
+    <div class="max-w-4xl mx-auto px-6 lg:px-10">
+      <div class="mb-16 md:mb-24 max-w-3xl">
+        <h2 class="font-display text-5xl md:text-7xl text-on-surface leading-[0.94] tracking-[-0.025em]">Frequently asked.</h2>
+      </div>
+      <div class="flex flex-col">
+        {faqs.map((faq, idx) => (
+          <details class={`group ${idx === 0 ? 'border-y' : 'border-b'}`} style="border-color:rgba(17,17,17,0.14);">
+            <summary class="py-7 md:py-8 flex items-center justify-between cursor-pointer list-none select-none">
+              <span class="font-display text-lg md:text-xl text-on-surface pr-6 tracking-[-0.005em]">{faq.q}</span>
+              <span class="material-symbols-outlined expand-icon text-on-surface/40 flex-shrink-0 transition-transform duration-300">add</span>
             </summary>
-            <div class="px-8 pb-8 text-on-surface-variant text-sm md:text-base leading-relaxed">{faq.a}</div>
+            <div class="pb-8 text-on-surface/65 text-sm md:text-base leading-relaxed max-w-2xl">{faq.a}</div>
           </details>
         ))}
       </div>
