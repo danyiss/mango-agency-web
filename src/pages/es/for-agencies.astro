@@ -63,7 +63,6 @@ const faqs = [
     <div class="absolute inset-0 flex items-start pt-[18vh] md:items-center md:pt-0">
       <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-10 w-full">
         <div class="max-w-[640px] flex flex-col gap-7 md:gap-10">
-          <span class="text-xs uppercase tracking-[0.28em] italic text-white/55" style="font-family:Georgia,'Times New Roman',serif;">Para agencias</span>
           <h1 class="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-[120px] text-white leading-[0.92] tracking-[-0.025em]">
             Hecho para agencias de OnlyFans.
           </h1>
@@ -84,19 +83,18 @@ const faqs = [
     </div>
   </section>
 
-  <!-- 2. PROBLEM positioning (luxury dark editorial) -->
-  <section class="relative py-36 md:py-56 section-luxury grain">
+  <!-- 2. PROBLEM positioning (cinematic editorial) -->
+  <section class="relative py-36 md:py-56 section-cinematic grain">
     <div class="relative z-10 max-w-5xl mx-auto px-6 lg:px-10 flex flex-col gap-7 md:gap-10 text-center">
       <p class="font-display text-3xl md:text-5xl lg:text-6xl text-white leading-[1.05] tracking-[-0.015em]">T&uacute; sabes generar tr&aacute;fico.</p>
       <p class="font-display text-3xl md:text-5xl lg:text-6xl text-white/45 leading-[1.05] tracking-[-0.015em]">Nosotros sabemos maximizar la monetizaci&oacute;n detr&aacute;s.</p>
     </div>
   </section>
 
-  <!-- 3. WHERE AGENCIES LOSE REVENUE (warm beige, the problems break) -->
-  <section class="py-36 md:py-56" style="background-color:#D8C8B8;">
+  <!-- 3. WHERE AGENCIES LOSE REVENUE (warm beige textured, the problems break) -->
+  <section class="relative py-36 md:py-56 section-beige">
     <div class="max-w-7xl mx-auto px-6 lg:px-10">
       <div class="mb-24 md:mb-36 max-w-4xl">
-        <span class="text-xs uppercase tracking-[0.28em] italic text-on-surface/55 mb-6 block" style="font-family:Georgia,'Times New Roman',serif;">Secci&oacute;n 01 &mdash; El problema</span>
         <h2 class="font-display text-5xl md:text-7xl lg:text-8xl text-on-surface leading-[0.94] tracking-[-0.025em]">D&oacute;nde las agencias pierden ingresos.</h2>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-x-16 lg:gap-x-24 gap-y-14 md:gap-y-20">
@@ -110,11 +108,10 @@ const faqs = [
     </div>
   </section>
 
-  <!-- 4. SOLUTION (luxury dark) — operator-level -->
-  <section class="relative py-36 md:py-56 section-luxury-deep grain">
+  <!-- 4. SOLUTION (dark panel) — operator-level -->
+  <section class="relative py-36 md:py-56 section-panel grain">
     <div class="relative z-10 max-w-5xl mx-auto px-6 lg:px-10">
       <div class="mb-20 md:mb-28 max-w-3xl">
-        <span class="text-xs uppercase tracking-[0.28em] italic text-white/45 mb-6 block" style="font-family:Georgia,'Times New Roman',serif;">Secci&oacute;n 02 &mdash; La soluci&oacute;n</span>
         <h2 class="font-display text-5xl md:text-7xl lg:text-8xl text-white leading-[0.94] tracking-[-0.025em]">Nos convertimos en tu sistema de monetizaci&oacute;n.</h2>
       </div>
 
@@ -129,7 +126,6 @@ const faqs = [
 
       <!-- Refined monetization system map -->
       <div class="mt-32 md:mt-44">
-        <span class="text-xs uppercase tracking-[0.28em] italic text-white/45 mb-12 md:mb-16 block text-center" style="font-family:Georgia,'Times New Roman',serif;">El mapa del sistema de monetizaci&oacute;n</span>
         <div class="max-w-2xl mx-auto">
           {mapSteps.map((step, i) => (
             <div class={`py-9 md:py-11 grid grid-cols-12 gap-5 sm:gap-10 items-baseline ${i === 0 ? 'border-y' : 'border-b'}`} style="border-color:rgba(255,255,255,0.12);">
@@ -145,11 +141,10 @@ const faqs = [
     </div>
   </section>
 
-  <!-- 5. HOW IT WORKS (luxury dark, editorial workflow, no cards) -->
-  <section class="relative py-36 md:py-56 section-luxury grain">
+  <!-- 5. HOW IT WORKS (dark panel, editorial workflow, no cards) -->
+  <section class="relative py-36 md:py-56 section-panel grain">
     <div class="max-w-7xl mx-auto px-6 lg:px-10">
       <div class="mb-24 md:mb-36 max-w-3xl">
-        <span class="text-xs uppercase tracking-[0.28em] italic text-white/45 mb-6 block" style="font-family:Georgia,'Times New Roman',serif;">Secci&oacute;n 03 &mdash; El proceso</span>
         <h2 class="font-display text-5xl md:text-7xl lg:text-8xl text-white leading-[0.94] tracking-[-0.025em]">C&oacute;mo funciona.</h2>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 md:gap-12 lg:gap-16">
@@ -164,11 +159,10 @@ const faqs = [
     </div>
   </section>
 
-  <!-- 6. WHY TOP AGENCIES (luxury dark, quiet confidence) -->
-  <section class="relative py-36 md:py-56 section-luxury-deep grain">
+  <!-- 6. WHY TOP AGENCIES (cinematic, quiet confidence) -->
+  <section class="relative py-36 md:py-56 section-cinematic grain">
     <div class="relative z-10 max-w-5xl mx-auto px-6 lg:px-10">
       <div class="mb-20 md:mb-28 max-w-3xl">
-        <span class="text-xs uppercase tracking-[0.28em] italic text-white/45 mb-6 block" style="font-family:Georgia,'Times New Roman',serif;">Secci&oacute;n 04 &mdash; La diferenciaci&oacute;n</span>
         <h2 class="font-display text-5xl md:text-7xl lg:text-8xl text-white leading-[0.94] tracking-[-0.025em]">Por qu&eacute; las top agencias trabajan con nosotros.</h2>
       </div>
       <ul class="flex flex-col max-w-3xl">
@@ -185,8 +179,8 @@ const faqs = [
   <!-- 7. AGENCY APPLICATION FORM (dark, private application) -->
   <AgencyApplyForm lang="es" />
 
-  <!-- 8. FAQ (luxury dark, minimal hairline) -->
-  <section class="relative py-36 md:py-48 section-luxury grain">
+  <!-- 8. FAQ (dark panel, minimal hairline) -->
+  <section class="relative py-36 md:py-48 section-panel grain">
     <div class="relative z-10 max-w-4xl mx-auto px-6 lg:px-10">
       <div class="mb-16 md:mb-24 max-w-3xl">
         <h2 class="font-display text-5xl md:text-7xl text-white leading-[0.94] tracking-[-0.025em]">Preguntas frecuentes.</h2>

@@ -58,24 +58,53 @@ const serviceSchema = {
     </div>
   </section>
 
-  <!-- 1b. AUTHORITY STRIP (thin editorial, luxury dark) -->
-  <section class="relative py-32 md:py-44 section-luxury grain">
-    <div class="relative z-10 max-w-6xl mx-auto px-6 lg:px-10">
-      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-y-6 md:gap-x-8 lg:gap-x-12 text-center md:text-left">
-        {[
-          'Focused on long-term growth.',
-          'Millions of views generated.',
-          'Behind high-performing creators.',
-          'Built on systems, not guesswork.',
-        ].map(line => (
-          <p class="text-[13px] md:text-sm text-white/65 font-medium leading-relaxed tracking-tight">{line}</p>
-        ))}
+  <!-- 1b. EDITORIAL METRICS (asymmetric luxury spread) -->
+  <section class="relative py-36 md:py-56 section-cinematic grain overflow-hidden">
+    <div class="atmosphere-glow warm" style="top:-6%;right:-8%;width:520px;height:520px;"></div>
+    <div class="atmosphere-glow deep" style="bottom:-15%;left:-10%;width:480px;height:480px;"></div>
+    <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-10">
+      <!-- Block 1 — left -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-y-6 lg:gap-x-16 items-end mb-28 md:mb-44">
+        <div class="lg:col-span-7 flex flex-col gap-4">
+          <p class="font-display text-7xl md:text-8xl lg:text-9xl xl:text-[180px] text-white leading-[0.85] tracking-[-0.03em]">50M+</p>
+          <p class="text-[11px] uppercase tracking-[0.3em] text-white/45 font-medium">Views generated</p>
+        </div>
+        <div class="lg:col-span-5 lg:pt-10">
+          <p class="text-white/60 text-base md:text-lg leading-relaxed max-w-md">Structured growth systems designed for long-term creator brands.</p>
+        </div>
+      </div>
+
+      <div class="h-px w-full mb-28 md:mb-44" style="background:rgba(255,255,255,0.08);"></div>
+
+      <!-- Block 2 — offset right -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-y-6 lg:gap-x-16 items-end mb-28 md:mb-44">
+        <div class="lg:col-span-5 lg:col-start-2 order-2 lg:order-1 lg:pt-10">
+          <p class="text-white/60 text-base md:text-lg leading-relaxed max-w-md">Native English &amp; Spanish chatting focused on retention and LTV.</p>
+        </div>
+        <div class="lg:col-span-6 lg:col-start-7 order-1 lg:order-2 flex flex-col gap-4 lg:items-end lg:text-right">
+          <p class="font-display text-7xl md:text-8xl lg:text-9xl xl:text-[180px] text-white leading-[0.85] tracking-[-0.03em]">24/7</p>
+          <p class="text-[11px] uppercase tracking-[0.3em] text-white/45 font-medium">Monetization</p>
+        </div>
+      </div>
+
+      <div class="h-px w-full mb-28 md:mb-44" style="background:rgba(255,255,255,0.08);"></div>
+
+      <!-- Block 3 — indented left -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-y-6 lg:gap-x-16 items-end">
+        <div class="lg:col-span-7 lg:col-start-3 flex flex-col gap-3">
+          <p class="font-display text-7xl md:text-8xl lg:text-9xl xl:text-[180px] text-white leading-[0.85] tracking-[-0.03em]">5&ndash;6</p>
+          <p class="font-display text-3xl md:text-4xl lg:text-5xl text-white/55 leading-[0.95] tracking-[-0.02em]">Figures</p>
+          <p class="text-[11px] uppercase tracking-[0.3em] text-white/45 font-medium mt-2">Monthly scaling</p>
+        </div>
+        <div class="lg:col-span-3 lg:col-start-10 lg:pt-10">
+          <p class="text-white/60 text-base md:text-lg leading-relaxed">Systems built to transform traffic into predictable revenue.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- 2b. PAIN / PROBLEM (warm beige, sticky-header magazine) -->
-  <section class="py-36 md:py-56" style="background-color:#D8C8B8;">
+  <!-- 2b. PAIN / PROBLEM (warm beige textured, sticky-header magazine) -->
+  <section class="relative py-36 md:py-56 section-beige">
     <div class="max-w-7xl mx-auto px-6 lg:px-10">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24">
         <!-- Sticky headline column -->
@@ -103,8 +132,17 @@ const serviceSchema = {
     </div>
   </section>
 
-  <!-- 2c. RESULTS PREVIEW (luxury dark, alternating case-study spreads) -->
-  <section class="relative py-36 md:py-56 section-luxury-deep grain">
+  <!-- 2b2. EDITORIAL QUOTE BREAK (emotional rhythm) -->
+  <section class="relative py-32 md:py-52 section-cinematic grain overflow-hidden">
+    <div class="atmosphere-glow warm" style="top:50%;left:-12%;width:520px;height:520px;transform:translateY(-50%);"></div>
+    <div class="relative z-10 max-w-5xl mx-auto px-6 lg:px-10 text-center">
+      <p class="font-display text-3xl md:text-5xl lg:text-6xl xl:text-7xl text-white leading-[1.08] tracking-[-0.02em]">Most creators don’t have a traffic problem.</p>
+      <p class="font-display text-3xl md:text-5xl lg:text-6xl xl:text-7xl text-white/45 leading-[1.08] tracking-[-0.02em] mt-3 md:mt-4">They have a monetization problem.</p>
+    </div>
+  </section>
+
+  <!-- 2c. RESULTS PREVIEW (cinematic black, alternating spreads) -->
+  <section class="relative py-36 md:py-56 section-cinematic grain overflow-hidden">
     <div class="max-w-7xl mx-auto px-6 lg:px-10">
       <!-- Header -->
       <div class="mb-28 md:mb-40 max-w-4xl">
@@ -161,7 +199,6 @@ const serviceSchema = {
             { num: '03', title: 'Protection & Infrastructure', text: 'Leak protection, DMCA support and account safety designed to help creators scale confidently without losing control of their content.' },
           ].map(s => (
             <div class="flex flex-col gap-6">
-              <span class="text-[11px] uppercase tracking-[0.3em] text-white/40 font-medium">{s.num}</span>
               <h3 class="font-display text-4xl md:text-5xl lg:text-6xl text-white leading-[1.0] tracking-[-0.02em]">{s.title}</h3>
               <p class="text-white/65 text-base md:text-lg leading-relaxed max-w-lg">{s.text}</p>
             </div>
@@ -171,8 +208,8 @@ const serviceSchema = {
     </div>
   </section>
 
-  <!-- 4. HOW IT WORKS (luxury dark, oversized step numbers) -->
-  <section class="relative py-36 md:py-56 section-luxury grain">
+  <!-- 4. HOW IT WORKS (dark panel, oversized step numbers) -->
+  <section class="relative py-36 md:py-56 section-panel grain">
     <div class="max-w-7xl mx-auto px-6 lg:px-10">
       <div class="mb-28 md:mb-40 max-w-4xl">
         <h2 class="font-display text-5xl md:text-7xl lg:text-8xl text-on-surface leading-[0.94] tracking-[-0.025em]">How it works.</h2>
@@ -197,8 +234,8 @@ const serviceSchema = {
   <!-- 6. APPLY -->
   <ApplyForm lang="en" />
 
-  <!-- 7. FAQ (luxury dark, minimal) -->
-  <section class="relative py-32 md:py-40 section-luxury grain">
+  <!-- 7. FAQ (cinematic, minimal) -->
+  <section class="relative py-32 md:py-40 section-cinematic grain">
     <div class="max-w-3xl mx-auto px-6 lg:px-8">
       <div class="mb-20 md:mb-28">
         <h2 class="font-display text-5xl md:text-7xl text-on-surface leading-[0.96] tracking-[-0.025em]">Frequently asked.</h2>

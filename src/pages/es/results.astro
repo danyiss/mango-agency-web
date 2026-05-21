@@ -79,7 +79,7 @@ const finalCase = {
   <!-- 2-5. CASE STUDIES (alternating cream / dark, alternating layout) -->
   {cases.map((c, i) => {
     const isImageLeft = c.layout === 'image-left';
-    const sectionClass = i % 2 === 0 ? 'section-luxury' : 'section-luxury-deep';
+    const sectionClass = i % 2 === 0 ? 'section-cinematic' : 'section-panel';
     const imgBorder = '1px solid rgba(255,255,255,0.08)';
     const imgShadow = '0 30px 80px -25px rgba(186,154,110,0.16), 0 30px 60px -25px rgba(0,0,0,0.7)';
     return (
@@ -87,7 +87,6 @@ const finalCase = {
         <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-10">
           <div class="grid grid-cols-1 lg:grid-cols-12 gap-14 lg:gap-24 items-center">
             <div class={`flex flex-col gap-7 md:gap-9 lg:col-span-6 ${isImageLeft ? 'lg:order-2' : 'lg:order-1'}`}>
-              <span class="text-xs md:text-[13px] uppercase tracking-[0.28em] italic text-white/45" style="font-family:Georgia,'Times New Roman',serif;">{c.label}</span>
               <h2 class="font-display text-3xl md:text-5xl lg:text-6xl text-white leading-[0.98] tracking-[-0.02em]">{c.headline}</h2>
               <div class="flex flex-col gap-5 text-white/70 text-base md:text-lg leading-relaxed max-w-lg">
                 {c.paragraphs.map(p => <p>{p}</p>)}
@@ -108,11 +107,10 @@ const finalCase = {
     );
   })}
 
-  <!-- 6. CASE 05 (centered editorial proof, luxury dark) -->
-  <section class="relative py-32 md:py-52 section-luxury grain">
+  <!-- 6. CASE 05 (centered editorial proof, cinematic) -->
+  <section class="relative py-32 md:py-52 section-cinematic grain">
     <div class="relative z-10 max-w-3xl mx-auto px-6 lg:px-8 flex flex-col items-center text-center gap-10 md:gap-14">
       <div class="flex flex-col gap-7 md:gap-9 items-center">
-        <span class="text-xs md:text-[13px] uppercase tracking-[0.28em] italic text-white/45" style="font-family:Georgia,'Times New Roman',serif;">{finalCase.label}</span>
         <h2 class="font-display text-3xl md:text-5xl lg:text-6xl text-white leading-[0.98] tracking-[-0.02em] max-w-2xl">{finalCase.headline}</h2>
         <div class="flex flex-col gap-5 text-white/70 text-base md:text-lg leading-relaxed max-w-xl">
           {finalCase.paragraphs.map(p => <p>{p}</p>)}

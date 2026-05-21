@@ -266,6 +266,80 @@ p {
 .section-luxury-deep .bg-surface-container-low { background-color: rgba(255,255,255,0.04); }
 .section-luxury .bg-surface-container-lowest,
 .section-luxury-deep .bg-surface-container-lowest { background-color: rgba(255,255,255,0.04); }
+
+/* ---------------------------------------------------------- */
+/* Editorial background systems (3 differentiated layers)     */
+/* ---------------------------------------------------------- */
+
+/* A — CINEMATIC BLACK: hero, results, apply, footer-adjacent  */
+.section-cinematic {
+  position: relative;
+  background-color: #050505;
+  background-image:
+    radial-gradient(ellipse 75% 55% at 78% 12%, rgba(214,183,122,0.08), transparent 65%),
+    radial-gradient(ellipse 65% 50% at 14% 92%, rgba(184,154,103,0.05), transparent 70%),
+    radial-gradient(ellipse 90% 60% at 50% 50%, rgba(20,18,14,0.55), transparent 80%);
+  color: #ffffff;
+}
+
+/* B — WARM EDITORIAL BEIGE: pain, educational                 */
+.section-beige {
+  position: relative;
+  background-color: #d8cfbf;
+  background-image:
+    radial-gradient(ellipse 55% 45% at 82% 14%, rgba(255,255,255,0.22), transparent 60%),
+    radial-gradient(ellipse 70% 55% at 18% 92%, rgba(110,88,62,0.10), transparent 70%);
+}
+
+/* C — DARK PANEL / GLASS: systems, process, agency operations */
+.section-panel {
+  position: relative;
+  background-color: #0e0e0e;
+  background-image:
+    linear-gradient(180deg, rgba(255,255,255,0.03) 0%, transparent 22%, transparent 78%, rgba(255,255,255,0.014) 100%),
+    radial-gradient(ellipse 65% 45% at 50% 0%, rgba(214,183,122,0.045), transparent 70%),
+    radial-gradient(ellipse 60% 40% at 0% 100%, rgba(180,148,100,0.04), transparent 75%);
+  color: #ffffff;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.05), inset 0 -1px 0 rgba(255,255,255,0.025);
+}
+
+/* Apply same token inversions on cinematic + panel */
+.section-cinematic .text-on-surface,
+.section-panel .text-on-surface { color: #ffffff; }
+.section-cinematic .text-on-surface-variant,
+.section-panel .text-on-surface-variant { color: rgba(255,255,255,0.72); }
+.section-cinematic .text-on-surface\/40,
+.section-panel .text-on-surface\/40 { color: rgba(255,255,255,0.4); }
+.section-cinematic .text-on-surface\/45,
+.section-panel .text-on-surface\/45 { color: rgba(255,255,255,0.45); }
+.section-cinematic .text-on-surface\/50,
+.section-panel .text-on-surface\/50 { color: rgba(255,255,255,0.5); }
+.section-cinematic .text-on-surface\/55,
+.section-panel .text-on-surface\/55 { color: rgba(255,255,255,0.55); }
+.section-cinematic .text-on-surface\/60,
+.section-panel .text-on-surface\/60 { color: rgba(255,255,255,0.6); }
+.section-cinematic .text-on-surface\/65,
+.section-panel .text-on-surface\/65 { color: rgba(255,255,255,0.65); }
+.section-cinematic .text-on-surface\/70,
+.section-panel .text-on-surface\/70 { color: rgba(255,255,255,0.7); }
+.section-cinematic .text-on-surface\/75,
+.section-panel .text-on-surface\/75 { color: rgba(255,255,255,0.72); }
+
+/* Atmospheric overlay glow (use as <div class="atmosphere-glow"></div>) */
+.atmosphere-glow {
+  position: absolute;
+  pointer-events: none;
+  border-radius: 9999px;
+  filter: blur(80px);
+  opacity: 0.5;
+  z-index: 0;
+}
+.atmosphere-glow.warm {
+  background: radial-gradient(circle, rgba(214,183,122,0.22), transparent 70%);
+}
+.atmosphere-glow.deep {
+  background: radial-gradient(circle, rgba(60,46,30,0.65), transparent 70%);
+}
 .section-dark .text-on-surface { color: #ffffff; }
 .section-dark .text-on-surface-variant { color: rgba(255,255,255,0.72); }
 .section-dark .text-on-surface\/40 { color: rgba(255,255,255,0.4); }
