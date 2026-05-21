@@ -58,47 +58,27 @@ const serviceSchema = {
     </div>
   </section>
 
-  <!-- 1b. EDITORIAL METRICS (asymmetric luxury spread) -->
-  <section class="relative py-36 md:py-56 section-cinematic grain overflow-hidden">
-    <div class="atmosphere-glow warm" style="top:-6%;right:-8%;width:520px;height:520px;"></div>
-    <div class="atmosphere-glow deep" style="bottom:-15%;left:-10%;width:480px;height:480px;"></div>
+  <!-- 1b. EDITORIAL METRICS — 4 horizontal cards, left-aligned, premium PE feel -->
+  <section class="relative py-32 md:py-52 overflow-hidden" style="background-color:#0a0a0a; background-image: radial-gradient(ellipse 60% 50% at 80% 14%, rgba(214,183,122,0.05), transparent 65%), radial-gradient(ellipse 70% 55% at 18% 92%, rgba(184,154,103,0.035), transparent 72%);">
+    <div class="grain absolute inset-0 pointer-events-none"></div>
+    <div class="atmosphere-glow warm" style="top:-10%;right:-6%;width:520px;height:520px;"></div>
     <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-10">
-      <!-- Block 1 — left -->
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-y-6 lg:gap-x-16 items-end mb-28 md:mb-44">
-        <div class="lg:col-span-7 flex flex-col gap-4">
-          <p class="font-display text-7xl md:text-8xl lg:text-9xl xl:text-[180px] text-white leading-[0.85] tracking-[-0.03em]">50M+</p>
-          <p class="text-[11px] uppercase tracking-[0.3em] text-white/45 font-medium">Visitas generadas</p>
-        </div>
-        <div class="lg:col-span-5 lg:pt-10">
-          <p class="text-white/60 text-base md:text-lg leading-relaxed max-w-md">Sistemas de crecimiento estructurados dise&ntilde;ados para marcas de creadoras a largo plazo.</p>
-        </div>
-      </div>
-
-      <div class="h-px w-full mb-28 md:mb-44" style="background:rgba(255,255,255,0.08);"></div>
-
-      <!-- Block 2 — offset right -->
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-y-6 lg:gap-x-16 items-end mb-28 md:mb-44">
-        <div class="lg:col-span-5 lg:col-start-2 order-2 lg:order-1 lg:pt-10">
-          <p class="text-white/60 text-base md:text-lg leading-relaxed max-w-md">Chatting nativo en ingl&eacute;s y espa&ntilde;ol enfocado en retenci&oacute;n y LTV.</p>
-        </div>
-        <div class="lg:col-span-6 lg:col-start-7 order-1 lg:order-2 flex flex-col gap-4 lg:items-end lg:text-right">
-          <p class="font-display text-7xl md:text-8xl lg:text-9xl xl:text-[180px] text-white leading-[0.85] tracking-[-0.03em]">24/7</p>
-          <p class="text-[11px] uppercase tracking-[0.3em] text-white/45 font-medium">Monetizaci&oacute;n</p>
-        </div>
-      </div>
-
-      <div class="h-px w-full mb-28 md:mb-44" style="background:rgba(255,255,255,0.08);"></div>
-
-      <!-- Block 3 — indented left -->
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-y-6 lg:gap-x-16 items-end">
-        <div class="lg:col-span-7 lg:col-start-3 flex flex-col gap-3">
-          <p class="font-display text-7xl md:text-8xl lg:text-9xl xl:text-[180px] text-white leading-[0.85] tracking-[-0.03em]">5&ndash;6</p>
-          <p class="font-display text-3xl md:text-4xl lg:text-5xl text-white/55 leading-[0.95] tracking-[-0.02em]">Cifras</p>
-          <p class="text-[11px] uppercase tracking-[0.3em] text-white/45 font-medium mt-2">Escalado mensual</p>
-        </div>
-        <div class="lg:col-span-3 lg:col-start-10 lg:pt-10">
-          <p class="text-white/60 text-base md:text-lg leading-relaxed">Sistemas construidos para transformar tr&aacute;fico en ingresos predecibles.</p>
-        </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6">
+        {[
+          { metric: '24/7', title: 'Monetización', text: 'Sistemas de chatting nativo en inglés y español enfocados en retención, relaciones y LTV a largo plazo.', tone: '#0d0d0d' },
+          { metric: '5–6 Cifras', title: 'Escalado Mensual', text: 'Sistemas diseñados para escalar creadoras de $1k a $10k — y de $10k a $100k/mes.', tone: '#0f0f0f' },
+          { metric: '+5B', title: 'Visitas Generadas', text: 'Sistemas de crecimiento construidos sobre Instagram, posicionamiento de creadora y adquisición escalable de audiencia.', tone: '#0d0d0d' },
+          { metric: '+30% LTV', title: 'Mayor Valor del Fan', text: 'Sistemas de retención diseñados para aumentar gasto del fan, lealtad y monetización a largo plazo.', tone: '#0f0f0f' },
+        ].map(c => (
+          <div
+            class="rounded-2xl p-8 md:p-10 lg:p-12 flex flex-col gap-6 transition-all duration-300 hover:bg-white/[0.015]"
+            style={`background-color:${c.tone}; border:1px solid rgba(255,255,255,0.07);`}
+          >
+            <p class="font-display text-5xl md:text-6xl text-white leading-[0.9] tracking-[-0.025em]" style="text-wrap:balance;">{c.metric}</p>
+            <p class="text-[11px] uppercase tracking-[0.28em] font-medium" style="color:#c8a96a;">{c.title}</p>
+            <p class="text-white/55 text-sm leading-relaxed">{c.text}</p>
+          </div>
+        ))}
       </div>
     </div>
   </section>
