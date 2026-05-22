@@ -115,6 +115,37 @@ const serviceSchema = {
     </div>
   </section>
 
+  <!-- 2b1. REELS ECOSYSTEM (virality / attention / creator culture) -->
+  <section class="relative py-32 md:py-52 overflow-hidden" style="background-color:#080808; background-image: radial-gradient(ellipse 65% 50% at 90% 15%, rgba(216,72,120,0.08), transparent 65%), radial-gradient(ellipse 70% 55% at 10% 85%, rgba(184,42,72,0.06), transparent 70%), radial-gradient(ellipse 50% 40% at 50% 50%, rgba(216,72,120,0.025), transparent 75%);">
+    <div class="grain absolute inset-0 pointer-events-none"></div>
+    <div class="absolute top-0 left-0 right-0 h-32 pointer-events-none" style="background:linear-gradient(to bottom, rgba(216,200,184,0.08), transparent);"></div>
+    <div class="atmosphere-glow magenta" style="top:8%;right:-8%;width:560px;height:560px;"></div>
+    <div class="atmosphere-glow crimson" style="bottom:-10%;left:-8%;width:480px;height:480px;"></div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-10 mb-16 md:mb-24">
+      <h2 class="font-display text-5xl md:text-7xl lg:text-8xl text-white leading-[0.94] tracking-[-0.025em] max-w-4xl">Millones de visitas generadas org&aacute;nicamente con nuestras estrategias.</h2>
+      <p class="mt-7 md:mt-9 text-white/60 text-base md:text-lg leading-relaxed max-w-md">Crecimiento estrat&eacute;gico de Instagram construido sobre viralidad, posicionamiento y creator branding.</p>
+    </div>
+
+    <div class="relative z-10 flex flex-col gap-5 md:gap-6">
+      {[
+        { ids: [1, 2, 3, 4, 5, 6], reverse: false, opacity: 1 },
+        { ids: [7, 8, 9, 10, 11, 12], reverse: true, opacity: 0.92 },
+        { ids: [13, 14, 15, 16, 17, 18], reverse: false, opacity: 1 },
+      ].map(row => (
+        <div class="reels-marquee" style={`opacity:${row.opacity};`}>
+          <div class={row.reverse ? 'reels-track reverse' : 'reels-track'}>
+            {[...row.ids, ...row.ids].map(n => (
+              <div class="reel-card">
+                <img src={`/assets/reels/${n}.png`} alt={`Reel de Instagram ${n}`} loading="lazy" />
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
   <!-- 2b2. EDITORIAL QUOTE BREAK (emotional rhythm) -->
   <section class="relative py-32 md:py-52 section-cinematic grain overflow-hidden">
     <div class="atmosphere-glow warm" style="top:50%;left:-12%;width:520px;height:520px;transform:translateY(-50%);"></div>

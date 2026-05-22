@@ -340,6 +340,77 @@ p {
 .atmosphere-glow.deep {
   background: radial-gradient(circle, rgba(60,46,30,0.65), transparent 70%);
 }
+.atmosphere-glow.magenta {
+  background: radial-gradient(circle, rgba(216,72,120,0.32), transparent 70%);
+}
+.atmosphere-glow.crimson {
+  background: radial-gradient(circle, rgba(184,42,72,0.25), transparent 72%);
+}
+
+/* ---------------------------------------------------------- */
+/* Infinite-scroll reels marquee (3 rows, alternating dir)    */
+/* ---------------------------------------------------------- */
+.reels-marquee {
+  position: relative;
+  overflow: hidden;
+  mask-image: linear-gradient(to right, transparent 0%, #000 6%, #000 94%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 6%, #000 94%, transparent 100%);
+}
+.reels-track {
+  display: flex;
+  gap: 20px;
+  width: max-content;
+  will-change: transform;
+  animation: reels-scroll-left 80s linear infinite;
+}
+.reels-track.reverse {
+  animation: reels-scroll-right 80s linear infinite;
+}
+.reels-marquee:hover .reels-track {
+  animation-play-state: paused;
+}
+@keyframes reels-scroll-left {
+  from { transform: translate3d(0, 0, 0); }
+  to   { transform: translate3d(-50%, 0, 0); }
+}
+@keyframes reels-scroll-right {
+  from { transform: translate3d(-50%, 0, 0); }
+  to   { transform: translate3d(0, 0, 0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .reels-track,
+  .reels-track.reverse {
+    animation: none;
+  }
+}
+.reel-card {
+  flex: 0 0 auto;
+  width: 200px;
+  aspect-ratio: 9 / 16;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.06);
+  box-shadow: 0 18px 40px -16px rgba(0,0,0,0.7), 0 0 30px -10px rgba(216,72,120,0.08);
+  position: relative;
+  background-color: #0d0d0d;
+}
+.reel-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0) 60%, rgba(0,0,0,0.25));
+  pointer-events: none;
+}
+.reel-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+@media (max-width: 768px) {
+  .reel-card { width: 134px; border-radius: 11px; }
+  .reels-track { gap: 14px; }
+}
 .section-dark .text-on-surface { color: #ffffff; }
 .section-dark .text-on-surface-variant { color: rgba(255,255,255,0.72); }
 .section-dark .text-on-surface\/40 { color: rgba(255,255,255,0.4); }
