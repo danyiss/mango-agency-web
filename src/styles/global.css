@@ -385,9 +385,9 @@ p {
 }
 .reel-card {
   flex: 0 0 auto;
-  width: 200px;
+  width: 180px;
   aspect-ratio: 9 / 16;
-  border-radius: 14px;
+  border-radius: 13px;
   overflow: hidden;
   border: 1px solid rgba(255,255,255,0.06);
   box-shadow: 0 18px 40px -16px rgba(0,0,0,0.7), 0 0 30px -10px rgba(216,72,120,0.08);
@@ -408,7 +408,7 @@ p {
   display: block;
 }
 @media (max-width: 768px) {
-  .reel-card { width: 134px; border-radius: 11px; }
+  .reel-card { width: 120px; border-radius: 10px; }
   .reels-track { gap: 14px; }
 }
 .section-dark .text-on-surface { color: #ffffff; }
