@@ -68,18 +68,30 @@ const serviceSchema = {
     <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-10">
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6">
         {[
-          { metric: '24/7', title: 'Monetization', text: 'Native English & Spanish chatting systems focused on retention, relationships and long-term LTV.', tone: '#0d0d0d' },
-          { metric: '5–6 Figures', title: 'Monthly Scaling', text: 'Systems designed to scale creators from $1k to $10k — and from $10k to $100k/month.', tone: '#0f0f0f' },
-          { metric: '+5 Billion', title: 'Views Generated', text: 'Growth systems built around Instagram, creator positioning and scalable audience acquisition.', tone: '#0d0d0d' },
-          { metric: '+30% LTV', title: 'Higher Fan Value', text: 'Retention systems designed to increase fan spending, loyalty and long-term monetization.', tone: '#0f0f0f' },
+          { metric: '24/7', size: 'text-7xl md:text-7xl lg:text-[5.5rem]', title: 'Monetization', text: 'Native English & Spanish chatting focused on retention and long-term LTV.', glow: 'warm' },
+          { metric: '5–6 Figures', size: 'text-5xl md:text-5xl lg:text-[3.5rem]', title: 'Monthly Scaling', text: 'Structured growth designed to scale creators from $1k to multi 6-figures.', glow: null },
+          { metric: '+5 Billion', size: 'text-5xl md:text-6xl lg:text-[4rem]', title: 'Views Generated', text: 'Instagram growth built around virality, positioning and creator branding.', glow: 'crimson' },
+          { metric: '+30% LTV', size: 'text-5xl md:text-5xl lg:text-[3.25rem]', title: 'Higher Fan Value', text: 'Chatting designed to increase fan spending and long-term monetization.', glow: null },
         ].map(c => (
           <div
-            class="rounded-2xl p-8 md:p-10 lg:p-12 flex flex-col gap-6 transition-all duration-300 hover:bg-white/[0.015]"
-            style={`background-color:${c.tone}; border:1px solid rgba(255,255,255,0.07);`}
+            class="relative rounded-2xl px-9 py-14 md:px-10 md:py-16 lg:px-11 lg:py-20 flex flex-col justify-between min-h-[360px] md:min-h-[420px] transition-all duration-300 hover:bg-white/[0.028] overflow-hidden"
+            style="background-color:rgba(255,255,255,0.02); border:1px solid rgba(255,255,255,0.06); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px);"
           >
-            <p class="font-display text-5xl md:text-6xl text-white leading-[0.9] tracking-[-0.025em]" style="text-wrap:balance;">{c.metric}</p>
-            <p class="text-[11px] uppercase tracking-[0.28em] font-medium" style="color:#c8a96a;">{c.title}</p>
-            <p class="text-white/55 text-sm leading-relaxed">{c.text}</p>
+            {c.glow === 'warm' && (
+              <div class="absolute pointer-events-none" style="top:-20%;right:-25%;width:80%;height:75%;border-radius:9999px;background:radial-gradient(circle, rgba(214,183,122,0.16), transparent 70%);filter:blur(36px);"></div>
+            )}
+            {c.glow === 'crimson' && (
+              <div class="absolute pointer-events-none" style="bottom:-25%;left:-25%;width:85%;height:80%;border-radius:9999px;background:radial-gradient(circle, rgba(184,42,72,0.18), transparent 70%);filter:blur(40px);"></div>
+            )}
+
+            <div class="relative z-10">
+              <p class={`font-display ${c.size} text-white leading-[0.92] tracking-[-0.025em]`} style="text-wrap:balance;">{c.metric}</p>
+            </div>
+
+            <div class="relative z-10 flex flex-col gap-4 mt-14 md:mt-16">
+              <p class="text-[13px] uppercase tracking-[0.21em] font-semibold" style="color:#c8a96a;">{c.title}</p>
+              <p class="text-[13px] md:text-sm text-white/65 leading-[1.6] max-w-[26ch] font-normal">{c.text}</p>
+            </div>
           </div>
         ))}
       </div>
