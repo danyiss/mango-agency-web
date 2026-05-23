@@ -48,11 +48,11 @@ const serviceSchema = {
     <div class="absolute inset-0 pointer-events-none" style="background: linear-gradient(to bottom, rgba(0,0,0,0.32), rgba(0,0,0,0) 28%, rgba(0,0,0,0.48));"></div>
     <div class="absolute inset-0 flex items-center">
       <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-10 w-full">
-        <div class="flex flex-col items-start gap-10 md:gap-14 max-w-[20ch]">
-          <h1 class="font-display text-[40px] sm:text-6xl md:text-7xl lg:text-8xl xl:text-[120px] text-white leading-[0.92] tracking-[-0.025em] text-left">
+        <div class="flex flex-col items-start gap-7 md:gap-14 max-w-[14ch] sm:max-w-[20ch]">
+          <h1 class="font-display text-[34px] sm:text-6xl md:text-7xl lg:text-8xl xl:text-[120px] text-white leading-[0.96] sm:leading-[0.92] tracking-[-0.025em] text-left">
             Gesti&oacute;n de OnlyFans<br />para creadoras que quieren m&aacute;s.
           </h1>
-          <p class="text-white/75 text-[15px] md:text-base lg:text-lg leading-relaxed font-body max-w-md text-left">
+          <p class="text-white/75 text-[14px] md:text-base lg:text-lg leading-relaxed font-body max-w-[22ch] sm:max-w-md text-left">
             Crecimiento, monetizaci&oacute;n y gesti&oacute;n construidos para escalar creadoras a largo plazo.
           </p>
           <p class="text-[10px] uppercase tracking-[0.3em] text-white/45 font-medium mt-1 md:mt-2">Para creadoras, por creadoras.</p>
@@ -62,7 +62,7 @@ const serviceSchema = {
   </section>
 
   <!-- 1b. EDITORIAL METRICS — 4 horizontal cards, left-aligned, premium PE feel -->
-  <section class="relative py-32 md:py-52 overflow-hidden" style="background-color:#0a0a0a; background-image: radial-gradient(ellipse 60% 50% at 80% 14%, rgba(214,183,122,0.05), transparent 65%), radial-gradient(ellipse 70% 55% at 18% 92%, rgba(184,154,103,0.035), transparent 72%);">
+  <section class="relative py-20 md:py-52 overflow-hidden" style="background-color:#0a0a0a; background-image: radial-gradient(ellipse 60% 50% at 80% 14%, rgba(214,183,122,0.05), transparent 65%), radial-gradient(ellipse 70% 55% at 18% 92%, rgba(184,154,103,0.035), transparent 72%);">
     <div class="grain absolute inset-0 pointer-events-none"></div>
     <div class="atmosphere-glow warm" style="top:-10%;right:-6%;width:520px;height:520px;"></div>
     <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-10">
@@ -74,7 +74,7 @@ const serviceSchema = {
           { metric: '+30% LTV', size: 'text-5xl md:text-5xl lg:text-[3.25rem]', title: 'Mayor Valor del Fan', text: 'Chatting diseñado para aumentar el gasto del fan y la monetización a largo plazo.', glow: null },
         ].map(c => (
           <div
-            class="relative rounded-2xl px-9 py-14 md:px-10 md:py-16 lg:px-11 lg:py-20 flex flex-col justify-between min-h-[360px] md:min-h-[420px] transition-all duration-300 hover:bg-white/[0.028] overflow-hidden"
+            class="relative rounded-2xl px-7 py-10 md:px-10 md:py-16 lg:px-11 lg:py-20 flex flex-col justify-between min-h-[240px] md:min-h-[420px] transition-all duration-300 hover:bg-white/[0.028] overflow-hidden"
             style="background-color:rgba(255,255,255,0.02); border:1px solid rgba(255,255,255,0.06); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px);"
           >
             {c.glow === 'warm' && (
@@ -88,7 +88,7 @@ const serviceSchema = {
               <p class={`font-display ${c.size} text-white leading-[0.92] tracking-[-0.025em]`} style="text-wrap:balance;">{c.metric}</p>
             </div>
 
-            <div class="relative z-10 flex flex-col gap-4 mt-14 md:mt-16">
+            <div class="relative z-10 flex flex-col gap-4 mt-10 md:mt-16">
               <p class="text-[13px] uppercase tracking-[0.21em] font-semibold" style="color:#c8a96a;">{c.title}</p>
               <p class="text-[13px] md:text-sm text-white/65 leading-[1.6] max-w-[26ch] font-normal">{c.text}</p>
             </div>
@@ -99,12 +99,12 @@ const serviceSchema = {
   </section>
 
   <!-- 2b. PAIN / PROBLEM (warm beige textured, sticky-header magazine) -->
-  <section class="relative py-36 md:py-56 section-beige">
+  <section class="relative py-24 md:py-56 section-beige">
     <div class="max-w-7xl mx-auto px-6 lg:px-10">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24">
         <!-- Sticky headline column -->
         <div class="lg:col-span-5 lg:sticky lg:top-32 lg:self-start">
-          <h2 class="font-display text-5xl md:text-7xl lg:text-7xl xl:text-8xl text-on-surface leading-[0.92] tracking-[-0.025em]">El crecimiento en OnlyFans ahora es un juego de sistemas.</h2>
+          <h2 class="font-display text-4xl md:text-7xl lg:text-7xl xl:text-8xl text-on-surface leading-[0.95] md:leading-[0.92] tracking-[-0.025em]">El crecimiento en OnlyFans ahora es un juego de sistemas.</h2>
           <p class="mt-8 md:mt-10 text-on-surface/65 text-base md:text-lg leading-relaxed max-w-sm">Las creadoras que escalan m&aacute;s r&aacute;pido hoy tienen equipos profesionales detr&aacute;s.</p>
         </div>
 
@@ -117,8 +117,8 @@ const serviceSchema = {
             { title: 'Sin sistemas reales ni control de calidad, el crecimiento se vuelve inconsistente.', text: 'Los meses fuertes se vuelven impredecibles, los ingresos fluctúan y escalar se hace difícil de sostener a largo plazo. La consistencia viene de la estructura, la ejecución y el soporte operativo.' },
             { title: 'La mayoría de creadoras no pueden escalar solas para siempre.', text: 'En algún punto, el contenido, los mensajes, la publicación y la monetización son demasiado para que una sola persona los gestione bien. El crecimiento real requiere el equipo adecuado detrás de la página.' },
           ].map((row, idx) => (
-            <div class={`py-14 md:py-20 ${idx === 0 ? '' : 'border-t'}`} style="border-color:rgba(17,17,17,0.22);">
-              <h3 class="font-display text-3xl md:text-4xl lg:text-5xl text-on-surface leading-[0.98] tracking-[-0.015em] mb-5 md:mb-6">{row.title}</h3>
+            <div class={`py-10 md:py-20 ${idx === 0 ? '' : 'border-t'}`} style="border-color:rgba(17,17,17,0.22);">
+              <h3 class="font-display text-2xl md:text-4xl lg:text-5xl text-on-surface leading-[1.0] md:leading-[0.98] tracking-[-0.015em] mb-4 md:mb-6">{row.title}</h3>
               <p class="text-on-surface/65 text-[15px] md:text-base leading-relaxed max-w-lg">{row.text}</p>
             </div>
           ))}
@@ -128,15 +128,15 @@ const serviceSchema = {
   </section>
 
   <!-- 2b1. REELS ECOSYSTEM (virality / attention / creator culture) -->
-  <section class="relative py-32 md:py-52 overflow-hidden" style="background-color:#080808; background-image: radial-gradient(ellipse 65% 50% at 90% 15%, rgba(216,72,120,0.08), transparent 65%), radial-gradient(ellipse 70% 55% at 10% 85%, rgba(184,42,72,0.06), transparent 70%), radial-gradient(ellipse 50% 40% at 50% 50%, rgba(216,72,120,0.025), transparent 75%);">
+  <section class="relative py-20 md:py-52 overflow-hidden" style="background-color:#080808; background-image: radial-gradient(ellipse 65% 50% at 90% 15%, rgba(216,72,120,0.08), transparent 65%), radial-gradient(ellipse 70% 55% at 10% 85%, rgba(184,42,72,0.06), transparent 70%), radial-gradient(ellipse 50% 40% at 50% 50%, rgba(216,72,120,0.025), transparent 75%);">
     <div class="grain absolute inset-0 pointer-events-none"></div>
     <div class="absolute top-0 left-0 right-0 h-32 pointer-events-none" style="background:linear-gradient(to bottom, rgba(216,200,184,0.08), transparent);"></div>
     <div class="atmosphere-glow magenta" style="top:8%;right:-8%;width:560px;height:560px;"></div>
     <div class="atmosphere-glow crimson" style="bottom:-10%;left:-8%;width:480px;height:480px;"></div>
 
-    <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-10 mb-16 md:mb-24">
-      <h2 class="font-display text-5xl md:text-7xl lg:text-8xl text-white leading-[0.94] tracking-[-0.025em] max-w-4xl">Millones de visitas generadas org&aacute;nicamente con nuestras estrategias.</h2>
-      <p class="mt-7 md:mt-9 text-white/60 text-base md:text-lg leading-relaxed max-w-md">Crecimiento estrat&eacute;gico de Instagram construido sobre viralidad, posicionamiento y creator branding.</p>
+    <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-10 mb-12 md:mb-24">
+      <h2 class="font-display text-4xl md:text-7xl lg:text-8xl text-white leading-[0.96] md:leading-[0.94] tracking-[-0.025em] max-w-4xl">Millones de visitas generadas org&aacute;nicamente con nuestras estrategias.</h2>
+      <p class="mt-5 md:mt-9 text-white/60 text-sm md:text-lg leading-relaxed max-w-md">Crecimiento estrat&eacute;gico de Instagram construido sobre viralidad, posicionamiento y creator branding.</p>
     </div>
 
     <div class="relative z-10 flex flex-col gap-5 md:gap-6">
@@ -159,30 +159,30 @@ const serviceSchema = {
   </section>
 
   <!-- 2b2. EDITORIAL QUOTE BREAK (emotional rhythm) -->
-  <section class="relative py-32 md:py-52 section-cinematic grain overflow-hidden">
+  <section class="relative py-20 md:py-52 section-cinematic grain overflow-hidden">
     <div class="atmosphere-glow warm" style="top:50%;left:-12%;width:520px;height:520px;transform:translateY(-50%);"></div>
     <div class="relative z-10 max-w-5xl mx-auto px-6 lg:px-10 text-center">
-      <p class="font-display text-3xl md:text-5xl lg:text-6xl xl:text-7xl text-white leading-[1.08] tracking-[-0.02em]">La mayor&iacute;a de creadoras no tienen un problema de tr&aacute;fico.</p>
-      <p class="font-display text-3xl md:text-5xl lg:text-6xl xl:text-7xl text-white/45 leading-[1.08] tracking-[-0.02em] mt-3 md:mt-4">Tienen un problema de monetizaci&oacute;n.</p>
+      <p class="font-display text-[26px] md:text-5xl lg:text-6xl xl:text-7xl text-white leading-[1.1] md:leading-[1.08] tracking-[-0.02em]">La mayor&iacute;a de creadoras no tienen un problema de tr&aacute;fico.</p>
+      <p class="font-display text-[26px] md:text-5xl lg:text-6xl xl:text-7xl text-white/45 leading-[1.1] md:leading-[1.08] tracking-[-0.02em] mt-3 md:mt-4">Tienen un problema de monetizaci&oacute;n.</p>
     </div>
   </section>
 
   <!-- 2c. RESULTS PREVIEW (cinematic black, alternating spreads) -->
-  <section class="relative py-36 md:py-56 section-cinematic grain overflow-hidden">
+  <section class="relative py-24 md:py-56 section-cinematic grain overflow-hidden">
     <div class="atmosphere-glow warm" style="top:8%;right:-10%;width:520px;height:520px;"></div>
     <div class="atmosphere-glow deep" style="bottom:5%;left:-12%;width:460px;height:460px;"></div>
     <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-10">
       <!-- Header -->
-      <div class="mb-28 md:mb-40 max-w-4xl">
-        <h2 class="font-display text-5xl md:text-7xl lg:text-8xl text-on-surface leading-[0.94] tracking-[-0.025em]">Resultados construidos sobre sistemas.</h2>
-        <p class="mt-7 md:mt-9 text-on-surface/65 text-base md:text-lg leading-relaxed max-w-md">El crecimiento solo vale cuando la monetizaci&oacute;n escala detr&aacute;s.</p>
+      <div class="mb-16 md:mb-40 max-w-4xl">
+        <h2 class="font-display text-4xl md:text-7xl lg:text-8xl text-on-surface leading-[0.96] md:leading-[0.94] tracking-[-0.025em]">Resultados construidos sobre sistemas.</h2>
+        <p class="mt-5 md:mt-9 text-on-surface/65 text-sm md:text-lg leading-relaxed max-w-md">El crecimiento solo vale cuando la monetizaci&oacute;n escala detr&aacute;s.</p>
       </div>
 
       <!-- Case 1: text left / screenshot right -->
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center mb-32 md:mb-44">
-        <div class="lg:col-span-5 flex flex-col gap-6">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-20 items-center mb-20 md:mb-44">
+        <div class="lg:col-span-5 flex flex-col gap-4 md:gap-6">
           <span class="text-[11px] uppercase tracking-[0.3em] text-on-surface/45 font-medium">Crecimiento</span>
-          <p class="font-display text-3xl md:text-4xl lg:text-5xl text-on-surface leading-[1.0] tracking-[-0.015em]">+53k seguidores generados en 30 d&iacute;as.</p>
+          <p class="font-display text-2xl md:text-4xl lg:text-5xl text-on-surface leading-[1.05] md:leading-[1.0] tracking-[-0.015em]">+53k seguidores generados en 30 d&iacute;as.</p>
         </div>
         <div class="lg:col-span-7">
           <img src="/assets/results/growth.jpeg" alt="Anal&iacute;ticas de Instagram — +53k seguidores en 30 d&iacute;as" class="w-full h-auto block rounded-sm" style="box-shadow: 0 30px 80px -25px rgba(186,154,110,0.16), 0 30px 60px -25px rgba(0,0,0,0.7); border:1px solid rgba(255,255,255,0.08);" loading="lazy" />
@@ -190,13 +190,13 @@ const serviceSchema = {
       </div>
 
       <!-- Case 2: screenshot left / text right -->
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center mb-32 md:mb-40">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-20 items-center mb-16 md:mb-40">
         <div class="lg:col-span-7 lg:order-1">
           <img src="/assets/results/monetization.jpeg" alt="Screenshot de ingresos mensuales — $24,586" class="w-full h-auto block rounded-sm" style="box-shadow: 0 30px 80px -25px rgba(186,154,110,0.16), 0 30px 60px -25px rgba(0,0,0,0.7); border:1px solid rgba(255,255,255,0.08);" loading="lazy" />
         </div>
-        <div class="lg:col-span-5 lg:order-2 flex flex-col gap-6">
+        <div class="lg:col-span-5 lg:order-2 flex flex-col gap-4 md:gap-6">
           <span class="text-[11px] uppercase tracking-[0.3em] text-on-surface/45 font-medium">Monetizaci&oacute;n</span>
-          <p class="font-display text-3xl md:text-4xl lg:text-5xl text-on-surface leading-[1.0] tracking-[-0.015em]">$24,586/mes.</p>
+          <p class="font-display text-2xl md:text-4xl lg:text-5xl text-on-surface leading-[1.05] md:leading-[1.0] tracking-[-0.015em]">$24,586/mes.</p>
         </div>
       </div>
 
@@ -211,25 +211,25 @@ const serviceSchema = {
   </section>
 
   <!-- 3. SYSTEMS BEHIND THE REVENUE (panel, sticky header + staggered systems) -->
-  <section class="relative py-36 md:py-56 section-panel grain overflow-hidden">
+  <section class="relative py-24 md:py-56 section-panel grain overflow-hidden">
     <div class="atmosphere-glow warm" style="top:-8%;left:30%;width:560px;height:560px;opacity:0.35;"></div>
     <div class="atmosphere-glow deep" style="bottom:10%;right:-10%;width:480px;height:480px;"></div>
     <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-10">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-24">
         <!-- Sticky headline column -->
         <div class="lg:col-span-5 lg:sticky lg:top-32 lg:self-start">
-          <h2 class="font-display text-5xl md:text-7xl lg:text-7xl xl:text-8xl text-white leading-[0.92] tracking-[-0.025em]">Los sistemas detr&aacute;s de los ingresos.</h2>
+          <h2 class="font-display text-4xl md:text-7xl lg:text-7xl xl:text-8xl text-white leading-[0.96] md:leading-[0.92] tracking-[-0.025em]">Los sistemas detr&aacute;s de los ingresos.</h2>
         </div>
 
         <!-- Systems stacked right -->
-        <div class="lg:col-span-7 flex flex-col gap-24 md:gap-32">
+        <div class="lg:col-span-7 flex flex-col gap-16 md:gap-32">
           {[
             { num: '01', title: 'Chatting y Monetización', text: 'Nuestro equipo interno de chatting se centra en retención, relaciones con fans y gasto a largo plazo — construyendo una monetización más fuerte detrás de la página, no solo ventas a corto plazo.' },
             { num: '02', title: 'Sistemas de Crecimiento', text: 'Sistemas multiplataforma de crecimiento que combinan Instagram, estrategia de contenido viral y fuentes de tráfico externo, diseñados para traer fans nuevos al ecosistema de forma constante.' },
             { num: '03', title: 'Protección e Infraestructura', text: 'Protección frente a filtraciones, soporte DMCA y seguridad de cuenta diseñados para que las creadoras escalen con confianza sin perder el control de su contenido.' },
           ].map(s => (
             <div class="flex flex-col gap-6">
-              <h3 class="font-display text-4xl md:text-5xl lg:text-6xl text-white leading-[1.0] tracking-[-0.02em]">{s.title}</h3>
+              <h3 class="font-display text-3xl md:text-5xl lg:text-6xl text-white leading-[1.05] md:leading-[1.0] tracking-[-0.02em]">{s.title}</h3>
               <p class="text-white/65 text-base md:text-lg leading-relaxed max-w-lg">{s.text}</p>
             </div>
           ))}
@@ -239,13 +239,13 @@ const serviceSchema = {
   </section>
 
   <!-- 4. HOW IT WORKS (dark panel, oversized step numbers) -->
-  <section class="relative py-36 md:py-56 section-panel grain overflow-hidden">
+  <section class="relative py-24 md:py-56 section-panel grain overflow-hidden">
     <div class="atmosphere-glow warm" style="top:20%;right:-12%;width:480px;height:480px;opacity:0.35;"></div>
     <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-10">
-      <div class="mb-28 md:mb-40 max-w-4xl">
-        <h2 class="font-display text-5xl md:text-7xl lg:text-8xl text-on-surface leading-[0.94] tracking-[-0.025em]">C&oacute;mo funciona.</h2>
+      <div class="mb-16 md:mb-40 max-w-4xl">
+        <h2 class="font-display text-4xl md:text-7xl lg:text-8xl text-on-surface leading-[0.96] md:leading-[0.94] tracking-[-0.025em]">C&oacute;mo funciona.</h2>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 md:gap-12 lg:gap-16">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-12 lg:gap-16">
         {[
           { num: '01', title: 'Aplicar', text: 'Aplicación breve para entender tu perfil, contenido y etapa actual.' },
           { num: '02', title: 'Auditoría', text: 'Revisamos tu página, posicionamiento, tráfico y estructura de monetización.' },
@@ -253,7 +253,7 @@ const serviceSchema = {
           { num: '04', title: 'Escalar y Optimizar', text: 'Optimización continua enfocada en crecimiento, retención e ingresos a largo plazo.' },
         ].map(step => (
           <div class="flex flex-col gap-6">
-            <span class="font-display text-6xl md:text-7xl lg:text-8xl text-white/18 leading-[0.85] tracking-[-0.02em]">{step.num}</span>
+            <span class="font-display text-5xl md:text-7xl lg:text-8xl text-white/18 leading-[0.85] tracking-[-0.02em]">{step.num}</span>
             <h3 class="font-display text-2xl md:text-3xl text-on-surface leading-[1.05] tracking-[-0.015em]">{step.title}</h3>
             <p class="text-on-surface/65 text-base leading-relaxed max-w-xs">{step.text}</p>
           </div>
@@ -266,11 +266,11 @@ const serviceSchema = {
   <ApplyForm lang="es" />
 
   <!-- 7. FAQ (cinematic, minimal) -->
-  <section class="relative py-32 md:py-40 section-cinematic grain overflow-hidden">
+  <section class="relative py-20 md:py-40 section-cinematic grain overflow-hidden">
     <div class="atmosphere-glow warm" style="bottom:-10%;left:-12%;width:520px;height:520px;opacity:0.4;"></div>
     <div class="relative z-10 max-w-3xl mx-auto px-6 lg:px-8">
-      <div class="mb-20 md:mb-28">
-        <h2 class="font-display text-5xl md:text-7xl text-on-surface leading-[0.96] tracking-[-0.025em]">Preguntas frecuentes.</h2>
+      <div class="mb-12 md:mb-28">
+        <h2 class="font-display text-4xl md:text-7xl text-on-surface leading-[0.98] md:leading-[0.96] tracking-[-0.025em]">Preguntas frecuentes.</h2>
       </div>
       <div class="flex flex-col">
         {[
