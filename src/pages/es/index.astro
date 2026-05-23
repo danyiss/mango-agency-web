@@ -149,7 +149,7 @@ const serviceSchema = {
           <div class={row.reverse ? 'reels-track reverse' : 'reels-track'}>
             {[...row.ids, ...row.ids].map(n => (
               <div class="reel-card">
-                <img src={`/assets/reels/${n}.png`} alt={`Reel de Instagram ${n}`} loading="lazy" />
+                <img src={`/assets/reels/${n}.jpg`} alt={`Reel de Instagram ${n}`} loading="lazy" decoding="async" />
               </div>
             ))}
           </div>
