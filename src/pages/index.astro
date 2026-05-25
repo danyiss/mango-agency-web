@@ -41,44 +41,58 @@ const serviceSchema = {
     <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
   </Fragment>
 
-  <!-- 1. HERO — Editorial split composition: text left, creator image right -->
+  <!-- 1. HERO — Mobile: editorial portrait (image bottom, text top-left). Desktop: split composition. -->
   <section class="relative h-screen -mt-16 w-full overflow-hidden" style="background-color:#070707;">
-    <!-- Ambient atmosphere (burgundy/magenta on right half) -->
-    <div class="absolute inset-0 pointer-events-none" style="background: radial-gradient(ellipse 55% 60% at 78% 50%, rgba(168,52,92,0.18), transparent 70%), radial-gradient(ellipse 45% 40% at 82% 26%, rgba(132,38,62,0.14), transparent 65%);"></div>
+    <!-- Ambient atmosphere — desktop (right half) -->
+    <div class="absolute inset-0 pointer-events-none hidden md:block" style="background: radial-gradient(ellipse 55% 60% at 78% 50%, rgba(168,52,92,0.18), transparent 70%), radial-gradient(ellipse 45% 40% at 82% 26%, rgba(132,38,62,0.14), transparent 65%);"></div>
+    <!-- Ambient atmosphere — mobile (top zone, magenta cloud feel) -->
+    <div class="absolute inset-x-0 top-0 pointer-events-none md:hidden" style="height:55%; background: radial-gradient(ellipse 80% 70% at 50% 30%, rgba(186,62,112,0.10), transparent 70%), radial-gradient(ellipse 60% 50% at 30% 20%, rgba(132,38,62,0.08), transparent 60%);"></div>
 
-    <!-- IMAGE PANEL (desktop: 42% right column; mobile: full bleed background) -->
+    <!-- IMAGE PANEL -->
     <div class="absolute inset-0 md:left-[58%] md:right-0 md:w-[42%]">
-      <div class="absolute inset-0 bg-cover bg-no-repeat" style="background-image:url('/assets/hero-home-v3.jpg'); background-position: 70% center; filter: brightness(0.86) contrast(1.09) saturate(1.05);"></div>
-      <!-- Burgundy shadow enhancement (multiply) — also tones down whites (sheets/shirt) -->
-      <div class="absolute inset-0 pointer-events-none" style="background: linear-gradient(to bottom, rgba(28,12,22,0.18), rgba(38,16,28,0.42) 55%, rgba(20,8,16,0.55)); mix-blend-mode:multiply;"></div>
-      <!-- Magenta glow halo behind subject (desktop) -->
+      <!-- Mobile: editorial portrait, bottom-anchored, ~85% width (head lands upper-middle, body extends to bottom) -->
+      <div class="absolute inset-0 bg-no-repeat md:hidden" style="background-image:url('/assets/hero-home-v3.jpg'); background-size: 85% auto; background-position: center bottom; filter: brightness(0.84) contrast(1.08) saturate(1.05);"></div>
+      <!-- Desktop: full-bleed cover, shifted right -->
+      <div class="absolute inset-0 bg-cover bg-no-repeat hidden md:block" style="background-image:url('/assets/hero-home-v3.jpg'); background-position: 70% center; filter: brightness(0.86) contrast(1.09) saturate(1.05);"></div>
+
+      <!-- Mobile: magenta glow halo behind subject (within image area) -->
+      <div class="absolute pointer-events-none md:hidden" style="bottom:8%; left:50%; width:95%; height:55%; transform:translateX(-50%); background: radial-gradient(circle, rgba(186,62,112,0.32), transparent 65%); filter: blur(48px); mix-blend-mode:screen;"></div>
+      <!-- Desktop: magenta glow halo -->
       <div class="absolute pointer-events-none hidden md:block" style="top:38%; left:18%; width:75%; height:60%; transform:translateY(-50%); background: radial-gradient(circle, rgba(186,62,112,0.32), transparent 65%); filter: blur(48px); mix-blend-mode:screen;"></div>
-      <!-- Top/bottom edge vignette -->
-      <div class="absolute inset-0 pointer-events-none" style="background: linear-gradient(to bottom, rgba(0,0,0,0.45), transparent 22%, transparent 72%, rgba(0,0,0,0.65));"></div>
-      <!-- Left-edge bleed into pure black (desktop seamless seam) -->
+
+      <!-- Burgundy shadow enhancement (multiply) — tones down whites -->
+      <div class="absolute inset-0 pointer-events-none" style="background: linear-gradient(to bottom, rgba(28,12,22,0.18), rgba(38,16,28,0.42) 55%, rgba(20,8,16,0.55)); mix-blend-mode:multiply;"></div>
+
+      <!-- Top/bottom edge vignette (both) -->
+      <div class="absolute inset-0 pointer-events-none" style="background: linear-gradient(to bottom, rgba(0,0,0,0.35), transparent 22%, transparent 72%, rgba(0,0,0,0.55));"></div>
+
+      <!-- Desktop: left-edge bleed into pure black -->
       <div class="absolute inset-0 pointer-events-none hidden md:block" style="background: linear-gradient(to right, rgba(7,7,7,1) 0%, rgba(7,7,7,0.85) 8%, rgba(7,7,7,0.35) 22%, rgba(7,7,7,0.08) 38%, transparent 55%);"></div>
-      <!-- Right edge slight vignette -->
-      <div class="absolute inset-0 pointer-events-none" style="background: linear-gradient(to left, rgba(0,0,0,0.35), transparent 25%);"></div>
+      <!-- Desktop: right-edge slight vignette -->
+      <div class="absolute inset-0 pointer-events-none hidden md:block" style="background: linear-gradient(to left, rgba(0,0,0,0.35), transparent 25%);"></div>
+
+      <!-- Mobile: top-left diagonal darkness for headline readability -->
+      <div class="absolute inset-0 pointer-events-none md:hidden" style="background: linear-gradient(135deg, rgba(7,7,7,0.92) 0%, rgba(7,7,7,0.7) 26%, rgba(7,7,7,0.32) 52%, transparent 78%);"></div>
+      <!-- Mobile: soft edge vignette around image -->
+      <div class="absolute inset-0 pointer-events-none md:hidden" style="background: radial-gradient(ellipse 95% 95% at 50% 60%, transparent 70%, rgba(0,0,0,0.5));"></div>
     </div>
 
-    <!-- LEFT TEXT PANEL — heavy dark fade (mobile: over image; desktop: solid black) -->
-    <div class="absolute inset-0 md:right-[42%] md:w-[60%] pointer-events-none">
-      <!-- Mobile: heavy left fade over background image -->
-      <div class="absolute inset-0 md:hidden" style="background: linear-gradient(to right, rgba(7,7,7,0.94) 0%, rgba(7,7,7,0.78) 38%, rgba(7,7,7,0.48) 68%, rgba(7,7,7,0.18) 92%, transparent);"></div>
-      <!-- Desktop: solid panel blending into image -->
-      <div class="absolute inset-0 hidden md:block" style="background: linear-gradient(to right, rgba(7,7,7,1) 0%, rgba(7,7,7,0.98) 70%, rgba(7,7,7,0.7) 88%, rgba(7,7,7,0.25) 98%, transparent);"></div>
+    <!-- Desktop LEFT TEXT PANEL (solid black blend) -->
+    <div class="absolute inset-0 md:right-[42%] md:w-[60%] pointer-events-none hidden md:block">
+      <div class="absolute inset-0" style="background: linear-gradient(to right, rgba(7,7,7,1) 0%, rgba(7,7,7,0.98) 70%, rgba(7,7,7,0.7) 88%, rgba(7,7,7,0.25) 98%, transparent);"></div>
     </div>
 
-    <!-- Ambient burgundy leak onto left side (desktop) -->
+    <!-- Desktop ambient burgundy leak onto left -->
     <div class="absolute pointer-events-none hidden md:block" style="top:50%; left:38%; width:18%; height:60%; transform:translateY(-50%); background: radial-gradient(ellipse, rgba(132,38,62,0.18), transparent 65%); filter:blur(48px);"></div>
 
-    <!-- CONTENT -->
-    <div class="relative z-10 h-full max-w-7xl mx-auto px-6 lg:px-10 flex items-center">
-      <div class="flex flex-col items-start gap-6 md:gap-9 md:w-[55%]">
-        <h1 class="font-display text-[34px] sm:text-6xl md:text-6xl lg:text-7xl xl:text-[96px] text-white leading-[0.96] md:leading-[0.92] tracking-[-0.025em] text-left">
-          OnlyFans Management<br />for creators who want more.
+    <!-- CONTENT — mobile: top-left with generous breathing room; desktop: centered split -->
+    <div class="relative z-10 h-full max-w-7xl mx-auto px-6 lg:px-10 flex items-start md:items-center pt-24 md:pt-0">
+      <div class="flex flex-col items-start gap-7 md:gap-9 md:w-[55%]">
+        <h1 class="font-display text-[40px] sm:text-6xl md:text-6xl lg:text-7xl xl:text-[96px] text-white leading-[1.0] md:leading-[0.92] tracking-[-0.025em] text-left">
+          <span class="md:hidden">OnlyFans<br />Management<br />for creators<br />who want<br />more.</span>
+          <span class="hidden md:inline">OnlyFans Management<br />for creators who want more.</span>
         </h1>
-        <p class="text-white/75 text-[14px] md:text-base lg:text-lg leading-relaxed font-body max-w-[22ch] sm:max-w-md text-left">
+        <p class="text-white/80 text-[15px] md:text-base lg:text-lg leading-relaxed font-body max-w-[22ch] sm:max-w-md text-left">
           Growth, monetization and management built to scale creators long-term.
         </p>
         <a href="#apply" class="inline-block bg-accent text-black font-bold px-7 py-4 rounded-[7px] text-sm tracking-wide hover:brightness-95 hover:scale-[1.02] transition-all">
