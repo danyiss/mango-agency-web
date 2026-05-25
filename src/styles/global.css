@@ -408,8 +408,8 @@ p {
   display: block;
 }
 @media (max-width: 768px) {
-  .reel-card { width: 120px; border-radius: 10px; }
-  .reels-track { gap: 14px; }
+  .reel-card { width: 102px; border-radius: 10px; }
+  .reels-track { gap: 12px; }
 }
 .section-dark .text-on-surface { color: #ffffff; }
 .section-dark .text-on-surface-variant { color: rgba(255,255,255,0.72); }
