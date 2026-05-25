@@ -48,8 +48,8 @@ const serviceSchema = {
     <!-- Full-bleed cinematic image — mobile: tighter crop, creator centered vertically -->
     <div class="absolute inset-0 bg-cover bg-no-repeat md:hidden" style="background-image:url('/assets/hero-home-v4.jpg'); background-position: 72% 42%; background-size: cover; filter: brightness(0.82) contrast(1.08) saturate(1.05);"></div>
 
-    <!-- Desktop: smooth left-to-transparent atmospheric fade (no hard wall, no visible seam) -->
-    <div class="absolute inset-0 pointer-events-none hidden md:block" style="background: linear-gradient(to right, rgba(7,7,7,0.95) 0%, rgba(7,7,7,0.82) 12%, rgba(7,7,7,0.56) 26%, rgba(7,7,7,0.3) 40%, rgba(7,7,7,0.12) 54%, rgba(7,7,7,0.03) 66%, transparent 78%);"></div>
+    <!-- Desktop: soft left-to-transparent atmospheric fade — atmosphere stays visible behind text -->
+    <div class="absolute inset-0 pointer-events-none hidden md:block" style="background: linear-gradient(to right, rgba(5,5,5,0.72) 0%, rgba(5,5,5,0.55) 16%, rgba(5,5,5,0.34) 32%, rgba(5,5,5,0.16) 48%, rgba(5,5,5,0.05) 62%, transparent 75%);"></div>
     <!-- Desktop: magenta bleed from image into the text zone (extends the image's atmosphere) -->
     <div class="absolute inset-0 pointer-events-none hidden md:block" style="background: radial-gradient(ellipse 50% 60% at 30% 52%, rgba(168,52,92,0.12), transparent 70%), radial-gradient(ellipse 35% 45% at 12% 38%, rgba(132,38,62,0.08), transparent 65%);"></div>
     <!-- Desktop: subtle vertical vignette (top + bottom) -->
@@ -57,10 +57,10 @@ const serviceSchema = {
     <!-- Desktop: soft full-frame vignette -->
     <div class="absolute inset-0 pointer-events-none hidden md:block" style="background: radial-gradient(ellipse 110% 100% at 55% 50%, transparent 60%, rgba(0,0,0,0.4));"></div>
 
-    <!-- Mobile: top-left diagonal darkness — embeds the text deeply into the scene -->
-    <div class="absolute inset-0 pointer-events-none md:hidden" style="background: linear-gradient(155deg, rgba(7,7,7,0.96) 0%, rgba(7,7,7,0.82) 22%, rgba(7,7,7,0.5) 42%, rgba(7,7,7,0.22) 62%, transparent 82%);"></div>
-    <!-- Mobile: extra top fade behind headline -->
-    <div class="absolute inset-x-0 top-0 pointer-events-none md:hidden" style="height:50%; background: linear-gradient(to bottom, rgba(7,7,7,0.55) 0%, transparent);"></div>
+    <!-- Mobile: top-left diagonal darkness — softer so the cinematic atmosphere remains visible behind text -->
+    <div class="absolute inset-0 pointer-events-none md:hidden" style="background: linear-gradient(155deg, rgba(5,5,5,0.82) 0%, rgba(5,5,5,0.62) 22%, rgba(5,5,5,0.36) 44%, rgba(5,5,5,0.15) 64%, transparent 82%);"></div>
+    <!-- Mobile: subtle top fade behind headline -->
+    <div class="absolute inset-x-0 top-0 pointer-events-none md:hidden" style="height:50%; background: linear-gradient(to bottom, rgba(5,5,5,0.38) 0%, transparent);"></div>
     <!-- Mobile: bottom soft vignette -->
     <div class="absolute inset-x-0 bottom-0 pointer-events-none md:hidden" style="height:30%; background: linear-gradient(to top, rgba(0,0,0,0.5), transparent);"></div>
 
@@ -85,10 +85,10 @@ const serviceSchema = {
     </div>
   </section>
 
-  <!-- 1b. EDITORIAL METRICS — 4 horizontal cards, left-aligned, premium PE feel -->
-  <section class="relative py-20 md:py-52 overflow-hidden" style="background-color:#070707; background-image: radial-gradient(ellipse 60% 50% at 80% 28%, rgba(214,183,122,0.055), transparent 65%), radial-gradient(ellipse 65% 50% at 22% 70%, rgba(184,154,103,0.04), transparent 72%);">
+  <!-- 1b. EDITORIAL METRICS — 4 horizontal cards (unified magenta/burgundy atmosphere) -->
+  <section class="relative py-20 md:py-52 overflow-hidden" style="background-color:#070707; background-image: radial-gradient(ellipse 65% 50% at 80% 30%, rgba(216,72,120,0.07), transparent 70%), radial-gradient(ellipse 70% 55% at 18% 75%, rgba(184,42,72,0.05), transparent 72%);">
     <div class="grain absolute inset-0 pointer-events-none"></div>
-    <div class="atmosphere-glow warm" style="top:-10%;right:-6%;width:520px;height:520px;"></div>
+    <div class="atmosphere-glow magenta" style="top:-10%;right:-6%;width:520px;height:520px;opacity:0.5;"></div>
     <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-10">
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6">
         {[
@@ -152,9 +152,9 @@ const serviceSchema = {
     </div>
   </section>
 
-  <!-- 2b. PAIN / PROBLEM (charcoal editorial, soft dark warmth) -->
-  <section class="relative py-24 md:py-56 overflow-hidden grain" style="background-color:#141414; background-image: radial-gradient(ellipse 70% 55% at 28% 30%, rgba(186,154,110,0.045), transparent 65%), radial-gradient(ellipse 60% 50% at 78% 75%, rgba(132,38,62,0.06), transparent 70%);">
-    <div class="atmosphere-glow warm" style="top:18%;right:-12%;width:520px;height:520px;opacity:0.3;"></div>
+  <!-- 2b. PAIN / PROBLEM (unified deep black + magenta/burgundy atmosphere) -->
+  <section class="relative py-24 md:py-56 overflow-hidden grain" style="background-color:#070707; background-image: radial-gradient(ellipse 65% 50% at 25% 28%, rgba(216,72,120,0.06), transparent 70%), radial-gradient(ellipse 70% 55% at 80% 72%, rgba(184,42,72,0.05), transparent 70%);">
+    <div class="atmosphere-glow crimson" style="top:18%;right:-12%;width:520px;height:520px;opacity:0.35;"></div>
     <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-10">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-24">
         <div class="lg:col-span-5 lg:sticky lg:top-32 lg:self-start">
@@ -180,20 +180,10 @@ const serviceSchema = {
     </div>
   </section>
 
-  <!-- 2b2. EDITORIAL QUOTE BREAK (burgundy warmth) -->
-  <section class="relative py-20 md:py-52 overflow-hidden" style="background-color:#070707; background-image: radial-gradient(ellipse 60% 50% at 30% 40%, rgba(132,38,62,0.11), transparent 65%), radial-gradient(ellipse 55% 45% at 78% 65%, rgba(186,154,110,0.045), transparent 70%);">
-    <div class="grain absolute inset-0 pointer-events-none"></div>
-    <div class="atmosphere-glow crimson" style="top:50%;left:-12%;width:520px;height:520px;transform:translateY(-50%);opacity:0.45;"></div>
-    <div class="relative z-10 max-w-5xl mx-auto px-6 lg:px-10 text-center">
-      <p class="font-display text-[26px] md:text-5xl lg:text-6xl xl:text-7xl text-white leading-[1.1] md:leading-[1.08] tracking-[-0.02em]">Most creators don’t have a traffic problem.</p>
-      <p class="font-display text-[26px] md:text-5xl lg:text-6xl xl:text-7xl text-white/45 leading-[1.1] md:leading-[1.08] tracking-[-0.02em] mt-3 md:mt-4">They have a monetization problem.</p>
-    </div>
-  </section>
-
   <!-- 2c. RESULTS PREVIEW (clean cinematic, softer atmosphere) -->
   <section class="relative py-24 md:py-56 section-cinematic grain overflow-hidden">
-    <div class="atmosphere-glow warm" style="top:14%;right:-14%;width:480px;height:480px;opacity:0.32;"></div>
-    <div class="atmosphere-glow deep" style="bottom:10%;left:-14%;width:420px;height:420px;opacity:0.4;"></div>
+    <div class="atmosphere-glow magenta" style="top:14%;right:-14%;width:480px;height:480px;opacity:0.35;"></div>
+    <div class="atmosphere-glow crimson" style="bottom:10%;left:-14%;width:420px;height:420px;opacity:0.35;"></div>
     <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-10">
       <!-- Header -->
       <div class="mb-16 md:mb-40 max-w-4xl">
@@ -235,8 +225,8 @@ const serviceSchema = {
 
   <!-- 3. SYSTEMS BEHIND THE REVENUE (panel, sticky header + staggered systems) -->
   <section class="relative py-24 md:py-56 section-panel grain overflow-hidden">
-    <div class="atmosphere-glow warm" style="top:-8%;left:30%;width:560px;height:560px;opacity:0.35;"></div>
-    <div class="atmosphere-glow deep" style="bottom:10%;right:-10%;width:480px;height:480px;"></div>
+    <div class="atmosphere-glow magenta" style="top:-8%;left:30%;width:560px;height:560px;opacity:0.35;"></div>
+    <div class="atmosphere-glow crimson" style="bottom:10%;right:-10%;width:480px;height:480px;opacity:0.4;"></div>
     <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-10">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-24">
         <!-- Sticky headline column -->
@@ -263,7 +253,7 @@ const serviceSchema = {
 
   <!-- 4. HOW IT WORKS (dark panel, oversized step numbers) -->
   <section class="relative py-24 md:py-56 section-panel grain overflow-hidden">
-    <div class="atmosphere-glow warm" style="top:20%;right:-12%;width:480px;height:480px;opacity:0.35;"></div>
+    <div class="atmosphere-glow magenta" style="top:20%;right:-12%;width:480px;height:480px;opacity:0.35;"></div>
     <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-10">
       <div class="mb-16 md:mb-40 max-w-4xl">
         <h2 class="font-display text-4xl md:text-7xl lg:text-8xl text-on-surface leading-[0.96] md:leading-[0.94] tracking-[-0.025em]">How it works.</h2>
@@ -290,7 +280,7 @@ const serviceSchema = {
 
   <!-- 7. FAQ (cinematic, minimal) -->
   <section class="relative py-20 md:py-40 section-cinematic grain overflow-hidden">
-    <div class="atmosphere-glow warm" style="bottom:-10%;left:-12%;width:520px;height:520px;opacity:0.4;"></div>
+    <div class="atmosphere-glow crimson" style="bottom:-10%;left:-12%;width:520px;height:520px;opacity:0.35;"></div>
     <div class="relative z-10 max-w-3xl mx-auto px-6 lg:px-8">
       <div class="mb-12 md:mb-28">
         <h2 class="font-display text-4xl md:text-7xl text-on-surface leading-[0.98] md:leading-[0.96] tracking-[-0.025em]">Frequently asked.</h2>
