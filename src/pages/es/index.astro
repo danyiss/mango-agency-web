@@ -44,7 +44,7 @@ const serviceSchema = {
   <!-- 1. HERO — Unified full-bleed cinematic scene. Desktop: smooth left fade, no split. Mobile: distinct portrait crop. -->
   <section class="relative h-screen -mt-16 w-full overflow-hidden" style="background-color:#070707;">
     <!-- Full-bleed cinematic image — desktop -->
-    <div class="absolute inset-0 bg-no-repeat hidden md:block" style="background-image:url('/assets/hero-home-v4.jpg'); background-position: 82% 28%; background-size: auto 122%; filter: brightness(0.92) contrast(1.06) saturate(1.04);"></div>
+    <div class="absolute inset-0 bg-cover bg-no-repeat hidden md:block" style="background-image:url('/assets/hero-home-v4.jpg'); background-position: 62% center; background-size: cover; filter: brightness(0.92) contrast(1.06) saturate(1.04);"></div>
     <!-- Full-bleed cinematic image — mobile (tighter crop) -->
     <div class="absolute inset-0 bg-cover bg-no-repeat md:hidden" style="background-image:url('/assets/hero-home-v4.jpg'); background-position: 72% 42%; background-size: cover; filter: brightness(0.82) contrast(1.08) saturate(1.05);"></div>
 
