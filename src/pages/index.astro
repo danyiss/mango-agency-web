@@ -98,40 +98,9 @@ const serviceSchema = {
     </div>
   </section>
 
-  <!-- 2b. PAIN / PROBLEM (warm beige textured, sticky-header magazine) -->
-  <section class="relative py-24 md:py-56 section-beige">
-    <div class="max-w-7xl mx-auto px-6 lg:px-10">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24">
-        <!-- Sticky headline column -->
-        <div class="lg:col-span-5 lg:sticky lg:top-32 lg:self-start">
-          <h2 class="font-display text-4xl md:text-7xl lg:text-7xl xl:text-8xl text-on-surface leading-[0.95] md:leading-[0.92] tracking-[-0.025em]">OnlyFans growth is now a systems game.</h2>
-          <p class="mt-8 md:mt-10 text-on-surface/65 text-base md:text-lg leading-relaxed max-w-sm">The creators scaling fastest today are backed by professional teams.</p>
-        </div>
-
-        <!-- Pain points column -->
-        <div class="lg:col-span-7 flex flex-col">
-          {[
-            { title: 'Bad chatting kills page growth.', text: 'Aggressive selling, weak conversations and poor execution slowly damage retention, fan trust and long-term spending. Strong monetization requires structure, training and consistency behind every interaction.' },
-            { title: 'Having followers doesn’t always mean making real money.', text: 'Many creators already have views and followers — the real difference comes from monetization behind the page. Long-term growth depends on retention, fan spending and strong execution inside the DMs.' },
-            { title: 'Many creators feel like just another account inside their agency.', text: 'Generic strategies, shared teams and poor communication eventually limit long-term growth. Serious scaling requires personalized strategy and dedicated support behind the page.' },
-            { title: 'Without real systems and quality control, growth becomes inconsistent.', text: 'Strong months become unpredictable, revenue fluctuates and scaling becomes difficult to sustain long-term. Consistency comes from structure, execution and operational support.' },
-            { title: 'Most creators can’t scale alone forever.', text: 'At some point, content, messaging, posting and monetization become too much for one person to manage properly. Real growth requires the right team behind the page.' },
-          ].map((row, idx) => (
-            <div class={`py-10 md:py-20 ${idx === 0 ? '' : 'border-t'}`} style="border-color:rgba(17,17,17,0.22);">
-              <h3 class="font-display text-2xl md:text-4xl lg:text-5xl text-on-surface leading-[1.0] md:leading-[0.98] tracking-[-0.015em] mb-4 md:mb-6">{row.title}</h3>
-              <p class="text-on-surface/65 text-[15px] md:text-base leading-relaxed max-w-lg">{row.text}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 2b1. REELS ECOSYSTEM (virality / attention / creator culture) -->
-  <section class="relative py-20 md:py-52 overflow-hidden" style="background-color:#080808; background-image: radial-gradient(ellipse 65% 50% at 90% 15%, rgba(216,72,120,0.08), transparent 65%), radial-gradient(ellipse 70% 55% at 10% 85%, rgba(184,42,72,0.06), transparent 70%), radial-gradient(ellipse 50% 40% at 50% 50%, rgba(216,72,120,0.025), transparent 75%);">
+  <!-- 2a. REELS ECOSYSTEM (virality / attention / creator culture) -->
+  <section class="relative py-20 md:py-52 overflow-hidden" style="background-color:#080808; background-image: radial-gradient(ellipse 65% 50% at 90% 15%, rgba(216,72,120,0.09), transparent 65%), radial-gradient(ellipse 70% 55% at 10% 85%, rgba(184,42,72,0.07), transparent 70%), radial-gradient(ellipse 50% 40% at 50% 50%, rgba(216,72,120,0.03), transparent 75%);">
     <div class="grain absolute inset-0 pointer-events-none"></div>
-    <!-- Soft transition from beige Pain section above -->
-    <div class="absolute top-0 left-0 right-0 h-32 pointer-events-none" style="background:linear-gradient(to bottom, rgba(216,200,184,0.08), transparent);"></div>
     <div class="atmosphere-glow magenta" style="top:8%;right:-8%;width:560px;height:560px;"></div>
     <div class="atmosphere-glow crimson" style="bottom:-10%;left:-8%;width:480px;height:480px;"></div>
 
@@ -159,19 +128,47 @@ const serviceSchema = {
     </div>
   </section>
 
-  <!-- 2b2. EDITORIAL QUOTE BREAK (emotional rhythm) -->
-  <section class="relative py-20 md:py-52 section-cinematic grain overflow-hidden">
-    <div class="atmosphere-glow warm" style="top:50%;left:-12%;width:520px;height:520px;transform:translateY(-50%);"></div>
+  <!-- 2b. PAIN / PROBLEM (warm beige textured, sticky-header magazine) -->
+  <section class="relative py-24 md:py-56 section-beige">
+    <div class="max-w-7xl mx-auto px-6 lg:px-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-24">
+        <div class="lg:col-span-5 lg:sticky lg:top-32 lg:self-start">
+          <h2 class="font-display text-4xl md:text-7xl lg:text-7xl xl:text-8xl text-on-surface leading-[0.95] md:leading-[0.92] tracking-[-0.025em]">OnlyFans growth is now a systems game.</h2>
+          <p class="mt-8 md:mt-10 text-on-surface/65 text-base md:text-lg leading-relaxed max-w-sm">The creators scaling fastest today are backed by professional teams.</p>
+        </div>
+
+        <div class="lg:col-span-7 flex flex-col">
+          {[
+            { title: 'Bad chatting kills page growth.', text: 'Aggressive selling, weak conversations and poor execution slowly damage retention, fan trust and long-term spending. Strong monetization requires structure, training and consistency behind every interaction.' },
+            { title: 'Having followers doesn’t always mean making real money.', text: 'Many creators already have views and followers — the real difference comes from monetization behind the page. Long-term growth depends on retention, fan spending and strong execution inside the DMs.' },
+            { title: 'Many creators feel like just another account inside their agency.', text: 'Generic strategies, shared teams and poor communication eventually limit long-term growth. Serious scaling requires personalized strategy and dedicated support behind the page.' },
+            { title: 'Without real systems and quality control, growth becomes inconsistent.', text: 'Strong months become unpredictable, revenue fluctuates and scaling becomes difficult to sustain long-term. Consistency comes from structure, execution and operational support.' },
+            { title: 'Most creators can’t scale alone forever.', text: 'At some point, content, messaging, posting and monetization become too much for one person to manage properly. Real growth requires the right team behind the page.' },
+          ].map((row, idx) => (
+            <div class={`py-10 md:py-20 ${idx === 0 ? '' : 'border-t'}`} style="border-color:rgba(17,17,17,0.22);">
+              <h3 class="font-display text-2xl md:text-4xl lg:text-5xl text-on-surface leading-[1.0] md:leading-[0.98] tracking-[-0.015em] mb-4 md:mb-6">{row.title}</h3>
+              <p class="text-on-surface/65 text-[15px] md:text-base leading-relaxed max-w-lg">{row.text}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2b2. EDITORIAL QUOTE BREAK (burgundy warmth) -->
+  <section class="relative py-20 md:py-52 overflow-hidden" style="background-color:#0a0708; background-image: radial-gradient(ellipse 60% 50% at 25% 30%, rgba(132,38,62,0.12), transparent 65%), radial-gradient(ellipse 55% 45% at 80% 80%, rgba(186,154,110,0.05), transparent 70%);">
+    <div class="grain absolute inset-0 pointer-events-none"></div>
+    <div class="atmosphere-glow crimson" style="top:50%;left:-12%;width:520px;height:520px;transform:translateY(-50%);opacity:0.45;"></div>
     <div class="relative z-10 max-w-5xl mx-auto px-6 lg:px-10 text-center">
       <p class="font-display text-[26px] md:text-5xl lg:text-6xl xl:text-7xl text-white leading-[1.1] md:leading-[1.08] tracking-[-0.02em]">Most creators don’t have a traffic problem.</p>
       <p class="font-display text-[26px] md:text-5xl lg:text-6xl xl:text-7xl text-white/45 leading-[1.1] md:leading-[1.08] tracking-[-0.02em] mt-3 md:mt-4">They have a monetization problem.</p>
     </div>
   </section>
 
-  <!-- 2c. RESULTS PREVIEW (cinematic black, alternating spreads) -->
+  <!-- 2c. RESULTS PREVIEW (clean cinematic, softer atmosphere) -->
   <section class="relative py-24 md:py-56 section-cinematic grain overflow-hidden">
-    <div class="atmosphere-glow warm" style="top:8%;right:-10%;width:520px;height:520px;"></div>
-    <div class="atmosphere-glow deep" style="bottom:5%;left:-12%;width:460px;height:460px;"></div>
+    <div class="atmosphere-glow warm" style="top:14%;right:-14%;width:480px;height:480px;opacity:0.32;"></div>
+    <div class="atmosphere-glow deep" style="bottom:10%;left:-14%;width:420px;height:420px;opacity:0.4;"></div>
     <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-10">
       <!-- Header -->
       <div class="mb-16 md:mb-40 max-w-4xl">
