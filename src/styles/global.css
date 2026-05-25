@@ -46,12 +46,12 @@
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-color: #070707;
+    background-color: #050505;
   }
 
   body {
     font-family: var(--font-body);
-    background: #070707;
+    background: #050505;
     color: #ffffff;
   }
 
@@ -195,6 +195,35 @@ p {
 }
 
 /* ---------------------------------------------------------- */
+/* Global cinematic page canvas — one continuous dark backdrop */
+/* with burgundy + magenta atmosphere and film grain.          */
+/* Fixed to viewport so all sections share the same canvas.    */
+/* Sections render transparent on top → no horizontal jumps.   */
+/* ---------------------------------------------------------- */
+.page-canvas {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-color: #050505;
+  background-image:
+    radial-gradient(ellipse 65% 38% at 82% 12%, rgba(216,72,120,0.07), transparent 70%),
+    radial-gradient(ellipse 60% 34% at 14% 28%, rgba(184,42,72,0.055), transparent 72%),
+    radial-gradient(ellipse 70% 32% at 84% 52%, rgba(216,72,120,0.05), transparent 70%),
+    radial-gradient(ellipse 60% 32% at 18% 74%, rgba(184,42,72,0.05), transparent 72%),
+    radial-gradient(ellipse 70% 34% at 60% 92%, rgba(216,72,120,0.055), transparent 70%);
+}
+.page-canvas::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.05;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.7 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+}
+
+/* ---------------------------------------------------------- */
 /* Black-dominant section helper (warm charcoal)              */
 /* Applies dark bg and auto-inverts text/borders/sub-bgs.     */
 /* ---------------------------------------------------------- */
@@ -214,16 +243,16 @@ p {
   color: #ffffff;
 }
 .section-luxury {
-  background-color: #070707;
+  background-color: transparent;
   background-image:
-    radial-gradient(ellipse 65% 50% at 80% 32%, rgba(216,72,120,0.065), transparent 65%),
-    radial-gradient(ellipse 70% 55% at 18% 72%, rgba(184,42,72,0.05), transparent 75%);
+    radial-gradient(ellipse 65% 50% at 80% 32%, rgba(216,72,120,0.05), transparent 70%),
+    radial-gradient(ellipse 70% 55% at 18% 72%, rgba(184,42,72,0.04), transparent 75%);
 }
 .section-luxury-deep {
-  background-color: #070707;
+  background-color: transparent;
   background-image:
-    radial-gradient(ellipse 65% 50% at 22% 32%, rgba(216,72,120,0.055), transparent 65%),
-    radial-gradient(ellipse 70% 55% at 80% 72%, rgba(184,42,72,0.05), transparent 75%);
+    radial-gradient(ellipse 65% 50% at 22% 32%, rgba(216,72,120,0.045), transparent 70%),
+    radial-gradient(ellipse 70% 55% at 80% 72%, rgba(184,42,72,0.04), transparent 75%);
 }
 .section-luxury .text-on-surface,
 .section-luxury-deep .text-on-surface { color: #ffffff; }
@@ -276,11 +305,10 @@ p {
    Uses the unified magenta + burgundy atmospheric palette (reels reference). */
 .section-cinematic {
   position: relative;
-  background-color: #070707;
+  background-color: transparent;
   background-image:
-    radial-gradient(ellipse 65% 50% at 78% 32%, rgba(216,72,120,0.065), transparent 70%),
-    radial-gradient(ellipse 70% 55% at 18% 72%, rgba(184,42,72,0.05), transparent 72%),
-    radial-gradient(ellipse 50% 40% at 50% 50%, rgba(216,72,120,0.02), transparent 75%);
+    radial-gradient(ellipse 65% 50% at 78% 32%, rgba(216,72,120,0.05), transparent 72%),
+    radial-gradient(ellipse 70% 55% at 18% 72%, rgba(184,42,72,0.04), transparent 74%);
   color: #ffffff;
 }
 
@@ -338,11 +366,10 @@ p {
 /* C — DARK PANEL / GLASS: systems, process, agency operations */
 .section-panel {
   position: relative;
-  background-color: #070707;
+  background-color: transparent;
   background-image:
-    radial-gradient(ellipse 60% 45% at 22% 28%, rgba(216,72,120,0.055), transparent 70%),
-    radial-gradient(ellipse 65% 50% at 82% 75%, rgba(184,42,72,0.045), transparent 72%),
-    linear-gradient(180deg, rgba(255,255,255,0.012) 0%, transparent 25%, transparent 75%, rgba(255,255,255,0.012) 100%);
+    radial-gradient(ellipse 60% 45% at 22% 28%, rgba(216,72,120,0.045), transparent 72%),
+    radial-gradient(ellipse 65% 50% at 82% 75%, rgba(184,42,72,0.04), transparent 74%);
   color: #ffffff;
 }
 
