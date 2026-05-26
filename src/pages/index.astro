@@ -71,11 +71,11 @@ const serviceSchema = {
     <div class="relative z-10 h-full max-w-7xl mx-auto px-6 lg:px-10 flex items-start md:items-center pt-28 md:pt-0">
       <div class="flex flex-col items-start gap-5 md:gap-9 md:w-[55%] max-w-[15ch] md:max-w-none">
         <h1 class="font-display text-[34px] sm:text-6xl md:text-6xl lg:text-7xl xl:text-[96px] text-white leading-[1.02] md:leading-[0.92] tracking-[-0.025em] text-left">
-          <span class="md:hidden">OnlyFans<br />Management<br /><span class="font-serif italic font-normal tracking-[-0.01em]">for creators</span><br />who want<br />more.</span>
-          <span class="hidden md:inline">OnlyFans Management<br />for creators who want more.</span>
+          <span class="md:hidden">Premium<br />OnlyFans<br />Management</span>
+          <span class="hidden md:inline">Premium OnlyFans<br />Management</span>
         </h1>
         <p class="text-white/80 text-[14px] md:text-base lg:text-lg leading-relaxed font-body max-w-[22ch] sm:max-w-md text-left">
-          Growth, monetization and management built to scale creators long-term.
+          We scale OnlyFans creators through strategic social media growth, stronger monetization and personalized support built for long-term success.
         </p>
         <a href="#apply" class="inline-block bg-accent text-black font-bold px-7 py-3.5 md:py-4 rounded-[7px] text-sm tracking-wide hover:brightness-95 hover:scale-[1.02] transition-all">
           Apply to work with us
@@ -245,6 +245,7 @@ const serviceSchema = {
         <div class="lg:col-span-7 flex flex-col gap-14 md:gap-24">
           {[
             {
+              id: 'chatting-monetization',
               title: 'Chatting & Monetization',
               paragraphs: [
                 'Our in-house chatting team focuses on fan relationships, retention and higher spending — adapting every conversation to the creator’s personality, audience and boundaries.',
@@ -253,6 +254,7 @@ const serviceSchema = {
               ],
             },
             {
+              id: 'social-media-growth',
               title: 'Social Media Growth',
               paragraphs: [
                 'Our expert marketing team builds strategic social media growth around creator branding, audience psychology and constant performance analysis.',
@@ -260,6 +262,7 @@ const serviceSchema = {
               ],
             },
             {
+              id: 'content-strategy',
               title: 'Content Strategy',
               paragraphs: [
                 'We help creators know exactly what to film, why it matters and how it connects to growth.',
@@ -267,6 +270,7 @@ const serviceSchema = {
               ],
             },
             {
+              id: 'personalized-management',
               title: 'Personalized Management',
               paragraphs: [
                 'No generic strategies or one-size-fits-all systems.',
@@ -274,6 +278,7 @@ const serviceSchema = {
               ],
             },
             {
+              id: 'operations-scaling',
               title: 'Operations & Scaling',
               paragraphs: [
                 'Structured workflows, internal teams, performance tracking and quality control designed to help creators scale without chaos, inconsistency or burnout.',
@@ -281,6 +286,7 @@ const serviceSchema = {
               ],
             },
             {
+              id: 'protection-support',
               title: 'Protection & Support',
               paragraphs: [
                 'Leak protection, DMCA support, account safety and ongoing support designed to help creators scale confidently without losing control of their content or business.',
@@ -288,7 +294,7 @@ const serviceSchema = {
               ],
             },
           ].map(s => (
-            <div class="flex flex-col gap-5 md:gap-6">
+            <div id={s.id} class="flex flex-col gap-5 md:gap-6 scroll-mt-24">
               <h3 class="font-display text-3xl md:text-5xl lg:text-6xl text-white leading-[1.05] md:leading-[1.0] tracking-[-0.02em]">{s.title}</h3>
               <div class="flex flex-col gap-3 md:gap-4 max-w-lg">
                 {s.paragraphs.map(p => (

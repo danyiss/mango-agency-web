@@ -239,54 +239,74 @@ const websiteSchema = {
       <slot />
     </main>
 
-    <!-- Footer (transparent — inherits the global cinematic canvas, no horizontal seam) -->
-    <footer class="relative min-h-screen flex flex-col overflow-hidden">
-      <div class="atmosphere-glow magenta" style="top:12%;left:50%;transform:translateX(-50%);width:680px;height:680px;opacity:0.32;"></div>
-      <div class="atmosphere-glow crimson" style="bottom:8%;right:-12%;width:560px;height:560px;opacity:0.4;"></div>
+    <!-- Footer (Playboy-style: pure black, full-width, 3-column editorial luxury) -->
+    <footer class="relative overflow-hidden" style="background-color:#000000;">
+      <div class="relative z-10 max-w-7xl mx-auto px-6 md:px-8 lg:px-12 pt-24 md:pt-40 pb-12 md:pb-16">
 
-      <!-- Center hero: logo + statement + socials -->
-      <div class="relative z-10 flex-1 flex items-center justify-center px-6 lg:px-10 py-20">
-        <div class="flex flex-col items-center text-center gap-9 md:gap-16">
-          <a href={localPath('/')} class="flex items-center" aria-label="MANGO Talent Management">
-            <img src="/logo.png" alt="MANGO Talent Management" class="h-14 sm:h-20 md:h-32 w-auto" style="filter:invert(1) brightness(2);" />
-          </a>
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-14 md:gap-12 lg:gap-20">
 
-          <p class="font-display text-white text-2xl sm:text-3xl md:text-5xl lg:text-6xl italic leading-[1.1] md:leading-tight tracking-[-0.02em] max-w-2xl">For creators, by creators.</p>
-
-          <div class="flex items-center gap-8 md:gap-10">
-            <a
-              href="https://instagram.com/mango.creators"
-              target="_blank"
-              rel="noopener"
-              aria-label="Instagram @mango.creators"
-              class="inline-flex items-center justify-center text-white/55 hover:text-white transition-colors duration-300"
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <rect x="3" y="3" width="18" height="18" rx="5" />
-                <circle cx="12" cy="12" r="4" />
-                <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
-              </svg>
+          <!-- LEFT: Brand block -->
+          <div class="md:col-span-6 lg:col-span-5 flex flex-col gap-10 md:gap-14">
+            <a href={localPath('/')} class="inline-flex items-center" aria-label="MANGO Talent Management">
+              <img src="/logo.png" alt="MANGO Talent Management" class="h-10 md:h-14 w-auto" style="filter:invert(1) brightness(2);" />
             </a>
-            <a
-              href="https://t.me/mangocreators"
-              target="_blank"
-              rel="noopener"
-              aria-label="Telegram @mangocreators"
-              class="inline-flex items-center justify-center text-white/55 hover:text-white transition-colors duration-300"
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="m22 2-7 20-4-9-9-4Z" />
-                <path d="M22 2 11 13" />
-              </svg>
-            </a>
+
+            <p class="font-display text-white text-3xl md:text-5xl lg:text-6xl italic leading-[1.05] tracking-[-0.02em] max-w-md">For creators, by creators.</p>
+
+            <div class="flex items-center gap-6">
+              <a
+                href="https://instagram.com/mango.creators"
+                target="_blank"
+                rel="noopener"
+                aria-label="Instagram @mango.creators"
+                class="inline-flex items-center justify-center text-white/70 hover:text-white transition-colors duration-300"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="3" y="3" width="18" height="18" rx="5" />
+                  <circle cx="12" cy="12" r="4" />
+                  <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+                </svg>
+              </a>
+              <a
+                href="https://t.me/mangocreators"
+                target="_blank"
+                rel="noopener"
+                aria-label="Telegram @mangocreators"
+                class="inline-flex items-center justify-center text-white/70 hover:text-white transition-colors duration-300"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0Zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.139-.26.249-.51.249l.181-2.572 4.692-4.242c.203-.18-.044-.281-.32-.101l-5.799 3.654-2.486-.78c-.54-.165-.55-.54.122-.81l9.713-3.745c.451-.164.853.107.707.717Z"/>
+                </svg>
+              </a>
+            </div>
+
+            <p class="text-[10px] text-white/35 tracking-[0.25em] uppercase mt-2 md:mt-6">&copy; {currentYear} MANGO. ALL RIGHTS RESERVED.</p>
           </div>
-        </div>
-      </div>
 
-      <!-- Bottom edge row -->
-      <div class="relative z-10 px-4 sm:px-6 md:px-8 lg:px-10 pb-8 md:pb-10 flex flex-col gap-3 text-center md:flex-row md:items-center md:justify-between md:text-left">
-        <p class="text-[10px] text-white/35 tracking-[0.25em] uppercase">&copy; {currentYear} MANGO. ALL RIGHTS RESERVED.</p>
-        <a href={localPath('/legal')} class="text-[10px] text-white/35 tracking-[0.25em] uppercase hover:text-white transition-colors duration-300">{t('footer.privacy')}</a>
+          <!-- CENTER: Services -->
+          <div class="md:col-span-3 lg:col-span-4 flex flex-col gap-6 md:gap-8">
+            <h4 class="text-[11px] uppercase tracking-[0.3em] text-white/55 font-semibold">{currentLang === 'es' ? 'Servicios' : 'Services'}</h4>
+            <ul class="flex flex-col gap-3 md:gap-4">
+              <li><a href={`${localPath('/')}#chatting-monetization`} class="group inline-flex items-center text-white/85 hover:text-white text-base md:text-lg transition-colors duration-300"><span class="border-b border-transparent group-hover:border-white/70 pb-[2px] transition-colors duration-300">{currentLang === 'es' ? 'Chatting y Monetización' : 'Chatting & Monetization'}</span></a></li>
+              <li><a href={`${localPath('/')}#social-media-growth`} class="group inline-flex items-center text-white/85 hover:text-white text-base md:text-lg transition-colors duration-300"><span class="border-b border-transparent group-hover:border-white/70 pb-[2px] transition-colors duration-300">{currentLang === 'es' ? 'Crecimiento en Redes' : 'Social Media Growth'}</span></a></li>
+              <li><a href={`${localPath('/')}#content-strategy`} class="group inline-flex items-center text-white/85 hover:text-white text-base md:text-lg transition-colors duration-300"><span class="border-b border-transparent group-hover:border-white/70 pb-[2px] transition-colors duration-300">{currentLang === 'es' ? 'Estrategia de Contenido' : 'Content Strategy'}</span></a></li>
+              <li><a href={`${localPath('/')}#personalized-management`} class="group inline-flex items-center text-white/85 hover:text-white text-base md:text-lg transition-colors duration-300"><span class="border-b border-transparent group-hover:border-white/70 pb-[2px] transition-colors duration-300">{currentLang === 'es' ? 'Gestión de Creadora' : 'Creator Management'}</span></a></li>
+              <li><a href={`${localPath('/')}#protection-support`} class="group inline-flex items-center text-white/85 hover:text-white text-base md:text-lg transition-colors duration-300"><span class="border-b border-transparent group-hover:border-white/70 pb-[2px] transition-colors duration-300">{currentLang === 'es' ? 'Protección y Soporte' : 'Protection & Support'}</span></a></li>
+            </ul>
+          </div>
+
+          <!-- RIGHT: Company -->
+          <div class="md:col-span-3 lg:col-span-3 flex flex-col gap-6 md:gap-8">
+            <h4 class="text-[11px] uppercase tracking-[0.3em] text-white/55 font-semibold">{currentLang === 'es' ? 'Empresa' : 'Company'}</h4>
+            <ul class="flex flex-col gap-3 md:gap-4">
+              <li><a href={localPath('/results')} class="group inline-flex items-center text-white/85 hover:text-white text-base md:text-lg transition-colors duration-300"><span class="border-b border-transparent group-hover:border-white/70 pb-[2px] transition-colors duration-300">{currentLang === 'es' ? 'Resultados' : 'Results'}</span></a></li>
+              <li><a href={localPath('/for-agencies')} class="group inline-flex items-center text-white/85 hover:text-white text-base md:text-lg transition-colors duration-300"><span class="border-b border-transparent group-hover:border-white/70 pb-[2px] transition-colors duration-300">{currentLang === 'es' ? 'Para Agencias' : 'For Agencies'}</span></a></li>
+              <li><a href={`${localPath('/')}#apply`} class="group inline-flex items-center text-white/85 hover:text-white text-base md:text-lg transition-colors duration-300"><span class="border-b border-transparent group-hover:border-white/70 pb-[2px] transition-colors duration-300">{currentLang === 'es' ? 'Aplicar Ahora' : 'Apply Now'}</span></a></li>
+              <li><a href={localPath('/legal')} class="group inline-flex items-center text-white/85 hover:text-white text-base md:text-lg transition-colors duration-300"><span class="border-b border-transparent group-hover:border-white/70 pb-[2px] transition-colors duration-300">{currentLang === 'es' ? 'Política de Privacidad' : 'Privacy Policy'}</span></a></li>
+            </ul>
+          </div>
+
+        </div>
       </div>
     </footer>
   </body>

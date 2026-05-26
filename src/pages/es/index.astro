@@ -71,11 +71,11 @@ const serviceSchema = {
     <div class="relative z-10 h-full max-w-7xl mx-auto px-6 lg:px-10 flex items-start md:items-center pt-28 md:pt-0">
       <div class="flex flex-col items-start gap-5 md:gap-9 md:w-[55%] max-w-[15ch] md:max-w-none">
         <h1 class="font-display text-[34px] sm:text-6xl md:text-6xl lg:text-7xl xl:text-[96px] text-white leading-[1.02] md:leading-[0.92] tracking-[-0.025em] text-left">
-          <span class="md:hidden">Gesti&oacute;n<br />de OnlyFans<br /><span class="font-serif italic font-normal tracking-[-0.01em]">para creadoras</span><br />que quieren<br />m&aacute;s.</span>
-          <span class="hidden md:inline">Gesti&oacute;n de OnlyFans<br />para creadoras que quieren m&aacute;s.</span>
+          <span class="md:hidden">Gesti&oacute;n<br />Premium<br />de OnlyFans</span>
+          <span class="hidden md:inline">Gesti&oacute;n Premium<br />de OnlyFans</span>
         </h1>
         <p class="text-white/80 text-[14px] md:text-base lg:text-lg leading-relaxed font-body max-w-[22ch] sm:max-w-md text-left">
-          Crecimiento, monetizaci&oacute;n y gesti&oacute;n construidos para escalar creadoras a largo plazo.
+          Escalamos a creadoras de OnlyFans a trav&eacute;s de crecimiento estrat&eacute;gico en redes sociales, monetizaci&oacute;n m&aacute;s s&oacute;lida y soporte personalizado dise&ntilde;ado para el &eacute;xito a largo plazo.
         </p>
         <a href="#apply" class="inline-block bg-accent text-black font-bold px-7 py-3.5 md:py-4 rounded-[7px] text-sm tracking-wide hover:brightness-95 hover:scale-[1.02] transition-all">
           Aplicar para trabajar con nosotros
@@ -245,6 +245,7 @@ const serviceSchema = {
         <div class="lg:col-span-7 flex flex-col gap-14 md:gap-24">
           {[
             {
+              id: 'chatting-monetization',
               title: 'Chatting y Monetización',
               paragraphs: [
                 'Nuestro equipo interno de chatting se centra en las relaciones con los fans, la retención y un mayor gasto — adaptando cada conversación a la personalidad, la audiencia y los límites de cada creadora.',
@@ -253,6 +254,7 @@ const serviceSchema = {
               ],
             },
             {
+              id: 'social-media-growth',
               title: 'Crecimiento en Redes Sociales',
               paragraphs: [
                 'Nuestro equipo experto de marketing construye crecimiento estratégico en redes sociales alrededor del branding de la creadora, la psicología de la audiencia y el análisis constante de rendimiento.',
@@ -260,6 +262,7 @@ const serviceSchema = {
               ],
             },
             {
+              id: 'content-strategy',
               title: 'Estrategia de Contenido',
               paragraphs: [
                 'Ayudamos a las creadoras a saber exactamente qué grabar, por qué importa y cómo se conecta con el crecimiento.',
@@ -267,6 +270,7 @@ const serviceSchema = {
               ],
             },
             {
+              id: 'personalized-management',
               title: 'Gestión Personalizada',
               paragraphs: [
                 'Sin estrategias genéricas ni sistemas iguales para todas.',
@@ -274,6 +278,7 @@ const serviceSchema = {
               ],
             },
             {
+              id: 'operations-scaling',
               title: 'Operaciones y Escalado',
               paragraphs: [
                 'Flujos de trabajo estructurados, equipos internos, seguimiento de rendimiento y control de calidad diseñados para que las creadoras escalen sin caos, inconsistencia ni burnout.',
@@ -281,6 +286,7 @@ const serviceSchema = {
               ],
             },
             {
+              id: 'protection-support',
               title: 'Protección y Soporte',
               paragraphs: [
                 'Protección frente a filtraciones, soporte DMCA, seguridad de cuenta y soporte continuo diseñados para que las creadoras escalen con confianza sin perder el control de su contenido ni de su negocio.',
@@ -288,7 +294,7 @@ const serviceSchema = {
               ],
             },
           ].map(s => (
-            <div class="flex flex-col gap-5 md:gap-6">
+            <div id={s.id} class="flex flex-col gap-5 md:gap-6 scroll-mt-24">
               <h3 class="font-display text-3xl md:text-5xl lg:text-6xl text-white leading-[1.05] md:leading-[1.0] tracking-[-0.02em]">{s.title}</h3>
               <div class="flex flex-col gap-3 md:gap-4 max-w-lg">
                 {s.paragraphs.map(p => (
