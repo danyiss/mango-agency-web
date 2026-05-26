@@ -204,6 +204,67 @@ p {
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
 }
 
+/* ---------------------------------------------------------- */
+/* Hero collage — 4-column editorial parallax (AS Talent vibe) */
+/* Subtle floating per column + unified cinematic color grade  */
+/* ---------------------------------------------------------- */
+.collage-img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center;
+  filter: saturate(0.78) contrast(1.06) brightness(0.92) sepia(0.07);
+}
+.collage-column {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  will-change: transform;
+}
+@media (min-width: 1024px) {
+  .collage-column { gap: 1rem; }
+}
+.collage-column-1 { animation: collage-float-a 22s ease-in-out infinite alternate; }
+.collage-column-2 { animation: collage-float-b 26s ease-in-out infinite alternate; }
+.collage-column-3 { animation: collage-float-c 24s ease-in-out infinite alternate; }
+.collage-column-4 { animation: collage-float-d 28s ease-in-out infinite alternate; }
+
+@keyframes collage-float-a {
+  from { transform: translateY(calc(-50% - 28px)); }
+  to   { transform: translateY(calc(-50% + 28px)); }
+}
+@keyframes collage-float-b {
+  from { transform: translateY(calc(-50% + 32px)); }
+  to   { transform: translateY(calc(-50% - 32px)); }
+}
+@keyframes collage-float-c {
+  from { transform: translateY(calc(-50% - 22px)); }
+  to   { transform: translateY(calc(-50% + 22px)); }
+}
+@keyframes collage-float-d {
+  from { transform: translateY(calc(-50% + 36px)); }
+  to   { transform: translateY(calc(-50% - 36px)); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .collage-column { animation: none !important; transform: translateY(-50%) !important; }
+}
+
+/* Cinematic tint overlay — unifies the photos into one warm campaign */
+.collage-tint {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 130% 90% at 50% 50%, rgba(48, 14, 24, 0.22) 0%, rgba(8, 4, 6, 0.46) 100%);
+  mix-blend-mode: multiply;
+}
+
 
 /* ---------------------------------------------------------- */
 /* Black-dominant section helper (warm charcoal)              */

@@ -41,41 +41,50 @@ const serviceSchema = {
     <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
   </Fragment>
 
-  <!-- 1. HERO — Unified full-bleed cinematic scene. Desktop: smooth left fade, no split. Mobile: distinct portrait crop. -->
-  <section class="relative h-screen -mt-16 w-full overflow-hidden">
-    <!-- Full-bleed cinematic image — desktop: wide composition with creator on right third -->
-    <div class="absolute inset-0 bg-cover bg-no-repeat hidden md:block" style="background-image:url('/assets/hero-home-v4.jpg'); background-position: 62% center; background-size: cover; filter: brightness(0.92) contrast(1.06) saturate(1.04);"></div>
-    <!-- Full-bleed cinematic image — mobile: tighter crop, creator centered vertically -->
-    <div class="absolute inset-0 bg-cover bg-no-repeat md:hidden" style="background-image:url('/assets/hero-mobile-v2.jpg'); background-position: 56% 62%; background-size: cover; filter: brightness(0.96) contrast(1.04) saturate(1.03);"></div>
+  <!-- 1. HERO — Luxury editorial photo collage. Desktop: 4 columns × 3 images with subtle column parallax. Mobile: 2 columns × 3 of the strongest images. Unified cinematic grading via CSS filters + tint. -->
+  <section class="relative h-screen -mt-16 w-full overflow-hidden" style="background-color:#070707;">
 
-    <!-- Desktop: soft left-to-transparent atmospheric fade — atmosphere stays visible behind text -->
-    <div class="absolute inset-0 pointer-events-none hidden md:block" style="background: linear-gradient(to right, rgba(5,5,5,0.72) 0%, rgba(5,5,5,0.55) 16%, rgba(5,5,5,0.34) 32%, rgba(5,5,5,0.16) 48%, rgba(5,5,5,0.05) 62%, transparent 75%);"></div>
-    <!-- Desktop: magenta bleed from image into the text zone (extends the image's atmosphere) -->
-    <div class="absolute inset-0 pointer-events-none hidden md:block" style="background: radial-gradient(ellipse 50% 60% at 30% 52%, rgba(168,52,92,0.12), transparent 70%), radial-gradient(ellipse 35% 45% at 12% 38%, rgba(132,38,62,0.08), transparent 65%);"></div>
-    <!-- Desktop: subtle vertical vignette (top + bottom) -->
-    <div class="absolute inset-0 pointer-events-none hidden md:block" style="background: linear-gradient(to bottom, rgba(0,0,0,0.32) 0%, transparent 16%, transparent 76%, rgba(0,0,0,0.55) 100%);"></div>
-    <!-- Desktop: soft full-frame vignette -->
-    <div class="absolute inset-0 pointer-events-none hidden md:block" style="background: radial-gradient(ellipse 110% 100% at 55% 50%, transparent 60%, rgba(0,0,0,0.4));"></div>
+    <!-- DESKTOP: 4-column collage (12 images) -->
+    <div class="absolute inset-0 hidden md:block">
+      <div class="absolute inset-0 grid grid-cols-4 gap-3 lg:gap-4 px-3 lg:px-4">
+        <div class="relative h-full"><div class="collage-column collage-column-1"><img src="/assets/hero-collage/c1-t.jpg" alt="" class="collage-img" loading="eager" decoding="async" /><img src="/assets/hero-collage/c1-m.jpg" alt="" class="collage-img" loading="eager" decoding="async" /><img src="/assets/hero-collage/c1-b.jpg" alt="" class="collage-img" loading="eager" decoding="async" /></div></div>
+        <div class="relative h-full"><div class="collage-column collage-column-2"><img src="/assets/hero-collage/c2-t.jpg" alt="" class="collage-img" loading="eager" decoding="async" /><img src="/assets/hero-collage/c2-m.jpg" alt="" class="collage-img" loading="eager" decoding="async" /><img src="/assets/hero-collage/c2-b.jpg" alt="" class="collage-img" loading="eager" decoding="async" /></div></div>
+        <div class="relative h-full"><div class="collage-column collage-column-3"><img src="/assets/hero-collage/c3-t.jpg" alt="" class="collage-img" loading="eager" decoding="async" /><img src="/assets/hero-collage/c3-m.jpg" alt="" class="collage-img" loading="eager" decoding="async" /><img src="/assets/hero-collage/c3-b.jpg" alt="" class="collage-img" loading="eager" decoding="async" /></div></div>
+        <div class="relative h-full"><div class="collage-column collage-column-4"><img src="/assets/hero-collage/c4-t.jpg" alt="" class="collage-img" loading="eager" decoding="async" /><img src="/assets/hero-collage/c4-m.jpg" alt="" class="collage-img" loading="eager" decoding="async" /><img src="/assets/hero-collage/c4-b.jpg" alt="" class="collage-img" loading="eager" decoding="async" /></div></div>
+      </div>
+    </div>
 
-    <!-- Mobile: top-left diagonal darkness — softer so the cinematic atmosphere remains visible behind text -->
-    <div class="absolute inset-0 pointer-events-none md:hidden" style="background: linear-gradient(150deg, rgba(5,5,5,0.74) 0%, rgba(5,5,5,0.52) 22%, rgba(5,5,5,0.26) 44%, rgba(5,5,5,0.08) 62%, transparent 78%);"></div>
-    <!-- Mobile: subtle top fade behind headline -->
-    <div class="absolute inset-x-0 top-0 pointer-events-none md:hidden" style="height:50%; background: linear-gradient(to bottom, rgba(5,5,5,0.38) 0%, transparent);"></div>
-    <!-- Mobile: bottom soft vignette -->
-    <div class="absolute inset-x-0 bottom-0 pointer-events-none md:hidden" style="height:30%; background: linear-gradient(to top, rgba(0,0,0,0.5), transparent);"></div>
+    <!-- MOBILE: 2-column collage with the 6 strongest images (11, 14, 12 | 19, 10, 16) -->
+    <div class="absolute inset-0 md:hidden">
+      <div class="absolute inset-0 grid grid-cols-2 gap-2 px-2">
+        <div class="relative h-full"><div class="collage-column collage-column-1"><img src="/assets/hero-collage/c2-t.jpg" alt="" class="collage-img" loading="eager" decoding="async" /><img src="/assets/hero-collage/c1-m.jpg" alt="" class="collage-img" loading="eager" decoding="async" /><img src="/assets/hero-collage/c1-b.jpg" alt="" class="collage-img" loading="eager" decoding="async" /></div></div>
+        <div class="relative h-full"><div class="collage-column collage-column-2"><img src="/assets/hero-collage/c2-m.jpg" alt="" class="collage-img" loading="eager" decoding="async" /><img src="/assets/hero-collage/c3-t.jpg" alt="" class="collage-img" loading="eager" decoding="async" /><img src="/assets/hero-collage/c4-m.jpg" alt="" class="collage-img" loading="eager" decoding="async" /></div></div>
+      </div>
+    </div>
 
-    <!-- Subtle grain — adds cinematic film texture to the whole scene -->
-    <div class="grain absolute inset-0 pointer-events-none" style="opacity:0.55;"></div>
+    <!-- Unifying cinematic tint (multiply blend → warm/burgundy across all photos) -->
+    <div class="collage-tint" style="z-index:2;"></div>
 
-    <!-- CONTENT — mobile: top-left, clear of nav; desktop: vertically centered, left half -->
-    <div class="relative z-10 h-full max-w-7xl mx-auto px-6 lg:px-10 flex items-start md:items-center pt-28 md:pt-0">
+    <!-- Desktop: left-side darkening so text remains readable -->
+    <div class="absolute inset-0 pointer-events-none hidden md:block" style="z-index:3; background: linear-gradient(to right, rgba(5,5,5,0.84) 0%, rgba(5,5,5,0.65) 18%, rgba(5,5,5,0.42) 36%, rgba(5,5,5,0.22) 52%, rgba(5,5,5,0.08) 68%, transparent 84%);"></div>
+    <!-- Desktop: subtle top + bottom vignette -->
+    <div class="absolute inset-0 pointer-events-none hidden md:block" style="z-index:3; background: linear-gradient(to bottom, rgba(0,0,0,0.35) 0%, transparent 14%, transparent 78%, rgba(0,0,0,0.5) 100%);"></div>
+
+    <!-- Mobile: top half darkening so headline reads cleanly over the collage -->
+    <div class="absolute inset-0 pointer-events-none md:hidden" style="z-index:3; background: linear-gradient(to bottom, rgba(5,5,5,0.78) 0%, rgba(5,5,5,0.55) 22%, rgba(5,5,5,0.32) 42%, rgba(5,5,5,0.15) 60%, transparent 78%);"></div>
+
+    <!-- Film grain over everything -->
+    <div class="grain absolute inset-0 pointer-events-none" style="opacity:0.5; z-index:4;"></div>
+
+    <!-- CONTENT — left-aligned, on top of all overlays -->
+    <div class="relative h-full max-w-7xl mx-auto px-6 lg:px-10 flex items-start md:items-center pt-28 md:pt-0" style="z-index:10;">
       <div class="flex flex-col items-start gap-5 md:gap-9 md:w-[55%] max-w-[15ch] md:max-w-none">
         <h1 class="font-display text-[34px] sm:text-6xl md:text-6xl lg:text-7xl xl:text-[96px] text-white leading-[1.02] md:leading-[0.92] tracking-[-0.025em] text-left">
           <span class="md:hidden">Premium<br />OnlyFans<br />Management</span>
           <span class="hidden md:inline">Premium OnlyFans<br />Management</span>
         </h1>
         <p class="text-white/80 text-[14px] md:text-base lg:text-lg leading-relaxed font-body max-w-[22ch] sm:max-w-md text-left">
-          We scale OnlyFans creators through strategic social media growth, stronger monetization and personalized support built for long-term success.
+          We scale OnlyFans creators through strategic growth, stronger monetization and personalized support built for long-term success.
         </p>
         <a href="#apply" class="inline-block bg-accent text-black font-bold px-7 py-3.5 md:py-4 rounded-[7px] text-sm tracking-wide hover:brightness-95 hover:scale-[1.02] transition-all">
           Apply to work with us
