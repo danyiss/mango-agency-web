@@ -9,13 +9,17 @@ const lossCards = [
   { title: 'Sin visibilidad de monetización', text: 'La mayoría de agencias ven la caída de ingresos cuando ya ha pasado — sin saber por qué.' },
 ];
 
-const solutionBullets = [
-  { title: 'Chatters dedicados por modelo.', text: 'Tono, ritmo y construcción de relaciones consistentes en cada turno.' },
-  { title: 'Equipos nativos de monetización en inglés y español.', text: 'Construidos para maximizar conversión, retención y gasto del fan en distintas audiencias.' },
-  { title: 'Flujos de monetización estructurados.', text: 'Warm-up, engagement emocional, upsell, retención y sistemas de reactivación.' },
-  { title: 'Segmentación avanzada de fans.', text: 'Estrategias de monetización distintas para whales, compradores, suscriptores y fans dormidos.' },
-  { title: 'Desarrollo de spenders a largo plazo.', text: 'Construido para aumentar retención, compras repetidas y LTV total del fan — no solo picos puntuales de PPV.' },
-  { title: 'QA interno y revisiones de conversación.', text: 'Las conversaciones se revisan constantemente para mantener calidad, consistencia, experiencia del fan y valor a largo plazo.' },
+const topAgencyReasons = [
+  { title: 'Equipos de chatting dedicados por modelo.', text: 'Formados continuamente a través de sistemas estructurados de ventas, revisiones de QA y análisis continuo de rendimiento.' },
+  { title: 'Monetización construida alrededor de la retención y el LTV.', text: 'Enfocada en aumentar el gasto recurrente, relaciones más fuertes con los fans y estabilidad de ingresos a largo plazo.' },
+  { title: 'Equipos de monetización nativos en inglés y español.', text: 'Diseñados para maximizar la conversión, la retención y el gasto de los fans en diferentes audiencias y mercados.' },
+  { title: 'Flujos de monetización estructurados.', text: 'Sistemas de warm-up, engagement emocional, upsells, retención y reactivación diseñados para maximizar el valor a largo plazo del fan — no solo ventas a corto plazo.' },
+  { title: 'Segmentación avanzada de fans.', text: 'Diferentes estrategias de monetización para whales, compradores, suscriptores y fans inactivos basadas en patrones de comportamiento y gasto.' },
+  { title: 'Replicación de la persona de la creadora.', text: 'Estudiamos en profundidad la voz, personalidad, límites y dinámica de audiencia de cada creadora para crear interacciones auténticas con los fans que preserven la inmersión, fortalezcan la conexión emocional y maximicen el gasto a largo plazo.' },
+  { title: 'Conversaciones diseñadas para preservar la inmersión y la inversión emocional.', text: 'Porque una vez que el fan siente que la página es falsa, inconsistente o transaccional, el gasto a largo plazo cae rápido.' },
+  { title: 'Control operativo sobre el proceso de monetización.', text: 'Los chats se revisan constantemente a través de sistemas de QA, seguimiento de rendimiento y optimización continua para maximizar los ingresos, la consistencia y la experiencia del fan.' },
+  { title: 'Gestión completa de cuenta.', text: 'Planificación de contenido, publicación, monetización, analíticas, gestión de fans y soporte operativo estructurado para eliminar el caos y ayudar a las creadoras a escalar de forma más eficiente.' },
+  { title: 'Sistemas de monetización estructurados diseñados para escalar.', text: 'Ejecución consistente, rendimiento repetible y reducción de la dependencia de chatters individuales a medida que la agencia crece.' },
 ];
 
 const mapSteps = [
@@ -32,14 +36,6 @@ const howSteps = [
   { num: '02', title: 'Integración del sistema', text: 'Implementamos los flujos de monetización, sistemas de segmentación, estructura de QA y operaciones de chatting.' },
   { num: '03', title: 'Ejecución de ingresos', text: 'Nos encargamos de las conversaciones diarias, upsells, retención, relaciones con fans y desarrollo de spenders a largo plazo.' },
   { num: '04', title: 'Análisis y Optimización', text: 'Revisamos continuamente el rendimiento del chatting, flujo de conversión, comportamiento de gasto y resultados de monetización.' },
-];
-
-const whyBullets = [
-  { title: 'Equipos de monetización dedicados por modelo.', text: 'Formados continuamente con sistemas de venta estructurados, revisiones de QA y análisis de rendimiento continuo.' },
-  { title: 'Monetización construida sobre retención y LTV.', text: 'Enfocada en aumentar el gasto recurrente, las relaciones con fans y la estabilidad de ingresos a largo plazo.' },
-  { title: 'Conversaciones diseñadas para preservar la inmersión y la inversión emocional.', text: 'Porque cuando el fan siente que la página es fake o inconsistente, el gasto a largo plazo cae rápido.' },
-  { title: 'Control operativo sobre el proceso de monetización.', text: 'Revisiones de QA, seguimiento de rendimiento y optimización continua — no delegación a ciegas.' },
-  { title: 'Sistemas de monetización estructurados diseñados para escalar.', text: 'Ejecución consistente, rendimiento repetible y menor dependencia de chatters individuales.' },
 ];
 
 const faqs = [
@@ -104,24 +100,30 @@ const faqs = [
     </div>
   </section>
 
-  <!-- 4. SOLUTION (dark panel) — operator-level -->
+  <!-- 4. POR QUÉ LAS MEJORES AGENCIAS ELIGEN TRABAJAR CON NOSOTROS (sticky title left + 10 benefits right) -->
   <section class="relative py-24 md:py-56 section-panel grain">
-    <div class="relative z-10 max-w-5xl mx-auto px-6 lg:px-10">
-      <div class="mb-20 md:mb-28 max-w-3xl">
-        <h2 class="font-display text-4xl md:text-7xl lg:text-8xl text-white leading-[0.94] tracking-[-0.025em]">Nos convertimos en tu sistema de monetizaci&oacute;n.</h2>
+    <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-24">
+        <!-- Sticky headline column -->
+        <div class="lg:col-span-5 lg:sticky lg:top-32 lg:self-start">
+          <h2 class="font-display text-4xl md:text-6xl lg:text-7xl xl:text-7xl text-white leading-[0.96] md:leading-[0.94] tracking-[-0.025em]">
+            Por qu&eacute; las Mejores Agencias<br />Eligen Trabajar<br />con Nosotros.
+          </h2>
+        </div>
+
+        <!-- Benefits stacked right -->
+        <div class="lg:col-span-7 flex flex-col gap-10 md:gap-14">
+          {topAgencyReasons.map(r => (
+            <div class="flex flex-col gap-3 md:gap-4">
+              <h3 class="font-display text-2xl md:text-3xl lg:text-4xl text-white leading-[1.1] tracking-[-0.015em]">{r.title}</h3>
+              <p class="text-white/65 text-base md:text-lg leading-relaxed max-w-lg">{r.text}</p>
+            </div>
+          ))}
+        </div>
       </div>
 
-      <ul class="flex flex-col">
-        {solutionBullets.map((item, idx) => (
-          <li class={`py-9 md:py-11 grid grid-cols-1 lg:grid-cols-12 gap-3 lg:gap-12 items-baseline ${idx === 0 ? 'border-y' : 'border-b'}`} style="border-color:rgba(255,255,255,0.12);">
-            <p class="font-display text-xl md:text-2xl text-white leading-tight tracking-[-0.01em] lg:col-span-5">{item.title}</p>
-            <p class="text-white/65 text-base leading-relaxed lg:col-span-7 lg:max-w-lg">{item.text}</p>
-          </li>
-        ))}
-      </ul>
-
       <!-- Refined monetization system map: intro + 6 steps -->
-      <div class="mt-24 md:mt-36">
+      <div class="mt-28 md:mt-44">
         <div class="max-w-2xl mx-auto">
           <div class="mb-10 md:mb-14 text-center">
             <h3 class="font-display text-3xl md:text-5xl lg:text-6xl text-white leading-[0.98] tracking-[-0.02em]">C&oacute;mo Funciona Nuestro Sistema de Monetizaci&oacute;n.</h3>
@@ -159,22 +161,6 @@ const faqs = [
     </div>
   </section>
 
-  <!-- 6. WHY TOP AGENCIES (cinematic, quiet confidence) -->
-  <section class="relative py-24 md:py-56 section-cinematic grain">
-    <div class="relative z-10 max-w-5xl mx-auto px-6 lg:px-10">
-      <div class="mb-20 md:mb-28 max-w-3xl">
-        <h2 class="font-display text-4xl md:text-7xl lg:text-8xl text-white leading-[0.94] tracking-[-0.025em]">Por qu&eacute; las top agencias trabajan con nosotros.</h2>
-      </div>
-      <ul class="flex flex-col max-w-3xl">
-        {whyBullets.map((item, idx) => (
-          <li class={`py-9 md:py-11 ${idx === 0 ? 'border-y' : 'border-b'}`} style="border-color:rgba(255,255,255,0.12);">
-            <p class="font-display text-xl md:text-2xl text-white leading-tight tracking-[-0.01em] mb-3">{item.title}</p>
-            <p class="text-white/65 text-base leading-relaxed max-w-xl">{item.text}</p>
-          </li>
-        ))}
-      </ul>
-    </div>
-  </section>
 
   <!-- 7. AGENCY APPLICATION FORM (dark, private application) -->
   <AgencyApplyForm lang="es" />
