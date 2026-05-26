@@ -7,8 +7,8 @@ const { lang = 'en' } = Astro.props;
 
 const t = {
   en: {
-    headline: 'Start maximizing your agency’s revenue.',
-    subheadline: 'Increase revenue per model through structured chatting systems.',
+    headline: 'Apply To Work<br />With Us',
+    subheadline: 'Start maximizing your agency’s revenue.',
     formTitle: 'Partner application',
     agencyName: 'Agency / Brand Name',
     instagram: 'Main Instagram / Agency Page',
@@ -50,8 +50,8 @@ const t = {
     error: 'Something went wrong. Try again or reach us at hello@mangova.agency',
   },
   es: {
-    headline: 'Empieza a maximizar los ingresos de tu agencia.',
-    subheadline: 'Aumenta los ingresos por modelo con sistemas de chatting estructurados.',
+    headline: 'Solicita Trabajar<br />con Nosotros',
+    subheadline: 'Empieza a maximizar los ingresos de tu agencia.',
     formTitle: 'Solicitud de partner',
     agencyName: 'Nombre / Marca de la agencia',
     instagram: 'Instagram principal / Página de la agencia',
@@ -99,7 +99,7 @@ const t = {
 <section class="relative pt-24 md:pt-52 pb-8 md:pb-14 section-cinematic grain overflow-hidden">
   <div class="atmosphere-glow warm" style="top:-10%;left:-10%;width:520px;height:520px;"></div>
   <div class="relative z-10 max-w-3xl mx-auto px-6 lg:px-8 text-center flex flex-col gap-5 md:gap-7">
-    <h2 class="font-display text-4xl md:text-7xl lg:text-8xl text-white leading-[0.98] md:leading-[0.94] tracking-[-0.025em]">{t.headline}</h2>
+    <h2 class="font-display text-4xl md:text-7xl lg:text-8xl text-white leading-[0.98] md:leading-[0.94] tracking-[-0.025em]" set:html={t.headline}></h2>
     <p class="text-white/65 text-sm md:text-lg leading-relaxed max-w-xl mx-auto">{t.subheadline}</p>
   </div>
 </section>
