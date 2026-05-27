@@ -244,16 +244,16 @@ p {
    negative animation-delay so columns are not in phase at first paint
    (no perceived loop). cubic-bezier sine-in-out for cinematic glide. */
 .collage-column-1 {
-  animation: collage-float-a 28s cubic-bezier(0.45, 0, 0.55, 1) -3s infinite alternate;
+  animation: collage-float-a 14s cubic-bezier(0.45, 0, 0.55, 1) -1.5s infinite alternate;
 }
 .collage-column-2 {
-  animation: collage-float-b 34s cubic-bezier(0.45, 0, 0.55, 1) -11s infinite alternate;
+  animation: collage-float-b 17s cubic-bezier(0.45, 0, 0.55, 1) -5.5s infinite alternate;
 }
 .collage-column-3 {
-  animation: collage-float-c 38s cubic-bezier(0.45, 0, 0.55, 1) -19s infinite alternate;
+  animation: collage-float-c 19s cubic-bezier(0.45, 0, 0.55, 1) -9.5s infinite alternate;
 }
 .collage-column-4 {
-  animation: collage-float-d 44s cubic-bezier(0.45, 0, 0.55, 1) -27s infinite alternate;
+  animation: collage-float-d 22s cubic-bezier(0.45, 0, 0.55, 1) -13.5s infinite alternate;
 }
 
 /* Column 1 → drifts upward; Column 2 → downward; Column 3 → upward
