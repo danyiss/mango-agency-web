@@ -63,6 +63,8 @@ const websiteSchema = {
 <!doctype html>
 <html lang={currentLang} class="scroll-smooth">
   <head>
+    <!-- Mark JS as available ASAP so editorial-step content only hides when the reveal observer can run -->
+    <script is:inline>document.documentElement.classList.add('js');</script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
@@ -235,24 +237,41 @@ const websiteSchema = {
       })();
     </script>
 
-    <!-- Editorial step scroll reveal: subtle fade + rise via IntersectionObserver -->
+    <!-- Editorial step scroll reveal: subtle fade + rise via IntersectionObserver.
+         Runs after DOM is parsed so the slot content (.editorial-step blocks) exists. -->
     <script is:inline>
       (function(){
-        const targets = document.querySelectorAll('.editorial-step');
-        if (!targets.length) return;
-        if (!('IntersectionObserver' in window)) {
-          targets.forEach(t => t.classList.add('is-visible'));
-          return;
-        }
-        const io = new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('is-visible');
-              io.unobserve(entry.target);
-            }
+        function init(){
+          var targets = document.querySelectorAll('.editorial-step');
+          if (!targets.length) return;
+          if (!('IntersectionObserver' in window)) {
+            targets.forEach(function(t){ t.classList.add('is-visible'); });
+            return;
+          }
+          var io = new IntersectionObserver(function(entries){
+            entries.forEach(function(entry){
+              if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                io.unobserve(entry.target);
+              }
+            });
+          }, { rootMargin: '0px 0px -8% 0px', threshold: 0.12 });
+          targets.forEach(function(t){ io.observe(t); });
+          // Safety net: reveal anything still hidden after load (e.g. observer edge cases)
+          window.addEventListener('load', function(){
+            setTimeout(function(){
+              document.querySelectorAll('.editorial-step:not(.is-visible)').forEach(function(t){
+                var r = t.getBoundingClientRect();
+                if (r.top < window.innerHeight && r.bottom > 0) t.classList.add('is-visible');
+              });
+            }, 400);
           });
-        }, { rootMargin: '0px 0px -8% 0px', threshold: 0.12 });
-        targets.forEach(t => io.observe(t));
+        }
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', init);
+        } else {
+          init();
+        }
       })();
     </script>
 

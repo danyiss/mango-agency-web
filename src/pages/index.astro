@@ -211,14 +211,14 @@ const serviceSchema = {
 
   <!-- 2c.5. EDITORIAL CTA BANNER — full-width cinematic editorial image with anchored bottom CTA -->
   <section class="relative w-full overflow-hidden aspect-[4/3] md:aspect-auto md:h-[70vh]">
-    <!-- Editorial photo, cover-cropped -->
-    <div class="absolute inset-0 bg-no-repeat" style="background-image:url('/assets/cta-banner.jpg'); background-size: cover; background-position: center;"></div>
+    <!-- Editorial photo, cover-cropped, scaled ~1.1x toward the top so the model sits higher -->
+    <div class="absolute inset-0 bg-no-repeat" style="background-image:url('/assets/cta-banner.jpg'); background-size: cover; background-position: center 22%; transform: scale(1.1); transform-origin: center 22%;"></div>
 
-    <!-- Soft cinematic darkening — light at top, deeper toward the bottom so the CTA reads clearly -->
-    <div class="absolute inset-0 pointer-events-none" style="background: linear-gradient(to bottom, rgba(0,0,0,0.28) 0%, rgba(0,0,0,0.12) 35%, rgba(0,0,0,0.45) 72%, rgba(0,0,0,0.78) 100%);"></div>
+    <!-- Soft cinematic darkening — minimal at top, deeper toward the bottom so the CTA reads clearly -->
+    <div class="absolute inset-0 pointer-events-none" style="background: linear-gradient(to bottom, rgba(0,0,0,0.12) 0%, rgba(0,0,0,0.08) 40%, rgba(0,0,0,0.42) 74%, rgba(0,0,0,0.78) 100%);"></div>
 
-    <!-- Bottom-centered CTA content -->
-    <div class="absolute inset-0 flex flex-col items-center justify-end pb-12 md:pb-20 px-6">
+    <!-- Bottom-centered CTA content, kept low so it never covers the face -->
+    <div class="absolute inset-0 flex flex-col items-center justify-end pb-8 md:pb-12 px-6">
       <div class="flex flex-col items-center gap-6 md:gap-9 text-center max-w-3xl">
         <h2 class="font-display text-3xl md:text-5xl lg:text-6xl text-white leading-[1.05] tracking-[-0.02em]">Built for creators who want more</h2>
         <a href="#apply" class="inline-block bg-accent text-black font-bold px-7 py-3.5 md:py-4 rounded-[7px] text-sm tracking-wide hover:brightness-95 hover:scale-[1.02] transition-all">
@@ -249,7 +249,7 @@ const serviceSchema = {
             { title: 'Without real systems and quality control, growth becomes inconsistent.', text: 'Strong months become unpredictable, revenue fluctuates and scaling becomes difficult to sustain long-term. Consistency comes from structure, execution and operational support.' },
             { title: 'Most creators can’t scale alone forever.', text: 'At some point, content, messaging, posting and monetization become too much for one person to manage properly. Real growth requires the right team behind the page.' },
           ].map((row, idx) => (
-            <div class={`editorial-step py-12 md:py-20 ${idx === 0 ? '' : 'border-t'}`} style="border-color:rgba(255,255,255,0.08);">
+            <div class={`editorial-step pb-12 md:pb-20 ${idx === 0 ? '' : 'border-t pt-12 md:pt-20'}`} style="border-color:rgba(255,255,255,0.08);">
               <span class="block text-[11px] uppercase tracking-[0.32em] italic text-white/45 mb-5 md:mb-7" style="font-family:Georgia,'Times New Roman',serif;">{String(idx+1).padStart(2,'0')}</span>
               <h3 class="font-display text-2xl md:text-4xl lg:text-5xl text-white leading-[1.0] md:leading-[0.98] tracking-[-0.015em] mb-4 md:mb-6">{row.title}</h3>
               <p class="text-white/65 text-[15px] md:text-base leading-relaxed max-w-lg">{row.text}</p>
@@ -330,7 +330,7 @@ const serviceSchema = {
               ],
             },
           ].map((s, idx) => (
-            <div id={s.id} class={`editorial-step py-12 md:py-20 scroll-mt-24 ${idx === 0 ? '' : 'border-t'}`} style="border-color:rgba(255,255,255,0.08);">
+            <div id={s.id} class={`editorial-step pb-12 md:pb-20 scroll-mt-24 ${idx === 0 ? '' : 'border-t pt-12 md:pt-20'}`} style="border-color:rgba(255,255,255,0.08);">
               <span class="block text-[11px] uppercase tracking-[0.32em] italic text-white/45 mb-5 md:mb-7" style="font-family:Georgia,'Times New Roman',serif;">{String(idx+1).padStart(2,'0')}</span>
               <h3 class={`font-display text-3xl md:text-5xl text-white leading-[1.05] md:leading-[1.0] tracking-[-0.02em] mb-4 md:mb-6 ${s.noWrap ? 'lg:text-5xl whitespace-nowrap' : 'lg:text-6xl'}`}>{s.title}</h3>
               <div class="flex flex-col gap-3 md:gap-4 max-w-lg">
@@ -377,7 +377,7 @@ const serviceSchema = {
     <div class="atmosphere-glow crimson" style="bottom:-10%;left:-12%;width:520px;height:520px;opacity:0.35;"></div>
     <div class="relative z-10 max-w-3xl mx-auto px-6 lg:px-8">
       <div class="mb-12 md:mb-28">
-        <h2 class="font-display text-4xl md:text-7xl text-on-surface leading-[0.98] md:leading-[0.96] tracking-[-0.025em]">Frequently Asked Questions</h2>
+        <h2 class="font-display text-4xl md:text-5xl lg:text-6xl text-on-surface leading-[0.98] md:leading-[0.96] tracking-[-0.025em] md:whitespace-nowrap">Frequently Asked Questions</h2>
       </div>
       <div class="flex flex-col">
         {[
