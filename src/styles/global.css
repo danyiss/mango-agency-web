@@ -215,6 +215,16 @@ p {
   object-fit: cover;
   object-position: center;
   filter: saturate(0.78) contrast(1.06) brightness(0.92) sepia(0.07);
+  position: relative;
+  z-index: 1;
+  transition: transform 800ms cubic-bezier(0.22, 1, 0.36, 1),
+              filter 800ms cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
+}
+.collage-img:hover {
+  transform: scale(1.04);
+  filter: saturate(0.84) contrast(1.08) brightness(0.96) sepia(0.06);
+  z-index: 10;
 }
 .collage-column {
   position: absolute;
@@ -229,26 +239,40 @@ p {
 @media (min-width: 1024px) {
   .collage-column { gap: 1rem; }
 }
-.collage-column-1 { animation: collage-float-a 22s ease-in-out infinite alternate; }
-.collage-column-2 { animation: collage-float-b 26s ease-in-out infinite alternate; }
-.collage-column-3 { animation: collage-float-c 24s ease-in-out infinite alternate; }
-.collage-column-4 { animation: collage-float-d 28s ease-in-out infinite alternate; }
 
+/* Slow, premium parallax — long durations + prime-ish offsets +
+   negative animation-delay so columns are not in phase at first paint
+   (no perceived loop). cubic-bezier sine-in-out for cinematic glide. */
+.collage-column-1 {
+  animation: collage-float-a 28s cubic-bezier(0.45, 0, 0.55, 1) -3s infinite alternate;
+}
+.collage-column-2 {
+  animation: collage-float-b 34s cubic-bezier(0.45, 0, 0.55, 1) -11s infinite alternate;
+}
+.collage-column-3 {
+  animation: collage-float-c 38s cubic-bezier(0.45, 0, 0.55, 1) -19s infinite alternate;
+}
+.collage-column-4 {
+  animation: collage-float-d 44s cubic-bezier(0.45, 0, 0.55, 1) -27s infinite alternate;
+}
+
+/* Column 1 → drifts upward; Column 2 → downward; Column 3 → upward
+   (smaller travel, slower); Column 4 → downward (smaller travel, slower) */
 @keyframes collage-float-a {
-  from { transform: translateY(calc(-50% - 28px)); }
-  to   { transform: translateY(calc(-50% + 28px)); }
+  from { transform: translateY(calc(-50% + 18px)); }
+  to   { transform: translateY(calc(-50% - 22px)); }
 }
 @keyframes collage-float-b {
-  from { transform: translateY(calc(-50% + 32px)); }
-  to   { transform: translateY(calc(-50% - 32px)); }
+  from { transform: translateY(calc(-50% - 20px)); }
+  to   { transform: translateY(calc(-50% + 24px)); }
 }
 @keyframes collage-float-c {
-  from { transform: translateY(calc(-50% - 22px)); }
-  to   { transform: translateY(calc(-50% + 22px)); }
+  from { transform: translateY(calc(-50% + 14px)); }
+  to   { transform: translateY(calc(-50% - 16px)); }
 }
 @keyframes collage-float-d {
-  from { transform: translateY(calc(-50% + 36px)); }
-  to   { transform: translateY(calc(-50% - 36px)); }
+  from { transform: translateY(calc(-50% - 12px)); }
+  to   { transform: translateY(calc(-50% + 18px)); }
 }
 
 @media (prefers-reduced-motion: reduce) {
