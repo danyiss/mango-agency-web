@@ -76,19 +76,23 @@ const serviceSchema = {
     <div class="grain absolute inset-0 pointer-events-none" style="opacity:0.5; z-index:4;"></div>
 
     <!-- CONTENT — left-aligned, on top of all overlays -->
-    <div class="relative h-full max-w-7xl mx-auto px-6 lg:px-10 flex items-start md:items-center pt-28 md:pt-0" style="z-index:10;">
-      <div class="flex flex-col items-start gap-5 md:gap-9 md:w-[55%] max-w-[15ch] md:max-w-none">
-        <h1 class="font-display text-[34px] sm:text-6xl md:text-6xl lg:text-7xl xl:text-[96px] text-white leading-[1.02] md:leading-[0.92] tracking-[-0.025em] text-left">
-          <span class="md:hidden">Gesti&oacute;n<br />Premium<br />de OnlyFans</span>
-          <span class="hidden md:inline">Gesti&oacute;n Premium<br />de OnlyFans</span>
-        </h1>
-        <p class="text-white/80 text-[14px] md:text-base lg:text-lg leading-relaxed font-body max-w-[22ch] sm:max-w-md text-left">
-          Escalamos a creadoras de OnlyFans a trav&eacute;s de crecimiento estrat&eacute;gico, monetizaci&oacute;n m&aacute;s s&oacute;lida y soporte personalizado dise&ntilde;ado para el &eacute;xito a largo plazo.
-        </p>
-        <a href="#apply" class="inline-block bg-accent text-black font-bold px-7 py-3.5 md:py-4 rounded-[7px] text-sm tracking-wide hover:brightness-95 hover:scale-[1.02] transition-all">
-          Aplicar para trabajar con nosotros
-        </a>
-        <p class="text-[10px] uppercase tracking-[0.3em] text-white/45 font-medium mt-1">Para creadoras, por creadoras.</p>
+    <div class="relative h-full max-w-7xl mx-auto px-6 lg:px-10 flex items-start md:items-center pt-36 md:pt-0" style="z-index:10;">
+      <div class="relative w-[46%] sm:w-auto sm:max-w-md md:w-[55%] md:max-w-none">
+        <!-- Mobile-only soft dark backdrop behind the text for readability over the collage -->
+        <div class="absolute -inset-3 md:hidden pointer-events-none" style="background: radial-gradient(ellipse 115% 100% at 38% 50%, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.22) 50%, transparent 80%); filter: blur(8px);"></div>
+        <div class="relative flex flex-col items-start gap-3 md:gap-9">
+          <h1 class="font-display text-[26px] sm:text-6xl md:text-6xl lg:text-7xl xl:text-[96px] text-white leading-[0.96] md:leading-[0.92] tracking-[-0.025em] text-left">
+            <span class="md:hidden">Gesti&oacute;n<br />Premium<br />de OnlyFans</span>
+            <span class="hidden md:inline">Gesti&oacute;n Premium<br />de OnlyFans</span>
+          </h1>
+          <p class="text-white/85 text-[12px] md:text-base lg:text-lg leading-[1.5] md:leading-relaxed font-body text-left">
+            Escalamos a creadoras de OnlyFans a trav&eacute;s de crecimiento estrat&eacute;gico, monetizaci&oacute;n m&aacute;s s&oacute;lida y soporte personalizado dise&ntilde;ado para el &eacute;xito a largo plazo.
+          </p>
+          <a href="#apply" class="inline-block bg-accent text-black font-bold px-6 py-3 md:px-7 md:py-4 rounded-[7px] text-xs md:text-sm tracking-wide hover:brightness-95 hover:scale-[1.02] transition-all">
+            Aplicar para trabajar con nosotros
+          </a>
+          <p class="hidden md:block text-[10px] uppercase tracking-[0.3em] text-white/45 font-medium mt-1">Para creadoras, por creadoras.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -136,9 +140,11 @@ const serviceSchema = {
     <div class="atmosphere-glow magenta" style="top:8%;right:-8%;width:560px;height:560px;"></div>
     <div class="atmosphere-glow crimson" style="bottom:-10%;left:-8%;width:480px;height:480px;"></div>
 
-    <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-10 mb-12 md:mb-24">
-      <h2 class="font-display text-4xl md:text-7xl lg:text-8xl text-white leading-[0.96] md:leading-[0.94] tracking-[-0.025em] max-w-4xl">Millones de visitas generadas org&aacute;nicamente con nuestras estrategias</h2>
-      <p class="mt-5 md:mt-9 text-white/60 text-sm md:text-lg leading-relaxed max-w-2xl">Nuestro equipo experto de marketing construye crecimiento estrat&eacute;gico en redes sociales alrededor del branding de la creadora, la psicolog&iacute;a de la audiencia y el an&aacute;lisis constante de rendimiento &mdash; usando m&eacute;tricas reales de contenido para identificar qu&eacute; funciona, escalar el contenido ganador y construir marcas personales s&oacute;lidas que generan tr&aacute;fico org&aacute;nico de forma consistente.</p>
+    <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-10 mb-16 md:mb-24">
+      <div class="text-center md:text-left mx-auto md:mx-0 max-w-[85%] md:max-w-4xl">
+        <h2 class="font-display text-4xl md:text-7xl lg:text-8xl text-white leading-[0.96] md:leading-[0.94] tracking-[-0.025em]">Millones de visitas generadas org&aacute;nicamente con nuestras estrategias</h2>
+        <p class="mt-6 md:mt-9 text-white/60 text-sm md:text-lg leading-relaxed max-w-[85%] mx-auto md:max-w-2xl md:mx-0">Nuestro equipo experto de marketing construye crecimiento estrat&eacute;gico en redes sociales alrededor del branding de la creadora, la psicolog&iacute;a de la audiencia y el an&aacute;lisis constante de rendimiento &mdash; usando m&eacute;tricas reales de contenido para identificar qu&eacute; funciona, escalar el contenido ganador y construir marcas personales s&oacute;lidas que generan tr&aacute;fico org&aacute;nico de forma consistente.</p>
+      </div>
     </div>
 
     <div class="relative z-10 flex flex-col gap-5 md:gap-6">
@@ -160,47 +166,19 @@ const serviceSchema = {
     </div>
   </section>
 
-  <!-- 2b. PAIN / PROBLEM (unified deep black + magenta/burgundy atmosphere) -->
-  <section class="relative py-24 md:py-56 overflow-hidden grain">
-    <div class="atmosphere-glow crimson" style="top:18%;right:-12%;width:520px;height:520px;opacity:0.35;"></div>
-    <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-10">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-24">
-        <div class="lg:col-span-5 lg:sticky lg:top-32 lg:self-start">
-          <h2 class="font-display text-4xl md:text-7xl lg:text-7xl xl:text-8xl text-white leading-[0.95] md:leading-[0.92] tracking-[-0.025em]">Por qu&eacute;<br />a la mayor&iacute;a<br />de creadoras<br />les cuesta<br />escalar</h2>
-          <p class="mt-8 md:mt-10 text-white/65 text-base md:text-lg leading-relaxed max-w-sm">Las creadoras que escalan m&aacute;s r&aacute;pido hoy tienen equipos profesionales detr&aacute;s.</p>
-        </div>
-
-        <div class="lg:col-span-7 flex flex-col">
-          {[
-            { title: 'El mal chatting mata el crecimiento de la página.', text: 'Ventas agresivas, conversaciones débiles y mala ejecución dañan poco a poco la retención, la confianza del fan y el gasto a largo plazo. Una monetización fuerte requiere estructura, formación y consistencia detrás de cada interacción.' },
-            { title: 'Tener seguidores no siempre significa ganar dinero de verdad.', text: 'Muchas creadoras ya tienen visitas y seguidores — la diferencia real viene de la monetización detrás de la página. El crecimiento a largo plazo depende de la retención, el gasto del fan y la ejecución fuerte dentro de los DMs.' },
-            { title: 'Muchas creadoras se sienten como una más dentro de su agencia.', text: 'Estrategias genéricas, equipos compartidos y mala comunicación acaban limitando el crecimiento a largo plazo. Un escalado serio requiere estrategia personalizada y soporte dedicado detrás de la página.' },
-            { title: 'Sin sistemas reales ni control de calidad, el crecimiento se vuelve inconsistente.', text: 'Los meses fuertes se vuelven impredecibles, los ingresos fluctúan y escalar se hace difícil de sostener a largo plazo. La consistencia viene de la estructura, la ejecución y el soporte operativo.' },
-            { title: 'La mayoría de creadoras no pueden escalar solas para siempre.', text: 'En algún punto, el contenido, los mensajes, la publicación y la monetización son demasiado para que una sola persona los gestione bien. El crecimiento real requiere el equipo adecuado detrás de la página.' },
-          ].map((row, idx) => (
-            <div class={`py-10 md:py-20 ${idx === 0 ? '' : 'border-t'}`} style="border-color:rgba(255,255,255,0.08);">
-              <h3 class="font-display text-2xl md:text-4xl lg:text-5xl text-white leading-[1.0] md:leading-[0.98] tracking-[-0.015em] mb-4 md:mb-6">{row.title}</h3>
-              <p class="text-white/65 text-[15px] md:text-base leading-relaxed max-w-lg">{row.text}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- 2c. NUESTROS RESULTADOS — tightened editorial layout, one connected block -->
   <section class="relative py-20 md:py-36 section-cinematic grain overflow-hidden">
     <div class="atmosphere-glow magenta" style="top:14%;right:-14%;width:480px;height:480px;opacity:0.35;"></div>
     <div class="atmosphere-glow crimson" style="bottom:10%;left:-14%;width:420px;height:420px;opacity:0.35;"></div>
     <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-10">
       <!-- Header -->
-      <div class="mb-10 md:mb-16 max-w-4xl">
-        <h2 class="font-display text-4xl md:text-7xl lg:text-8xl text-on-surface leading-[0.96] md:leading-[0.94] tracking-[-0.025em]">Nuestros Resultados</h2>
-        <div class="mt-4 md:mt-6 flex flex-col gap-3 md:gap-3.5 max-w-xl">
-          <p class="text-on-surface/72 text-sm md:text-lg leading-relaxed">En Mango, el crecimiento es mucho m&aacute;s que vistas.</p>
-          <p class="text-on-surface/65 text-sm md:text-lg leading-relaxed">Combinamos branding de creadora, posicionamiento en redes sociales y sistemas de monetizaci&oacute;n dise&ntilde;ados para convertir la atenci&oacute;n en ingresos sostenibles.</p>
-          <p class="text-on-surface/65 text-sm md:text-lg leading-relaxed">Cada estrategia se construye alrededor de la creadora &mdash; su imagen, audiencia, posicionamiento y potencial de conversi&oacute;n.</p>
-          <p class="text-on-surface/65 text-sm md:text-lg leading-relaxed">Del alcance viral a la retenci&oacute;n de fans, todo est&aacute; estructurado para construir negocios de creadora escalables y rentables.</p>
+      <div class="mb-16 md:mb-16 max-w-4xl">
+        <h2 class="font-display text-5xl md:text-7xl lg:text-8xl text-on-surface leading-[0.96] md:leading-[0.94] tracking-[-0.025em]">Nuestros Resultados</h2>
+        <div class="mt-10 md:mt-6 flex flex-col gap-3 md:gap-3.5 max-w-xl">
+          <p class="hidden md:block text-on-surface/72 text-sm md:text-lg leading-relaxed">En Mango, el crecimiento es mucho m&aacute;s que vistas.</p>
+          <p class="text-on-surface/65 text-[15px] md:text-lg leading-[1.65] md:leading-relaxed">Combinamos branding de creadora, posicionamiento en redes sociales y sistemas de monetizaci&oacute;n dise&ntilde;ados para convertir la atenci&oacute;n en ingresos sostenibles.</p>
+          <p class="text-on-surface/65 text-[15px] md:text-lg leading-[1.65] md:leading-relaxed">Cada estrategia se construye alrededor de la creadora &mdash; su imagen, audiencia, posicionamiento y potencial de conversi&oacute;n.</p>
+          <p class="text-on-surface/65 text-[15px] md:text-lg leading-[1.65] md:leading-relaxed">Del alcance viral a la retenci&oacute;n de fans, todo est&aacute; estructurado para construir negocios de creadora escalables y rentables.</p>
         </div>
       </div>
 
@@ -228,6 +206,37 @@ const serviceSchema = {
         </div>
         <div class="lg:col-span-7 lg:order-1">
           <img src="/assets/results/growth.jpeg" alt="Anal&iacute;ticas de Instagram — +53k seguidores nuevos en 30 d&iacute;as" class="max-w-[80%] mx-auto lg:max-w-[68%] lg:ml-auto lg:mr-0 w-full h-auto block rounded-sm" style="box-shadow: 0 30px 80px -25px rgba(186,154,110,0.16), 0 30px 60px -25px rgba(0,0,0,0.7); border:1px solid rgba(255,255,255,0.08);" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2b. PAIN / PROBLEM (unified deep black + magenta/burgundy atmosphere) -->
+  <section class="relative py-24 md:py-56 overflow-hidden grain">
+    <div class="atmosphere-glow crimson" style="top:18%;right:-12%;width:520px;height:520px;opacity:0.35;"></div>
+    <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-24">
+        <div class="lg:col-span-5 lg:sticky lg:top-32 lg:self-start">
+          <h2 class="font-display text-5xl md:text-7xl lg:text-7xl xl:text-8xl text-white leading-[0.94] md:leading-[0.92] tracking-[-0.025em]">
+            <span class="md:hidden">Por qu&eacute; a la<br />mayor&iacute;a les<br />cuesta<br />escalar</span>
+            <span class="hidden md:inline">Por qu&eacute;<br />a la mayor&iacute;a<br />de creadoras<br />les cuesta<br />escalar</span>
+          </h2>
+          <p class="mt-10 md:mt-10 text-white/70 text-lg md:text-lg leading-[1.7] md:leading-relaxed max-w-sm">Las creadoras que escalan m&aacute;s r&aacute;pido hoy tienen equipos profesionales detr&aacute;s.</p>
+        </div>
+
+        <div class="lg:col-span-7 flex flex-col">
+          {[
+            { title: 'El mal chatting mata el crecimiento de la página.', text: 'Ventas agresivas, conversaciones débiles y mala ejecución dañan poco a poco la retención, la confianza del fan y el gasto a largo plazo. Una monetización fuerte requiere estructura, formación y consistencia detrás de cada interacción.' },
+            { title: 'Tener seguidores no siempre significa ganar dinero de verdad.', text: 'Muchas creadoras ya tienen visitas y seguidores — la diferencia real viene de la monetización detrás de la página. El crecimiento a largo plazo depende de la retención, el gasto del fan y la ejecución fuerte dentro de los DMs.' },
+            { title: 'Muchas creadoras se sienten como una más dentro de su agencia.', text: 'Estrategias genéricas, equipos compartidos y mala comunicación acaban limitando el crecimiento a largo plazo. Un escalado serio requiere estrategia personalizada y soporte dedicado detrás de la página.' },
+            { title: 'Sin sistemas reales ni control de calidad, el crecimiento se vuelve inconsistente.', text: 'Los meses fuertes se vuelven impredecibles, los ingresos fluctúan y escalar se hace difícil de sostener a largo plazo. La consistencia viene de la estructura, la ejecución y el soporte operativo.' },
+            { title: 'La mayoría de creadoras no pueden escalar solas para siempre.', text: 'En algún punto, el contenido, los mensajes, la publicación y la monetización son demasiado para que una sola persona los gestione bien. El crecimiento real requiere el equipo adecuado detrás de la página.' },
+          ].map((row, idx) => (
+            <div class={`py-10 md:py-20 ${idx === 0 ? '' : 'border-t'}`} style="border-color:rgba(255,255,255,0.08);">
+              <h3 class="font-display text-2xl md:text-4xl lg:text-5xl text-white leading-[1.0] md:leading-[0.98] tracking-[-0.015em] mb-4 md:mb-6">{row.title}</h3>
+              <p class="text-white/65 text-[15px] md:text-base leading-relaxed max-w-lg">{row.text}</p>
+            </div>
+          ))}
         </div>
       </div>
     </div>

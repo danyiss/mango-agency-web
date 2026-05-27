@@ -77,19 +77,23 @@ const serviceSchema = {
     <div class="grain absolute inset-0 pointer-events-none" style="opacity:0.5; z-index:4;"></div>
 
     <!-- CONTENT — left-aligned, on top of all overlays -->
-    <div class="relative h-full max-w-7xl mx-auto px-6 lg:px-10 flex items-start md:items-center pt-28 md:pt-0" style="z-index:10;">
-      <div class="flex flex-col items-start gap-5 md:gap-9 md:w-[55%] max-w-[15ch] md:max-w-none">
-        <h1 class="font-display text-[34px] sm:text-6xl md:text-6xl lg:text-7xl xl:text-[96px] text-white leading-[1.02] md:leading-[0.92] tracking-[-0.025em] text-left">
-          <span class="md:hidden">Premium<br />OnlyFans<br />Management</span>
-          <span class="hidden md:inline">Premium OnlyFans<br />Management</span>
-        </h1>
-        <p class="text-white/80 text-[14px] md:text-base lg:text-lg leading-relaxed font-body max-w-[22ch] sm:max-w-md text-left">
-          We scale OnlyFans creators through strategic growth, stronger monetization and personalized support built for long-term success.
-        </p>
-        <a href="#apply" class="inline-block bg-accent text-black font-bold px-7 py-3.5 md:py-4 rounded-[7px] text-sm tracking-wide hover:brightness-95 hover:scale-[1.02] transition-all">
-          Apply to work with us
-        </a>
-        <p class="text-[10px] uppercase tracking-[0.3em] text-white/45 font-medium mt-1">For creators, by creators.</p>
+    <div class="relative h-full max-w-7xl mx-auto px-6 lg:px-10 flex items-start md:items-center pt-36 md:pt-0" style="z-index:10;">
+      <div class="relative w-[46%] sm:w-auto sm:max-w-md md:w-[55%] md:max-w-none">
+        <!-- Mobile-only soft dark backdrop behind the text for readability over the collage -->
+        <div class="absolute -inset-3 md:hidden pointer-events-none" style="background: radial-gradient(ellipse 115% 100% at 38% 50%, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.22) 50%, transparent 80%); filter: blur(8px);"></div>
+        <div class="relative flex flex-col items-start gap-3 md:gap-9">
+          <h1 class="font-display text-[26px] sm:text-6xl md:text-6xl lg:text-7xl xl:text-[96px] text-white leading-[0.96] md:leading-[0.92] tracking-[-0.025em] text-left">
+            <span class="md:hidden">Premium<br />OnlyFans<br />Management</span>
+            <span class="hidden md:inline">Premium OnlyFans<br />Management</span>
+          </h1>
+          <p class="text-white/85 text-[12px] md:text-base lg:text-lg leading-[1.5] md:leading-relaxed font-body text-left">
+            We scale OnlyFans creators through strategic growth, stronger monetization and personalized support built for long-term success.
+          </p>
+          <a href="#apply" class="inline-block bg-accent text-black font-bold px-6 py-3 md:px-7 md:py-4 rounded-[7px] text-xs md:text-sm tracking-wide hover:brightness-95 hover:scale-[1.02] transition-all">
+            Apply to work with us
+          </a>
+          <p class="hidden md:block text-[10px] uppercase tracking-[0.3em] text-white/45 font-medium mt-1">For creators, by creators.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -137,9 +141,11 @@ const serviceSchema = {
     <div class="atmosphere-glow magenta" style="top:8%;right:-8%;width:560px;height:560px;"></div>
     <div class="atmosphere-glow crimson" style="bottom:-10%;left:-8%;width:480px;height:480px;"></div>
 
-    <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-10 mb-12 md:mb-24">
-      <h2 class="font-display text-4xl md:text-7xl lg:text-8xl text-white leading-[0.96] md:leading-[0.94] tracking-[-0.025em] max-w-4xl">Millions of views generated organically through our strategies</h2>
-      <p class="mt-5 md:mt-9 text-white/60 text-sm md:text-lg leading-relaxed max-w-2xl">Our expert marketing team builds strategic social media growth around creator branding, audience psychology and constant performance analysis &mdash; using real content metrics to identify what works, scale winning content and build strong personal brands that consistently generate organic traffic.</p>
+    <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-10 mb-16 md:mb-24">
+      <div class="text-center md:text-left mx-auto md:mx-0 max-w-[85%] md:max-w-4xl">
+        <h2 class="font-display text-4xl md:text-7xl lg:text-8xl text-white leading-[0.96] md:leading-[0.94] tracking-[-0.025em]">Millions of views generated organically through our strategies</h2>
+        <p class="mt-6 md:mt-9 text-white/60 text-sm md:text-lg leading-relaxed max-w-[85%] mx-auto md:max-w-2xl md:mx-0">Our expert marketing team builds strategic social media growth around creator branding, audience psychology and constant performance analysis &mdash; using real content metrics to identify what works, scale winning content and build strong personal brands that consistently generate organic traffic.</p>
+      </div>
     </div>
 
     <div class="relative z-10 flex flex-col gap-5 md:gap-6">
@@ -161,47 +167,19 @@ const serviceSchema = {
     </div>
   </section>
 
-  <!-- 2b. PAIN / PROBLEM (unified deep black + magenta/burgundy atmosphere) -->
-  <section class="relative py-24 md:py-56 overflow-hidden grain">
-    <div class="atmosphere-glow crimson" style="top:18%;right:-12%;width:520px;height:520px;opacity:0.35;"></div>
-    <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-10">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-24">
-        <div class="lg:col-span-5 lg:sticky lg:top-32 lg:self-start">
-          <h2 class="font-display text-4xl md:text-7xl lg:text-7xl xl:text-8xl text-white leading-[0.95] md:leading-[0.92] tracking-[-0.025em]">Why<br />Most<br />Creators<br />Struggle<br />To<br />Scale</h2>
-          <p class="mt-8 md:mt-10 text-white/65 text-base md:text-lg leading-relaxed max-w-sm">The creators scaling fastest today are backed by professional teams.</p>
-        </div>
-
-        <div class="lg:col-span-7 flex flex-col">
-          {[
-            { title: 'Bad chatting kills page growth.', text: 'Aggressive selling, weak conversations and poor execution slowly damage retention, fan trust and long-term spending. Strong monetization requires structure, training and consistency behind every interaction.' },
-            { title: 'Having followers doesn’t always mean making real money.', text: 'Many creators already have views and followers — the real difference comes from monetization behind the page. Long-term growth depends on retention, fan spending and strong execution inside the DMs.' },
-            { title: 'Many creators feel like just another account inside their agency.', text: 'Generic strategies, shared teams and poor communication eventually limit long-term growth. Serious scaling requires personalized strategy and dedicated support behind the page.' },
-            { title: 'Without real systems and quality control, growth becomes inconsistent.', text: 'Strong months become unpredictable, revenue fluctuates and scaling becomes difficult to sustain long-term. Consistency comes from structure, execution and operational support.' },
-            { title: 'Most creators can’t scale alone forever.', text: 'At some point, content, messaging, posting and monetization become too much for one person to manage properly. Real growth requires the right team behind the page.' },
-          ].map((row, idx) => (
-            <div class={`py-10 md:py-20 ${idx === 0 ? '' : 'border-t'}`} style="border-color:rgba(255,255,255,0.08);">
-              <h3 class="font-display text-2xl md:text-4xl lg:text-5xl text-white leading-[1.0] md:leading-[0.98] tracking-[-0.015em] mb-4 md:mb-6">{row.title}</h3>
-              <p class="text-white/65 text-[15px] md:text-base leading-relaxed max-w-lg">{row.text}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- 2c. OUR RESULTS — tightened editorial layout, one connected block -->
   <section class="relative py-20 md:py-36 section-cinematic grain overflow-hidden">
     <div class="atmosphere-glow magenta" style="top:14%;right:-14%;width:480px;height:480px;opacity:0.35;"></div>
     <div class="atmosphere-glow crimson" style="bottom:10%;left:-14%;width:420px;height:420px;opacity:0.35;"></div>
     <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-10">
       <!-- Header -->
-      <div class="mb-10 md:mb-16 max-w-4xl">
-        <h2 class="font-display text-4xl md:text-7xl lg:text-8xl text-on-surface leading-[0.96] md:leading-[0.94] tracking-[-0.025em]">Our Results</h2>
-        <div class="mt-4 md:mt-6 flex flex-col gap-3 md:gap-3.5 max-w-xl">
-          <p class="text-on-surface/72 text-sm md:text-lg leading-relaxed">At Mango, growth means more than views.</p>
-          <p class="text-on-surface/65 text-sm md:text-lg leading-relaxed">We combine creator branding, social media positioning and monetization systems designed to turn attention into long-term revenue.</p>
-          <p class="text-on-surface/65 text-sm md:text-lg leading-relaxed">Every strategy is built around the creator &mdash; their image, audience, positioning and conversion potential.</p>
-          <p class="text-on-surface/65 text-sm md:text-lg leading-relaxed">From viral reach to fan retention, everything is structured to build scalable and profitable creator businesses.</p>
+      <div class="mb-16 md:mb-16 max-w-4xl">
+        <h2 class="font-display text-5xl md:text-7xl lg:text-8xl text-on-surface leading-[0.96] md:leading-[0.94] tracking-[-0.025em]">Our Results</h2>
+        <div class="mt-10 md:mt-6 flex flex-col gap-3 md:gap-3.5 max-w-xl">
+          <p class="hidden md:block text-on-surface/72 text-sm md:text-lg leading-relaxed">At Mango, growth means more than views.</p>
+          <p class="text-on-surface/65 text-[15px] md:text-lg leading-[1.65] md:leading-relaxed">We combine creator branding, social media positioning and monetization systems designed to turn attention into long-term revenue.</p>
+          <p class="text-on-surface/65 text-[15px] md:text-lg leading-[1.65] md:leading-relaxed">Every strategy is built around the creator &mdash; their image, audience, positioning and conversion potential.</p>
+          <p class="text-on-surface/65 text-[15px] md:text-lg leading-[1.65] md:leading-relaxed">From viral reach to fan retention, everything is structured to build scalable and profitable creator businesses.</p>
         </div>
       </div>
 
@@ -229,6 +207,37 @@ const serviceSchema = {
         </div>
         <div class="lg:col-span-7 lg:order-1">
           <img src="/assets/results/growth.jpeg" alt="Instagram analytics — 53k+ new followers in 30 days" class="max-w-[80%] mx-auto lg:max-w-[68%] lg:ml-auto lg:mr-0 w-full h-auto block rounded-sm" style="box-shadow: 0 30px 80px -25px rgba(186,154,110,0.16), 0 30px 60px -25px rgba(0,0,0,0.7); border:1px solid rgba(255,255,255,0.08);" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2b. PAIN / PROBLEM (unified deep black + magenta/burgundy atmosphere) -->
+  <section class="relative py-24 md:py-56 overflow-hidden grain">
+    <div class="atmosphere-glow crimson" style="top:18%;right:-12%;width:520px;height:520px;opacity:0.35;"></div>
+    <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-24">
+        <div class="lg:col-span-5 lg:sticky lg:top-32 lg:self-start">
+          <h2 class="font-display text-5xl md:text-7xl lg:text-7xl xl:text-8xl text-white leading-[0.94] md:leading-[0.92] tracking-[-0.025em]">
+            <span class="md:hidden">Why Most<br />Creators<br />Struggle To<br />Scale</span>
+            <span class="hidden md:inline">Why<br />Most<br />Creators<br />Struggle<br />To<br />Scale</span>
+          </h2>
+          <p class="mt-10 md:mt-10 text-white/70 text-lg md:text-lg leading-[1.7] md:leading-relaxed max-w-sm">The creators scaling fastest today are backed by professional teams.</p>
+        </div>
+
+        <div class="lg:col-span-7 flex flex-col">
+          {[
+            { title: 'Bad chatting kills page growth.', text: 'Aggressive selling, weak conversations and poor execution slowly damage retention, fan trust and long-term spending. Strong monetization requires structure, training and consistency behind every interaction.' },
+            { title: 'Having followers doesn’t always mean making real money.', text: 'Many creators already have views and followers — the real difference comes from monetization behind the page. Long-term growth depends on retention, fan spending and strong execution inside the DMs.' },
+            { title: 'Many creators feel like just another account inside their agency.', text: 'Generic strategies, shared teams and poor communication eventually limit long-term growth. Serious scaling requires personalized strategy and dedicated support behind the page.' },
+            { title: 'Without real systems and quality control, growth becomes inconsistent.', text: 'Strong months become unpredictable, revenue fluctuates and scaling becomes difficult to sustain long-term. Consistency comes from structure, execution and operational support.' },
+            { title: 'Most creators can’t scale alone forever.', text: 'At some point, content, messaging, posting and monetization become too much for one person to manage properly. Real growth requires the right team behind the page.' },
+          ].map((row, idx) => (
+            <div class={`py-10 md:py-20 ${idx === 0 ? '' : 'border-t'}`} style="border-color:rgba(255,255,255,0.08);">
+              <h3 class="font-display text-2xl md:text-4xl lg:text-5xl text-white leading-[1.0] md:leading-[0.98] tracking-[-0.015em] mb-4 md:mb-6">{row.title}</h3>
+              <p class="text-white/65 text-[15px] md:text-base leading-relaxed max-w-lg">{row.text}</p>
+            </div>
+          ))}
         </div>
       </div>
     </div>
