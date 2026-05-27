@@ -11,7 +11,7 @@ export const translations = {
     // Nav
     'nav.home': 'Home',
     'nav.results': 'Results',
-    'nav.forAgencies': 'For Agencies',
+    'nav.forAgencies': 'Chatting Service',
     'nav.applyNow': 'Apply Now',
 
     // Home Hero
@@ -116,7 +116,7 @@ export const translations = {
     // Nav
     'nav.home': 'Inicio',
     'nav.results': 'Resultados',
-    'nav.forAgencies': 'Para Agencias',
+    'nav.forAgencies': 'Servicio de Chatting',
     'nav.applyNow': 'Aplicar',
 
     // Home Hero
