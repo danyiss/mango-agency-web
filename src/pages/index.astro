@@ -248,7 +248,8 @@ const serviceSchema = {
             { title: 'Without real systems and quality control, growth becomes inconsistent.', text: 'Strong months become unpredictable, revenue fluctuates and scaling becomes difficult to sustain long-term. Consistency comes from structure, execution and operational support.' },
             { title: 'Most creators can’t scale alone forever.', text: 'At some point, content, messaging, posting and monetization become too much for one person to manage properly. Real growth requires the right team behind the page.' },
           ].map((row, idx) => (
-            <div class={`py-10 md:py-20 ${idx === 0 ? '' : 'border-t'}`} style="border-color:rgba(255,255,255,0.08);">
+            <div class={`editorial-step py-12 md:py-20 ${idx === 0 ? '' : 'border-t'}`} style="border-color:rgba(255,255,255,0.08);">
+              <span class="block text-[11px] uppercase tracking-[0.32em] italic text-white/45 mb-5 md:mb-7" style="font-family:Georgia,'Times New Roman',serif;">{String(idx+1).padStart(2,'0')}</span>
               <h3 class="font-display text-2xl md:text-4xl lg:text-5xl text-white leading-[1.0] md:leading-[0.98] tracking-[-0.015em] mb-4 md:mb-6">{row.title}</h3>
               <p class="text-white/65 text-[15px] md:text-base leading-relaxed max-w-lg">{row.text}</p>
             </div>
@@ -274,8 +275,8 @@ const serviceSchema = {
           </p>
         </div>
 
-        <!-- Systems stacked right -->
-        <div class="lg:col-span-7 flex flex-col gap-14 md:gap-24">
+        <!-- Systems stacked right — editorial storytelling pattern matching the Pain section -->
+        <div class="lg:col-span-7 flex flex-col">
           {[
             {
               id: 'chatting-monetization',
@@ -327,9 +328,10 @@ const serviceSchema = {
                 'Our team supports creators through every stage of growth, so they can focus on creating while we manage the systems behind the page.',
               ],
             },
-          ].map(s => (
-            <div id={s.id} class="flex flex-col gap-5 md:gap-6 scroll-mt-24">
-              <h3 class={`font-display text-3xl md:text-5xl text-white leading-[1.05] md:leading-[1.0] tracking-[-0.02em] ${s.noWrap ? 'lg:text-5xl whitespace-nowrap' : 'lg:text-6xl'}`}>{s.title}</h3>
+          ].map((s, idx) => (
+            <div id={s.id} class={`editorial-step py-12 md:py-20 scroll-mt-24 ${idx === 0 ? '' : 'border-t'}`} style="border-color:rgba(255,255,255,0.08);">
+              <span class="block text-[11px] uppercase tracking-[0.32em] italic text-white/45 mb-5 md:mb-7" style="font-family:Georgia,'Times New Roman',serif;">{String(idx+1).padStart(2,'0')}</span>
+              <h3 class={`font-display text-3xl md:text-5xl text-white leading-[1.05] md:leading-[1.0] tracking-[-0.02em] mb-4 md:mb-6 ${s.noWrap ? 'lg:text-5xl whitespace-nowrap' : 'lg:text-6xl'}`}>{s.title}</h3>
               <div class="flex flex-col gap-3 md:gap-4 max-w-lg">
                 {s.paragraphs.map(p => (
                   <p class="text-white/65 text-base md:text-lg leading-relaxed">{p}</p>

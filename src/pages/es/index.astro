@@ -247,7 +247,8 @@ const serviceSchema = {
             { title: 'Sin sistemas reales ni control de calidad, el crecimiento se vuelve inconsistente.', text: 'Los meses fuertes se vuelven impredecibles, los ingresos fluctúan y escalar se hace difícil de sostener a largo plazo. La consistencia viene de la estructura, la ejecución y el soporte operativo.' },
             { title: 'La mayoría de creadoras no pueden escalar solas para siempre.', text: 'En algún punto, el contenido, los mensajes, la publicación y la monetización son demasiado para que una sola persona los gestione bien. El crecimiento real requiere el equipo adecuado detrás de la página.' },
           ].map((row, idx) => (
-            <div class={`py-10 md:py-20 ${idx === 0 ? '' : 'border-t'}`} style="border-color:rgba(255,255,255,0.08);">
+            <div class={`editorial-step py-12 md:py-20 ${idx === 0 ? '' : 'border-t'}`} style="border-color:rgba(255,255,255,0.08);">
+              <span class="block text-[11px] uppercase tracking-[0.32em] italic text-white/45 mb-5 md:mb-7" style="font-family:Georgia,'Times New Roman',serif;">{String(idx+1).padStart(2,'0')}</span>
               <h3 class="font-display text-2xl md:text-4xl lg:text-5xl text-white leading-[1.0] md:leading-[0.98] tracking-[-0.015em] mb-4 md:mb-6">{row.title}</h3>
               <p class="text-white/65 text-[15px] md:text-base leading-relaxed max-w-lg">{row.text}</p>
             </div>
@@ -274,7 +275,7 @@ const serviceSchema = {
         </div>
 
         <!-- Systems stacked right -->
-        <div class="lg:col-span-7 flex flex-col gap-14 md:gap-24">
+        <div class="lg:col-span-7 flex flex-col">
           {[
             {
               id: 'chatting-monetization',
@@ -326,9 +327,10 @@ const serviceSchema = {
                 'Nuestro equipo acompaña a las creadoras en cada etapa del crecimiento, para que puedan centrarse en crear mientras nosotros gestionamos los sistemas detrás de la página.',
               ],
             },
-          ].map(s => (
-            <div id={s.id} class="flex flex-col gap-5 md:gap-6 scroll-mt-24">
-              <h3 class={`font-display text-3xl md:text-5xl text-white leading-[1.05] md:leading-[1.0] tracking-[-0.02em] ${s.noWrap ? 'lg:text-5xl whitespace-nowrap' : 'lg:text-6xl'}`}>{s.title}</h3>
+          ].map((s, idx) => (
+            <div id={s.id} class={`editorial-step py-12 md:py-20 scroll-mt-24 ${idx === 0 ? '' : 'border-t'}`} style="border-color:rgba(255,255,255,0.08);">
+              <span class="block text-[11px] uppercase tracking-[0.32em] italic text-white/45 mb-5 md:mb-7" style="font-family:Georgia,'Times New Roman',serif;">{String(idx+1).padStart(2,'0')}</span>
+              <h3 class={`font-display text-3xl md:text-5xl text-white leading-[1.05] md:leading-[1.0] tracking-[-0.02em] mb-4 md:mb-6 ${s.noWrap ? 'lg:text-5xl whitespace-nowrap' : 'lg:text-6xl'}`}>{s.title}</h3>
               <div class="flex flex-col gap-3 md:gap-4 max-w-lg">
                 {s.paragraphs.map(p => (
                   <p class="text-white/65 text-base md:text-lg leading-relaxed">{p}</p>
