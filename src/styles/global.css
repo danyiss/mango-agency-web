@@ -523,7 +523,7 @@ p {
 }
 .reel-card {
   flex: 0 0 auto;
-  width: 153px;
+  width: 138px;
   aspect-ratio: 9 / 16;
   border-radius: 12px;
   overflow: hidden;
@@ -546,7 +546,7 @@ p {
   display: block;
 }
 @media (max-width: 768px) {
-  .reel-card { width: 87px; border-radius: 10px; }
+  .reel-card { width: 78px; border-radius: 10px; }
   .reels-track { gap: 16px; }
 }
 .section-dark .text-on-surface { color: #ffffff; }
