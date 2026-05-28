@@ -229,6 +229,26 @@ p {
   filter: saturate(0.84) contrast(1.08) brightness(0.96) sepia(0.06);
   z-index: 10;
 }
+
+/* Editorial asymmetry — per-image aspect ratios so heights vary slightly
+   across the grid. The eye reads it as a curated composition rather than
+   a 4×3 matrix. Each column gets its own height rhythm. */
+.collage-column-1 > .collage-img:nth-child(1) { aspect-ratio: 4 / 5.3; }
+.collage-column-1 > .collage-img:nth-child(2) { aspect-ratio: 4 / 4.6; }
+.collage-column-1 > .collage-img:nth-child(3) { aspect-ratio: 4 / 5.1; }
+
+.collage-column-2 > .collage-img:nth-child(1) { aspect-ratio: 4 / 4.7; }
+.collage-column-2 > .collage-img:nth-child(2) { aspect-ratio: 4 / 5.5; }
+.collage-column-2 > .collage-img:nth-child(3) { aspect-ratio: 4 / 4.8; }
+
+.collage-column-3 > .collage-img:nth-child(1) { aspect-ratio: 4 / 5.4; }
+.collage-column-3 > .collage-img:nth-child(2) { aspect-ratio: 4 / 4.5; }
+.collage-column-3 > .collage-img:nth-child(3) { aspect-ratio: 4 / 5.2; }
+
+.collage-column-4 > .collage-img:nth-child(1) { aspect-ratio: 4 / 4.8; }
+.collage-column-4 > .collage-img:nth-child(2) { aspect-ratio: 4 / 5.3; }
+.collage-column-4 > .collage-img:nth-child(3) { aspect-ratio: 4 / 4.7; }
+
 .collage-column {
   position: absolute;
   left: 0;
@@ -236,50 +256,55 @@ p {
   top: 50%;
   display: flex;
   flex-direction: column;
-  gap: 0.9rem;
+  gap: 1.1rem;
   will-change: transform;
 }
 @media (min-width: 1024px) {
-  .collage-column { gap: 1.25rem; }
+  .collage-column { gap: 1.5rem; }
 }
 
-/* Slow, premium parallax — long durations + prime-ish offsets +
-   negative animation-delay so columns are not in phase at first paint
-   (no perceived loop). cubic-bezier sine-in-out for cinematic glide. */
+/* Faster, more dynamic parallax — durations halved (2× speed) and
+   per-column baselines staggered so columns don't sit on the same
+   horizontal axis. Adds editorial rhythm without breaking the grid. */
 .collage-column-1 {
-  animation: collage-float-a 9.3s cubic-bezier(0.45, 0, 0.55, 1) -1s infinite alternate;
+  animation: collage-float-a 4.7s cubic-bezier(0.45, 0, 0.55, 1) -0.5s infinite alternate;
 }
 .collage-column-2 {
-  animation: collage-float-b 11.3s cubic-bezier(0.45, 0, 0.55, 1) -3.7s infinite alternate;
+  animation: collage-float-b 5.6s cubic-bezier(0.45, 0, 0.55, 1) -1.85s infinite alternate;
 }
 .collage-column-3 {
-  animation: collage-float-c 12.7s cubic-bezier(0.45, 0, 0.55, 1) -6.3s infinite alternate;
+  animation: collage-float-c 6.4s cubic-bezier(0.45, 0, 0.55, 1) -3.15s infinite alternate;
 }
 .collage-column-4 {
-  animation: collage-float-d 14.7s cubic-bezier(0.45, 0, 0.55, 1) -9s infinite alternate;
+  animation: collage-float-d 7.3s cubic-bezier(0.45, 0, 0.55, 1) -4.5s infinite alternate;
 }
 
-/* Column 1 → drifts upward; Column 2 → downward; Column 3 → upward
-   (smaller travel, slower); Column 4 → downward (smaller travel, slower) */
+/* Staggered vertical baselines — col 1 sits slightly higher than center,
+   col 2 sits lower, col 3 highest, col 4 mid-low. Creates the asymmetric
+   editorial rhythm. Each keyframe still floats around its own center. */
 @keyframes collage-float-a {
-  from { transform: translateY(calc(-50% + 18px)); }
-  to   { transform: translateY(calc(-50% - 22px)); }
+  from { transform: translateY(calc(-50% - 8px)); }
+  to   { transform: translateY(calc(-50% - 44px)); }
 }
 @keyframes collage-float-b {
-  from { transform: translateY(calc(-50% - 20px)); }
-  to   { transform: translateY(calc(-50% + 24px)); }
+  from { transform: translateY(calc(-50% + 22px)); }
+  to   { transform: translateY(calc(-50% + 60px)); }
 }
 @keyframes collage-float-c {
-  from { transform: translateY(calc(-50% + 14px)); }
-  to   { transform: translateY(calc(-50% - 16px)); }
+  from { transform: translateY(calc(-50% - 28px)); }
+  to   { transform: translateY(calc(-50% - 58px)); }
 }
 @keyframes collage-float-d {
-  from { transform: translateY(calc(-50% - 12px)); }
-  to   { transform: translateY(calc(-50% + 18px)); }
+  from { transform: translateY(calc(-50% + 14px)); }
+  to   { transform: translateY(calc(-50% + 44px)); }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .collage-column { animation: none !important; transform: translateY(-50%) !important; }
+  .collage-column { animation: none !important; }
+  .collage-column-1 { transform: translateY(calc(-50% - 26px)) !important; }
+  .collage-column-2 { transform: translateY(calc(-50% + 40px)) !important; }
+  .collage-column-3 { transform: translateY(calc(-50% - 42px)) !important; }
+  .collage-column-4 { transform: translateY(calc(-50% + 28px)) !important; }
 }
 
 /* ---------------------------------------------------------- */
