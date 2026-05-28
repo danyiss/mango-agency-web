@@ -25,6 +25,11 @@ const t = {
     situation4: '$20k+/month',
     goal: 'What’s your current situation and what’s holding you back?',
     goalPlaceholder: 'Tell us briefly where you are and what you need',
+    service: 'What service are you looking for?',
+    servicePlaceholder: 'Select one',
+    service1: 'Full Management',
+    service2: 'Chatting Service Only',
+    service3: 'Not Sure Yet',
     income: 'Current monthly revenue (optional)',
     incomeHint: 'Helps us understand how to scale your account',
     incomePlaceholder: 'e.g. $3,200',
@@ -54,6 +59,11 @@ const t = {
     situation4: '$20k+/mes',
     goal: '¿Cuál es tu situación actual y qué te está frenando?',
     goalPlaceholder: 'Cuéntanos brevemente dónde estás y qué necesitas',
+    service: '¿Qué servicio estás buscando?',
+    servicePlaceholder: 'Selecciona uno',
+    service1: 'Gestión Completa',
+    service2: 'Solo Servicio de Chatting',
+    service3: 'Aún No Lo Tengo Claro',
     income: 'Ingresos mensuales actuales (opcional)',
     incomeHint: 'Nos ayuda a entender cómo escalar tu cuenta',
     incomePlaceholder: 'ej. $3.200',
@@ -122,6 +132,17 @@ const t = {
           </div>
 
           <div>
+            <label for="service" class="text-[11px] font-semibold uppercase tracking-[0.22em] text-white/75 mb-3 block">{t.service}</label>
+            <select id="service" name="service" required
+              class="w-full bg-transparent border-0 border-b border-white/25 px-0 py-2.5 text-base text-white focus:outline-none focus:border-white/70 transition-colors appearance-none cursor-pointer">
+              <option value="" disabled selected style="background-color:#070707;color:rgba(255,255,255,0.5);">{t.servicePlaceholder}</option>
+              <option value="full-management" style="background-color:#070707;">{t.service1}</option>
+              <option value="chatting-only" style="background-color:#070707;">{t.service2}</option>
+              <option value="not-sure" style="background-color:#070707;">{t.service3}</option>
+            </select>
+          </div>
+
+          <div>
             <label for="income" class="text-[11px] font-semibold uppercase tracking-[0.22em] text-white/75 mb-3 block">{t.income}</label>
             <input type="text" id="income" name="income" placeholder={t.incomePlaceholder}
               class="w-full bg-transparent border-0 border-b border-white/25 px-0 py-2.5 text-base text-white placeholder:text-white/30 focus:outline-none focus:border-white/70 transition-colors" />
@@ -175,6 +196,7 @@ const t = {
       contact: form.contact.value,
       situation: form.situation.value,
       goal: form.goal.value,
+      service: form.service.value,
       income: form.income.value,
     };
 
