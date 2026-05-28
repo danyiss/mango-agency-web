@@ -229,8 +229,7 @@ const serviceSchema = {
   </section>
 
   <!-- 2b. PAIN / PROBLEM (unified deep black + magenta/burgundy atmosphere) -->
-  <section class="relative py-24 md:py-56 overflow-hidden grain">
-    <div class="atmosphere-glow crimson" style="top:18%;right:-12%;width:520px;height:520px;opacity:0.35;"></div>
+  <section class="relative py-24 md:py-56 section-panel grain">
     <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-10">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-24">
         <div class="lg:col-span-5 lg:sticky lg:top-32 lg:self-start">
@@ -251,7 +250,7 @@ const serviceSchema = {
           ].map((row, idx) => (
             <div class={`editorial-step pb-12 md:pb-20 ${idx === 0 ? '' : 'border-t pt-12 md:pt-20'}`} style="border-color:rgba(255,255,255,0.08);">
               <span class="block text-[11px] uppercase tracking-[0.32em] italic text-white/45 mb-5 md:mb-7" style="font-family:Georgia,'Times New Roman',serif;">{String(idx+1).padStart(2,'0')}</span>
-              <h3 class="font-display text-2xl md:text-4xl lg:text-5xl text-white leading-[1.0] md:leading-[0.98] tracking-[-0.015em] mb-4 md:mb-6">{row.title}</h3>
+              <h3 class="font-display text-2xl md:text-4xl lg:text-5xl text-white leading-[1.05] md:leading-[1.0] tracking-[-0.015em] mb-4 md:mb-6">{row.title}</h3>
               <p class="text-white/65 text-[15px] md:text-base leading-relaxed max-w-lg">{row.text}</p>
             </div>
           ))}
@@ -261,9 +260,7 @@ const serviceSchema = {
   </section>
 
   <!-- 3. HOW WE SCALE CREATORS (panel, sticky multi-line title + 6 system blocks) -->
-  <section class="relative py-24 md:py-56 section-panel grain overflow-hidden">
-    <div class="atmosphere-glow magenta" style="top:-8%;left:30%;width:560px;height:560px;opacity:0.35;"></div>
-    <div class="atmosphere-glow crimson" style="bottom:10%;right:-10%;width:480px;height:480px;opacity:0.4;"></div>
+  <section class="relative py-24 md:py-56 section-panel grain">
     <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-10">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-24">
         <!-- Sticky headline column -->
@@ -307,7 +304,6 @@ const serviceSchema = {
             {
               id: 'personalized-management',
               title: 'Personalized Management',
-              noWrap: true,
               paragraphs: [
                 'No generic strategies or one-size-fits-all systems.',
                 'Every creator receives personalized direction, communication and support built around their image, audience, goals and long-term potential.',
@@ -332,10 +328,10 @@ const serviceSchema = {
           ].map((s, idx) => (
             <div id={s.id} class={`editorial-step pb-12 md:pb-20 scroll-mt-24 ${idx === 0 ? '' : 'border-t pt-12 md:pt-20'}`} style="border-color:rgba(255,255,255,0.08);">
               <span class="block text-[11px] uppercase tracking-[0.32em] italic text-white/45 mb-5 md:mb-7" style="font-family:Georgia,'Times New Roman',serif;">{String(idx+1).padStart(2,'0')}</span>
-              <h3 class={`font-display text-3xl md:text-5xl text-white leading-[1.05] md:leading-[1.0] tracking-[-0.02em] mb-4 md:mb-6 ${s.noWrap ? 'lg:text-5xl whitespace-nowrap' : 'lg:text-6xl'}`}>{s.title}</h3>
+              <h3 class="font-display text-2xl md:text-4xl lg:text-5xl text-white leading-[1.05] md:leading-[1.0] tracking-[-0.015em] mb-4 md:mb-6">{s.title}</h3>
               <div class="flex flex-col gap-3 md:gap-4 max-w-lg">
                 {s.paragraphs.map(p => (
-                  <p class="text-white/65 text-base md:text-lg leading-relaxed">{p}</p>
+                  <p class="text-white/65 text-[15px] md:text-base leading-relaxed max-w-lg">{p}</p>
                 ))}
               </div>
             </div>
@@ -346,7 +342,7 @@ const serviceSchema = {
   </section>
 
   <!-- 4. HOW IT WORKS (dark panel, oversized step numbers) -->
-  <section class="relative py-24 md:py-56 section-panel grain overflow-hidden">
+  <section class="relative py-24 md:py-56 section-panel grain">
     <div class="atmosphere-glow magenta" style="top:20%;right:-12%;width:480px;height:480px;opacity:0.35;"></div>
     <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-10">
       <div class="mb-16 md:mb-40 max-w-4xl">
