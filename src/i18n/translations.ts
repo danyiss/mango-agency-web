@@ -9,7 +9,7 @@ export const defaultLang: Lang = 'en';
 export const translations = {
   en: {
     // Nav
-    'nav.home': 'Home',
+    'nav.home': 'For Creators',
     'nav.results': 'Results',
     'nav.forAgencies': 'Chatting Service',
     'nav.applyNow': 'Apply Now',
@@ -114,7 +114,7 @@ export const translations = {
 
   es: {
     // Nav
-    'nav.home': 'Inicio',
+    'nav.home': 'Para Creadoras',
     'nav.results': 'Resultados',
     'nav.forAgencies': 'Servicio de Chatting',
     'nav.applyNow': 'Aplicar',

@@ -210,15 +210,15 @@ const serviceSchema = {
   </section>
 
   <!-- 2c.5. EDITORIAL CTA BANNER — full-width cinematic editorial image with anchored bottom CTA -->
-  <section class="relative w-full overflow-hidden aspect-[4/3] md:aspect-auto md:h-[70vh]">
-    <!-- Editorial photo, cover-cropped, scaled ~1.1x toward the top so the model sits higher -->
-    <div class="absolute inset-0 bg-no-repeat" style="background-image:url('/assets/cta-banner.jpg'); background-size: cover; background-position: center 22%; transform: scale(1.1); transform-origin: center 22%;"></div>
+  <section class="relative w-full overflow-hidden aspect-[3/4] md:aspect-auto md:h-[75vh]">
+    <!-- Yacht editorial portrait, cover-cropped -->
+    <div class="absolute inset-0 bg-no-repeat" style="background-image:url('/assets/cta-banner.jpg'); background-size: cover; background-position: center 28%;"></div>
 
     <!-- Soft cinematic darkening — minimal at top, deeper toward the bottom so the CTA reads clearly -->
-    <div class="absolute inset-0 pointer-events-none" style="background: linear-gradient(to bottom, rgba(0,0,0,0.12) 0%, rgba(0,0,0,0.08) 40%, rgba(0,0,0,0.42) 74%, rgba(0,0,0,0.78) 100%);"></div>
+    <div class="absolute inset-0 pointer-events-none" style="background: linear-gradient(to bottom, rgba(0,0,0,0.20) 0%, rgba(0,0,0,0.10) 35%, rgba(0,0,0,0.45) 72%, rgba(0,0,0,0.78) 100%);"></div>
 
-    <!-- Bottom-centered CTA content, kept low so it never covers the face -->
-    <div class="absolute inset-0 flex flex-col items-center justify-end pb-8 md:pb-12 px-6">
+    <!-- Bottom-centered CTA content -->
+    <div class="absolute inset-0 flex flex-col items-center justify-end pb-12 md:pb-20 px-6">
       <div class="flex flex-col items-center gap-6 md:gap-9 text-center max-w-3xl">
         <h2 class="font-display text-3xl md:text-5xl lg:text-6xl text-white leading-[1.05] tracking-[-0.02em]">Built for creators who want more</h2>
         <a href="#apply" class="inline-block bg-accent text-black font-bold px-7 py-3.5 md:py-4 rounded-[7px] text-sm tracking-wide hover:brightness-95 hover:scale-[1.02] transition-all">
