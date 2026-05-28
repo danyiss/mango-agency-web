@@ -50,6 +50,7 @@
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    overflow-x: clip;
     background-color: #050505;
     background-image:
       radial-gradient(ellipse 70% 40% at 84% 14%, rgba(216,72,120,0.07), transparent 70%),
@@ -63,6 +64,8 @@
     font-family: var(--font-body);
     background: transparent;
     color: #ffffff;
+    overflow-x: clip;
+    width: 100%;
   }
 
   h1, h2, h3, h4 {
