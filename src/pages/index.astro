@@ -24,21 +24,88 @@ const faqSchema = {
   ]
 };
 
-const serviceSchema = {
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "OnlyFans Management",
-  "provider": { "@type": "Organization", "name": "MANGO Agency" },
-  "description": "System-driven talent management for content creators. Chatting operations, marketing strategy, traffic generation, and operational optimization.",
-  "serviceType": "Talent Management Agency",
-  "areaServed": ["Europe", "Asia"],
-};
+const provider = { "@type": "Organization", "name": "MANGO Agency", "url": "https://www.mangova.agency" };
+const areaServed = [
+  { "@type": "Place", "name": "Europe" },
+  { "@type": "Place", "name": "Asia" },
+];
+
+const serviceSchemas = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "OnlyFans Chatting & Monetization",
+    "provider": provider,
+    "areaServed": areaServed,
+    "serviceType": "OnlyFans Chatting Service",
+    "description": "24/7 in-house chatting team focused on fan retention, higher spending and long-term LTV. Each conversation adapts to the creator's personality, audience and boundaries.",
+    "url": "https://www.mangova.agency/#chatting-monetization",
+    "audience": { "@type": "Audience", "audienceType": "OnlyFans creators" },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "OnlyFans Social Media Growth",
+    "provider": provider,
+    "areaServed": areaServed,
+    "serviceType": "Creator Marketing & Growth",
+    "description": "Strategic Instagram-led growth built around creator branding, audience psychology and constant performance analysis. Real metrics drive what gets scaled.",
+    "url": "https://www.mangova.agency/#social-media-growth",
+    "audience": { "@type": "Audience", "audienceType": "OnlyFans creators" },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "OnlyFans Content Strategy",
+    "provider": provider,
+    "areaServed": areaServed,
+    "serviceType": "Content Direction & Strategy",
+    "description": "Content direction built around virality, positioning, conversion and performance data — giving creators clear guidance on what to film and why.",
+    "url": "https://www.mangova.agency/#content-strategy",
+    "audience": { "@type": "Audience", "audienceType": "OnlyFans creators" },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Personalized OnlyFans Management",
+    "provider": provider,
+    "areaServed": areaServed,
+    "serviceType": "Talent Management",
+    "description": "No generic playbooks. Each creator gets dedicated direction, communication and support tailored to their image, audience, goals and long-term potential.",
+    "url": "https://www.mangova.agency/#personalized-management",
+    "audience": { "@type": "Audience", "audienceType": "OnlyFans creators" },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "OnlyFans Operations & Scaling",
+    "provider": provider,
+    "areaServed": areaServed,
+    "serviceType": "Creator Operations",
+    "description": "Structured workflows, internal teams, performance tracking and quality control designed to scale creators without chaos, inconsistency or burnout.",
+    "url": "https://www.mangova.agency/#operations-scaling",
+    "audience": { "@type": "Audience", "audienceType": "OnlyFans creators" },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "OnlyFans Protection & Support",
+    "provider": provider,
+    "areaServed": areaServed,
+    "serviceType": "Creator Protection",
+    "description": "Leak protection, DMCA support, account safety and ongoing operational support so creators can scale confidently without losing control of their content.",
+    "url": "https://www.mangova.agency/#protection-support",
+    "audience": { "@type": "Audience", "audienceType": "OnlyFans creators" },
+  },
+];
 ---
 
 <Layout title="MANGO | OnlyFans Management Agency for Creators" description="Modern OnlyFans management agency. Full-service growth, monetization and creator branding built to scale OnlyFans creators long-term." activeNav="home" lang="en" transparentTop={true}>
   <Fragment slot="head">
     <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
-    <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+    {serviceSchemas.map(s => (
+      <script type="application/ld+json" set:html={JSON.stringify(s)} />
+    ))}
   </Fragment>
 
   <!-- 1. HERO — Luxury editorial photo collage. Desktop: 4 columns × 3 images with subtle column parallax. Mobile: 2 columns × 3 of the strongest images. Unified cinematic grading via CSS filters + tint. -->
@@ -378,7 +445,7 @@ const serviceSchema = {
         {[
           {
             q: "What makes you different from other agencies?",
-            a: `<p>Most agencies rely on volume — more content, more posts, more messages.</p><p>We focus on performance.</p><p>We combine:</p><ul class="list-disc pl-5 space-y-1 mt-1"><li>A marketing team focused on generating consistent traffic</li><li>A dedicated in-house chatting team per model (not shared across accounts)</li><li>Structured sales systems (dripping, upsells, retention)</li><li>Weekly optimization based on real performance data (revenue, conversion, LTV)</li></ul><p>We don't work with everyone. We select the right creators and focus on scaling them properly.</p>`,
+            a: `<p>Most agencies rely on volume — more content, more posts, more messages.</p><p>We focus on performance.</p><p>We combine:</p><ul class="list-disc pl-5 space-y-1 mt-1"><li>A marketing team focused on generating consistent traffic</li><li>A <a href="/for-agencies" class="text-accent hover:text-accent/80 underline underline-offset-2">dedicated in-house chatting team per model</a> (not shared across accounts)</li><li>Structured sales systems (dripping, upsells, retention)</li><li>Weekly optimization based on real performance data (revenue, conversion, LTV)</li></ul><p>We don't work with everyone. We select the right creators and focus on scaling them properly.</p>`,
           },
           {
             q: "Why should I work with an agency?",
@@ -386,7 +453,7 @@ const serviceSchema = {
           },
           {
             q: "How much can I expect to grow?",
-            a: `<p>It depends on your starting point.</p><p>Most creators we work with see:</p><ul class="list-disc pl-5 space-y-1 mt-1"><li>Higher revenue per subscriber</li><li>Better conversion from fans to buyers</li><li>More consistent daily income</li></ul><p>In many cases, creators move from unstable income to predictable monthly revenue by improving both traffic and monetization.</p>`,
+            a: `<p>It depends on your starting point.</p><p>Most <a href="/results" class="text-accent hover:text-accent/80 underline underline-offset-2">creators we work with</a> see:</p><ul class="list-disc pl-5 space-y-1 mt-1"><li>Higher revenue per subscriber</li><li>Better conversion from fans to buyers</li><li>More consistent daily income</li></ul><p>In many cases, creators move from unstable income to predictable monthly revenue by improving both traffic and monetization.</p>`,
           },
           {
             q: "Is it safe to give access to my account?",
@@ -410,7 +477,7 @@ const serviceSchema = {
           },
           {
             q: "How is chatting quality maintained?",
-            a: `<p>We use a system-based approach:</p><ul class="list-disc pl-5 space-y-1 mt-1"><li>24/7 monitoring</li><li>Dedicated QA team</li><li>Performance tracking per chatter</li><li>Continuous optimization</li></ul><p>Everything is measured and improved constantly.</p>`,
+            a: `<p>We use a system-based approach:</p><ul class="list-disc pl-5 space-y-1 mt-1"><li>24/7 monitoring</li><li>Dedicated QA team</li><li>Performance tracking per chatter</li><li>Continuous optimization</li></ul><p>Everything is measured and improved constantly. See our full <a href="/for-agencies" class="text-accent hover:text-accent/80 underline underline-offset-2">chatting service methodology</a> for the agency-grade version of the same system.</p>`,
           },
           {
             q: "Can I stop anytime?",

@@ -24,21 +24,88 @@ const faqSchema = {
   ]
 };
 
-const serviceSchema = {
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "Gestion OnlyFans",
-  "provider": { "@type": "Organization", "name": "MANGO Agency" },
-  "description": "Agencia de gestion de talento para creadoras de contenido. Operaciones de chatting, estrategia de marketing, generacion de trafico y optimizacion operativa.",
-  "serviceType": "Agencia de Gestion de Talento",
-  "areaServed": ["Europa", "Asia"],
-};
+const provider = { "@type": "Organization", "name": "MANGO Agency", "url": "https://www.mangova.agency" };
+const areaServed = [
+  { "@type": "Place", "name": "Europa" },
+  { "@type": "Place", "name": "Asia" },
+];
+
+const serviceSchemas = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Chatting y Monetizacion OnlyFans",
+    "provider": provider,
+    "areaServed": areaServed,
+    "serviceType": "Servicio de Chatting OnlyFans",
+    "description": "Equipo de chatting 24/7 enfocado en retencion del fan, mayor gasto y LTV a largo plazo. Cada conversacion se adapta a la personalidad, audiencia y limites de la creadora.",
+    "url": "https://www.mangova.agency/es#chatting-monetization",
+    "audience": { "@type": "Audience", "audienceType": "Creadoras de OnlyFans" },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Crecimiento en Redes para OnlyFans",
+    "provider": provider,
+    "areaServed": areaServed,
+    "serviceType": "Marketing y Crecimiento de Creadoras",
+    "description": "Crecimiento estrategico en Instagram construido sobre creator branding, psicologia de audiencia y analisis constante de rendimiento. Las metricas reales deciden que escalar.",
+    "url": "https://www.mangova.agency/es#social-media-growth",
+    "audience": { "@type": "Audience", "audienceType": "Creadoras de OnlyFans" },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Estrategia de Contenido OnlyFans",
+    "provider": provider,
+    "areaServed": areaServed,
+    "serviceType": "Direccion y Estrategia de Contenido",
+    "description": "Direccion de contenido construida sobre viralidad, posicionamiento, conversion y datos de rendimiento — dando a las creadoras pautas claras de que grabar y por que.",
+    "url": "https://www.mangova.agency/es#content-strategy",
+    "audience": { "@type": "Audience", "audienceType": "Creadoras de OnlyFans" },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Gestion Personalizada de OnlyFans",
+    "provider": provider,
+    "areaServed": areaServed,
+    "serviceType": "Gestion de Talento",
+    "description": "Sin estrategias genericas. Cada creadora recibe direccion, comunicacion y soporte dedicados adaptados a su imagen, audiencia, objetivos y potencial a largo plazo.",
+    "url": "https://www.mangova.agency/es#personalized-management",
+    "audience": { "@type": "Audience", "audienceType": "Creadoras de OnlyFans" },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Operaciones y Escalado OnlyFans",
+    "provider": provider,
+    "areaServed": areaServed,
+    "serviceType": "Operaciones de Creadora",
+    "description": "Flujos de trabajo estructurados, equipos internos, seguimiento de rendimiento y control de calidad disenados para escalar a creadoras sin caos, inconsistencia ni burnout.",
+    "url": "https://www.mangova.agency/es#operations-scaling",
+    "audience": { "@type": "Audience", "audienceType": "Creadoras de OnlyFans" },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Proteccion y Soporte OnlyFans",
+    "provider": provider,
+    "areaServed": areaServed,
+    "serviceType": "Proteccion de Creadora",
+    "description": "Proteccion contra leaks, soporte DMCA, seguridad de cuenta y soporte operativo continuo para que las creadoras escalen con confianza sin perder el control de su contenido.",
+    "url": "https://www.mangova.agency/es#protection-support",
+    "audience": { "@type": "Audience", "audienceType": "Creadoras de OnlyFans" },
+  },
+];
 ---
 
 <Layout title="MANGO | Agencia de Gestión OnlyFans para Creadoras" description="Agencia moderna de gestión de OnlyFans. Crecimiento, monetización y creator branding diseñados para escalar a creadoras de OnlyFans a largo plazo." activeNav="home" lang="es" transparentTop={true}>
   <Fragment slot="head">
     <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
-    <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+    {serviceSchemas.map(s => (
+      <script type="application/ld+json" set:html={JSON.stringify(s)} />
+    ))}
   </Fragment>
 
   <!-- 1. HERO — Luxury editorial photo collage. Desktop: 4 columns × 3 images with subtle column parallax. Mobile: 2 columns × 3 of the strongest images. Unified cinematic grading via CSS filters + tint. -->
@@ -377,7 +444,7 @@ const serviceSchema = {
         {[
           {
             q: "¿Qué os diferencia de otras agencias?",
-            a: `<p>La mayoría de agencias se basan en volumen — más contenido, más publicaciones, más mensajes.</p><p>Nosotros nos enfocamos en rendimiento.</p><p>Combinamos:</p><ul class="list-disc pl-5 space-y-1 mt-1"><li>Un equipo de marketing enfocado en generar tráfico consistente</li><li>Un equipo de chatting dedicado por modelo (no compartido entre cuentas)</li><li>Sistemas de ventas estructurados (dripping, upsells, retención)</li><li>Optimización semanal basada en datos reales de rendimiento (ingresos, conversión, LTV)</li></ul><p>No trabajamos con todo el mundo. Seleccionamos a las creadoras adecuadas y nos centramos en escalarlas correctamente.</p>`,
+            a: `<p>La mayoría de agencias se basan en volumen — más contenido, más publicaciones, más mensajes.</p><p>Nosotros nos enfocamos en rendimiento.</p><p>Combinamos:</p><ul class="list-disc pl-5 space-y-1 mt-1"><li>Un equipo de marketing enfocado en generar tráfico consistente</li><li>Un <a href="/es/for-agencies" class="text-accent hover:text-accent/80 underline underline-offset-2">equipo de chatting dedicado por modelo</a> (no compartido entre cuentas)</li><li>Sistemas de ventas estructurados (dripping, upsells, retención)</li><li>Optimización semanal basada en datos reales de rendimiento (ingresos, conversión, LTV)</li></ul><p>No trabajamos con todo el mundo. Seleccionamos a las creadoras adecuadas y nos centramos en escalarlas correctamente.</p>`,
           },
           {
             q: "¿Por qué debería trabajar con una agencia?",
@@ -385,7 +452,7 @@ const serviceSchema = {
           },
           {
             q: "¿Cuánto puedo esperar crecer?",
-            a: `<p>Depende de tu punto de partida.</p><p>La mayoría de creadoras con las que trabajamos ven:</p><ul class="list-disc pl-5 space-y-1 mt-1"><li>Mayor ingreso por suscriptor</li><li>Mejor conversión de fans a compradores</li><li>Ingresos diarios más consistentes</li></ul><p>En muchos casos, las creadoras pasan de ingresos inestables a ingresos mensuales predecibles mejorando tanto el tráfico como la monetización.</p>`,
+            a: `<p>Depende de tu punto de partida.</p><p>La mayoría de <a href="/es/results" class="text-accent hover:text-accent/80 underline underline-offset-2">creadoras con las que trabajamos</a> ven:</p><ul class="list-disc pl-5 space-y-1 mt-1"><li>Mayor ingreso por suscriptor</li><li>Mejor conversión de fans a compradores</li><li>Ingresos diarios más consistentes</li></ul><p>En muchos casos, las creadoras pasan de ingresos inestables a ingresos mensuales predecibles mejorando tanto el tráfico como la monetización.</p>`,
           },
           {
             q: "¿Es seguro dar acceso a mi cuenta?",
@@ -409,7 +476,7 @@ const serviceSchema = {
           },
           {
             q: "¿Cómo mantenéis la calidad del chatting?",
-            a: `<p>Usamos un enfoque basado en sistemas:</p><ul class="list-disc pl-5 space-y-1 mt-1"><li>Monitorización 24/7</li><li>Equipo de QA dedicado</li><li>Seguimiento de rendimiento por chatter</li><li>Optimización continua</li></ul><p>Todo se mide y se mejora constantemente.</p>`,
+            a: `<p>Usamos un enfoque basado en sistemas:</p><ul class="list-disc pl-5 space-y-1 mt-1"><li>Monitorización 24/7</li><li>Equipo de QA dedicado</li><li>Seguimiento de rendimiento por chatter</li><li>Optimización continua</li></ul><p>Todo se mide y se mejora constantemente. Mira la <a href="/es/for-agencies" class="text-accent hover:text-accent/80 underline underline-offset-2">metodología completa de nuestro servicio de chatting</a> para la versión a nivel de agencia del mismo sistema.</p>`,
           },
           {
             q: "¿Puedo parar cuando quiera?",

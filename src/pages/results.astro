@@ -4,6 +4,7 @@ import Layout from '../layouts/Layout.astro';
 const cases = [
   {
     label: 'Case 01 — Male creator',
+    subhead: 'OnlyFans monetization case study — male creator scaled to 5-figure months',
     headline: 'High traffic alone wasn’t translating into revenue.',
     paragraphs: [
       'This male creator was already generating strong visibility and consistent traffic, but monetization per subscriber remained underperforming.',
@@ -16,6 +17,7 @@ const cases = [
   },
   {
     label: 'Case 02 — Lifestyle creator',
+    subhead: 'Revenue stability case study — lifestyle creator on OnlyFans',
     headline: 'Revenue became more stable once the backend was structured properly.',
     paragraphs: [
       'This creator already had active fans and regular traffic, but revenue remained inconsistent month to month due to weak retention and monetization systems behind the page.',
@@ -28,6 +30,7 @@ const cases = [
   },
   {
     label: 'Case 03 — Tattoo creator',
+    subhead: 'OnlyFans monetization optimization — tattoo creator',
     headline: 'Most of the revenue potential was being left on the table.',
     paragraphs: [
       'The page already had active subscribers and strong traffic, but monetization behind the account lacked structure and consistency.',
@@ -40,6 +43,7 @@ const cases = [
   },
   {
     label: 'Case 04 — Fitness creator',
+    subhead: 'Daily revenue uplift case study — fitness creator on OnlyFans',
     headline: 'Better monetization created stronger daily revenue behind the same traffic.',
     paragraphs: [
       'Instead of depending purely on subscriber volume, the focus shifted toward fan retention, monetization structure and higher-value spending behavior.',
@@ -54,6 +58,7 @@ const cases = [
 
 const finalCase = {
   label: 'Case 05 — Lifestyle creator',
+  subhead: 'Single-day OnlyFans earnings — what better backend systems produce',
   headline: 'Even a single day can look completely different with the right backend systems.',
   paragraphs: [
     'The difference wasn’t traffic volume — it was monetization execution behind the page.',
@@ -87,7 +92,9 @@ const finalCase = {
         <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-10">
           <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-20 items-center">
             <div class={`flex flex-col gap-4 md:gap-6 lg:col-span-6 ${isImageLeft ? 'lg:order-2' : 'lg:order-1'}`}>
+              <span class="text-[11px] uppercase tracking-[0.32em] italic text-white/45" style="font-family:Georgia,'Times New Roman',serif;">{c.label}</span>
               <h2 class="font-display text-3xl md:text-5xl lg:text-6xl text-white leading-[0.98] tracking-[-0.02em]">{c.headline}</h2>
+              <h3 class="text-white/55 text-[13px] md:text-sm uppercase tracking-[0.22em] font-medium max-w-lg">{c.subhead}</h3>
               <div class="flex flex-col gap-4 text-white/70 text-base md:text-lg leading-relaxed max-w-lg">
                 {c.paragraphs.map(p => <p>{p}</p>)}
               </div>
@@ -111,7 +118,9 @@ const finalCase = {
   <section class="relative py-12 md:py-24 section-cinematic grain">
     <div class="relative z-10 max-w-3xl mx-auto px-6 lg:px-8 flex flex-col items-center text-center gap-8 md:gap-10">
       <div class="flex flex-col gap-4 md:gap-6 items-center">
+        <span class="text-[11px] uppercase tracking-[0.32em] italic text-white/45" style="font-family:Georgia,'Times New Roman',serif;">{finalCase.label}</span>
         <h2 class="font-display text-3xl md:text-5xl lg:text-6xl text-white leading-[0.98] tracking-[-0.02em] max-w-2xl">{finalCase.headline}</h2>
+        <h3 class="text-white/55 text-[13px] md:text-sm uppercase tracking-[0.22em] font-medium max-w-xl">{finalCase.subhead}</h3>
         <div class="flex flex-col gap-4 text-white/70 text-base md:text-lg leading-relaxed max-w-xl">
           {finalCase.paragraphs.map(p => <p>{p}</p>)}
         </div>

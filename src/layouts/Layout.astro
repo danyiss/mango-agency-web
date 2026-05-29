@@ -59,6 +59,27 @@ const websiteSchema = {
   "url": siteUrl,
   "publisher": { "@type": "Organization", "name": "MANGO" }
 };
+
+// BreadcrumbList — derived from the URL path. Skipped on the locale-root pages
+// where it would be a single-item list ("Home" -> "Home").
+const breadcrumbHomeName = currentLang === 'es' ? 'Inicio' : 'Home';
+const breadcrumbLabelMap: Record<string, { en: string; es: string }> = {
+  '/results': { en: 'Results', es: 'Resultados' },
+  '/for-agencies': { en: 'Chatting Service', es: 'Servicio de Chatting' },
+  '/legal': { en: 'Legal', es: 'Legal' },
+};
+const pageLabels = breadcrumbLabelMap[basePath];
+const homeUrl = currentLang === 'es' ? `${siteUrl}/es` : siteUrl;
+const breadcrumbSchema = (basePath !== '/' && pageLabels)
+  ? {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": breadcrumbHomeName, "item": homeUrl },
+        { "@type": "ListItem", "position": 2, "name": pageLabels[currentLang], "item": canonicalUrl },
+      ],
+    }
+  : null;
 ---
 
 <!doctype html>
@@ -107,6 +128,9 @@ const websiteSchema = {
     <!-- Organization + WebSite Schema -->
     <script type="application/ld+json" set:html={JSON.stringify(orgSchema)} />
     <script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
+    {breadcrumbSchema && (
+      <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+    )}
 
     <!-- Extra head slot for page-specific schema -->
     <slot name="head" />
