@@ -100,13 +100,16 @@ const finalCase = {
               </div>
             </div>
             <div class={`lg:col-span-6 ${isImageLeft ? 'lg:order-1' : 'lg:order-2'}`}>
-              <img
-                src={c.image}
-                alt={c.imageAlt}
-                class="w-full h-auto block rounded-sm"
-                style={`box-shadow:${imgShadow}; border:${imgBorder};`}
-                loading="lazy"
-              />
+              <picture>
+                <source srcset={c.image.replace(/\.jpe?g$/, '.webp')} type="image/webp" />
+                <img
+                  src={c.image}
+                  alt={c.imageAlt}
+                  class="w-full h-auto block rounded-sm"
+                  style={`box-shadow:${imgShadow}; border:${imgBorder};`}
+                  loading="lazy"
+                />
+              </picture>
             </div>
           </div>
         </div>
@@ -126,13 +129,16 @@ const finalCase = {
         </div>
       </div>
       <div class="w-full max-w-2xl mt-2 md:mt-4">
-        <img
-          src={finalCase.image}
-          alt={finalCase.imageAlt}
-          class="w-full h-auto block rounded-sm"
-          style="box-shadow:0 30px 80px -25px rgba(186,154,110,0.16), 0 30px 60px -25px rgba(0,0,0,0.7);"
-          loading="lazy"
-        />
+        <picture>
+          <source srcset={finalCase.image.replace(/\.jpe?g$/, '.webp')} type="image/webp" />
+          <img
+            src={finalCase.image}
+            alt={finalCase.imageAlt}
+            class="w-full h-auto block rounded-sm"
+            style="box-shadow:0 30px 80px -25px rgba(186,154,110,0.16), 0 30px 60px -25px rgba(0,0,0,0.7);"
+            loading="lazy"
+          />
+        </picture>
       </div>
     </div>
   </section>

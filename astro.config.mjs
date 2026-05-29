@@ -20,5 +20,23 @@ export default defineConfig({
     plugins: [tailwindcss()],
   },
 
-  integrations: [sitemap()],
+  integrations: [
+    sitemap({
+      // Emit <xhtml:link rel="alternate" hreflang="..."> per URL so search
+      // engines see explicit language pairs in the sitemap, not just in the
+      // page <head>.
+      i18n: {
+        defaultLocale: 'en',
+        locales: {
+          en: 'en-US',
+          es: 'es-ES',
+        },
+      },
+      // Stamp every URL with the current build's lastmod so crawlers know
+      // when to re-fetch. Vercel rebuilds on every push, so this is fresh.
+      lastmod: new Date(),
+      changefreq: 'weekly',
+      priority: 0.7,
+    }),
+  ],
 });

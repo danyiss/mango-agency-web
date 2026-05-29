@@ -224,6 +224,16 @@ p {
               filter 800ms cubic-bezier(0.22, 1, 0.36, 1);
   will-change: transform;
 }
+
+/* <picture> wrappers for WebP-with-JPEG-fallback. Force block layout so
+   they behave identically to the original bare <img> in the flex/grid
+   containers. */
+.collage-column > picture,
+.reel-card > picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
 .collage-img:hover {
   transform: scale(1.04);
   filter: saturate(0.84) contrast(1.08) brightness(0.96) sepia(0.06);
@@ -232,22 +242,24 @@ p {
 
 /* Editorial asymmetry — per-image aspect ratios so heights vary slightly
    across the grid. The eye reads it as a curated composition rather than
-   a 4×3 matrix. Each column gets its own height rhythm. */
-.collage-column-1 > .collage-img:nth-child(1) { aspect-ratio: 4 / 5.3; }
-.collage-column-1 > .collage-img:nth-child(2) { aspect-ratio: 4 / 4.6; }
-.collage-column-1 > .collage-img:nth-child(3) { aspect-ratio: 4 / 5.1; }
+   a 4×3 matrix. Each column gets its own height rhythm.
+   Note: each image is wrapped in <picture> for WebP delivery, so the
+   nth-child selectors target the <picture> wrapper and the inner <img>. */
+.collage-column-1 > picture:nth-child(1) > .collage-img { aspect-ratio: 4 / 5.3; }
+.collage-column-1 > picture:nth-child(2) > .collage-img { aspect-ratio: 4 / 4.6; }
+.collage-column-1 > picture:nth-child(3) > .collage-img { aspect-ratio: 4 / 5.1; }
 
-.collage-column-2 > .collage-img:nth-child(1) { aspect-ratio: 4 / 4.7; }
-.collage-column-2 > .collage-img:nth-child(2) { aspect-ratio: 4 / 5.5; }
-.collage-column-2 > .collage-img:nth-child(3) { aspect-ratio: 4 / 4.8; }
+.collage-column-2 > picture:nth-child(1) > .collage-img { aspect-ratio: 4 / 4.7; }
+.collage-column-2 > picture:nth-child(2) > .collage-img { aspect-ratio: 4 / 5.5; }
+.collage-column-2 > picture:nth-child(3) > .collage-img { aspect-ratio: 4 / 4.8; }
 
-.collage-column-3 > .collage-img:nth-child(1) { aspect-ratio: 4 / 5.4; }
-.collage-column-3 > .collage-img:nth-child(2) { aspect-ratio: 4 / 4.5; }
-.collage-column-3 > .collage-img:nth-child(3) { aspect-ratio: 4 / 5.2; }
+.collage-column-3 > picture:nth-child(1) > .collage-img { aspect-ratio: 4 / 5.4; }
+.collage-column-3 > picture:nth-child(2) > .collage-img { aspect-ratio: 4 / 4.5; }
+.collage-column-3 > picture:nth-child(3) > .collage-img { aspect-ratio: 4 / 5.2; }
 
-.collage-column-4 > .collage-img:nth-child(1) { aspect-ratio: 4 / 4.8; }
-.collage-column-4 > .collage-img:nth-child(2) { aspect-ratio: 4 / 5.3; }
-.collage-column-4 > .collage-img:nth-child(3) { aspect-ratio: 4 / 4.7; }
+.collage-column-4 > picture:nth-child(1) > .collage-img { aspect-ratio: 4 / 4.8; }
+.collage-column-4 > picture:nth-child(2) > .collage-img { aspect-ratio: 4 / 5.3; }
+.collage-column-4 > picture:nth-child(3) > .collage-img { aspect-ratio: 4 / 4.7; }
 
 .collage-column {
   position: absolute;

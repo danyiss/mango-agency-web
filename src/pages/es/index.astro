@@ -24,6 +24,20 @@ const faqSchema = {
   ]
 };
 
+// WebPage with speakable — indica a asistentes de voz y resúmenes AI qué
+// partes de la página son seguras para leer en voz alta.
+const webPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "url": "https://www.mangova.agency/es",
+  "name": "MANGO | Agencia de Gestión OnlyFans para Creadoras",
+  "inLanguage": "es",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": ["h1", "details summary span", "details > div"],
+  },
+};
+
 const provider = { "@type": "Organization", "name": "MANGO Agency", "url": "https://www.mangova.agency" };
 const areaServed = [
   { "@type": "Place", "name": "Europa" },
@@ -102,6 +116,7 @@ const serviceSchemas = [
 
 <Layout title="MANGO | Agencia de Gestión OnlyFans para Creadoras" description="Agencia moderna de gestión de OnlyFans. Crecimiento, monetización y creator branding diseñados para escalar a creadoras de OnlyFans a largo plazo." activeNav="home" lang="es" transparentTop={true}>
   <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(webPageSchema)} />
     <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
     {serviceSchemas.map(s => (
       <script type="application/ld+json" set:html={JSON.stringify(s)} />
@@ -114,18 +129,18 @@ const serviceSchemas = [
     <!-- DESKTOP: 4-column collage (12 images) -->
     <div class="absolute inset-0 hidden md:block">
       <div class="absolute inset-0 grid grid-cols-4 gap-5 lg:gap-6 px-5 lg:px-6">
-        <div class="relative h-full"><div class="collage-column collage-column-1"><img src="/assets/hero-collage/c1-t.jpg" alt="Retrato editorial de una creadora de OnlyFans — luz natural suave" class="collage-img" loading="eager" decoding="async" /><img src="/assets/hero-collage/c1-m.jpg" alt="Foto lifestyle de una creadora de contenido — paleta neutra" class="collage-img" loading="eager" decoding="async" /><img src="/assets/hero-collage/c1-b.jpg" alt="Retrato premium de estudio — atmósfera moody" class="collage-img" loading="eager" decoding="async" /></div></div>
-        <div class="relative h-full"><div class="collage-column collage-column-2"><img src="/assets/hero-collage/c2-t.jpg" alt="Retrato de creadora — luz de hora dorada" class="collage-img" loading="eager" decoding="async" /><img src="/assets/hero-collage/c2-m.jpg" alt="Frame editorial de modelo de OnlyFans — contraste suave" class="collage-img" loading="eager" decoding="async" /><img src="/assets/hero-collage/c2-b.jpg" alt="Composición de estudio de cuerpo entero — tonos cálidos" class="collage-img" loading="eager" decoding="async" /></div></div>
-        <div class="relative h-full"><div class="collage-column collage-column-3"><img src="/assets/hero-collage/c3-t.jpg" alt="Foto editorial de una creadora — escena íntima" class="collage-img" loading="eager" decoding="async" /><img src="/assets/hero-collage/c3-m.jpg" alt="Frame lifestyle exterior — fondo natural" class="collage-img" loading="eager" decoding="async" /><img src="/assets/hero-collage/c3-b.jpg" alt="Retrato de estudio de creadora de OnlyFans — paleta beige suave" class="collage-img" loading="eager" decoding="async" /></div></div>
-        <div class="relative h-full"><div class="collage-column collage-column-4"><img src="/assets/hero-collage/c4-t.jpg" alt="Primer plano — iluminación dramática de estudio" class="collage-img" loading="eager" decoding="async" /><img src="/assets/hero-collage/c4-m.jpg" alt="Foto lifestyle — momento candid de creadora" class="collage-img" loading="eager" decoding="async" /><img src="/assets/hero-collage/c4-b.jpg" alt="Retrato editorial — iluminación high-key" class="collage-img" loading="eager" decoding="async" /></div></div>
+        <div class="relative h-full"><div class="collage-column collage-column-1"><picture><source srcset="/assets/hero-collage/c1-t.webp" type="image/webp" /><img src="/assets/hero-collage/c1-t.jpg" alt="Retrato editorial de una creadora de OnlyFans — luz natural suave" class="collage-img" loading="eager" decoding="async" /></picture><picture><source srcset="/assets/hero-collage/c1-m.webp" type="image/webp" /><img src="/assets/hero-collage/c1-m.jpg" alt="Foto lifestyle de una creadora de contenido — paleta neutra" class="collage-img" loading="eager" decoding="async" /></picture><picture><source srcset="/assets/hero-collage/c1-b.webp" type="image/webp" /><img src="/assets/hero-collage/c1-b.jpg" alt="Retrato premium de estudio — atmósfera moody" class="collage-img" loading="eager" decoding="async" /></picture></div></div>
+        <div class="relative h-full"><div class="collage-column collage-column-2"><picture><source srcset="/assets/hero-collage/c2-t.webp" type="image/webp" /><img src="/assets/hero-collage/c2-t.jpg" alt="Retrato de creadora — luz de hora dorada" class="collage-img" loading="eager" decoding="async" /></picture><picture><source srcset="/assets/hero-collage/c2-m.webp" type="image/webp" /><img src="/assets/hero-collage/c2-m.jpg" alt="Frame editorial de modelo de OnlyFans — contraste suave" class="collage-img" loading="eager" decoding="async" /></picture><picture><source srcset="/assets/hero-collage/c2-b.webp" type="image/webp" /><img src="/assets/hero-collage/c2-b.jpg" alt="Composición de estudio de cuerpo entero — tonos cálidos" class="collage-img" loading="eager" decoding="async" /></picture></div></div>
+        <div class="relative h-full"><div class="collage-column collage-column-3"><picture><source srcset="/assets/hero-collage/c3-t.webp" type="image/webp" /><img src="/assets/hero-collage/c3-t.jpg" alt="Foto editorial de una creadora — escena íntima" class="collage-img" loading="eager" decoding="async" /></picture><picture><source srcset="/assets/hero-collage/c3-m.webp" type="image/webp" /><img src="/assets/hero-collage/c3-m.jpg" alt="Frame lifestyle exterior — fondo natural" class="collage-img" loading="eager" decoding="async" /></picture><picture><source srcset="/assets/hero-collage/c3-b.webp" type="image/webp" /><img src="/assets/hero-collage/c3-b.jpg" alt="Retrato de estudio de creadora de OnlyFans — paleta beige suave" class="collage-img" loading="eager" decoding="async" /></picture></div></div>
+        <div class="relative h-full"><div class="collage-column collage-column-4"><picture><source srcset="/assets/hero-collage/c4-t.webp" type="image/webp" /><img src="/assets/hero-collage/c4-t.jpg" alt="Primer plano — iluminación dramática de estudio" class="collage-img" loading="eager" decoding="async" /></picture><picture><source srcset="/assets/hero-collage/c4-m.webp" type="image/webp" /><img src="/assets/hero-collage/c4-m.jpg" alt="Foto lifestyle — momento candid de creadora" class="collage-img" loading="eager" decoding="async" /></picture><picture><source srcset="/assets/hero-collage/c4-b.webp" type="image/webp" /><img src="/assets/hero-collage/c4-b.jpg" alt="Retrato editorial — iluminación high-key" class="collage-img" loading="eager" decoding="async" /></picture></div></div>
       </div>
     </div>
 
     <!-- MOBILE: 2-column collage with the 6 strongest images (11, 14, 12 | 19, 10, 16) -->
     <div class="absolute inset-0 md:hidden">
       <div class="absolute inset-0 grid grid-cols-2 gap-3 px-3">
-        <div class="relative h-full"><div class="collage-column collage-column-1"><img src="/assets/hero-collage/c2-t.jpg" alt="Retrato de creadora — luz de hora dorada" class="collage-img" loading="eager" decoding="async" /><img src="/assets/hero-collage/c1-m.jpg" alt="Foto lifestyle de una creadora de contenido — paleta neutra" class="collage-img" loading="eager" decoding="async" /><img src="/assets/hero-collage/c1-b.jpg" alt="Retrato premium de estudio — atmósfera moody" class="collage-img" loading="eager" decoding="async" /></div></div>
-        <div class="relative h-full"><div class="collage-column collage-column-2"><img src="/assets/hero-collage/c2-m.jpg" alt="Frame editorial de modelo de OnlyFans — contraste suave" class="collage-img" loading="eager" decoding="async" /><img src="/assets/hero-collage/c3-t.jpg" alt="Foto editorial de una creadora — escena íntima" class="collage-img" loading="eager" decoding="async" /><img src="/assets/hero-collage/c4-m.jpg" alt="Foto lifestyle — momento candid de creadora" class="collage-img" loading="eager" decoding="async" /></div></div>
+        <div class="relative h-full"><div class="collage-column collage-column-1"><picture><source srcset="/assets/hero-collage/c2-t.webp" type="image/webp" /><img src="/assets/hero-collage/c2-t.jpg" alt="Retrato de creadora — luz de hora dorada" class="collage-img" loading="eager" decoding="async" /></picture><picture><source srcset="/assets/hero-collage/c1-m.webp" type="image/webp" /><img src="/assets/hero-collage/c1-m.jpg" alt="Foto lifestyle de una creadora de contenido — paleta neutra" class="collage-img" loading="eager" decoding="async" /></picture><picture><source srcset="/assets/hero-collage/c1-b.webp" type="image/webp" /><img src="/assets/hero-collage/c1-b.jpg" alt="Retrato premium de estudio — atmósfera moody" class="collage-img" loading="eager" decoding="async" /></picture></div></div>
+        <div class="relative h-full"><div class="collage-column collage-column-2"><picture><source srcset="/assets/hero-collage/c2-m.webp" type="image/webp" /><img src="/assets/hero-collage/c2-m.jpg" alt="Frame editorial de modelo de OnlyFans — contraste suave" class="collage-img" loading="eager" decoding="async" /></picture><picture><source srcset="/assets/hero-collage/c3-t.webp" type="image/webp" /><img src="/assets/hero-collage/c3-t.jpg" alt="Foto editorial de una creadora — escena íntima" class="collage-img" loading="eager" decoding="async" /></picture><picture><source srcset="/assets/hero-collage/c4-m.webp" type="image/webp" /><img src="/assets/hero-collage/c4-m.jpg" alt="Foto lifestyle — momento candid de creadora" class="collage-img" loading="eager" decoding="async" /></picture></div></div>
       </div>
     </div>
 
@@ -221,7 +236,10 @@ const serviceSchemas = [
           <div class={row.reverse ? 'reels-track reverse' : 'reels-track'}>
             {[...row.ids, ...row.ids, ...row.ids].map(n => (
               <div class="reel-card">
-                <img src={`/assets/reels/${n}.jpg`} alt={`Reel de Instagram ${n}`} loading="lazy" decoding="async" />
+                <picture>
+                  <source srcset={`/assets/reels/${n}.webp`} type="image/webp" />
+                  <img src={`/assets/reels/${n}.jpg`} alt={`Reel de Instagram ${n}`} loading="lazy" decoding="async" />
+                </picture>
               </div>
             ))}
           </div>
@@ -257,7 +275,10 @@ const serviceSchemas = [
           </a>
         </div>
         <div class="lg:col-span-7">
-          <img src="/assets/results/monetization.jpeg" alt="Screenshot de ingresos mensuales — $24,586 en 30 d&iacute;as" class="w-full h-auto block rounded-sm" style="box-shadow: 0 30px 80px -25px rgba(186,154,110,0.16), 0 30px 60px -25px rgba(0,0,0,0.7); border:1px solid rgba(255,255,255,0.08);" loading="lazy" />
+          <picture>
+            <source srcset="/assets/results/monetization.webp" type="image/webp" />
+            <img src="/assets/results/monetization.jpeg" alt="Screenshot de ingresos mensuales — $24,586 en 30 d&iacute;as" class="w-full h-auto block rounded-sm" style="box-shadow: 0 30px 80px -25px rgba(186,154,110,0.16), 0 30px 60px -25px rgba(0,0,0,0.7); border:1px solid rgba(255,255,255,0.08);" loading="lazy" />
+          </picture>
         </div>
       </div>
 
@@ -269,7 +290,10 @@ const serviceSchemas = [
           <p class="text-on-surface/65 text-sm md:text-base leading-relaxed max-w-sm">A trav&eacute;s de nuestras estrategias de crecimiento en redes sociales enfocadas en posicionamiento de creadora, optimizaci&oacute;n de contenido y an&aacute;lisis constante de rendimiento &mdash; usando m&eacute;tricas reales para identificar qu&eacute; funciona, escalar el contenido ganador y maximizar el alcance org&aacute;nico.</p>
         </div>
         <div class="lg:col-span-7">
-          <img src="/assets/results/growth.jpeg" alt="Anal&iacute;ticas de Instagram — +53k seguidores nuevos en 30 d&iacute;as" class="max-h-[68vh] md:max-h-[78vh] w-auto h-auto mx-auto block rounded-sm" style="box-shadow: 0 30px 80px -25px rgba(186,154,110,0.16), 0 30px 60px -25px rgba(0,0,0,0.7); border:1px solid rgba(255,255,255,0.08);" loading="lazy" />
+          <picture>
+            <source srcset="/assets/results/growth.webp" type="image/webp" />
+            <img src="/assets/results/growth.jpeg" alt="Anal&iacute;ticas de Instagram — +53k seguidores nuevos en 30 d&iacute;as" class="max-h-[68vh] md:max-h-[78vh] w-auto h-auto mx-auto block rounded-sm" style="box-shadow: 0 30px 80px -25px rgba(186,154,110,0.16), 0 30px 60px -25px rgba(0,0,0,0.7); border:1px solid rgba(255,255,255,0.08);" loading="lazy" />
+          </picture>
         </div>
       </div>
     </div>
