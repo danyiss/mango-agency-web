@@ -15,7 +15,8 @@ const currentLang = Astro.props.lang ?? getLangFromUrl(Astro.url);
 const t = useTranslations(currentLang);
 const altLang = currentLang === 'en' ? 'es' : 'en';
 
-const { title, description = t('home.hero.subtitle'), activeNav = '', ogImage = '/og-image.png', transparentTop = false } = Astro.props;
+const defaultOgImage = currentLang === 'es' ? '/og-image-es.png' : '/og-image.png';
+const { title, description = t('home.hero.subtitle'), activeNav = '', ogImage = defaultOgImage, transparentTop = false } = Astro.props;
 const currentYear = new Date().getFullYear();
 
 // Canonical and alternate URLs
