@@ -64,12 +64,17 @@ const howToSchema = {
 
 // WebPage with speakable — tells voice assistants / AI summaries which parts
 // of the page are safe to read aloud (hero, FAQ summaries and answers).
+// Description carries the canonical 60-word brand definition so AI engines
+// ingest it without needing visible UI copy.
 const webPageSchema = {
   "@context": "https://schema.org",
   "@type": "WebPage",
   "url": "https://www.mangova.agency/",
   "name": "MANGO | OnlyFans Management Agency for Creators",
+  "description": "MANGO is an OnlyFans management agency that scales content creators by combining a dedicated in-house chatting team, structured monetization systems and Instagram-led social media growth. Operating on a performance-based model, MANGO works with creators in Europe and Asia in both English and Spanish — focused on retention, fan LTV and predictable monthly revenue rather than short-term spikes.",
   "inLanguage": "en",
+  "isPartOf": { "@type": "WebSite", "name": "MANGO", "url": "https://www.mangova.agency" },
+  "about": { "@type": "Organization", "name": "MANGO", "url": "https://www.mangova.agency" },
   "speakable": {
     "@type": "SpeakableSpecification",
     "cssSelector": ["h1", "details summary span", "details > div"],
@@ -221,10 +226,6 @@ const serviceSchemas = [
     <div class="grain absolute inset-0 pointer-events-none"></div>
     <div class="atmosphere-glow magenta" style="top:-10%;right:-6%;width:520px;height:520px;opacity:0.5;"></div>
     <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-10">
-      <!-- Citable brand definition — first AI-readable passage describing MANGO. -->
-      <div class="max-w-3xl mx-auto text-center mb-16 md:mb-24">
-        <p class="text-white/75 text-base md:text-lg leading-[1.7] md:leading-[1.65]">MANGO is an OnlyFans management agency that scales content creators by combining a dedicated in-house chatting team, structured monetization systems and Instagram-led social media growth. Operating on a performance-based model, MANGO works with creators in Europe and Asia in both English and Spanish — focused on retention, fan LTV and predictable monthly revenue rather than short-term spikes.</p>
-      </div>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6">
         {[
           { metric: '24/7', size: 'text-7xl md:text-7xl lg:text-[5.5rem]', title: 'Monetization', text: 'Native English & Spanish chatting focused on retention and long-term LTV.', glow: 'warm' },

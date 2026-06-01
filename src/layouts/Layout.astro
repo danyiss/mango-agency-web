@@ -36,6 +36,14 @@ function localPath(path: string) {
   return getLocalizedPath(path, currentLang);
 }
 
+// Canonical brand definition — the "MANGO is..." passage AI engines and
+// search engines will read as the authoritative entity description. Kept
+// in schema only so the visible UI stays clean; AI engines fully ingest
+// schema descriptions for entity-definition queries.
+const orgDescription = currentLang === 'es'
+  ? "MANGO es una agencia de gestión de OnlyFans que escala a creadoras de contenido combinando un equipo de chatting interno y dedicado, sistemas estructurados de monetización y crecimiento en redes sociales liderado por Instagram. Operando bajo un modelo basado en rendimiento, MANGO trabaja con creadoras en Europa y Asia en inglés y español — enfocada en retención, LTV del fan e ingresos mensuales predecibles, no en picos cortoplacistas."
+  : "MANGO is an OnlyFans management agency that scales content creators by combining a dedicated in-house chatting team, structured monetization systems and Instagram-led social media growth. Operating on a performance-based model, MANGO works with creators in Europe and Asia in both English and Spanish — focused on retention, fan LTV and predictable monthly revenue rather than short-term spikes.";
+
 // Organization schema (on every page) — enriched with legal entity,
 // founding date, address and founder so search engines and AI engines
 // can build a complete entity card.
@@ -48,7 +56,7 @@ const orgSchema = {
   "url": siteUrl,
   "logo": `${siteUrl}/logo.png`,
   "image": `${siteUrl}/og-image.png`,
-  "description": "OnlyFans management agency. Growth, monetization, chatting and creator branding for OnlyFans creators and agencies.",
+  "description": orgDescription,
   "foundingDate": "2025-04",
   "numberOfEmployees": { "@type": "QuantitativeValue", "value": 1 },
   "address": {

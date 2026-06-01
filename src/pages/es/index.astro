@@ -64,13 +64,18 @@ const howToSchema = {
 };
 
 // WebPage with speakable — indica a asistentes de voz y resúmenes AI qué
-// partes de la página son seguras para leer en voz alta.
+// partes de la página son seguras para leer en voz alta. La description
+// lleva la definición canónica de 60 palabras de la marca para que los AI
+// engines la ingieran sin necesidad de copy visible.
 const webPageSchema = {
   "@context": "https://schema.org",
   "@type": "WebPage",
   "url": "https://www.mangova.agency/es",
   "name": "MANGO | Agencia de Gestión OnlyFans para Creadoras",
+  "description": "MANGO es una agencia de gestión de OnlyFans que escala a creadoras de contenido combinando un equipo de chatting interno y dedicado, sistemas estructurados de monetización y crecimiento en redes sociales liderado por Instagram. Operando bajo un modelo basado en rendimiento, MANGO trabaja con creadoras en Europa y Asia en inglés y español — enfocada en retención, LTV del fan e ingresos mensuales predecibles, no en picos cortoplacistas.",
   "inLanguage": "es",
+  "isPartOf": { "@type": "WebSite", "name": "MANGO", "url": "https://www.mangova.agency" },
+  "about": { "@type": "Organization", "name": "MANGO", "url": "https://www.mangova.agency" },
   "speakable": {
     "@type": "SpeakableSpecification",
     "cssSelector": ["h1", "details summary span", "details > div"],
@@ -221,10 +226,6 @@ const serviceSchemas = [
     <div class="grain absolute inset-0 pointer-events-none"></div>
     <div class="atmosphere-glow magenta" style="top:-10%;right:-6%;width:520px;height:520px;opacity:0.5;"></div>
     <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-10">
-      <!-- Definición de marca citable — primer pasaje legible por AI describiendo MANGO. -->
-      <div class="max-w-3xl mx-auto text-center mb-16 md:mb-24">
-        <p class="text-white/75 text-base md:text-lg leading-[1.7] md:leading-[1.65]">MANGO es una agencia de gestión de OnlyFans que escala a creadoras de contenido combinando un equipo de chatting interno y dedicado, sistemas estructurados de monetización y crecimiento en redes sociales liderado por Instagram. Operando bajo un modelo basado en rendimiento, MANGO trabaja con creadoras en Europa y Asia en inglés y español — enfocada en retención, LTV del fan e ingresos mensuales predecibles, no en picos cortoplacistas.</p>
-      </div>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6">
         {[
           { metric: '24/7', size: 'text-7xl md:text-7xl lg:text-[5.5rem]', title: 'Monetización', text: 'Chatting nativo en inglés y español enfocado en retención y LTV a largo plazo.', glow: 'warm' },
