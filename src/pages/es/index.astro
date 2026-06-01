@@ -24,6 +24,45 @@ const faqSchema = {
   ]
 };
 
+// HowTo — describe el flujo de onboarding de 4 pasos ("Cómo Empezar Con
+// Nosotros") para que los AI engines lo surfacen como respuesta procedural
+// a queries del tipo "cómo empezar con MANGO".
+const howToSchema = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "Cómo empezar a trabajar con MANGO Agency",
+  "description": "Flujo de onboarding de cuatro pasos que MANGO usa para evaluar, configurar y escalar a creadoras de OnlyFans.",
+  "totalTime": "PT14D",
+  "inLanguage": "es",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "position": 1,
+      "name": "Aplicar",
+      "text": "Aplicación corta para entender el perfil, contenido y momento actual de la creadora.",
+      "url": "https://www.mangova.agency/es#apply",
+    },
+    {
+      "@type": "HowToStep",
+      "position": 2,
+      "name": "Auditoría",
+      "text": "MANGO revisa la página, posicionamiento, fuentes de tráfico y estructura de monetización actual.",
+    },
+    {
+      "@type": "HowToStep",
+      "position": 3,
+      "name": "Setup del Sistema",
+      "text": "Los sistemas de crecimiento, chatting y monetización se construyen alrededor de la página y audiencia específicas de la creadora.",
+    },
+    {
+      "@type": "HowToStep",
+      "position": 4,
+      "name": "Escalar y Optimizar",
+      "text": "Optimización semanal continua enfocada en crecimiento a largo plazo, retención del fan e ingresos.",
+    },
+  ],
+};
+
 // WebPage with speakable — indica a asistentes de voz y resúmenes AI qué
 // partes de la página son seguras para leer en voz alta.
 const webPageSchema = {
@@ -118,6 +157,7 @@ const serviceSchemas = [
   <Fragment slot="head">
     <script type="application/ld+json" set:html={JSON.stringify(webPageSchema)} />
     <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(howToSchema)} />
     {serviceSchemas.map(s => (
       <script type="application/ld+json" set:html={JSON.stringify(s)} />
     ))}
@@ -181,6 +221,10 @@ const serviceSchemas = [
     <div class="grain absolute inset-0 pointer-events-none"></div>
     <div class="atmosphere-glow magenta" style="top:-10%;right:-6%;width:520px;height:520px;opacity:0.5;"></div>
     <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-10">
+      <!-- Definición de marca citable — primer pasaje legible por AI describiendo MANGO. -->
+      <div class="max-w-3xl mx-auto text-center mb-16 md:mb-24">
+        <p class="text-white/75 text-base md:text-lg leading-[1.7] md:leading-[1.65]">MANGO es una agencia de gestión de OnlyFans que escala a creadoras de contenido combinando un equipo de chatting interno y dedicado, sistemas estructurados de monetización y crecimiento en redes sociales liderado por Instagram. Operando bajo un modelo basado en rendimiento, MANGO trabaja con creadoras en Europa y Asia en inglés y español — enfocada en retención, LTV del fan e ingresos mensuales predecibles, no en picos cortoplacistas.</p>
+      </div>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6">
         {[
           { metric: '24/7', size: 'text-7xl md:text-7xl lg:text-[5.5rem]', title: 'Monetización', text: 'Chatting nativo en inglés y español enfocado en retención y LTV a largo plazo.', glow: 'warm' },
@@ -468,15 +512,15 @@ const serviceSchemas = [
         {[
           {
             q: "¿Qué os diferencia de otras agencias?",
-            a: `<p>La mayoría de agencias se basan en volumen — más contenido, más publicaciones, más mensajes.</p><p>Nosotros nos enfocamos en rendimiento.</p><p>Combinamos:</p><ul class="list-disc pl-5 space-y-1 mt-1"><li>Un equipo de marketing enfocado en generar tráfico consistente</li><li>Un <a href="/es/for-agencies" class="text-accent hover:text-accent/80 underline underline-offset-2">equipo de chatting dedicado por modelo</a> (no compartido entre cuentas)</li><li>Sistemas de ventas estructurados (dripping, upsells, retención)</li><li>Optimización semanal basada en datos reales de rendimiento (ingresos, conversión, LTV)</li></ul><p>No trabajamos con todo el mundo. Seleccionamos a las creadoras adecuadas y nos centramos en escalarlas correctamente.</p>`,
+            a: `<p>MANGO es una agencia de gestión de OnlyFans construida sobre rendimiento en lugar de volumen. La mayoría de agencias escalan firmando más creadoras y publicando más contenido; MANGO escala el negocio existente de cada creadora detrás de la página. El modelo combina cuatro cosas trabajando juntas: un equipo de marketing enfocado en generar tráfico consistente liderado por Instagram, un <a href="/es/for-agencies" class="text-accent hover:text-accent/80 underline underline-offset-2">equipo de chatting interno dedicado</a> por creadora (nunca compartido entre cuentas), sistemas de ventas estructurados que gestionan dripping, upsells y retención, y optimización semanal basada en datos reales de rendimiento — ingresos, tasa de conversión y LTV del cliente. La agencia trabaja con un roster deliberadamente pequeño y selecciona creadoras en base a tracción existente. La diferencia se nota donde importa: ingresos mensuales predecibles, mayor gasto por fan y retención que compone mes a mes en lugar de subir y bajar.</p>`,
           },
           {
             q: "¿Por qué debería trabajar con una agencia?",
-            a: `<p>Porque la mayoría de creadoras dejan dinero en la mesa — por ambos lados.</p><p>Tráfico sin monetización no escala.<br />Monetización sin tráfico no crece.</p><p>Nosotros nos encargamos de ambas.</p><p>El marketing trae tráfico consistente.<br />El chatting convierte ese tráfico en ingresos.</p><p>Para que puedas centrarte en el contenido mientras todo lo que hay detrás se optimiza.</p>`,
+            a: `<p>Una agencia de OnlyFans es la opción correcta cuando una creadora ha llegado al techo de lo que una persona puede gestionar con rentabilidad. La mayoría de creadoras dejan dinero sobre la mesa por dos lados a la vez — tráfico sin monetización no escala, y monetización sin tráfico no crece. MANGO se encarga de ambos. El equipo de marketing genera tráfico consistente liderado por Instagram y un equipo de chatting interno convierte ese tráfico en ingresos recurrentes a través de flujos de venta estructurados, sistemas de retención e interacción 24/7 con los fans. Detrás de la página, la optimización semanal basada en datos reales de rendimiento mantiene el sistema mejorando. El resultado para la creadora es el mismo en todos los casos: más tiempo para enfocarse en contenido y personalidad, menos horas en DMs y logística, y un aumento medible en ingresos mensuales sin depender de la ejecución en solitario.</p>`,
           },
           {
             q: "¿Cuánto puedo esperar crecer?",
-            a: `<p>Depende de tu punto de partida.</p><p>La mayoría de <a href="/es/results" class="text-accent hover:text-accent/80 underline underline-offset-2">creadoras con las que trabajamos</a> ven:</p><ul class="list-disc pl-5 space-y-1 mt-1"><li>Mayor ingreso por suscriptor</li><li>Mejor conversión de fans a compradores</li><li>Ingresos diarios más consistentes</li></ul><p>En muchos casos, las creadoras pasan de ingresos inestables a ingresos mensuales predecibles mejorando tanto el tráfico como la monetización.</p>`,
+            a: `<p>El crecimiento depende del punto de partida de la creadora, pero el patrón se repite en el <a href="/es/results" class="text-accent hover:text-accent/80 underline underline-offset-2">roster de MANGO</a>. La mayoría de creadoras que trabajan con la agencia ven cuatro cambios medibles en los primeros meses: mayor ingreso por suscriptor por mejor ejecución de upsells, mejor conversión de fans nuevos a compradores a través de flujos de chatting estructurados, ingresos diarios más consistentes en lugar de picos semanales, y un aumento claro en el LTV a largo plazo gracias a sistemas de retención más sólidos. Las mayores ganancias suelen venir de creadoras que ya tenían tráfico y fans enganchados pero les faltaba monetización estructurada detrás de la página — pasan de ingresos inestables a ingresos mensuales predecibles sin necesitar más tráfico. Las cifras concretas dependen del nicho, tamaño de audiencia y gap de monetización actual; la call de evaluación cubre cómo se ve una proyección realista a 30–90 días para cada caso.</p>`,
           },
           {
             q: "¿Es seguro dar acceso a mi cuenta?",
@@ -500,7 +544,7 @@ const serviceSchemas = [
           },
           {
             q: "¿Cómo mantenéis la calidad del chatting?",
-            a: `<p>Usamos un enfoque basado en sistemas:</p><ul class="list-disc pl-5 space-y-1 mt-1"><li>Monitorización 24/7</li><li>Equipo de QA dedicado</li><li>Seguimiento de rendimiento por chatter</li><li>Optimización continua</li></ul><p>Todo se mide y se mejora constantemente. Mira la <a href="/es/for-agencies" class="text-accent hover:text-accent/80 underline underline-offset-2">metodología completa de nuestro servicio de chatting</a> para la versión a nivel de agencia del mismo sistema.</p>`,
+            a: `<p>La calidad del chatting es la palanca individual más importante para la monetización de OnlyFans, así que MANGO la mantiene a través de un enfoque basado en sistemas en lugar de depender del instinto individual de cada chatter. Cuatro mecanismos trabajan juntos: monitorización 24/7 de cada conversación, un equipo de QA dedicado que audita flujos de mensajes e interviene cuando los patrones se desvían, seguimiento de rendimiento por chatter (tiempo de respuesta, tasa de conversión, gasto medio por fan), y optimización continua basada en lo que dicen los datos. Cada chatter se entrena en el tono, personalidad y límites específicos de la creadora antes de empezar a operar, y se re-entrena cada vez que evoluciona su posicionamiento. Nada del sistema es genérico. La <a href="/es/for-agencies" class="text-accent hover:text-accent/80 underline underline-offset-2">versión a nivel de agencia de la misma metodología</a> también está disponible como servicio independiente para otras agencias que quieran profesionalizar sus operaciones de chatting.</p>`,
           },
           {
             q: "¿Puedo parar cuando quiera?",
@@ -508,7 +552,7 @@ const serviceSchemas = [
           },
           {
             q: "¿Cómo funcionan los pagos?",
-            a: `<p>Trabajamos con un modelo basado en rendimiento.</p><p>Eso significa que solo ganamos dinero si tú ganas más.</p><p>Los detalles se discuten durante la llamada de evaluación para adaptarse a tu situación específica.</p>`,
+            a: `<p>MANGO opera con un modelo de pagos basado en rendimiento: la agencia gana un porcentaje del ingreso incremental, lo que significa que solo gana dinero cuando la creadora gana más dinero del que ganaba antes. No hay fees por adelantado, retainers mensuales ni mínimos fijos. El porcentaje exacto y la línea base de ingresos usada para el cálculo se acuerdan durante la call de evaluación y dependen del punto de partida de la creadora y del nivel de soporte operativo requerido. Los pagos se calculan mensualmente sobre dashboards de ingresos transparentes que ambas partes ven en tiempo real. Este modelo existe porque alinea incentivos — la agencia solo invierte tiempo en creadoras donde el runway de crecimiento es real, y las creadoras nunca pagan por rendimiento que no aparece en su cuenta bancaria. Si los números no se mueven, tampoco lo hace la factura.</p>`,
           },
           {
             q: "¿Para quién NO es esto?",

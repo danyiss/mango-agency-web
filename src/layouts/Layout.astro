@@ -17,7 +17,12 @@ const altLang = currentLang === 'en' ? 'es' : 'en';
 
 const defaultOgImage = currentLang === 'es' ? '/og-image-es.png' : '/og-image.png';
 const { title, description = t('home.hero.subtitle'), activeNav = '', ogImage = defaultOgImage, transparentTop = false } = Astro.props;
-const currentYear = new Date().getFullYear();
+const buildDate = new Date();
+const currentYear = buildDate.getFullYear();
+const buildDateIso = buildDate.toISOString().slice(0, 10);
+const buildDateLabel = currentLang === 'es'
+  ? buildDate.toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' })
+  : buildDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
 
 // Canonical and alternate URLs
 const siteUrl = 'https://www.mangova.agency';
@@ -31,23 +36,48 @@ function localPath(path: string) {
   return getLocalizedPath(path, currentLang);
 }
 
-// Organization schema (on every page)
+// Organization schema (on every page) — enriched with legal entity,
+// founding date, address and founder so search engines and AI engines
+// can build a complete entity card.
 const orgSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
   "name": "MANGO",
+  "legalName": "AG MEDIA PRO LLC",
   "alternateName": ["Mangova Agency", "MANGO Agency"],
   "url": siteUrl,
   "logo": `${siteUrl}/logo.png`,
+  "image": `${siteUrl}/og-image.png`,
   "description": "OnlyFans management agency. Growth, monetization, chatting and creator branding for OnlyFans creators and agencies.",
+  "foundingDate": "2025-04",
+  "numberOfEmployees": { "@type": "QuantitativeValue", "value": 1 },
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "US",
+    "addressRegion": "Wyoming",
+  },
+  "founder": {
+    "@type": "Person",
+    "name": "Aitor González Rivera",
+    "jobTitle": "Founder",
+    "url": `${siteUrl}/about`,
+    "sameAs": ["https://de.linkedin.com/in/aitorgonzalezrivera"],
+  },
   "contactPoint": {
     "@type": "ContactPoint",
     "email": "hello@mangova.agency",
-    "contactType": "sales"
+    "contactType": "sales",
+    "availableLanguage": ["English", "Spanish"],
   },
+  "areaServed": [
+    { "@type": "Place", "name": "Europe" },
+    { "@type": "Place", "name": "Asia" },
+  ],
   "sameAs": [
-    "https://instagram.com/mango.creators"
-  ]
+    "https://instagram.com/mango.creators",
+    "https://t.me/mangocreators",
+    "https://de.linkedin.com/in/aitorgonzalezrivera",
+  ],
 };
 
 // WebSite schema — helps Google show "MANGO" as the site name in SERP
@@ -66,6 +96,7 @@ const breadcrumbHomeName = currentLang === 'es' ? 'Inicio' : 'Home';
 const breadcrumbLabelMap: Record<string, { en: string; es: string }> = {
   '/results': { en: 'Results', es: 'Resultados' },
   '/for-agencies': { en: 'Chatting Service', es: 'Servicio de Chatting' },
+  '/about': { en: 'About', es: 'Sobre MANGO' },
   '/legal': { en: 'Legal', es: 'Legal' },
 };
 const pageLabels = breadcrumbLabelMap[basePath];
@@ -363,6 +394,7 @@ const breadcrumbSchema = (basePath !== '/' && pageLabels)
           <div class="flex flex-col gap-5 md:gap-6 items-center text-center">
             <h4 class="text-[10px] uppercase tracking-[0.32em] text-white font-medium">{currentLang === 'es' ? 'Empresa' : 'Company'}</h4>
             <ul class="flex flex-col gap-2.5 md:gap-3 items-center">
+              <li><a href={localPath('/about')} class="group inline-flex items-center text-white hover:text-white/70 text-[13px] md:text-sm transition-colors duration-300"><span class="border-b border-transparent group-hover:border-white pb-[2px] transition-colors duration-300">{currentLang === 'es' ? 'Sobre MANGO' : 'About'}</span></a></li>
               <li><a href={localPath('/results')} class="group inline-flex items-center text-white hover:text-white/70 text-[13px] md:text-sm transition-colors duration-300"><span class="border-b border-transparent group-hover:border-white pb-[2px] transition-colors duration-300">{currentLang === 'es' ? 'Resultados' : 'Results'}</span></a></li>
               <li><a href={localPath('/for-agencies')} class="group inline-flex items-center text-white hover:text-white/70 text-[13px] md:text-sm transition-colors duration-300"><span class="border-b border-transparent group-hover:border-white pb-[2px] transition-colors duration-300">{currentLang === 'es' ? 'Servicio de Chatting' : 'Chatting Service'}</span></a></li>
               <li><a href={`${localPath('/')}#apply`} class="group inline-flex items-center text-white hover:text-white/70 text-[13px] md:text-sm transition-colors duration-300"><span class="border-b border-transparent group-hover:border-white pb-[2px] transition-colors duration-300">{currentLang === 'es' ? 'Aplicar Ahora' : 'Apply Now'}</span></a></li>
@@ -377,6 +409,9 @@ const breadcrumbSchema = (basePath !== '/' && pageLabels)
           <p class="text-[10px] text-white tracking-[0.28em] uppercase">&copy; {currentYear} MANGO. {currentLang === 'es' ? 'TODOS LOS DERECHOS RESERVADOS.' : 'ALL RIGHTS RESERVED.'}</p>
           <p class="text-[10px] text-white tracking-[0.28em] uppercase">{currentLang === 'es' ? 'PARA CREADORAS, POR CREADORAS.' : 'FOR CREATORS, BY CREATORS.'}</p>
         </div>
+        <p class="mt-4 md:mt-6 text-[10px] text-white/40 tracking-[0.18em] uppercase text-center md:text-right">
+          {currentLang === 'es' ? 'Actualizado' : 'Last updated'}: <time datetime={buildDateIso}>{buildDateLabel}</time>
+        </p>
       </div>
     </footer>
   </body>

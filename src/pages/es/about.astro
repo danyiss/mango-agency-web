@@ -1,0 +1,93 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const siteUrl = 'https://www.mangova.agency';
+
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Aitor González Rivera",
+  "jobTitle": "Founder, MANGO Agency",
+  "description": "Aitor González Rivera es el fundador de MANGO Agency. Cinco años en marketing digital y monetización de creadoras de OnlyFans, especializado en crecimiento orgánico en Instagram, sistemas de monetización de OnlyFans y operaciones de chatting internas.",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "MANGO Agency",
+    "legalName": "AG MEDIA PRO LLC",
+    "url": siteUrl,
+  },
+  "url": `${siteUrl}/es/about`,
+  "sameAs": ["https://de.linkedin.com/in/aitorgonzalezrivera"],
+};
+
+const aboutPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  "url": `${siteUrl}/es/about`,
+  "name": "Sobre MANGO Agency",
+  "inLanguage": "es",
+  "mainEntity": personSchema,
+};
+---
+
+<Layout
+  title="Sobre MANGO Agency | Agencia de OnlyFans fundada por Aitor González"
+  description="MANGO Agency fue fundada por Aitor González Rivera, especialista en marketing digital con cinco años en crecimiento y monetización de OnlyFans. Roster pequeño, estrategias totalmente personalizadas."
+  activeNav=""
+  lang="es"
+  transparentTop={true}
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(aboutPageSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(personSchema)} />
+  </Fragment>
+
+  <!-- 1. HERO -->
+  <section class="relative min-h-[60vh] -mt-16 w-full overflow-hidden flex items-end pb-16 md:pb-24 section-cinematic grain">
+    <div class="atmosphere-glow magenta" style="top:14%;right:-12%;width:520px;height:520px;opacity:0.35;"></div>
+    <div class="atmosphere-glow crimson" style="bottom:-10%;left:-12%;width:480px;height:480px;opacity:0.3;"></div>
+    <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-10 w-full pt-32 md:pt-40">
+      <div class="flex flex-col items-start gap-6 md:gap-8 max-w-4xl">
+        <span class="text-[11px] uppercase tracking-[0.32em] italic text-white/45" style="font-family:Georgia,'Times New Roman',serif;">Sobre MANGO</span>
+        <h1 class="font-display text-[44px] sm:text-7xl md:text-8xl lg:text-[120px] xl:text-[140px] text-white leading-[0.92] tracking-[-0.03em]">Una agencia<br />pequeña, a propósito.</h1>
+        <p class="text-white/65 text-[15px] md:text-base lg:text-lg leading-relaxed max-w-2xl">MANGO Agency es una agencia de gestión de OnlyFans construida en torno a un roster pequeño de creadoras. Cada estrategia es totalmente personalizada — sin equipos compartidos, sin manuales genéricos, sin escalar por escalar.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. FOUNDER STORY -->
+  <section class="relative py-24 md:py-40 section-panel grain">
+    <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-24">
+        <div class="lg:col-span-5 lg:sticky lg:top-32 lg:self-start">
+          <span class="block text-[11px] uppercase tracking-[0.32em] italic text-white/45 mb-5 md:mb-7" style="font-family:Georgia,'Times New Roman',serif;">Fundador</span>
+          <h2 class="font-display text-5xl md:text-7xl lg:text-7xl xl:text-7xl text-white leading-[0.94] md:leading-[0.92] tracking-[-0.025em]">Aitor<br />González<br />Rivera</h2>
+          <p class="mt-8 text-white/55 text-sm tracking-[0.18em] uppercase">Fundador · AG Media Pro LLC</p>
+          <a href="https://de.linkedin.com/in/aitorgonzalezrivera" target="_blank" rel="noopener" class="mt-6 inline-block text-accent hover:text-accent/80 text-sm tracking-[0.18em] uppercase underline underline-offset-4 transition-colors">LinkedIn →</a>
+        </div>
+
+        <div class="lg:col-span-7 flex flex-col gap-6 md:gap-8">
+          <p class="font-display text-2xl md:text-3xl lg:text-4xl text-white leading-[1.15] tracking-[-0.015em] max-w-2xl">Un caso de éxito convertido en agencia.</p>
+          <div class="flex flex-col gap-5 text-white/70 text-base md:text-lg leading-relaxed max-w-2xl">
+            <p>Aitor González Rivera es el fundador de MANGO Agency. Antes de MANGO desarrolló su propia marca personal en redes sociales centrada por completo en generar tráfico para OnlyFans — un proyecto que se convirtió en su caso de éxito personal y en la base de todo lo que MANGO hace hoy.</p>
+            <p>Con cinco años de experiencia en marketing digital y monetización de creadoras, su foco se ha estrechado a dos canales: el crecimiento orgánico liderado por Instagram y los sistemas de monetización de OnlyFans. La agencia está construida sobre esa combinación — un equipo de marketing centrado en la atención, un equipo de chatting interno con años de experiencia convirtiendo esa atención en ingresos, y un fundador único que se asegura de que cada estrategia siga siendo totalmente personalizada.</p>
+            <p>MANGO trabaja con un grupo deliberadamente pequeño de creadoras en cada momento. El objetivo no es escalar firmando más talento — es escalar el negocio de cada creadora detrás de la página.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. AGENCY ENTITY -->
+  <section class="relative py-24 md:py-40 section-cinematic grain">
+    <div class="relative z-10 max-w-3xl mx-auto px-6 lg:px-8 text-center flex flex-col items-center gap-8 md:gap-12">
+      <span class="text-[11px] uppercase tracking-[0.32em] italic text-white/45" style="font-family:Georgia,'Times New Roman',serif;">La entidad legal</span>
+      <h2 class="font-display text-4xl md:text-5xl lg:text-6xl text-white leading-[0.98] tracking-[-0.02em] max-w-2xl">AG Media Pro LLC</h2>
+      <div class="flex flex-col gap-3 text-white/70 text-base md:text-lg leading-relaxed max-w-xl">
+        <p>MANGO Agency opera bajo <strong class="text-white/85">AG Media Pro LLC</strong>, una sociedad registrada en Wyoming (EE.UU.) y fundada en abril de 2025.</p>
+        <p>Las operaciones cubren Europa y Asia, con equipos de chatting nativos en inglés y español. La agencia trabaja con un modelo basado en rendimiento — gana cuando la creadora gana más, nunca antes.</p>
+      </div>
+      <a href="/es#apply" class="inline-block bg-accent text-black font-bold px-8 py-4 rounded-[7px] text-sm tracking-wide hover:brightness-95 hover:scale-[1.02] transition-all mt-4">Aplicar para trabajar con nosotros</a>
+    </div>
+  </section>
+
+</Layout>
