@@ -3,10 +3,17 @@ import { defineConfig } from 'astro/config';
 import tailwindcss from '@tailwindcss/vite';
 
 import sitemap from '@astrojs/sitemap';
+import vercel from '@astrojs/vercel';
 
 export default defineConfig({
   site: 'https://www.mangova.agency',
   trailingSlash: 'never',
+  output: 'static',
+  adapter: vercel({
+    webAnalytics: {
+      enabled: true,
+    },
+  }),
 
   i18n: {
     defaultLocale: 'en',
