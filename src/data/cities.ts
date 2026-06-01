@@ -1,0 +1,351 @@
+// 17 city/market pages targeting "OnlyFans agency [city]" long-tail queries.
+// Each city has unique market context and a local angle to avoid thin/duplicate
+// content. The dynamic route uses this data to generate /[city] (EN) and
+// /es/[city] (ES) pages at build time.
+
+export type CityData = {
+  slug: string;
+  name: string;
+  country: { en: string; es: string };
+  countryCode: string; // ISO 3166-1 alpha-2
+  region: { en: string; es: string };
+  timezone: string; // IANA tz
+  utcOffset: string;
+  primaryLanguage: 'es' | 'en';
+  population: string;
+  marketContext: { en: string; es: string };
+  localAngle: { en: string; es: string };
+};
+
+export const cities: CityData[] = [
+  // ────────────── SPANISH-SPEAKING MARKETS ──────────────
+  {
+    slug: 'madrid',
+    name: 'Madrid',
+    country: { en: 'Spain', es: 'España' },
+    countryCode: 'ES',
+    region: { en: 'Europe', es: 'Europa' },
+    timezone: 'Europe/Madrid',
+    utcOffset: 'UTC+1 / UTC+2 (CET / CEST)',
+    primaryLanguage: 'es',
+    population: '3.3M',
+    marketContext: {
+      en: "Madrid is the largest OnlyFans creator hub in Spain, with a creator base that skews professional, brand-conscious and bilingual. Spanish creators tend to convert better with chatters who understand local cultural references and Castilian Spanish nuance rather than generic Latin American Spanish — the difference shows up in retention and tip rates over the first 60 days.",
+      es: "Madrid es el principal hub de creadoras de OnlyFans en España, con un perfil de creadora profesional, consciente de marca y a menudo bilingüe. Las creadoras españolas suelen convertir mejor con chatters que dominan los matices del castellano peninsular (modismos, registro, referencias culturales) en lugar del español neutro latinoamericano — la diferencia se nota en retención y propinas durante los primeros 60 días.",
+    },
+    localAngle: {
+      en: "MANGO's Spanish chatting team operates from European hours, which matters for Madrid-based creators whose fans are mostly in Iberia and Western Europe. Peak fan engagement windows fall between 20:00 and 02:00 CET — the chatting team is staffed to cover those hours specifically.",
+      es: "El equipo de chatting en español de MANGO opera en horario europeo, algo crítico para creadoras en Madrid cuyo público está mayoritariamente en la Península Ibérica y Europa Occidental. Los picos de engagement caen entre las 20:00 y las 02:00 CET, y el equipo está dimensionado para cubrir esas horas.",
+    },
+  },
+  {
+    slug: 'barcelona',
+    name: 'Barcelona',
+    country: { en: 'Spain', es: 'España' },
+    countryCode: 'ES',
+    region: { en: 'Europe', es: 'Europa' },
+    timezone: 'Europe/Madrid',
+    utcOffset: 'UTC+1 / UTC+2 (CET / CEST)',
+    primaryLanguage: 'es',
+    population: '1.6M',
+    marketContext: {
+      en: "Barcelona's OnlyFans creator scene is unusually international — the city attracts creators relocating from across the EU and Latin America, which means audience composition is more multilingual than the typical Spanish market. Many Barcelona-based creators run accounts in both Spanish and English to capture both audiences without splitting their effort.",
+      es: "La escena de creadoras de OnlyFans en Barcelona es inusualmente internacional — la ciudad atrae a creadoras que se relocan desde toda la UE y Latinoamérica, lo que hace que la audiencia sea más multilingüe que en un mercado español típico. Muchas creadoras en Barcelona operan cuentas en español e inglés a la vez para capturar las dos audiencias.",
+    },
+    localAngle: {
+      en: "MANGO supports Barcelona creators with both Spanish and English chatting teams in parallel, so the same creator can run a fully bilingual page without having to choose. This is one of the few cities where bilingual operation is the default rather than the exception.",
+      es: "MANGO apoya a las creadoras en Barcelona con equipos de chatting en español y en inglés en paralelo, para que la misma creadora pueda mantener una página totalmente bilingüe sin tener que elegir un idioma. Es una de las pocas ciudades donde la operación bilingüe es la norma, no la excepción.",
+    },
+  },
+  {
+    slug: 'valencia',
+    name: 'Valencia',
+    country: { en: 'Spain', es: 'España' },
+    countryCode: 'ES',
+    region: { en: 'Europe', es: 'Europa' },
+    timezone: 'Europe/Madrid',
+    utcOffset: 'UTC+1 / UTC+2 (CET / CEST)',
+    primaryLanguage: 'es',
+    population: '800k',
+    marketContext: {
+      en: "Valencia hosts a smaller but tightly-knit OnlyFans creator community, often overlapping with the city's photography and fashion industries. Creators here tend to value editorial-quality content over volume, which aligns with MANGO's small-roster model — quality over quantity is the operating principle, not marketing copy.",
+      es: "Valencia tiene una comunidad de creadoras de OnlyFans más pequeña pero muy cohesionada, a menudo solapada con las industrias locales de fotografía y moda. Las creadoras aquí suelen valorar contenido de calidad editorial por encima del volumen, lo que encaja con el modelo de roster reducido de MANGO — calidad sobre cantidad es principio operativo, no copy de marketing.",
+    },
+    localAngle: {
+      en: "Spanish-speaking chatting team operating in European hours matches Valencia creators' audience timezone perfectly. Strong fit for creators who want personalized strategy rather than one-size-fits-all agency playbooks.",
+      es: "El equipo de chatting en español operando en horario europeo encaja perfectamente con la zona horaria del público de las creadoras valencianas. Encaje fuerte para creadoras que buscan estrategia personalizada en lugar de manuales genéricos.",
+    },
+  },
+  {
+    slug: 'mexico-city',
+    name: 'Ciudad de México',
+    country: { en: 'Mexico', es: 'México' },
+    countryCode: 'MX',
+    region: { en: 'Latin America', es: 'Latinoamérica' },
+    timezone: 'America/Mexico_City',
+    utcOffset: 'UTC-6 / UTC-5 (CST / CDT)',
+    primaryLanguage: 'es',
+    population: '9.2M',
+    marketContext: {
+      en: "Mexico City is one of the largest Spanish-speaking OnlyFans markets in the world, with a creator base that's grown faster than the agency infrastructure to support them. Common challenges: payout volatility, weak local agency options and audience that mixes Mexican Spanish with US English (especially the diaspora). The agency gap creates space for serious operators.",
+      es: "Ciudad de México es uno de los mercados de OnlyFans hispanohablantes más grandes del mundo, con una base de creadoras que ha crecido más rápido que la infraestructura de agencias que las soporta. Retos habituales: volatilidad en pagos, opciones de agencia local débiles, y una audiencia que mezcla español mexicano e inglés estadounidense (especialmente la diáspora). El gap de agencia abre espacio para operadores serios.",
+    },
+    localAngle: {
+      en: "MANGO's Spanish chatting team handles regional Spanish variants natively (Mexican, Castilian, Rioplatense) — Mexico City creators don't get assigned a neutral-Spanish chatter who breaks immersion. Time zone coverage spans Mexican peak hours through the US night.",
+      es: "El equipo de chatting en español de MANGO maneja las variantes regionales (mexicano, castellano, rioplatense) de forma nativa — las creadoras de CDMX no reciben un chatter de español neutro que rompa la inmersión. La cobertura horaria abarca el pico mexicano y la noche estadounidense.",
+    },
+  },
+  {
+    slug: 'bogota',
+    name: 'Bogotá',
+    country: { en: 'Colombia', es: 'Colombia' },
+    countryCode: 'CO',
+    region: { en: 'Latin America', es: 'Latinoamérica' },
+    timezone: 'America/Bogota',
+    utcOffset: 'UTC-5 (COT)',
+    primaryLanguage: 'es',
+    population: '7.4M',
+    marketContext: {
+      en: "Bogotá's OnlyFans creator scene has exploded in the last three years, often led by creators leveraging Colombia's strong photography and modeling pipeline. Audience tends to mix Colombian, Mexican and US Hispanic fans — Spanish chatters who can navigate all three registers convert meaningfully better than English-default operators.",
+      es: "La escena de OnlyFans en Bogotá ha crecido enormemente en los últimos tres años, frecuentemente liderada por creadoras que aprovechan el sólido pipeline colombiano de fotografía y modelaje. La audiencia mezcla fans colombianos, mexicanos e hispanos en EE.UU. — los chatters en español que manejan los tres registros convierten significativamente mejor que los operadores por defecto en inglés.",
+    },
+    localAngle: {
+      en: "MANGO's roster includes creators operating from Colombia, and the Spanish chatting team has experience handling the specific audience expectations Colombian creators build. Time zone overlap with US East Coast makes peak-hour coverage straightforward.",
+      es: "El roster de MANGO incluye creadoras que operan desde Colombia, y el equipo de chatting en español tiene experiencia gestionando las expectativas específicas de audiencia que las creadoras colombianas construyen. El solapamiento horario con la Costa Este de EE.UU. hace que la cobertura de pico horario sea directa.",
+    },
+  },
+  {
+    slug: 'buenos-aires',
+    name: 'Buenos Aires',
+    country: { en: 'Argentina', es: 'Argentina' },
+    countryCode: 'AR',
+    region: { en: 'Latin America', es: 'Latinoamérica' },
+    timezone: 'America/Argentina/Buenos_Aires',
+    utcOffset: 'UTC-3 (ART)',
+    primaryLanguage: 'es',
+    population: '3.1M',
+    marketContext: {
+      en: "Buenos Aires has one of the most distinctive Spanish-language OnlyFans markets — Rioplatense Spanish (the local dialect) is different enough from standard Spanish that generic chatters break immersion immediately. Argentine creators consistently report that chatting in their native dialect lifts retention. Audience is mostly local plus Argentine diaspora in Europe and the US.",
+      es: "Buenos Aires tiene uno de los mercados de OnlyFans en español más distintivos — el rioplatense (el dialecto local) es lo suficientemente diferente del español estándar como para que un chatter genérico rompa la inmersión al instante. Las creadoras argentinas reportan consistentemente que el chatting en su dialecto nativo eleva la retención. La audiencia es mayoritariamente local más diáspora argentina en Europa y EE.UU.",
+    },
+    localAngle: {
+      en: "MANGO assigns Rioplatense-fluent chatters to Argentine creators, not the default neutral-Spanish operators. Time zone (UTC-3) overlaps Western European mornings and US daytime, giving Argentine creators broader audience reach than Mexico-based peers.",
+      es: "MANGO asigna chatters fluentes en rioplatense a las creadoras argentinas, no operadores de español neutro por defecto. La zona horaria (UTC-3) se solapa con las mañanas europeas y el día estadounidense, dando a las creadoras argentinas un alcance de audiencia más amplio que sus pares en México.",
+    },
+  },
+  {
+    slug: 'miami',
+    name: 'Miami',
+    country: { en: 'United States', es: 'Estados Unidos' },
+    countryCode: 'US',
+    region: { en: 'North America', es: 'Norteamérica' },
+    timezone: 'America/New_York',
+    utcOffset: 'UTC-5 / UTC-4 (EST / EDT)',
+    primaryLanguage: 'es',
+    population: '470k',
+    marketContext: {
+      en: "Miami is functionally a bilingual OnlyFans market — the city's Hispanic community means creators here often run pages that need both English and Spanish chatting from day one. Audiences split between US fans (English) and Latin American fans (Spanish), and the conversion rate gap between bilingual and English-only operation tends to be significant.",
+      es: "Miami es un mercado de OnlyFans funcionalmente bilingüe — la comunidad hispana de la ciudad hace que las creadoras aquí a menudo operen páginas que necesitan chatting en inglés y en español desde el primer día. La audiencia se divide entre fans estadounidenses (inglés) y latinoamericanos (español), y el gap de conversión entre operación bilingüe y solo-inglés tiende a ser significativo.",
+    },
+    localAngle: {
+      en: "MANGO is built for Miami creators specifically because the EN + ES dual-track is the agency's default operation, not an upsell. One creator, one team, two language channels running in parallel.",
+      es: "MANGO está diseñada para las creadoras de Miami específicamente porque la operación dual EN + ES es el default de la agencia, no un upsell. Una creadora, un equipo, dos canales de idioma corriendo en paralelo.",
+    },
+  },
+
+  // ────────────── ENGLISH-PRIMARY MARKETS ──────────────
+  {
+    slug: 'london',
+    name: 'London',
+    country: { en: 'United Kingdom', es: 'Reino Unido' },
+    countryCode: 'GB',
+    region: { en: 'Europe', es: 'Europa' },
+    timezone: 'Europe/London',
+    utcOffset: 'UTC+0 / UTC+1 (GMT / BST)',
+    primaryLanguage: 'en',
+    population: '9.0M',
+    marketContext: {
+      en: "London is the densest OnlyFans creator market in Europe and one of the most mature globally. Creators here are usually well-positioned on social media before signing with an agency, which shifts the agency's job from traffic generation to monetization engineering. Audience composition skews UK + EU + North American — pure native English chatters with strong cultural literacy convert better than offshore alternatives.",
+      es: "Londres es el mercado de creadoras de OnlyFans más denso de Europa y uno de los más maduros a nivel global. Las creadoras aquí ya suelen tener un posicionamiento sólido en redes antes de firmar con una agencia, lo que cambia el trabajo de la agencia de generación de tráfico a ingeniería de monetización. La audiencia es UK + UE + Norteamérica — los chatters nativos en inglés con fuerte alfabetización cultural convierten mejor que las alternativas offshore.",
+    },
+    localAngle: {
+      en: "MANGO's English chatting team operates in European hours and is staffed for cultural fit with UK audiences specifically — not just generic English. Peak engagement windows for London creators (21:00–02:00 GMT) align directly with the agency's coverage.",
+      es: "El equipo de chatting en inglés de MANGO opera en horario europeo y está dimensionado para encaje cultural con audiencias del Reino Unido específicamente — no inglés genérico. Los picos de engagement para creadoras en Londres (21:00–02:00 GMT) coinciden directamente con la cobertura de la agencia.",
+    },
+  },
+  {
+    slug: 'berlin',
+    name: 'Berlin',
+    country: { en: 'Germany', es: 'Alemania' },
+    countryCode: 'DE',
+    region: { en: 'Europe', es: 'Europa' },
+    timezone: 'Europe/Berlin',
+    utcOffset: 'UTC+1 / UTC+2 (CET / CEST)',
+    primaryLanguage: 'en',
+    population: '3.7M',
+    marketContext: {
+      en: "Berlin's OnlyFans creator community is younger, more alternative-aesthetic and operates primarily in English even when the creators are native German speakers — the international audience pays better than the local one. Many Berlin creators come from the city's underground photography and performance scenes, which translates into above-average content quality but often weak business operations behind the page.",
+      es: "La comunidad de creadoras de OnlyFans en Berlín es más joven, de estética más alternativa, y opera principalmente en inglés incluso cuando las creadoras son germanohablantes nativas — la audiencia internacional paga mejor que la local. Muchas creadoras en Berlín vienen de las escenas underground de fotografía y performance de la ciudad, lo que se traduce en calidad de contenido superior a la media pero a menudo operaciones de negocio débiles.",
+    },
+    localAngle: {
+      en: "MANGO's strength for Berlin creators is the operational side — chatting, retention systems, monetization — built around the creator's existing content quality rather than trying to re-do it. Time zone alignment with the rest of Europe is straightforward.",
+      es: "La fortaleza de MANGO para creadoras en Berlín es el lado operativo — chatting, sistemas de retención, monetización — construido sobre la calidad de contenido existente de la creadora en lugar de intentar rehacerla. El alineamiento horario con el resto de Europa es directo.",
+    },
+  },
+  {
+    slug: 'amsterdam',
+    name: 'Amsterdam',
+    country: { en: 'Netherlands', es: 'Países Bajos' },
+    countryCode: 'NL',
+    region: { en: 'Europe', es: 'Europa' },
+    timezone: 'Europe/Amsterdam',
+    utcOffset: 'UTC+1 / UTC+2 (CET / CEST)',
+    primaryLanguage: 'en',
+    population: '900k',
+    marketContext: {
+      en: "Amsterdam has a small but highly professional OnlyFans creator base — Dutch creators tend to treat the platform as a legitimate business from day one and underperform less on the operational discipline that makes agency partnerships work. English is the default operating language, and the local market's openness about adult work means creators here often have stronger personal branding than peers in more restrictive jurisdictions.",
+      es: "Amsterdam tiene una base de creadoras de OnlyFans pequeña pero muy profesional — las creadoras holandesas tienden a tratar la plataforma como un negocio legítimo desde el día uno y rinden mejor en la disciplina operativa que hace funcionar a las agencias. El inglés es el idioma de operación por defecto, y la apertura local sobre el trabajo adulto hace que las creadoras aquí suelan tener un personal branding más fuerte que sus pares en jurisdicciones más restrictivas.",
+    },
+    localAngle: {
+      en: "MANGO works well for Amsterdam-based creators because the agency's small-roster, performance-based model matches the Dutch operational culture — clear KPIs, no upfront fees, transparent dashboards.",
+      es: "MANGO funciona bien para creadoras basadas en Amsterdam porque el modelo de roster reducido y basado en rendimiento de la agencia encaja con la cultura operativa holandesa — KPIs claros, sin fees por adelantado, dashboards transparentes.",
+    },
+  },
+  {
+    slug: 'paris',
+    name: 'Paris',
+    country: { en: 'France', es: 'Francia' },
+    countryCode: 'FR',
+    region: { en: 'Europe', es: 'Europa' },
+    timezone: 'Europe/Paris',
+    utcOffset: 'UTC+1 / UTC+2 (CET / CEST)',
+    primaryLanguage: 'en',
+    population: '2.1M',
+    marketContext: {
+      en: "Paris hosts a strong OnlyFans creator base tied to the city's fashion and editorial photography industries. French creators often operate in both French and English depending on their target audience — those serving international fans usually default to English for chatting. Common gap: strong content positioning paired with weak retention systems behind the page.",
+      es: "París alberga una base sólida de creadoras de OnlyFans ligada a las industrias de moda y fotografía editorial de la ciudad. Las creadoras francesas a menudo operan en francés e inglés según su audiencia objetivo — las que sirven a fans internacionales suelen optar por inglés en el chatting. Gap habitual: posicionamiento fuerte de contenido emparejado con sistemas de retención débiles detrás de la página.",
+    },
+    localAngle: {
+      en: "MANGO's English chatting team serves Paris creators targeting international audiences. The agency does not currently operate native French chatting, so the best fit is for creators whose page runs primarily in English.",
+      es: "El equipo de chatting en inglés de MANGO sirve a creadoras parisinas que apuntan a audiencias internacionales. La agencia no opera actualmente chatting nativo en francés, así que el mejor encaje es para creadoras cuya página opera principalmente en inglés.",
+    },
+  },
+  {
+    slug: 'milan',
+    name: 'Milan',
+    country: { en: 'Italy', es: 'Italia' },
+    countryCode: 'IT',
+    region: { en: 'Europe', es: 'Europa' },
+    timezone: 'Europe/Rome',
+    utcOffset: 'UTC+1 / UTC+2 (CET / CEST)',
+    primaryLanguage: 'en',
+    population: '1.4M',
+    marketContext: {
+      en: "Milan's OnlyFans creator scene leans into the city's fashion-industry DNA — editorial visuals, high production value, brand-conscious positioning. Many creators are already represented for non-OF work (modeling, ad campaigns) which means they bring a professional operations mindset but often lack the platform-specific monetization expertise. Audience splits between Italian and international fans.",
+      es: "La escena de creadoras de OnlyFans en Milán se apoya en el ADN fashion de la ciudad — visuales editoriales, alta producción, posicionamiento consciente de marca. Muchas creadoras ya están representadas para trabajos no-OF (modelaje, campañas) lo que les da una mentalidad de operación profesional pero a menudo les falta la expertise específica de monetización en la plataforma. La audiencia se divide entre fans italianos e internacionales.",
+    },
+    localAngle: {
+      en: "MANGO's English chatting team serves Milan-based creators whose audience is international. Fashion-industry-grade content + agency-grade monetization is a strong combination for creators ready to scale beyond the Italian-only market.",
+      es: "El equipo de chatting en inglés de MANGO sirve a creadoras basadas en Milán cuya audiencia es internacional. Contenido nivel-industria-fashion combinado con monetización nivel-agencia es una combinación fuerte para creadoras listas para escalar más allá del mercado solo-italiano.",
+    },
+  },
+  {
+    slug: 'stockholm',
+    name: 'Stockholm',
+    country: { en: 'Sweden', es: 'Suecia' },
+    countryCode: 'SE',
+    region: { en: 'Europe', es: 'Europa' },
+    timezone: 'Europe/Stockholm',
+    utcOffset: 'UTC+1 / UTC+2 (CET / CEST)',
+    primaryLanguage: 'en',
+    population: '975k',
+    marketContext: {
+      en: "Stockholm's OnlyFans creator base is small but disproportionately high-revenue — Swedish creators tend to operate in English from day one, have strong production values and often come from photography or design backgrounds. The Nordic creator market is also one of the most platform-mature globally, with creators treating OF as a primary career rather than a side gig.",
+      es: "La base de creadoras de OnlyFans en Estocolmo es pequeña pero desproporcionadamente de alto ingreso — las creadoras suecas suelen operar en inglés desde el primer día, tienen valores de producción altos y a menudo vienen de fotografía o diseño. El mercado nórdico de creadoras es también uno de los más maduros a nivel global, con creadoras tratando OF como carrera principal en lugar de side gig.",
+    },
+    localAngle: {
+      en: "MANGO's English chatting team and performance-based model match the Stockholm market's expectations of transparent, KPI-driven business relationships. The agency's small-roster approach also pairs well with the typical Stockholm creator's preference for personalized rather than industrial operations.",
+      es: "El equipo de chatting en inglés de MANGO y el modelo basado en rendimiento encajan con las expectativas del mercado de Estocolmo de relaciones de negocio transparentes y guiadas por KPIs. El enfoque de roster reducido también encaja con la preferencia de la creadora típica de Estocolmo por operaciones personalizadas en lugar de industriales.",
+    },
+  },
+  {
+    slug: 'dubai',
+    name: 'Dubai',
+    country: { en: 'United Arab Emirates', es: 'Emiratos Árabes Unidos' },
+    countryCode: 'AE',
+    region: { en: 'Middle East', es: 'Oriente Medio' },
+    timezone: 'Asia/Dubai',
+    utcOffset: 'UTC+4 (GST)',
+    primaryLanguage: 'en',
+    population: '3.5M',
+    marketContext: {
+      en: "Dubai's OnlyFans creator community is composed almost entirely of international expats — local content creation is legally restricted, so creators based here are nearly always producing for international audiences from a relocated base. English is the default operating language, audiences skew global, and time zone (UTC+4) gives Dubai creators an unusual coverage advantage: peak hours for European, US East Coast and Asian audiences all fall within their working day.",
+      es: "La comunidad de creadoras de OnlyFans en Dubái está compuesta casi en su totalidad por expats internacionales — la creación local de contenido está legalmente restringida, así que las creadoras basadas aquí casi siempre producen para audiencias internacionales desde una base relocada. El inglés es el idioma de operación por defecto, las audiencias son globales, y la zona horaria (UTC+4) da una ventaja inusual: los picos europeos, de la Costa Este de EE.UU. y asiáticos caen dentro de su jornada laboral.",
+    },
+    localAngle: {
+      en: "MANGO's English chatting team handles Dubai-based creators targeting global audiences. The agency does not provide local representation or legal counsel — creators in this market should consult separately on jurisdiction-specific compliance.",
+      es: "El equipo de chatting en inglés de MANGO gestiona a creadoras basadas en Dubái que apuntan a audiencias globales. La agencia no proporciona representación local ni asesoría legal — las creadoras en este mercado deben consultar por separado sobre cumplimiento específico de jurisdicción.",
+    },
+  },
+  {
+    slug: 'singapore',
+    name: 'Singapore',
+    country: { en: 'Singapore', es: 'Singapur' },
+    countryCode: 'SG',
+    region: { en: 'Asia', es: 'Asia' },
+    timezone: 'Asia/Singapore',
+    utcOffset: 'UTC+8 (SGT)',
+    primaryLanguage: 'en',
+    population: '5.9M',
+    marketContext: {
+      en: "Singapore's OnlyFans creator base is small, expat-heavy and English-default. Creators here typically operate at high content production standards and target international audiences rather than the heavily restricted local market. The time zone (UTC+8) makes Singapore an effective base for serving Asian-Pacific audiences during peak engagement windows, with secondary coverage of European mornings.",
+      es: "La base de creadoras de OnlyFans en Singapur es pequeña, mayoritariamente expat y por defecto en inglés. Las creadoras aquí operan típicamente con estándares altos de producción de contenido y apuntan a audiencias internacionales en lugar del muy restringido mercado local. La zona horaria (UTC+8) hace de Singapur una base efectiva para servir audiencias del Asia-Pacífico en sus picos de engagement, con cobertura secundaria de las mañanas europeas.",
+    },
+    localAngle: {
+      en: "MANGO supports Singapore-based creators with English chatting coverage tuned to Asian-Pacific peak hours plus European overlap. Best fit for creators producing for global audiences from an Asian base.",
+      es: "MANGO apoya a creadoras basadas en Singapur con cobertura de chatting en inglés ajustada a las horas pico del Asia-Pacífico más el solapamiento europeo. Mejor encaje para creadoras que producen para audiencias globales desde una base asiática.",
+    },
+  },
+  {
+    slug: 'bangkok',
+    name: 'Bangkok',
+    country: { en: 'Thailand', es: 'Tailandia' },
+    countryCode: 'TH',
+    region: { en: 'Asia', es: 'Asia' },
+    timezone: 'Asia/Bangkok',
+    utcOffset: 'UTC+7 (ICT)',
+    primaryLanguage: 'en',
+    population: '10.5M',
+    marketContext: {
+      en: "Bangkok hosts a growing community of OnlyFans creators — both Thai nationals and a large expat creator population — operating primarily in English for international audiences. The local creator scene is heavily influenced by Bangkok's photography and lifestyle-content infrastructure. Audiences skew international (US + Europe + Asia-Pacific) which makes language coverage and time zone strategy more important than local positioning.",
+      es: "Bangkok alberga una creciente comunidad de creadoras de OnlyFans — tanto tailandesas como una gran población creadora expat — operando principalmente en inglés para audiencias internacionales. La escena local está fuertemente influenciada por la infraestructura de fotografía y lifestyle de Bangkok. Las audiencias son internacionales (EE.UU. + Europa + Asia-Pacífico), lo que hace la cobertura de idioma y la estrategia de zona horaria más importantes que el posicionamiento local.",
+    },
+    localAngle: {
+      en: "MANGO's English chatting team is staffed to cover Bangkok creators' international audience peaks — primarily US evening and European afternoon. Strong fit for creators based in Bangkok producing for global rather than local audiences.",
+      es: "El equipo de chatting en inglés de MANGO está dimensionado para cubrir los picos de audiencia internacional de las creadoras en Bangkok — principalmente noche estadounidense y tarde europea. Encaje fuerte para creadoras basadas en Bangkok que producen para audiencias globales en lugar de locales.",
+    },
+  },
+  {
+    slug: 'tokyo',
+    name: 'Tokyo',
+    country: { en: 'Japan', es: 'Japón' },
+    countryCode: 'JP',
+    region: { en: 'Asia', es: 'Asia' },
+    timezone: 'Asia/Tokyo',
+    utcOffset: 'UTC+9 (JST)',
+    primaryLanguage: 'en',
+    population: '14M',
+    marketContext: {
+      en: "Tokyo's OnlyFans creator base is still relatively small but growing — most active creators are either international expats or Japanese creators with strong English skills targeting global audiences. Local platform alternatives (FANTIA, Patreon-equivalents) absorb some of the domestic market, which pushes OF creators in Tokyo toward international positioning by default.",
+      es: "La base de creadoras de OnlyFans en Tokio es aún relativamente pequeña pero creciendo — la mayoría de creadoras activas son expats internacionales o creadoras japonesas con inglés fuerte apuntando a audiencias globales. Las alternativas locales (FANTIA, equivalentes a Patreon) absorben parte del mercado doméstico, lo que empuja a las creadoras de OF en Tokio hacia un posicionamiento internacional por defecto.",
+    },
+    localAngle: {
+      en: "MANGO's English chatting team serves Tokyo-based creators targeting international audiences. The agency does not currently operate native Japanese chatting, so the best fit is for creators whose primary monetization happens in English-speaking markets.",
+      es: "El equipo de chatting en inglés de MANGO sirve a creadoras basadas en Tokio que apuntan a audiencias internacionales. La agencia no opera actualmente chatting nativo en japonés, así que el mejor encaje es para creadoras cuya monetización principal ocurre en mercados anglófonos.",
+    },
+  },
+];
+
+export function getCityBySlug(slug: string): CityData | undefined {
+  return cities.find((c) => c.slug === slug);
+}

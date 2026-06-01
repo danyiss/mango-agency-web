@@ -1,0 +1,103 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog', ({ data }) => data.lang === 'en' && !data.draft);
+  return posts.map((post) => ({
+    params: { slug: post.data.slug },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+const siteUrl = 'https://www.mangova.agency';
+const url = `${siteUrl}/blog/${post.data.slug}`;
+const altUrl = `${siteUrl}/es/blog/${post.data.slug}`;
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": post.data.title,
+  "description": post.data.description,
+  "image": post.data.coverImage ? `${siteUrl}${post.data.coverImage}` : `${siteUrl}/og-image.png`,
+  "datePublished": post.data.pubDate.toISOString(),
+  "dateModified": (post.data.updatedDate ?? post.data.pubDate).toISOString(),
+  "author": {
+    "@type": "Person",
+    "name": post.data.author,
+    "url": `${siteUrl}/about`,
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "MANGO Agency",
+    "logo": { "@type": "ImageObject", "url": `${siteUrl}/logo.png` },
+  },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": url },
+  "inLanguage": "en",
+  "keywords": post.data.tags.join(', '),
+};
+---
+
+<Layout
+  title={`${post.data.title} | MANGO Blog`}
+  description={post.data.description}
+  activeNav=""
+  lang="en"
+  ogImage={post.data.coverImage ?? '/og-image.png'}
+  transparentTop={true}
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+    <link rel="alternate" hreflang="es" href={altUrl} />
+    <meta property="article:published_time" content={post.data.pubDate.toISOString()} />
+    {post.data.updatedDate && <meta property="article:modified_time" content={post.data.updatedDate.toISOString()} />}
+    <meta property="article:author" content={post.data.author} />
+    {post.data.tags.map((tag: string) => <meta property="article:tag" content={tag} />)}
+  </Fragment>
+
+  <article class="relative">
+    <!-- HEADER -->
+    <header class="relative min-h-[55vh] -mt-16 w-full overflow-hidden flex items-end pb-16 md:pb-24 section-cinematic grain">
+      <div class="atmosphere-glow magenta" style="top:14%;right:-12%;width:520px;height:520px;opacity:0.35;"></div>
+      <div class="relative z-10 max-w-4xl mx-auto px-6 lg:px-10 w-full pt-32 md:pt-40">
+        <div class="flex flex-col items-start gap-6 md:gap-8">
+          <div class="flex items-center gap-3 text-[11px] uppercase tracking-[0.28em] text-white/45">
+            <time datetime={post.data.pubDate.toISOString().slice(0, 10)}>{post.data.pubDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</time>
+            {post.data.tags.length > 0 && <span>·</span>}
+            <span>{post.data.tags.join(', ')}</span>
+          </div>
+          <h1 class="font-display text-[36px] sm:text-5xl md:text-6xl lg:text-7xl text-white leading-[1.0] tracking-[-0.025em]">{post.data.title}</h1>
+          <p class="text-white/65 text-[15px] md:text-base lg:text-lg leading-relaxed max-w-3xl">{post.data.description}</p>
+          <p class="text-white/45 text-sm">By <a href="/about" class="text-white/65 hover:text-white underline underline-offset-4">{post.data.author}</a></p>
+        </div>
+      </div>
+    </header>
+
+    <!-- BODY -->
+    <section class="relative py-20 md:py-32 section-panel grain">
+      <div class="relative z-10 max-w-2xl mx-auto px-6 lg:px-10">
+        <div class="prose-mango text-white/80 text-base md:text-lg leading-[1.75]">
+          <Content />
+        </div>
+      </div>
+    </section>
+  </article>
+
+</Layout>
+
+<style is:global>
+  .prose-mango p { margin: 0 0 1.5em; }
+  .prose-mango h2 { font-family: 'Inter', sans-serif; color: #fff; font-size: 1.875rem; line-height: 1.15; letter-spacing: -0.015em; margin: 2.5em 0 0.75em; font-weight: 700; }
+  .prose-mango h3 { font-family: 'Inter', sans-serif; color: #fff; font-size: 1.375rem; line-height: 1.2; letter-spacing: -0.01em; margin: 2em 0 0.5em; font-weight: 700; }
+  .prose-mango a { color: #C8A96A; text-decoration: underline; text-underline-offset: 2px; }
+  .prose-mango a:hover { color: rgba(200,169,106,0.8); }
+  .prose-mango ul, .prose-mango ol { margin: 0 0 1.5em; padding-left: 1.5em; }
+  .prose-mango li { margin-bottom: 0.5em; }
+  .prose-mango blockquote { border-left: 2px solid #C8A96A; padding-left: 1.25em; margin: 2em 0; color: rgba(255,255,255,0.65); font-style: italic; }
+  .prose-mango code { background: rgba(255,255,255,0.06); padding: 0.15em 0.4em; border-radius: 4px; font-size: 0.9em; }
+  .prose-mango pre { background: rgba(255,255,255,0.04); padding: 1.25em; border-radius: 8px; overflow-x: auto; margin: 2em 0; }
+  .prose-mango pre code { background: transparent; padding: 0; }
+  .prose-mango img { border-radius: 6px; margin: 2em 0; }
+</style>

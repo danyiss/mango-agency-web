@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import { getLangFromUrl, useTranslations, getLocalizedPath, type Lang } from '../i18n/translations';
+import { cities } from '../data/cities';
 
 interface Props {
   title: string;
@@ -88,14 +89,25 @@ const orgSchema = {
   ],
 };
 
-// WebSite schema — helps Google show "MANGO" as the site name in SERP
+// WebSite schema — helps Google show "MANGO" as the site name in SERP,
+// and exposes a SearchAction so Google can render the sitelink search box
+// for branded queries ("mango agency").
 const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
   "name": "MANGO",
   "alternateName": "Mangova Agency",
   "url": siteUrl,
-  "publisher": { "@type": "Organization", "name": "MANGO" }
+  "inLanguage": currentLang === 'es' ? 'es' : 'en',
+  "publisher": { "@type": "Organization", "name": "MANGO" },
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": `${siteUrl}/?q={search_term_string}`,
+    },
+    "query-input": "required name=search_term_string",
+  },
 };
 
 // BreadcrumbList — derived from the URL path. Skipped on the locale-root pages
@@ -106,8 +118,14 @@ const breadcrumbLabelMap: Record<string, { en: string; es: string }> = {
   '/for-agencies': { en: 'Chatting Service', es: 'Servicio de Chatting' },
   '/about': { en: 'About', es: 'Sobre MANGO' },
   '/legal': { en: 'Legal', es: 'Legal' },
+  '/blog': { en: 'Blog', es: 'Blog' },
 };
-const pageLabels = breadcrumbLabelMap[basePath];
+// Dynamic match: if the basePath is a known city slug, build a label from
+// city data instead of the static map.
+const citySlug = basePath.replace(/^\//, '');
+const matchedCity = cities.find((c) => c.slug === citySlug);
+const pageLabels = breadcrumbLabelMap[basePath]
+  ?? (matchedCity ? { en: matchedCity.name, es: matchedCity.name } : undefined);
 const homeUrl = currentLang === 'es' ? `${siteUrl}/es` : siteUrl;
 const breadcrumbSchema = (basePath !== '/' && pageLabels)
   ? {
@@ -155,6 +173,11 @@ const breadcrumbSchema = (basePath !== '/' && pageLabels)
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+
+    <!-- Vercel Speed Insights (Real User Monitoring of Core Web Vitals) -->
+    <script defer src="/_vercel/speed-insights/script.js"></script>
+    <!-- Vercel Web Analytics (privacy-friendly visitor analytics) -->
+    <script defer src="/_vercel/insights/script.js"></script>
 
     <!-- Fonts — Inter is render-blocking (critical for hero text), Material Symbols is async-loaded. -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -405,6 +428,7 @@ const breadcrumbSchema = (basePath !== '/' && pageLabels)
               <li><a href={localPath('/about')} class="group inline-flex items-center text-white hover:text-white/70 text-[13px] md:text-sm transition-colors duration-300"><span class="border-b border-transparent group-hover:border-white pb-[2px] transition-colors duration-300">{currentLang === 'es' ? 'Sobre MANGO' : 'About'}</span></a></li>
               <li><a href={localPath('/results')} class="group inline-flex items-center text-white hover:text-white/70 text-[13px] md:text-sm transition-colors duration-300"><span class="border-b border-transparent group-hover:border-white pb-[2px] transition-colors duration-300">{currentLang === 'es' ? 'Resultados' : 'Results'}</span></a></li>
               <li><a href={localPath('/for-agencies')} class="group inline-flex items-center text-white hover:text-white/70 text-[13px] md:text-sm transition-colors duration-300"><span class="border-b border-transparent group-hover:border-white pb-[2px] transition-colors duration-300">{currentLang === 'es' ? 'Servicio de Chatting' : 'Chatting Service'}</span></a></li>
+              <li><a href={localPath('/blog')} class="group inline-flex items-center text-white hover:text-white/70 text-[13px] md:text-sm transition-colors duration-300"><span class="border-b border-transparent group-hover:border-white pb-[2px] transition-colors duration-300">Blog</span></a></li>
               <li><a href={`${localPath('/')}#apply`} class="group inline-flex items-center text-white hover:text-white/70 text-[13px] md:text-sm transition-colors duration-300"><span class="border-b border-transparent group-hover:border-white pb-[2px] transition-colors duration-300">{currentLang === 'es' ? 'Aplicar Ahora' : 'Apply Now'}</span></a></li>
               <li><a href={localPath('/legal')} class="group inline-flex items-center text-white hover:text-white/70 text-[13px] md:text-sm transition-colors duration-300"><span class="border-b border-transparent group-hover:border-white pb-[2px] transition-colors duration-300">{currentLang === 'es' ? 'Política de Privacidad' : 'Privacy Policy'}</span></a></li>
             </ul>

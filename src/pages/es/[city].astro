@@ -1,0 +1,160 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { cities, type CityData } from '../../data/cities';
+
+export async function getStaticPaths() {
+  return cities.map((c) => ({
+    params: { city: c.slug },
+    props: { city: c },
+  }));
+}
+
+interface Props {
+  city: CityData;
+}
+
+const { city } = Astro.props as Props;
+const siteUrl = 'https://www.mangova.agency';
+const pageUrl = `${siteUrl}/es/${city.slug}`;
+const altUrl = `${siteUrl}/${city.slug}`;
+
+const title = `Agencia de Gestión OnlyFans en ${city.name} | MANGO`;
+const description = `MANGO es una agencia de gestión de OnlyFans que trabaja con creadoras en ${city.name}, ${city.country.es}. Equipo de chatting ${city.primaryLanguage === 'es' ? 'nativo en español' : 'nativo en inglés'}, sistemas de monetización y crecimiento liderado por Instagram — pricing basado en rendimiento.`;
+
+const cityServiceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": `Gestión OnlyFans en ${city.name}`,
+  "provider": {
+    "@type": "Organization",
+    "name": "MANGO Agency",
+    "legalName": "AG MEDIA PRO LLC",
+    "url": siteUrl,
+  },
+  "areaServed": {
+    "@type": "City",
+    "name": city.name,
+    "containedInPlace": { "@type": "Country", "name": city.country.es },
+  },
+  "serviceType": "Gestión de Talento OnlyFans",
+  "description": description,
+  "url": pageUrl,
+  "audience": { "@type": "Audience", "audienceType": "Creadoras de OnlyFans" },
+};
+
+const webPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "url": pageUrl,
+  "name": title,
+  "description": description,
+  "inLanguage": "es",
+  "isPartOf": { "@type": "WebSite", "name": "MANGO", "url": siteUrl },
+  "about": { "@type": "Organization", "name": "MANGO", "url": siteUrl },
+  "primaryImageOfPage": { "@type": "ImageObject", "url": `${siteUrl}/og-image-es.png` },
+};
+---
+
+<Layout
+  title={title}
+  description={description}
+  activeNav=""
+  lang="es"
+  transparentTop={true}
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(webPageSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(cityServiceSchema)} />
+    <link rel="alternate" hreflang="en" href={altUrl} />
+  </Fragment>
+
+  <!-- 1. HERO -->
+  <section class="relative min-h-[55vh] -mt-16 w-full overflow-hidden flex items-end pb-16 md:pb-24 section-cinematic grain">
+    <div class="atmosphere-glow magenta" style="top:14%;right:-12%;width:520px;height:520px;opacity:0.35;"></div>
+    <div class="atmosphere-glow crimson" style="bottom:-10%;left:-12%;width:480px;height:480px;opacity:0.3;"></div>
+    <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-10 w-full pt-32 md:pt-40">
+      <div class="flex flex-col items-start gap-6 md:gap-8 max-w-4xl">
+        <span class="text-[11px] uppercase tracking-[0.32em] italic text-white/45" style="font-family:Georgia,'Times New Roman',serif;">{city.region.es} · {city.country.es}</span>
+        <h1 class="font-display text-[44px] sm:text-7xl md:text-8xl lg:text-[110px] xl:text-[130px] text-white leading-[0.92] tracking-[-0.03em]">Agencia OnlyFans<br />en {city.name}.</h1>
+        <p class="text-white/65 text-[15px] md:text-base lg:text-lg leading-relaxed max-w-2xl">MANGO apoya a creadoras de OnlyFans basadas en {city.name} con un equipo de chatting {city.primaryLanguage === 'es' ? 'nativo en español' : 'nativo en inglés'}, sistemas estructurados de monetización y crecimiento en redes liderado por Instagram. Pricing basado en rendimiento, roster deliberadamente pequeño, estrategia totalmente personalizada.</p>
+        <a href="/es#apply" class="inline-block bg-accent text-black font-bold px-8 py-4 rounded-[7px] text-sm tracking-wide hover:brightness-95 hover:scale-[1.02] transition-all mt-2">Aplicar para trabajar con nosotros</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. MARKET CONTEXT (citable passage) -->
+  <section class="relative py-24 md:py-36 section-panel grain">
+    <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-24">
+        <div class="lg:col-span-5">
+          <span class="block text-[11px] uppercase tracking-[0.32em] italic text-white/45 mb-5 md:mb-7" style="font-family:Georgia,'Times New Roman',serif;">El mercado de {city.name}</span>
+          <h2 class="font-display text-4xl md:text-5xl lg:text-6xl text-white leading-[1.0] tracking-[-0.02em]">Cómo monetizan realmente las creadoras de OnlyFans en {city.name}.</h2>
+        </div>
+        <div class="lg:col-span-7 flex flex-col gap-5 md:gap-6 text-white/75 text-base md:text-lg leading-relaxed">
+          <p>{city.marketContext.es}</p>
+          <p>{city.localAngle.es}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. LOCAL FACTS -->
+  <section class="relative py-20 md:py-28 section-cinematic grain">
+    <div class="relative z-10 max-w-5xl mx-auto px-6 lg:px-8">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
+        <div class="flex flex-col gap-2">
+          <span class="text-[10px] uppercase tracking-[0.28em] text-white/45">Región</span>
+          <span class="text-white text-base md:text-lg">{city.region.es}</span>
+        </div>
+        <div class="flex flex-col gap-2">
+          <span class="text-[10px] uppercase tracking-[0.28em] text-white/45">País</span>
+          <span class="text-white text-base md:text-lg">{city.country.es}</span>
+        </div>
+        <div class="flex flex-col gap-2">
+          <span class="text-[10px] uppercase tracking-[0.28em] text-white/45">Zona horaria</span>
+          <span class="text-white text-base md:text-lg">{city.utcOffset}</span>
+        </div>
+        <div class="flex flex-col gap-2">
+          <span class="text-[10px] uppercase tracking-[0.28em] text-white/45">Idioma de chatting</span>
+          <span class="text-white text-base md:text-lg">{city.primaryLanguage === 'es' ? 'Español (nativo)' : 'Inglés (nativo)'}</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. SERVICES SUMMARY -->
+  <section class="relative py-24 md:py-36 section-panel grain">
+    <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-10">
+      <div class="mb-12 md:mb-16 max-w-3xl">
+        <span class="block text-[11px] uppercase tracking-[0.32em] italic text-white/45 mb-5 md:mb-7" style="font-family:Georgia,'Times New Roman',serif;">Lo que MANGO hace por las creadoras en {city.name}</span>
+        <h2 class="font-display text-4xl md:text-5xl lg:text-6xl text-white leading-[1.0] tracking-[-0.02em]">Una agencia pequeña, a propósito.</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
+        {[
+          { t: 'Chatting y Monetización', d: `Equipo de chatting 24/7 en ${city.primaryLanguage === 'es' ? 'español' : 'inglés'} enfocado en retención del fan, mayor gasto y LTV a largo plazo.` },
+          { t: 'Crecimiento en Redes', d: 'Crecimiento orgánico liderado por Instagram construido sobre creator branding y contenido viral.' },
+          { t: 'Estrategia de Contenido', d: 'Dirección de contenido basada en datos de rendimiento — qué grabar, por qué y cómo convierte.' },
+          { t: 'Gestión Personalizada', d: 'Sin equipos compartidos. Cada creadora recibe soporte dedicado adaptado a su imagen, audiencia y objetivos.' },
+          { t: 'Operaciones y Escalado', d: 'Flujos de trabajo estructurados, QA y seguimiento de rendimiento para que escalar no rompa la consistencia.' },
+          { t: 'Protección y Soporte', d: 'Protección contra leaks, DMCA, seguridad de cuenta y respaldo operativo continuo.' },
+        ].map(s => (
+          <div class="flex flex-col gap-3">
+            <h3 class="font-display text-xl md:text-2xl text-white leading-[1.1] tracking-[-0.015em]">{s.t}</h3>
+            <p class="text-white/65 text-sm md:text-base leading-relaxed">{s.d}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. CTA -->
+  <section class="relative py-24 md:py-36 section-cinematic grain">
+    <div class="relative z-10 max-w-3xl mx-auto px-6 lg:px-8 text-center flex flex-col items-center gap-8 md:gap-12">
+      <span class="text-[11px] uppercase tracking-[0.32em] italic text-white/45" style="font-family:Georgia,'Times New Roman',serif;">Aplicar</span>
+      <h2 class="font-display text-4xl md:text-5xl lg:text-6xl text-white leading-[0.98] tracking-[-0.02em] max-w-2xl">Hecho para creadoras que quieren más.</h2>
+      <p class="text-white/70 text-base md:text-lg leading-relaxed max-w-xl">Si estás basada en {city.name} y lista para escalar tu negocio de OnlyFans con sistemas estructurados y un equipo dedicado, envía tu aplicación.</p>
+      <a href="/es#apply" class="inline-block bg-accent text-black font-bold px-8 py-4 rounded-[7px] text-sm tracking-wide hover:brightness-95 hover:scale-[1.02] transition-all">Aplicar para trabajar con nosotros</a>
+    </div>
+  </section>
+
+</Layout>

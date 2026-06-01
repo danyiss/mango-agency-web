@@ -1,0 +1,12 @@
+/* TEAM */
+Founder: Aitor González Rivera
+LinkedIn: https://de.linkedin.com/in/aitorgonzalezrivera
+Location: Wyoming, USA
+
+/* SITE */
+Brand: MANGO Agency
+Legal: AG MEDIA PRO LLC
+Languages: English, Spanish
+Doctype: HTML5
+Frameworks: Astro 6, Tailwind CSS v4
+Hosting: Vercel

@@ -1,0 +1,73 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+const siteUrl = 'https://www.mangova.agency';
+const allPosts = await getCollection('blog', ({ data }) => data.lang === 'en' && !data.draft);
+const posts = allPosts.sort((a, b) => +b.data.pubDate - +a.data.pubDate);
+
+const blogSchema = {
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  "name": "MANGO Agency Blog",
+  "url": `${siteUrl}/blog`,
+  "description": "OnlyFans management, monetization and creator growth — written by MANGO Agency.",
+  "inLanguage": "en",
+  "publisher": { "@type": "Organization", "name": "MANGO", "url": siteUrl },
+};
+---
+
+<Layout
+  title="OnlyFans Agency Blog | MANGO"
+  description="Insights on OnlyFans management, monetization, chatting and social media growth from MANGO Agency."
+  activeNav=""
+  lang="en"
+  transparentTop={true}
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(blogSchema)} />
+    <link rel="alternate" type="application/rss+xml" title="MANGO Blog" href={`${siteUrl}/rss.xml`} />
+  </Fragment>
+
+  <!-- HERO -->
+  <section class="relative min-h-[45vh] -mt-16 w-full overflow-hidden flex items-end pb-16 md:pb-24 section-cinematic grain">
+    <div class="atmosphere-glow magenta" style="top:14%;right:-12%;width:520px;height:520px;opacity:0.35;"></div>
+    <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-10 w-full pt-32 md:pt-40">
+      <div class="flex flex-col items-start gap-6 md:gap-8 max-w-4xl">
+        <span class="text-[11px] uppercase tracking-[0.32em] italic text-white/45" style="font-family:Georgia,'Times New Roman',serif;">Editorial</span>
+        <h1 class="font-display text-[44px] sm:text-7xl md:text-8xl lg:text-[120px] xl:text-[140px] text-white leading-[0.92] tracking-[-0.03em]">Blog.</h1>
+        <p class="text-white/65 text-[15px] md:text-base lg:text-lg leading-relaxed max-w-2xl">Field notes on OnlyFans monetization, chatting, social media growth and the operational side of running a creator business at scale.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- POSTS LIST or EMPTY STATE -->
+  <section class="relative py-24 md:py-36 section-panel grain">
+    <div class="relative z-10 max-w-5xl mx-auto px-6 lg:px-10">
+      {posts.length === 0 ? (
+        <div class="flex flex-col items-center gap-6 md:gap-8 text-center py-12 md:py-20">
+          <span class="text-[11px] uppercase tracking-[0.32em] italic text-white/45" style="font-family:Georgia,'Times New Roman',serif;">Coming soon</span>
+          <h2 class="font-display text-3xl md:text-4xl lg:text-5xl text-white leading-[1.0] tracking-[-0.02em] max-w-2xl">First posts publishing soon.</h2>
+          <p class="text-white/65 text-base md:text-lg leading-relaxed max-w-xl">The MANGO blog is being prepared. Subscribe to the RSS feed to know when the first piece goes live.</p>
+          <a href="/rss.xml" class="text-accent hover:text-accent/80 text-sm tracking-[0.18em] uppercase underline underline-offset-4 transition-colors mt-2">RSS feed →</a>
+        </div>
+      ) : (
+        <div class="flex flex-col gap-12 md:gap-16">
+          {posts.map((post) => (
+            <a href={`/blog/${post.data.slug}`} class="group flex flex-col gap-3 md:gap-4 border-b border-white/10 pb-12 md:pb-16 hover:border-white/30 transition-colors">
+              <div class="flex items-center gap-3 text-[11px] uppercase tracking-[0.28em] text-white/45">
+                <time datetime={post.data.pubDate.toISOString().slice(0, 10)}>{post.data.pubDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</time>
+                {post.data.tags.length > 0 && <span>·</span>}
+                <span>{post.data.tags.join(', ')}</span>
+              </div>
+              <h2 class="font-display text-3xl md:text-4xl lg:text-5xl text-white leading-[1.05] tracking-[-0.02em] group-hover:text-accent transition-colors">{post.data.title}</h2>
+              <p class="text-white/65 text-base md:text-lg leading-relaxed max-w-2xl">{post.data.description}</p>
+              <span class="mt-2 text-accent text-[11px] tracking-[0.22em] uppercase">Read →</span>
+            </a>
+          ))}
+        </div>
+      )}
+    </div>
+  </section>
+
+</Layout>
