@@ -6,7 +6,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
-  const { name, instagram, contact, situation, goal, income } = req.body || {};
+  const { name, instagram, contact, email, situation, goal, income } = req.body || {};
 
   if (!name || !instagram || !contact || !situation) {
     return res.status(400).json({ error: 'Required fields missing' });
@@ -37,6 +37,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     const { data, error } = await resend.emails.send({
       from: 'MANGO Agency <onboarding@resend.dev>',
       to: [process.env.CONTACT_TO || 'mangova.agency@gmail.com'],
+      replyTo: email || undefined,
       subject: `New Application — ${name} (${situationText})`.trim(),
       html: `
         <div style="font-family: -apple-system, BlinkMacSystemFont, 'Inter', sans-serif; max-width: 560px; margin: 0 auto; color: #1a1c1d;">
@@ -48,6 +49,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
             ${row('Name', name)}
             ${row('Instagram', instagram)}
             ${row('Contact', contact)}
+            ${row('Email', email)}
             ${row('Situation', situationText)}
             ${row('Situation & blockers', (goal || 'Not provided').replace(/\n/g, '<br>'))}
             ${row('Monthly Revenue', income || 'Not provided')}
@@ -57,7 +59,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
           </div>
         </div>
       `,
-      text: `New Application\nName: ${name}\nInstagram: ${instagram}\nContact: ${contact}\nSituation: ${situationText}\nContext: ${goal || 'Not provided'}\nMonthly Revenue: ${income || 'Not provided'}`,
+      text: `New Application\nName: ${name}\nInstagram: ${instagram}\nContact: ${contact}\nEmail: ${email || 'Not provided'}\nSituation: ${situationText}\nContext: ${goal || 'Not provided'}\nMonthly Revenue: ${income || 'Not provided'}`,
     });
 
     if (error) {

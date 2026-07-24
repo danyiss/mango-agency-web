@@ -17,6 +17,9 @@ const t = {
     contact: 'Telegram / WhatsApp',
     contactPlaceholder: '@username or +country phone',
     contactHint: 'We’ll contact you here if there’s a fit',
+    email: 'Email',
+    emailPlaceholder: 'your@email.com',
+    emailHint: 'So we can reach you if there’s a fit',
     situation: 'What best describes your situation?',
     situationPlaceholder: 'Select one',
     situation1: 'Just starting',
@@ -51,6 +54,9 @@ const t = {
     contact: 'Telegram / WhatsApp',
     contactPlaceholder: '@usuario o +tel con prefijo',
     contactHint: 'Te contactaremos por aquí si encajamos',
+    email: 'Email',
+    emailPlaceholder: 'tu@email.com',
+    emailHint: 'Para poder contactarte si hay encaje',
     situation: '¿Qué describe mejor tu situación?',
     situationPlaceholder: 'Selecciona una',
     situation1: 'Empezando',
@@ -111,6 +117,13 @@ const t = {
             <input type="text" id="contact" name="contact" required placeholder={t.contactPlaceholder}
               class="w-full bg-transparent border-0 border-b border-white/25 px-0 py-2.5 text-base text-white placeholder:text-white/30 focus:outline-none focus:border-white/70 transition-colors" />
             <p class="text-xs text-white/45 mt-2">{t.contactHint}</p>
+          </div>
+
+          <div>
+            <label for="email" class="text-[11px] font-semibold uppercase tracking-[0.22em] text-white/75 mb-3 block">{t.email}</label>
+            <input type="email" id="email" name="email" required placeholder={t.emailPlaceholder}
+              class="w-full bg-transparent border-0 border-b border-white/25 px-0 py-2.5 text-base text-white placeholder:text-white/30 focus:outline-none focus:border-white/70 transition-colors" />
+            <p class="text-xs text-white/45 mt-2">{t.emailHint}</p>
           </div>
 
           <div>
@@ -194,6 +207,7 @@ const t = {
       name: form.name.value,
       instagram: form.instagram.value,
       contact: form.contact.value,
+      email: form.email.value,
       situation: form.situation.value,
       goal: form.goal.value,
       service: form.service.value,
