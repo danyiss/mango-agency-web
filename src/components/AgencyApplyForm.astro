@@ -13,6 +13,8 @@ const t = {
     agencyName: 'Agency / Brand Name',
     instagram: 'Main Instagram / Agency Page',
     contact: 'Telegram / WhatsApp',
+    email: 'Email',
+    emailPlaceholder: 'you@agency.com',
     accounts: 'How many accounts are you looking to scale?',
     accountsPlaceholder: 'Select range',
     accountOptions: [
@@ -56,6 +58,8 @@ const t = {
     agencyName: 'Nombre / Marca de la agencia',
     instagram: 'Instagram principal / Página de la agencia',
     contact: 'Telegram / WhatsApp',
+    email: 'Email',
+    emailPlaceholder: 'tu@agencia.com',
     accounts: '¿Cuántas cuentas quieres escalar?',
     accountsPlaceholder: 'Selecciona rango',
     accountOptions: [
@@ -125,6 +129,12 @@ const t = {
         <div>
           <label for="contact" class="text-[11px] font-semibold uppercase tracking-[0.22em] text-white/70 mb-3 block">{t.contact}</label>
           <input type="text" id="contact" name="contact" required
+            class="w-full bg-transparent border-0 border-b border-white/25 px-0 py-2.5 text-base text-white placeholder:text-white/30 focus:outline-none focus:border-white/70 transition-colors" />
+        </div>
+
+        <div>
+          <label for="email" class="text-[11px] font-semibold uppercase tracking-[0.22em] text-white/70 mb-3 block">{t.email}</label>
+          <input type="email" id="email" name="email" required placeholder={t.emailPlaceholder}
             class="w-full bg-transparent border-0 border-b border-white/25 px-0 py-2.5 text-base text-white placeholder:text-white/30 focus:outline-none focus:border-white/70 transition-colors" />
         </div>
 
@@ -201,6 +211,7 @@ const t = {
       agencyName: form.agencyName.value,
       instagram: form.instagram.value,
       contact: form.contact.value,
+      email: form.email.value,
       accounts: form.accounts.value,
       revenue: form.revenue.value,
       challenge: form.challenge.value,

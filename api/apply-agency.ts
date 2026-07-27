@@ -6,7 +6,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
-  const { agencyName, instagram, contact, accounts, revenue, challenge } = req.body || {};
+  const { agencyName, instagram, contact, email, accounts, revenue, challenge } = req.body || {};
 
   if (!agencyName || !instagram || !contact || !accounts || !revenue || !challenge) {
     return res.status(400).json({ error: 'Required fields missing' });
@@ -57,6 +57,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     const { data, error } = await resend.emails.send({
       from: 'MANGO Agency <onboarding@resend.dev>',
       to: [process.env.CONTACT_TO || 'mangova.agency@gmail.com'],
+      replyTo: email || undefined,
       subject: `Agency Partnership — ${agencyName} (${accountsText}, ${revenueText})`,
       html: `
         <div style="font-family: -apple-system, BlinkMacSystemFont, 'Inter', sans-serif; max-width: 580px; margin: 0 auto; color: #1a1c1d;">
@@ -68,6 +69,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
             ${row('Agency / Brand', agencyName)}
             ${row('Instagram / Page', instagram)}
             ${row('Contact', contact)}
+            ${row('Email', email)}
             ${row('Accounts to scale', accountsText)}
             ${row('Avg revenue / account', revenueText)}
             ${row('Biggest challenge', challengeText)}
@@ -77,7 +79,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
           </div>
         </div>
       `,
-      text: `New Agency Partnership Application\nAgency: ${agencyName}\nInstagram: ${instagram}\nContact: ${contact}\nAccounts: ${accountsText}\nAvg revenue/account: ${revenueText}\nBiggest challenge: ${challengeText}`,
+      text: `New Agency Partnership Application\nAgency: ${agencyName}\nInstagram: ${instagram}\nContact: ${contact}\nEmail: ${email || 'Not provided'}\nAccounts: ${accountsText}\nAvg revenue/account: ${revenueText}\nBiggest challenge: ${challengeText}`,
     });
 
     if (error) {
