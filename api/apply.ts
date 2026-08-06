@@ -1,12 +1,29 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import { Resend } from 'resend';
 
+// Persist each application to the internal portal (app.mangova.agency) so the team
+// sees them in real time. Best-effort: never blocks or breaks the email flow.
+async function persistToPortal(payload: Record<string, unknown>) {
+  const token = process.env['MANGO_INGEST_TOKEN'];
+  if (!token) return;
+  const url = process.env['PORTAL_INGEST_URL'] || 'https://app.mangova.agency/api/solicitudes';
+  try {
+    await (globalThis as any).fetch(url, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
+      body: JSON.stringify(payload),
+    });
+  } catch (e: any) {
+    console.error('portal persist failed:', e?.message);
+  }
+}
+
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
-  const { name, instagram, contact, email, situation, goal, income } = req.body || {};
+  const { name, instagram, contact, email, situation, goal, service, income } = req.body || {};
 
   if (!name || !instagram || !contact || !situation) {
     return res.status(400).json({ error: 'Required fields missing' });
@@ -19,6 +36,9 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     '20k-plus': '$20k+/month',
   };
   const situationText = situationLabels[situation] || situation;
+
+  // Real-time copy to the internal portal (best-effort; the email below is unaffected).
+  await persistToPortal({ source: 'model', name, email, instagram, contact, situation, goal, service, income });
 
   if (!process.env.RESEND_API_KEY) {
     console.error('RESEND_API_KEY not configured');
