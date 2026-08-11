@@ -1,4 +1,6 @@
 ---
+import { countryCodes } from '../data/countryCodes';
+
 interface Props {
   lang?: 'en' | 'es';
 }
@@ -13,6 +15,7 @@ const t = {
     agencyName: 'Agency / Brand Name',
     instagram: 'Main Instagram / Agency Page',
     contact: 'Telegram / WhatsApp',
+    prefixPlaceholder: 'Code',
     email: 'Email',
     emailPlaceholder: 'you@agency.com',
     accounts: 'How many accounts are you looking to scale?',
@@ -58,6 +61,7 @@ const t = {
     agencyName: 'Nombre / Marca de la agencia',
     instagram: 'Instagram principal / Página de la agencia',
     contact: 'Telegram / WhatsApp',
+    prefixPlaceholder: 'Prefijo',
     email: 'Email',
     emailPlaceholder: 'tu@agencia.com',
     accounts: '¿Cuántas cuentas quieres escalar?',
@@ -128,8 +132,17 @@ const t = {
 
         <div>
           <label for="contact" class="text-[11px] font-semibold uppercase tracking-[0.22em] text-white/70 mb-3 block">{t.contact}</label>
-          <input type="text" id="contact" name="contact" required
-            class="w-full bg-transparent border-0 border-b border-white/25 px-0 py-2.5 text-base text-white placeholder:text-white/30 focus:outline-none focus:border-white/70 transition-colors" />
+          <div class="flex gap-3 items-end">
+            <select id="prefix" name="prefix" required
+              class="shrink-0 max-w-[8rem] bg-transparent border-0 border-b border-white/25 px-0 py-2.5 text-base text-white focus:outline-none focus:border-white/70 transition-colors appearance-none cursor-pointer">
+              <option value="" disabled selected style="background-color:#070707;color:rgba(255,255,255,0.5);">{t.prefixPlaceholder}</option>
+              {countryCodes.map((c) => (
+                <option value={c.dial} style="background-color:#070707;">{c.label}</option>
+              ))}
+            </select>
+            <input type="text" id="contact" name="contact" required
+              class="flex-1 min-w-0 bg-transparent border-0 border-b border-white/25 px-0 py-2.5 text-base text-white placeholder:text-white/30 focus:outline-none focus:border-white/70 transition-colors" />
+          </div>
         </div>
 
         <div>
@@ -210,7 +223,7 @@ const t = {
     const data = {
       agencyName: form.agencyName.value,
       instagram: form.instagram.value,
-      contact: form.contact.value,
+      contact: (form.prefix.value ? form.prefix.value + ' ' : '') + form.contact.value,
       email: form.email.value,
       accounts: form.accounts.value,
       revenue: form.revenue.value,

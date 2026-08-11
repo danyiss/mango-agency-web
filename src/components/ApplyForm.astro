@@ -1,4 +1,6 @@
 ---
+import { countryCodes } from '../data/countryCodes';
+
 interface Props {
   lang?: 'en' | 'es';
 }
@@ -15,8 +17,9 @@ const t = {
     instagramPlaceholder: '@yourhandle',
     instagramHint: 'We’ll review your profile to understand your potential',
     contact: 'Telegram / WhatsApp',
-    contactPlaceholder: '@username or +country phone',
+    contactPlaceholder: '@username or number',
     contactHint: 'We’ll contact you here if there’s a fit',
+    prefixPlaceholder: 'Code',
     email: 'Email',
     emailPlaceholder: 'your@email.com',
     emailHint: 'So we can reach you if there’s a fit',
@@ -52,8 +55,9 @@ const t = {
     instagramPlaceholder: '@tuusuario',
     instagramHint: 'Revisaremos tu perfil para entender tu potencial',
     contact: 'Telegram / WhatsApp',
-    contactPlaceholder: '@usuario o +tel con prefijo',
+    contactPlaceholder: '@usuario o número',
     contactHint: 'Te contactaremos por aquí si encajamos',
+    prefixPlaceholder: 'Prefijo',
     email: 'Email',
     emailPlaceholder: 'tu@email.com',
     emailHint: 'Para poder contactarte si hay encaje',
@@ -114,8 +118,17 @@ const t = {
 
           <div>
             <label for="contact" class="text-[11px] font-semibold uppercase tracking-[0.22em] text-white/75 mb-3 block">{t.contact}</label>
-            <input type="text" id="contact" name="contact" required placeholder={t.contactPlaceholder}
-              class="w-full bg-transparent border-0 border-b border-white/25 px-0 py-2.5 text-base text-white placeholder:text-white/30 focus:outline-none focus:border-white/70 transition-colors" />
+            <div class="flex gap-3 items-end">
+              <select id="prefix" name="prefix" required
+                class="shrink-0 max-w-[8rem] bg-transparent border-0 border-b border-white/25 px-0 py-2.5 text-base text-white focus:outline-none focus:border-white/70 transition-colors appearance-none cursor-pointer">
+                <option value="" disabled selected style="background-color:#070707;color:rgba(255,255,255,0.5);">{t.prefixPlaceholder}</option>
+                {countryCodes.map((c) => (
+                  <option value={c.dial} style="background-color:#070707;">{c.label}</option>
+                ))}
+              </select>
+              <input type="text" id="contact" name="contact" required placeholder={t.contactPlaceholder}
+                class="flex-1 min-w-0 bg-transparent border-0 border-b border-white/25 px-0 py-2.5 text-base text-white placeholder:text-white/30 focus:outline-none focus:border-white/70 transition-colors" />
+            </div>
             <p class="text-xs text-white/45 mt-2">{t.contactHint}</p>
           </div>
 
@@ -206,7 +219,7 @@ const t = {
     const data = {
       name: form.name.value,
       instagram: form.instagram.value,
-      contact: form.contact.value,
+      contact: (form.prefix.value ? form.prefix.value + ' ' : '') + form.contact.value,
       email: form.email.value,
       situation: form.situation.value,
       goal: form.goal.value,
