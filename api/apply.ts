@@ -4,15 +4,25 @@ import { Resend } from 'resend';
 // Persist each application to the internal portal (app.mangova.agency) so the team
 // sees them in real time. Best-effort: never blocks or breaks the email flow.
 async function persistToPortal(payload: Record<string, unknown>) {
-  const token = process.env['MANGO_INGEST_TOKEN'];
+  // Token de una sola capacidad: solo autoriza mandar solicitudes. El anterior
+  // (MANGO_INGEST_TOKEN) era una llave maestra que ademas dejaba leer el mapa
+  // completo de la red y borrar filas de 12 tablas; no tiene por que vivir en
+  // Vercel, que es lo mas expuesto que tenemos (23-ago-2026).
+  const token = process.env['MANGO_SOLICITUDES_TOKEN'];
   if (!token) return;
   const url = process.env['PORTAL_INGEST_URL'] || 'https://app.mangova.agency/api/solicitudes';
   try {
-    await (globalThis as any).fetch(url, {
+    // Limite de tiempo: sin el, un portal que no responde deja la funcion colgada
+    // hasta que Vercel la corta, y entonces el correo de abajo NO se envia. El lead
+    // se perderia entero, sin fila y sin aviso (2026-08-22).
+    const r = await (globalThis as any).fetch(url, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
       body: JSON.stringify(payload),
+      signal: AbortSignal.timeout(5000),
     });
+    // fetch no lanza con un 500: hay que mirar el estado o el fallo pasa inadvertido.
+    if (!r?.ok) console.error('portal persist rechazo:', r?.status);
   } catch (e: any) {
     console.error('portal persist failed:', e?.message);
   }
@@ -37,8 +47,6 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   };
   const situationText = situationLabels[situation] || situation;
 
-  // Real-time copy to the internal portal (best-effort; the email below is unaffected).
-  await persistToPortal({ source: 'model', name, email, instagram, contact, situation, goal, service, income });
 
   if (!process.env.RESEND_API_KEY) {
     console.error('RESEND_API_KEY not configured');
@@ -87,6 +95,10 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       return res.status(500).json({ error: 'Failed to send email' });
     }
 
+    // El portal se avisa DESPUES del correo, a proposito: el correo es la copia
+    // que nunca puede fallar. Si el portal esta caido, el lead llega igual al
+    // buzon y solo falta la fila, que se puede recuperar.
+    await persistToPortal({ source: 'model', name, email, instagram, contact, situation, goal, service, income });
     return res.status(200).json({ ok: true, id: data?.id });
   } catch (e: any) {
     console.error('Send error:', e?.message);
