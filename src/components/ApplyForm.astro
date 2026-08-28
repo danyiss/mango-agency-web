@@ -20,6 +20,9 @@ const t = {
     contactPlaceholder: '@username or number',
     contactHint: 'We’ll contact you here if there’s a fit',
     prefixPlaceholder: 'Code',
+    telegram: 'Telegram username (optional)',
+    telegramPlaceholder: '@username',
+    telegramHint: 'Another way to reach you',
     email: 'Email',
     emailPlaceholder: 'your@email.com',
     emailHint: 'So we can reach you if there’s a fit',
@@ -58,6 +61,9 @@ const t = {
     contactPlaceholder: '@usuario o número',
     contactHint: 'Te contactaremos por aquí si encajamos',
     prefixPlaceholder: 'Prefijo',
+    telegram: 'Usuario de Telegram (opcional)',
+    telegramPlaceholder: '@usuario',
+    telegramHint: 'Otra vía para contactarte',
     email: 'Email',
     emailPlaceholder: 'tu@email.com',
     emailHint: 'Para poder contactarte si hay encaje',
@@ -130,6 +136,13 @@ const t = {
                 class="flex-1 min-w-0 bg-transparent border-0 border-b border-white/25 px-0 py-2.5 text-base text-white placeholder:text-white/30 focus:outline-none focus:border-white/70 transition-colors" />
             </div>
             <p class="text-xs text-white/45 mt-2">{t.contactHint}</p>
+          </div>
+
+          <div>
+            <label for="telegram" class="text-[11px] font-semibold uppercase tracking-[0.22em] text-white/75 mb-3 block">{t.telegram}</label>
+            <input type="text" id="telegram" name="telegram" placeholder={t.telegramPlaceholder}
+              class="w-full bg-transparent border-0 border-b border-white/25 px-0 py-2.5 text-base text-white placeholder:text-white/30 focus:outline-none focus:border-white/70 transition-colors" />
+            <p class="text-xs text-white/45 mt-2">{t.telegramHint}</p>
           </div>
 
           <div>
@@ -220,6 +233,7 @@ const t = {
       name: form.name.value,
       instagram: form.instagram.value,
       contact: (form.prefix.value ? form.prefix.value + ' ' : '') + form.contact.value,
+      telegram: form.telegram.value,
       email: form.email.value,
       situation: form.situation.value,
       goal: form.goal.value,

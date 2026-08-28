@@ -33,7 +33,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
-  const { name, instagram, contact, email, situation, goal, service, income } = req.body || {};
+  const { name, instagram, contact, telegram, email, situation, goal, service, income } = req.body || {};
 
   if (!name || !instagram || !contact || !situation) {
     return res.status(400).json({ error: 'Required fields missing' });
@@ -77,6 +77,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
             ${row('Name', name)}
             ${row('Instagram', instagram)}
             ${row('Contact', contact)}
+            ${row('Telegram', telegram)}
             ${row('Email', email)}
             ${row('Situation', situationText)}
             ${row('Situation & blockers', (goal || 'Not provided').replace(/\n/g, '<br>'))}
@@ -87,7 +88,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
           </div>
         </div>
       `,
-      text: `New Application\nName: ${name}\nInstagram: ${instagram}\nContact: ${contact}\nEmail: ${email || 'Not provided'}\nSituation: ${situationText}\nContext: ${goal || 'Not provided'}\nMonthly Revenue: ${income || 'Not provided'}`,
+      text: `New Application\nName: ${name}\nInstagram: ${instagram}\nContact: ${contact}\nTelegram: ${telegram || 'Not provided'}\nEmail: ${email || 'Not provided'}\nSituation: ${situationText}\nContext: ${goal || 'Not provided'}\nMonthly Revenue: ${income || 'Not provided'}`,
     });
 
     if (error) {
@@ -98,7 +99,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     // El portal se avisa DESPUES del correo, a proposito: el correo es la copia
     // que nunca puede fallar. Si el portal esta caido, el lead llega igual al
     // buzon y solo falta la fila, que se puede recuperar.
-    await persistToPortal({ source: 'model', name, email, instagram, contact, situation, goal, service, income });
+    await persistToPortal({ source: 'model', name, email, instagram, contact, telegram, situation, goal, service, income });
     return res.status(200).json({ ok: true, id: data?.id });
   } catch (e: any) {
     console.error('Send error:', e?.message);

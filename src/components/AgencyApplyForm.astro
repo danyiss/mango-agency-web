@@ -16,6 +16,9 @@ const t = {
     instagram: 'Main Instagram / Agency Page',
     contact: 'Telegram / WhatsApp',
     prefixPlaceholder: 'Code',
+    telegram: 'Telegram username (optional)',
+    telegramPlaceholder: '@username',
+    telegramHint: 'Another way to reach you',
     email: 'Email',
     emailPlaceholder: 'you@agency.com',
     accounts: 'How many accounts are you looking to scale?',
@@ -62,6 +65,9 @@ const t = {
     instagram: 'Instagram principal / Página de la agencia',
     contact: 'Telegram / WhatsApp',
     prefixPlaceholder: 'Prefijo',
+    telegram: 'Usuario de Telegram (opcional)',
+    telegramPlaceholder: '@usuario',
+    telegramHint: 'Otra vía para contactarte',
     email: 'Email',
     emailPlaceholder: 'tu@agencia.com',
     accounts: '¿Cuántas cuentas quieres escalar?',
@@ -146,6 +152,13 @@ const t = {
         </div>
 
         <div>
+          <label for="telegram" class="text-[11px] font-semibold uppercase tracking-[0.22em] text-white/70 mb-3 block">{t.telegram}</label>
+          <input type="text" id="telegram" name="telegram" placeholder={t.telegramPlaceholder}
+            class="w-full bg-transparent border-0 border-b border-white/25 px-0 py-2.5 text-base text-white placeholder:text-white/30 focus:outline-none focus:border-white/70 transition-colors" />
+          <p class="text-xs text-white/45 mt-2">{t.telegramHint}</p>
+        </div>
+
+        <div>
           <label for="email" class="text-[11px] font-semibold uppercase tracking-[0.22em] text-white/70 mb-3 block">{t.email}</label>
           <input type="email" id="email" name="email" required placeholder={t.emailPlaceholder}
             class="w-full bg-transparent border-0 border-b border-white/25 px-0 py-2.5 text-base text-white placeholder:text-white/30 focus:outline-none focus:border-white/70 transition-colors" />
@@ -224,6 +237,7 @@ const t = {
       agencyName: form.agencyName.value,
       instagram: form.instagram.value,
       contact: (form.prefix.value ? form.prefix.value + ' ' : '') + form.contact.value,
+      telegram: form.telegram.value,
       email: form.email.value,
       accounts: form.accounts.value,
       revenue: form.revenue.value,

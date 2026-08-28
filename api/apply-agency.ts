@@ -33,7 +33,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
-  const { agencyName, instagram, contact, email, accounts, revenue, challenge } = req.body || {};
+  const { agencyName, instagram, contact, telegram, email, accounts, revenue, challenge } = req.body || {};
 
   if (!agencyName || !instagram || !contact || !accounts || !revenue || !challenge) {
     return res.status(400).json({ error: 'Required fields missing' });
@@ -97,6 +97,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
             ${row('Agency / Brand', agencyName)}
             ${row('Instagram / Page', instagram)}
             ${row('Contact', contact)}
+            ${row('Telegram', telegram)}
             ${row('Email', email)}
             ${row('Accounts to scale', accountsText)}
             ${row('Avg revenue / account', revenueText)}
@@ -107,7 +108,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
           </div>
         </div>
       `,
-      text: `New Agency Partnership Application\nAgency: ${agencyName}\nInstagram: ${instagram}\nContact: ${contact}\nEmail: ${email || 'Not provided'}\nAccounts: ${accountsText}\nAvg revenue/account: ${revenueText}\nBiggest challenge: ${challengeText}`,
+      text: `New Agency Partnership Application\nAgency: ${agencyName}\nInstagram: ${instagram}\nContact: ${contact}\nTelegram: ${telegram || 'Not provided'}\nEmail: ${email || 'Not provided'}\nAccounts: ${accountsText}\nAvg revenue/account: ${revenueText}\nBiggest challenge: ${challengeText}`,
     });
 
     if (error) {
@@ -118,7 +119,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     // El portal se avisa DESPUES del correo, a proposito: el correo es la copia
     // que nunca puede fallar. Si el portal esta caido, el lead llega igual al
     // buzon y solo falta la fila, que se puede recuperar.
-    await persistToPortal({ source: 'agency', name: agencyName, email, instagram, contact, accounts, revenue, challenge });
+    await persistToPortal({ source: 'agency', name: agencyName, email, instagram, contact, telegram, accounts, revenue, challenge });
     return res.status(200).json({ ok: true, id: data?.id });
   } catch (e: any) {
     console.error('Send error:', e?.message);
