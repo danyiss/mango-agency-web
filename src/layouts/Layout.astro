@@ -2,6 +2,7 @@
 import '../styles/global.css';
 import { getLangFromUrl, useTranslations, getLocalizedPath, type Lang } from '../i18n/translations';
 import { cities } from '../data/cities';
+import ContactFloat from '../components/ContactFloat.astro';
 
 interface Props {
   title: string;
@@ -84,7 +85,7 @@ const orgSchema = {
   ],
   "sameAs": [
     "https://instagram.com/mango.creators",
-    "https://t.me/mangocreators",
+    "https://t.me/manna131",
     "https://de.linkedin.com/in/aitorgonzalezrivera",
   ],
 };
@@ -393,10 +394,10 @@ const breadcrumbSchema = (basePath !== '/' && pageLabels)
               </svg>
             </a>
             <a
-              href="https://t.me/mangocreators"
+              href="https://t.me/manna131"
               target="_blank"
               rel="noopener"
-              aria-label="Telegram @mangocreators"
+              aria-label="Telegram @manna131"
               class="inline-flex items-center justify-center text-white hover:text-white/70 transition-colors duration-300"
             >
               <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -446,5 +447,7 @@ const breadcrumbSchema = (basePath !== '/' && pageLabels)
         </p>
       </div>
     </footer>
+
+    <ContactFloat lang={currentLang} />
   </body>
 </html>

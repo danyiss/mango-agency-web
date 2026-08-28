@@ -1,5 +1,6 @@
 ---
 import { countryCodes } from '../data/countryCodes';
+import ContactDirect from './ContactDirect.astro';
 
 interface Props {
   lang?: 'en' | 'es';
@@ -207,6 +208,8 @@ const t = {
           <p class="text-xs text-white/45">{t.check2}</p>
         </div>
       </form>
+
+      <ContactDirect lang={lang} />
 
       <div id="agency-form-success" class="hidden text-center py-10">
         <span class="material-symbols-outlined mb-4 block" style="font-size:48px;font-variation-settings:'FILL' 1; color:#C8A96A;">check_circle</span>

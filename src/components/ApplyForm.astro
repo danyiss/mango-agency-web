@@ -1,5 +1,6 @@
 ---
 import { countryCodes } from '../data/countryCodes';
+import ContactDirect from './ContactDirect.astro';
 
 interface Props {
   lang?: 'en' | 'es';
@@ -199,6 +200,8 @@ const t = {
             <p class="text-xs text-white/55">{t.note3}</p>
           </div>
         </form>
+
+        <ContactDirect lang={lang} />
 
         <!-- Success state -->
         <div id="form-success" class="hidden text-center py-10">
