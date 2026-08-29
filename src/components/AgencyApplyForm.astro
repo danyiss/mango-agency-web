@@ -52,6 +52,18 @@ const t = {
       { value: 'no-control', label: 'Lack of control over chatting performance' },
       { value: 'other', label: 'Other' },
     ],
+    heard: 'How did you hear about us? (optional)',
+    heardPlaceholder: 'Select one',
+    heardOptions: [
+      { value: 'chatgpt', label: 'ChatGPT / AI assistant' },
+      { value: 'google', label: 'Google' },
+      { value: 'instagram', label: 'Instagram' },
+      { value: 'tiktok', label: 'TikTok' },
+      { value: 'twitter', label: 'X / Twitter' },
+      { value: 'reddit', label: 'Reddit' },
+      { value: 'friend', label: 'A friend / referral' },
+      { value: 'other', label: 'Other' },
+    ],
     submit: 'Apply for partnership',
     check1: 'Applications reviewed within 24–48h',
     check2: 'We only work with a limited number of partners',
@@ -99,6 +111,18 @@ const t = {
       { value: 'no-system', label: 'Sin sistema de chatting estructurado' },
       { value: 'scaling', label: 'Escalar la monetización entre múltiples modelos' },
       { value: 'no-control', label: 'Falta de control sobre el rendimiento del chatting' },
+      { value: 'other', label: 'Otro' },
+    ],
+    heard: '¿Cómo nos conociste? (opcional)',
+    heardPlaceholder: 'Selecciona una',
+    heardOptions: [
+      { value: 'chatgpt', label: 'ChatGPT / asistente de IA' },
+      { value: 'google', label: 'Google' },
+      { value: 'instagram', label: 'Instagram' },
+      { value: 'tiktok', label: 'TikTok' },
+      { value: 'twitter', label: 'X / Twitter' },
+      { value: 'reddit', label: 'Reddit' },
+      { value: 'friend', label: 'Una amiga / recomendación' },
       { value: 'other', label: 'Otro' },
     ],
     submit: 'Solicitar partnership',
@@ -198,6 +222,17 @@ const t = {
           </select>
         </div>
 
+        <div>
+          <label for="heardFrom" class="text-[11px] font-semibold uppercase tracking-[0.22em] text-white/70 mb-3 block">{t.heard}</label>
+          <select id="heardFrom" name="heardFrom"
+            class="w-full bg-transparent border-0 border-b border-white/25 px-0 py-2.5 text-base text-white focus:outline-none focus:border-white/70 transition-colors appearance-none cursor-pointer">
+            <option value="" disabled selected style="background-color:#070707;color:rgba(255,255,255,0.5);">{t.heardPlaceholder}</option>
+            {t.heardOptions.map((o) => (
+              <option value={o.value} style="background-color:#070707;">{o.label}</option>
+            ))}
+          </select>
+        </div>
+
         <button type="submit" id="agency-submit-btn"
           class="bg-accent text-black font-bold py-4 rounded-[7px] text-sm tracking-wide hover:brightness-95 hover:scale-[1.02] transition-all w-full mt-5">
           {t.submit}
@@ -245,6 +280,7 @@ const t = {
       accounts: form.accounts.value,
       revenue: form.revenue.value,
       challenge: form.challenge.value,
+      heardFrom: form.heardFrom.value,
     };
 
     try {
