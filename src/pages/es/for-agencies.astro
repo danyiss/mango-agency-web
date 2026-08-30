@@ -46,9 +46,24 @@ const faqs = [
   { q: '¿Cómo se cobra?', a: 'Modelo basado en rendimiento. Cada setup es distinto según tus modelos, ingresos actuales y estructura. Solo ganamos dinero si tus ingresos suben — así nos mantenemos alineados.' },
   { q: '¿Por qué trabajar con vosotros en lugar de montarlo internamente?', a: 'Puedes hacerlo. Pero requiere tiempo, contratación, formación, gestión y optimización constante. Te damos un sistema que ya funciona — sin la complejidad operativa.' },
 ];
+
+// Las preguntas ya estaban en la pagina pero sin marcado: sin esto los buscadores
+// y los motores de IA no pueden extraerlas como respuestas citables.
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map((f) => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a },
+  })),
+};
+
 ---
 
 <Layout title="Servicio de Chatting OnlyFans para Agencias | MANGO" description="Servicio de chatting de MANGO para agencias de OnlyFans. Chatters dedicados por modelo, flujos de venta estructurados y sistemas de monetización diseñados para escalar." activeNav="for-agencies" lang="es" transparentTop={true}>
+
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 
   <!-- 1. HERO — cinematic, deep overlay, atmospheric grain -->
   <section class="relative h-screen -mt-16 w-full overflow-hidden grain">
