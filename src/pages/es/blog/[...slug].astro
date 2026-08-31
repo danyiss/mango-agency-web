@@ -38,6 +38,16 @@ const articleSchema = {
   "inLanguage": "es",
   "keywords": post.data.tags.join(', '),
 };
+
+const faqSchema = post.data.faqs?.length ? {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": post.data.faqs.map((f) => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a },
+  })),
+} : null;
 ---
 
 <Layout
@@ -50,6 +60,7 @@ const articleSchema = {
 >
   <Fragment slot="head">
     <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+    {faqSchema && <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />}
     <link rel="alternate" hreflang="en" href={altUrl} />
     <meta property="article:published_time" content={post.data.pubDate.toISOString()} />
     {post.data.updatedDate && <meta property="article:modified_time" content={post.data.updatedDate.toISOString()} />}
@@ -58,24 +69,24 @@ const articleSchema = {
   </Fragment>
 
   <article class="relative">
-    <header class="relative min-h-[55vh] -mt-16 w-full overflow-hidden flex items-end pb-16 md:pb-24 section-cinematic grain">
+    <header class="relative -mt-16 w-full overflow-hidden section-cinematic grain pt-24 md:pt-28 pb-6 md:pb-8">
       <div class="atmosphere-glow magenta" style="top:14%;right:-12%;width:520px;height:520px;opacity:0.35;"></div>
-      <div class="relative z-10 max-w-4xl mx-auto px-6 lg:px-10 w-full pt-32 md:pt-40">
-        <div class="flex flex-col items-start gap-6 md:gap-8">
+      <div class="relative z-10 max-w-4xl mx-auto px-6 lg:px-10 w-full">
+        <div class="flex flex-col items-start gap-5 md:gap-6">
           <div class="flex items-center gap-3 text-[11px] uppercase tracking-[0.28em] text-white/45">
             <time datetime={post.data.pubDate.toISOString().slice(0, 10)}>{post.data.pubDate.toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' })}</time>
             {post.data.tags.length > 0 && <span>·</span>}
             <span>{post.data.tags.join(', ')}</span>
           </div>
-          <h1 class="font-display text-[36px] sm:text-5xl md:text-6xl lg:text-7xl text-white leading-[1.0] tracking-[-0.025em]">{post.data.title}</h1>
+          <h1 class="font-display text-[36px] sm:text-[46px] md:text-[58px] lg:text-[66px] text-white leading-[1.04] tracking-[-0.025em]">{post.data.title}</h1>
           <p class="text-white/65 text-[15px] md:text-base lg:text-lg leading-relaxed max-w-3xl">{post.data.description}</p>
           <p class="text-white/45 text-sm">Por <a href="/es/about" class="text-white/65 hover:text-white underline underline-offset-4">{post.data.author}</a></p>
         </div>
       </div>
     </header>
 
-    <section class="relative py-20 md:py-32 section-panel grain">
-      <div class="relative z-10 max-w-2xl mx-auto px-6 lg:px-10">
+    <section class="relative pt-8 md:pt-10 pb-24 md:pb-32 section-panel grain">
+      <div class="relative z-10 max-w-4xl mx-auto px-6 lg:px-10">
         <div class="prose-mango text-white/80 text-base md:text-lg leading-[1.75]">
           <Content />
         </div>
@@ -84,3 +95,33 @@ const articleSchema = {
   </article>
 
 </Layout>
+
+<style is:global>
+  .prose-mango p { margin: 0 0 1.5em; }
+  .prose-mango h2 { font-family: 'Inter', sans-serif; color: #fff; font-size: 1.875rem; line-height: 1.15; letter-spacing: -0.015em; margin: 2.5em 0 0.75em; font-weight: 700; }
+  .prose-mango h3 { font-family: 'Inter', sans-serif; color: #fff; font-size: 1.375rem; line-height: 1.2; letter-spacing: -0.01em; margin: 2em 0 0.5em; font-weight: 700; }
+  .prose-mango a { color: #C8A96A; text-decoration: underline; text-underline-offset: 2px; }
+  .prose-mango a:hover { color: rgba(200,169,106,0.8); }
+  .prose-mango ul, .prose-mango ol { margin: 0 0 1.5em; padding-left: 1.5em; }
+  .prose-mango li { margin-bottom: 0.5em; }
+  .prose-mango blockquote { border-left: 2px solid #C8A96A; padding-left: 1.25em; margin: 2em 0; color: rgba(255,255,255,0.65); font-style: italic; }
+  .prose-mango code { background: rgba(255,255,255,0.06); padding: 0.15em 0.4em; border-radius: 4px; font-size: 0.9em; }
+  .prose-mango pre { background: rgba(255,255,255,0.04); padding: 1.25em; border-radius: 8px; overflow-x: auto; margin: 2em 0; }
+  .prose-mango pre code { background: transparent; padding: 0; }
+  .prose-mango img { border-radius: 6px; margin: 2em 0; }
+
+  /* Entradilla: primer parrafo algo mayor, como en una revista */
+  .prose-mango > p:first-of-type { font-size: 1.1em; color: rgba(255,255,255,0.9); }
+  .prose-mango > :first-child { margin-top: 0; }
+  .prose-mango strong { color: #fff; font-weight: 650; }
+  .prose-mango hr { border: 0; border-top: 1px solid rgba(255,255,255,0.12); margin: 2.5em 0; }
+  .prose-mango li::marker { color: rgba(200,169,106,0.75); }
+  .prose-mango li { padding-left: 0.15em; }
+  /* Tablas: sin esto una tabla en markdown sale sin bordes ni separacion */
+  .prose-mango table { width: 100%; border-collapse: collapse; margin: 2em 0; font-size: 0.95em; }
+  .prose-mango th { text-align: left; color: #fff; font-weight: 700; padding: 0.7em 0.6em;
+    border-bottom: 1px solid rgba(255,255,255,0.22); }
+  .prose-mango td { padding: 0.7em 0.6em; border-bottom: 1px solid rgba(255,255,255,0.08); }
+  .prose-mango tbody tr:last-child td { border-bottom: 0; }
+  .prose-mango td:last-child, .prose-mango th:last-child { text-align: right; white-space: nowrap; }
+</style>
