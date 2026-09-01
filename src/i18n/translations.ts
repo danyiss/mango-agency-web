@@ -12,6 +12,7 @@ export const translations = {
     'nav.home': 'For Creators',
     'nav.results': 'Results',
     'nav.forAgencies': 'Chatting Service',
+    'nav.blog': 'Blog',
     'nav.applyNow': 'Apply Now',
 
     // Home Hero
@@ -117,6 +118,7 @@ export const translations = {
     'nav.home': 'Para Creadoras',
     'nav.results': 'Resultados',
     'nav.forAgencies': 'Servicio de Chatting',
+    'nav.blog': 'Blog',
     'nav.applyNow': 'Aplicar',
 
     // Home Hero
