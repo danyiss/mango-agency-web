@@ -1,0 +1,56 @@
+name: Publicar posts programados
+
+# Cada lunes a las 07:00 UTC (09:00 Madrid en verano, 08:00 en invierno) publica los
+# posts del blog que esten en `draft: true` y cuya `pubDate` ya haya llegado: les quita
+# el borrador, hace push (Vercel despliega solo), espera a que la URL nueva responda
+# 200 y avisa a IndexNow (Bing/ChatGPT, Yandex...). Si no hay nada que publicar termina
+# sin tocar nada. Tambien se puede lanzar a mano desde la pestaña Actions.
+on:
+  schedule:
+    - cron: '0 7 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency: publish-scheduled
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Quitar el borrador a los posts cuya fecha ha llegado
+        id: flip
+        run: node scripts/publish-scheduled.mjs
+
+      - name: Commit y push (Vercel despliega al recibirlo)
+        if: steps.flip.outputs.count > 0
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/content/blog
+          git commit -m "publish: ${{ steps.flip.outputs.slugs }} (${{ steps.flip.outputs.date }})"
+          git push
+
+      - name: Esperar a que Vercel sirva las URLs nuevas
+        if: steps.flip.outputs.count > 0
+        run: |
+          for url in ${{ steps.flip.outputs.urls }}; do
+            code=0
+            for i in $(seq 1 30); do
+              code=$(curl -s -o /dev/null -w '%{http_code}' "$url")
+              if [ "$code" = "200" ]; then echo "OK  $url"; break; fi
+              echo "($i/30) $url -> $code, espero 20s"; sleep 20
+            done
+            if [ "$code" != "200" ]; then echo "::error::$url sigue sin servirse tras 10 min"; exit 1; fi
+          done
+
+      - name: Avisar a IndexNow (Bing, Yandex, Naver, Seznam)
+        if: steps.flip.outputs.count > 0
+        run: node scripts/indexnow.mjs --sitemap
