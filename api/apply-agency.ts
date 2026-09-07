@@ -33,7 +33,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
-  const { agencyName, instagram, contact, telegram, email, accounts, revenue, challenge, heardFrom } = req.body || {};
+  const { agencyName, instagram, contact, telegram, email, accounts, revenue, challenge, heardFrom, heardDetail } = req.body || {};
 
   if (!agencyName || !instagram || !contact || !accounts || !revenue || !challenge) {
     return res.status(400).json({ error: 'Required fields missing' });
@@ -71,6 +71,8 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     twitter: 'X / Twitter', reddit: 'Reddit', friend: 'Friend / referral', other: 'Other',
   };
   const heardText = heardLabels[heardFrom] || heardFrom;
+  const heardDetailText = typeof heardDetail === 'string' ? heardDetail.trim().slice(0, 200) : '';
+  const heardFull = [heardText, heardDetailText].filter(Boolean).join(' — ');
 
 
   if (!process.env.RESEND_API_KEY) {
@@ -107,14 +109,14 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
             ${row('Accounts to scale', accountsText)}
             ${row('Avg revenue / account', revenueText)}
             ${row('Biggest challenge', challengeText)}
-            ${row('Heard about us', heardText || 'Not provided')}
+            ${row('Heard about us', heardFull || 'Not provided')}
           </table>
           <div style="margin-top: 24px; padding: 16px; background: #f9f9fb; border-radius: 8px; font-size: 12px; color: #777;">
             Received ${new Date().toISOString()}
           </div>
         </div>
       `,
-      text: `New Agency Partnership Application\nAgency: ${agencyName}\nInstagram: ${instagram}\nContact: ${contact}\nTelegram: ${telegram || 'Not provided'}\nEmail: ${email || 'Not provided'}\nAccounts: ${accountsText}\nAvg revenue/account: ${revenueText}\nBiggest challenge: ${challengeText}\nHeard about us: ${heardText || 'Not provided'}`,
+      text: `New Agency Partnership Application\nAgency: ${agencyName}\nInstagram: ${instagram}\nContact: ${contact}\nTelegram: ${telegram || 'Not provided'}\nEmail: ${email || 'Not provided'}\nAccounts: ${accountsText}\nAvg revenue/account: ${revenueText}\nBiggest challenge: ${challengeText}\nHeard about us: ${heardFull || 'Not provided'}`,
     });
 
     if (error) {
@@ -125,7 +127,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     // El portal se avisa DESPUES del correo, a proposito: el correo es la copia
     // que nunca puede fallar. Si el portal esta caido, el lead llega igual al
     // buzon y solo falta la fila, que se puede recuperar.
-    await persistToPortal({ source: 'agency', name: agencyName, email, instagram, contact, telegram, accounts, revenue, challenge, heardFrom });
+    await persistToPortal({ source: 'agency', name: agencyName, email, instagram, contact, telegram, accounts, revenue, challenge, heardFrom: heardDetailText ? `${heardFrom}: ${heardDetailText}` : heardFrom });
     return res.status(200).json({ ok: true, id: data?.id });
   } catch (e: any) {
     console.error('Send error:', e?.message);

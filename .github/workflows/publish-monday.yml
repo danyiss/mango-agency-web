@@ -1,13 +1,17 @@
 name: Publicar posts programados
 
-# Cada lunes a las 07:00 UTC (09:00 Madrid en verano, 08:00 en invierno) publica los
+# Cada lunes a las 07:13 UTC (09:13 Madrid en verano, 08:13 en invierno), con reintento a las 08:43 UTC, publica los
 # posts del blog que esten en `draft: true` y cuya `pubDate` ya haya llegado: les quita
 # el borrador, hace push (Vercel despliega solo), espera a que la URL nueva responda
 # 200 y avisa a IndexNow (Bing/ChatGPT, Yandex...). Si no hay nada que publicar termina
 # sin tocar nada. Tambien se puede lanzar a mano desde la pestaña Actions.
 on:
   schedule:
-    - cron: '0 7 * * 1'
+    # Minuto no redondo: GitHub descarta más crons a la hora en punto (el 7-sep-2026
+    # se tragó el de las 07:00). El segundo es un reintento: si el primero ya
+    # publicó, no encuentra nada y no toca nada.
+    - cron: '13 7 * * 1'
+    - cron: '43 8 * * 1'
   workflow_dispatch:
 
 permissions:

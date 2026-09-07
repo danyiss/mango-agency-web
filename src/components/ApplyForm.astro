@@ -54,6 +54,8 @@ const t = {
       { value: 'reddit', label: 'Reddit' },
       { value: 'other', label: 'Other' },
     ],
+    heardDetailLabels: { other: 'Tell us more (optional)', chatgpt: 'Which assistant? (optional)' },
+    heardDetailPlaceholders: { other: 'Where did you see us?', chatgpt: 'ChatGPT, Gemini, Perplexity…' },
     submit: 'Apply to work with us',
     note1: 'Applications reviewed within 24–48h.',
     note2: 'Only selected creators will be contacted.',
@@ -106,6 +108,8 @@ const t = {
       { value: 'reddit', label: 'Reddit' },
       { value: 'other', label: 'Otro' },
     ],
+    heardDetailLabels: { other: 'Cuéntanos más (opcional)', chatgpt: '¿Qué asistente? (opcional)' },
+    heardDetailPlaceholders: { other: '¿Dónde nos viste?', chatgpt: 'ChatGPT, Gemini, Perplexity…' },
     submit: 'Aplicar para trabajar con nosotros',
     note1: 'Las solicitudes se revisan en 24–48h.',
     note2: 'Solo las creadoras seleccionadas serán contactadas.',
@@ -221,6 +225,11 @@ const t = {
               ))}
             </select>
           </div>
+          <div id="heardDetailWrap" class="hidden" data-labels={JSON.stringify(t.heardDetailLabels)} data-placeholders={JSON.stringify(t.heardDetailPlaceholders)}>
+            <label for="heardDetail" id="heardDetailLabel" class="text-[11px] font-semibold uppercase tracking-[0.22em] text-white/75 mb-3 block">{t.heardDetailLabels.other}</label>
+            <input type="text" id="heardDetail" name="heardDetail" maxlength="200" placeholder={t.heardDetailPlaceholders.other}
+              class="w-full bg-transparent border-0 border-b border-white/25 px-0 py-2.5 text-base text-white placeholder:text-white/30 focus:outline-none focus:border-white/70 transition-colors" />
+          </div>
 
           <button type="submit" id="submit-btn"
             class="bg-accent text-black font-bold py-4 rounded-[7px] text-sm tracking-wide hover:brightness-95 hover:scale-[1.02] transition-all w-full mt-4">
@@ -253,6 +262,19 @@ const t = {
 </section>
 
 <script is:inline>
+  // «Otro» y «ChatGPT / IA» despliegan un texto libre para dar más detalle.
+  (() => {
+    const sel = document.getElementById('heardFrom'), wrap = document.getElementById('heardDetailWrap');
+    if (!sel || !wrap) return;
+    const input = document.getElementById('heardDetail'), label = document.getElementById('heardDetailLabel');
+    const labels = JSON.parse(wrap.dataset.labels), placeholders = JSON.parse(wrap.dataset.placeholders);
+    sel.addEventListener('change', () => {
+      const show = Object.prototype.hasOwnProperty.call(labels, sel.value);
+      wrap.classList.toggle('hidden', !show);
+      if (show) { label.textContent = labels[sel.value]; input.placeholder = placeholders[sel.value]; input.focus(); }
+      else input.value = '';
+    });
+  })();
   document.getElementById('apply-form')?.addEventListener('submit', async (e) => {
     e.preventDefault();
     const form = e.target;
@@ -276,6 +298,7 @@ const t = {
       service: form.service.value,
       income: form.income.value,
       heardFrom: form.heardFrom.value,
+      heardDetail: form.heardDetail.value.trim(),
     };
 
     try {
