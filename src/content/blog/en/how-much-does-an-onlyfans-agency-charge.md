@@ -2,7 +2,7 @@
 title: "How Much Does an OnlyFans Agency Charge? Real Percentages (2026)"
 description: "What an OnlyFans agency charges in 2026, gross vs net, what full management includes, and what we charge, being as transparent as we possibly can."
 pubDate: 2026-09-07
-draft: true
+draft: false
 author: "Aitor González Rivera"
 lang: "en"
 slug: "how-much-does-an-onlyfans-agency-charge"

@@ -2,7 +2,7 @@
 title: "Cuánto cobra una agencia de OnlyFans: porcentajes reales 2026"
 description: "Cuánto cobra una agencia de OnlyFans, sobre bruto o neto, qué incluye la gestión completa y cuánto cobramos nosotros, siendo lo más transparentes posible."
 pubDate: 2026-09-07
-draft: true
+draft: false
 author: "Aitor González Rivera"
 lang: "es"
 slug: "how-much-does-an-onlyfans-agency-charge"
