@@ -5,6 +5,7 @@ pubDate: 2026-08-31
 author: "Aitor González Rivera"
 lang: "es"
 slug: "how-to-choose-a-trustworthy-onlyfans-agency"
+coverImage: "/blog/covers/how-to-choose-a-trustworthy-onlyfans-agency-es.png"
 tags: ["agencia OnlyFans", "porcentaje agencia", "contratos", "estafas", "creadoras"]
 faqs:
   - q: "¿Qué porcentaje se lleva una agencia de OnlyFans?"
@@ -107,3 +108,5 @@ Escribimos esta guía porque nos hacen estas preguntas todas las semanas, así q
 Trabajamos con pocas creadoras a la vez y seleccionamos por compromiso, no por facturación: no hace falta que ya estés facturando cinco cifras, pero sí que quieras construir algo a largo plazo.
 
 Si después de pasar esta checklist quieres ver si encajamos, puedes [enviar tu solicitud aquí](/es#apply). Y si acabas eligiendo otra agencia, usa igualmente las siete preguntas: es lo que nos habría gustado que le preguntaran a todas las creadoras que llegan a nosotros después de una mala experiencia.
+
+Trabajamos con creadoras de toda Latinoamérica y España: [Buenos Aires](/es/buenos-aires), [Ciudad de México](/es/mexico-city), [Bogotá](/es/bogota), [Santiago](/es/santiago), [Lima](/es/lima), [Medellín](/es/medellin) y [Madrid](/es/madrid), entre otras ciudades.

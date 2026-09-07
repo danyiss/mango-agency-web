@@ -6,6 +6,7 @@ draft: false
 author: "Aitor González Rivera"
 lang: "es"
 slug: "how-much-does-an-onlyfans-agency-charge"
+coverImage: "/blog/covers/how-much-does-an-onlyfans-agency-charge-es.png"
 tags: ["porcentaje agencia", "cuánto cobra", "agencia OnlyFans", "gestión completa", "creadoras"]
 faqs:
   - q: "¿Cuánto cobra una agencia de OnlyFans?"
