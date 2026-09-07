@@ -181,13 +181,16 @@ const breadcrumbSchema = (basePath !== '/' && pageLabels)
          alternatives (PageSpeed Insights, Lighthouse) for CWV monitoring. -->
     <script defer src="/_vercel/insights/script.js"></script>
 
+    <!-- Material Symbols va SUBSETEADA con icon_names: la familia completa pesa 3,97 MB (era el 77 % del
+         peso de la home y hundía el LCP móvil); con los 4 iconos que usamos, 3,4 KB. Si añades un icono
+         nuevo, súmalo a icon_names (orden alfabético) o se pintará como texto. -->
     <!-- Fonts — Inter is render-blocking (critical for hero text), Material Symbols is async-loaded. -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" as="style" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet';" />
-    <noscript><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" rel="stylesheet" /></noscript>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=add,check_circle,close,menu&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet';" />
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=add,check_circle,close,menu&display=swap" rel="stylesheet" /></noscript>
 
     <title>{title}</title>
 
