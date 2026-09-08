@@ -28,7 +28,7 @@ const pill = 'cf-pill flex items-center gap-2.5 pl-3.5 pr-4 py-2.5 rounded-full 
 
 {(wa || tg) && (
   <div id="contact-float" class="fixed z-40 bottom-5 right-5 md:bottom-7 md:right-7 flex flex-col items-end gap-2.5">
-    <div id="cf-actions" class="flex flex-col items-end gap-2.5" aria-hidden="true" inert>
+    <div id="cf-actions" class="flex flex-col items-end gap-2.5" aria-hidden="true">
       {wa && (
         <a href={wa} target="_blank" rel="noopener" class={pill} data-contact="whatsapp">
           <svg viewBox="0 0 24 24" class="w-[17px] h-[17px] shrink-0" fill="#25D366" aria-hidden="true">
@@ -87,6 +87,7 @@ const pill = 'cf-pill flex items-center gap-2.5 pl-3.5 pr-4 py-2.5 rounded-full 
         chat.classList.toggle('hidden', open);
         close.classList.toggle('hidden', !open);
       }
+      set(false); // estado inicial: cerrado e inert (Astro no serializa `inert` en el HTML)
       btn.addEventListener('click', function (e) {
         e.stopPropagation();
         set(!box.classList.contains('is-open'));
