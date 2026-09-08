@@ -28,7 +28,7 @@ const pill = 'cf-pill flex items-center gap-2.5 pl-3.5 pr-4 py-2.5 rounded-full 
 
 {(wa || tg) && (
   <div id="contact-float" class="fixed z-40 bottom-5 right-5 md:bottom-7 md:right-7 flex flex-col items-end gap-2.5">
-    <div id="cf-actions" class="flex flex-col items-end gap-2.5" aria-hidden="true">
+    <div id="cf-actions" class="flex flex-col items-end gap-2.5" aria-hidden="true" inert>
       {wa && (
         <a href={wa} target="_blank" rel="noopener" class={pill} data-contact="whatsapp">
           <svg viewBox="0 0 24 24" class="w-[17px] h-[17px] shrink-0" fill="#25D366" aria-hidden="true">
@@ -81,6 +81,9 @@ const pill = 'cf-pill flex items-center gap-2.5 pl-3.5 pr-4 py-2.5 rounded-full 
         box.classList.toggle('is-open', open);
         btn.setAttribute('aria-expanded', open ? 'true' : 'false');
         acts.setAttribute('aria-hidden', open ? 'false' : 'true');
+        // inert saca los enlaces del orden de tabulación cuando está cerrado: con solo
+        // aria-hidden seguían siendo enfocables y Lighthouse lo marca (aria-hidden-focus).
+        if (open) acts.removeAttribute('inert'); else acts.setAttribute('inert', '');
         chat.classList.toggle('hidden', open);
         close.classList.toggle('hidden', !open);
       }
