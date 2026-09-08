@@ -1,0 +1,194 @@
+---
+// Páginas hub por país: /es/[país]. Datos en src/data/countries.ts; ciudades por código ISO.
+import Layout from '../../layouts/Layout.astro';
+import { countries, type CountryData } from '../../data/countries';
+import { cities } from '../../data/cities';
+
+export async function getStaticPaths() {
+  return countries.map((c) => ({ params: { country: c.slug }, props: { country: c } }));
+}
+
+interface Props { country: CountryData }
+const { country } = Astro.props as Props;
+const siteUrl = 'https://www.mangova.agency';
+const pageUrl = `${siteUrl}/es/${country.slug}`;
+const altUrl = `${siteUrl}/${country.slug}`;
+const countryCities = cities.filter((c) => c.countryCode === country.code);
+
+const title = `Agencia de OnlyFans en ${country.name.es} | MANGO`;
+const description = `MANGO es una agencia de gestión de OnlyFans que trabaja con creadoras en ${country.name.es}: chatting ${country.primaryLanguage === 'es' ? 'nativo en español' : 'bilingüe inglés-español'} 24/7, marketing y estrategia de contenido por el 50 % del neto. Cómo funciona el mercado, cómo se cobra y dónde trabajamos.`;
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": `Gestión de OnlyFans en ${country.name.es}`,
+  "provider": { "@type": "Organization", "name": "MANGO Agency", "legalName": "AG MEDIA PRO LLC", "url": siteUrl },
+  "areaServed": { "@type": "Country", "name": country.name.en },
+  "serviceType": "OnlyFans Talent Management",
+  "description": description,
+  "url": pageUrl,
+  "audience": { "@type": "Audience", "audienceType": "Creadoras de OnlyFans" },
+};
+const webPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "url": pageUrl, "name": title, "description": description, "inLanguage": "es",
+  "isPartOf": { "@type": "WebSite", "name": "MANGO", "url": siteUrl },
+  "about": { "@type": "Organization", "name": "MANGO", "url": siteUrl },
+  "primaryImageOfPage": { "@type": "ImageObject", "url": `${siteUrl}/og-image-es.png` },
+};
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": country.faqs.es.map((f) => ({ "@type": "Question", "name": f.q, "acceptedAnswer": { "@type": "Answer", "text": f.a } })),
+};
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Inicio", "item": `${siteUrl}/es` },
+    { "@type": "ListItem", "position": 2, "name": `Agencia de OnlyFans en ${country.name.es}`, "item": pageUrl },
+  ],
+};
+const label = "block text-[11px] uppercase tracking-[0.32em] italic text-white/45 mb-5 md:mb-7";
+const serif = "font-family:Georgia,'Times New Roman',serif;";
+---
+
+<Layout title={title} description={description} activeNav="" lang="es" transparentTop={true}>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(webPageSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+    <link rel="alternate" hreflang="en" href={altUrl} />
+  </Fragment>
+
+  <!-- 1. HERO -->
+  <section class="relative min-h-[55vh] -mt-16 w-full overflow-hidden flex items-end pb-16 md:pb-24 section-cinematic grain">
+    <div class="atmosphere-glow magenta" style="top:14%;right:-12%;width:520px;height:520px;opacity:0.35;"></div>
+    <div class="atmosphere-glow crimson" style="bottom:-10%;left:-12%;width:480px;height:480px;opacity:0.3;"></div>
+    <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-10 w-full pt-32 md:pt-40">
+      <div class="flex flex-col items-start gap-6 md:gap-8 max-w-4xl">
+        <span class="text-[11px] uppercase tracking-[0.32em] italic text-white/45" style={serif}>{country.region.es} · {country.name.es}</span>
+        <h1 class="font-display text-[44px] sm:text-7xl md:text-8xl lg:text-[110px] xl:text-[130px] text-white leading-[0.92] tracking-[-0.03em]">Agencia de OnlyFans<br />en {country.name.es}.</h1>
+        <p class="text-white/65 text-[15px] md:text-base lg:text-lg leading-relaxed max-w-2xl">MANGO gestiona cuentas de OnlyFans de creadoras en {country.name.es}: chatting {country.primaryLanguage === 'es' ? 'nativo en español' : 'bilingüe inglés-español'} 24/7, marketing, estrategia de contenido y protección, por el 50 % del neto. Todo en remoto, pocas creadoras a la vez y sin mínimo de facturación para empezar.</p>
+        <a href="/es#apply" class="inline-block bg-accent text-black font-bold px-8 py-4 rounded-[7px] text-sm tracking-wide hover:brightness-95 hover:scale-[1.02] transition-all mt-2">Aplicar para trabajar con nosotros</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. MERCADO -->
+  <section class="relative py-24 md:py-36 section-panel grain">
+    <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-24">
+        <div class="lg:col-span-5">
+          <span class={label} style={serif}>El mercado en {country.name.es}</span>
+          <h2 class="font-display text-4xl md:text-5xl lg:text-6xl text-white leading-[1.0] tracking-[-0.02em]">Cómo facturan de verdad las creadoras de OnlyFans en {country.name.es}.</h2>
+        </div>
+        <div class="lg:col-span-7 flex flex-col gap-5 md:gap-6 text-white/75 text-base md:text-lg leading-relaxed">
+          <p>{country.marketContext.es}</p>
+          <p>{country.localAngle.es}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. DATOS -->
+  <section class="relative py-20 md:py-28 section-cinematic grain">
+    <div class="relative z-10 max-w-5xl mx-auto px-6 lg:px-8">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
+        <div class="flex flex-col gap-2"><span class="text-[10px] uppercase tracking-[0.28em] text-white/45">Región</span><span class="text-white text-base md:text-lg">{country.region.es}</span></div>
+        <div class="flex flex-col gap-2"><span class="text-[10px] uppercase tracking-[0.28em] text-white/45">Huso horario</span><span class="text-white text-base md:text-lg">{country.utcOffset}</span></div>
+        <div class="flex flex-col gap-2"><span class="text-[10px] uppercase tracking-[0.28em] text-white/45">Idioma del chatting</span><span class="text-white text-base md:text-lg">{country.variant.es}</span></div>
+        <div class="flex flex-col gap-2"><span class="text-[10px] uppercase tracking-[0.28em] text-white/45">Nuestra comisión</span><span class="text-white text-base md:text-lg">50 % del neto</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. CÓMO SE COBRA -->
+  <section class="relative py-24 md:py-36 section-panel grain">
+    <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-24">
+        <div class="lg:col-span-5">
+          <span class={label} style={serif}>Cómo se cobra</span>
+          <h2 class="font-display text-4xl md:text-5xl lg:text-6xl text-white leading-[1.0] tracking-[-0.02em]">Cómo se cobra OnlyFans desde {country.name.es}.</h2>
+        </div>
+        <div class="lg:col-span-7 flex flex-col gap-5 md:gap-6 text-white/75 text-base md:text-lg leading-relaxed">
+          <p>{country.practical.es}</p>
+          <p class="text-white/55 text-sm md:text-base">Para ver qué cobran las agencias y por qué el porcentaje tiene que ser sobre el neto, lee <a href="/es/blog/how-much-does-an-onlyfans-agency-charge" class="text-white/80 underline underline-offset-4 hover:text-white">cuánto cobra una agencia de OnlyFans</a>.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {countryCities.length > 0 && (
+  <!-- 5. CIUDADES -->
+  <section class="relative py-20 md:py-28 section-cinematic grain">
+    <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-10">
+      <span class={label} style={serif}>Dónde trabajamos en {country.name.es}</span>
+      <h2 class="font-display text-3xl md:text-4xl lg:text-5xl text-white leading-[1.0] tracking-[-0.02em] mb-10">Ciudades con creadoras gestionadas por MANGO.</h2>
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
+        {countryCities.map((c) => (
+          <a href={`/es/${c.slug}`} class="group flex flex-col gap-1 border border-white/10 rounded-[10px] px-5 py-5 hover:border-white/40 transition-colors">
+            <span class="text-white text-lg md:text-xl font-display">{c.name}</span>
+            <span class="text-white/45 text-xs uppercase tracking-[0.2em]">Agencia OnlyFans en {c.name} →</span>
+          </a>
+        ))}
+      </div>
+      <p class="text-white/45 text-sm mt-8">¿No estás en ninguna de estas ciudades? La gestión es completamente remota: el equipo es el mismo en cualquier punto de {country.name.es}.</p>
+    </div>
+  </section>
+  )}
+
+  <!-- 6. SERVICIOS -->
+  <section class="relative py-24 md:py-36 section-panel grain">
+    <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-10">
+      <div class="mb-12 md:mb-16 max-w-3xl">
+        <span class={label} style={serif}>Qué hace MANGO por las creadoras en {country.name.es}</span>
+        <h2 class="font-display text-4xl md:text-5xl lg:text-6xl text-white leading-[1.0] tracking-[-0.02em]">Una agencia pequeña, a propósito.</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
+        {[
+          { t: 'Chatting y monetización', d: `Equipo de chatting 24/7 (${country.variant.es}) centrado en retención, mayor gasto por fan y valor a largo plazo.` },
+          { t: 'Crecimiento en redes', d: 'Crecimiento orgánico liderado por Instagram, construido sobre la marca de la creadora y contenido viral.' },
+          { t: 'Estrategia de contenido', d: 'Dirección de contenido basada en datos de rendimiento: qué grabar, por qué y cómo convierte.' },
+          { t: 'Gestión personalizada', d: 'Sin equipos compartidos. Cada creadora tiene soporte dedicado en torno a su imagen, su público y sus objetivos.' },
+          { t: 'Operaciones y escalado', d: 'Flujos estructurados, control de calidad y seguimiento de rendimiento para que escalar no rompa la consistencia.' },
+          { t: 'Protección y soporte', d: 'Protección contra filtraciones, DMCA, seguridad de la cuenta y respaldo operativo continuo.' },
+        ].map((s) => (
+          <div class="flex flex-col gap-3">
+            <h3 class="font-display text-xl md:text-2xl text-white leading-[1.1] tracking-[-0.015em]">{s.t}</h3>
+            <p class="text-white/65 text-sm md:text-base leading-relaxed">{s.d}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. PREGUNTAS -->
+  <section class="relative py-24 md:py-36 section-cinematic grain">
+    <div class="relative z-10 max-w-4xl mx-auto px-6 lg:px-8">
+      <span class={label} style={serif}>Preguntas de creadoras en {country.name.es}</span>
+      <h2 class="font-display text-3xl md:text-4xl lg:text-5xl text-white leading-[1.0] tracking-[-0.02em] mb-10">Preguntas frecuentes.</h2>
+      <div class="flex flex-col divide-y divide-white/10">
+        {country.faqs.es.map((f) => (
+          <div class="py-7 md:py-8">
+            <h3 class="text-white text-lg md:text-xl font-semibold leading-snug mb-3">{f.q}</h3>
+            <p class="text-white/70 text-base md:text-lg leading-relaxed">{f.a}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. CTA -->
+  <section class="relative py-24 md:py-36 section-panel grain">
+    <div class="relative z-10 max-w-3xl mx-auto px-6 lg:px-8 text-center flex flex-col items-center gap-8 md:gap-12">
+      <span class="text-[11px] uppercase tracking-[0.32em] italic text-white/45" style={serif}>Aplicar</span>
+      <h2 class="font-display text-4xl md:text-5xl lg:text-6xl text-white leading-[0.98] tracking-[-0.02em] max-w-2xl">Para creadoras que quieren más.</h2>
+      <p class="text-white/70 text-base md:text-lg leading-relaxed max-w-xl">Si estás en {country.name.es} y quieres escalar tu OnlyFans con sistemas estructurados y un equipo dedicado, envía tu solicitud. Respondemos a todas.</p>
+      <a href="/es#apply" class="inline-block bg-accent text-black font-bold px-8 py-4 rounded-[7px] text-sm tracking-wide hover:brightness-95 hover:scale-[1.02] transition-all">Aplicar para trabajar con nosotros</a>
+      <p class="text-white/45 text-sm leading-relaxed max-w-xl">¿Eligiendo agencia? Lee nuestra <a href="/es/blog/how-to-choose-a-trustworthy-onlyfans-agency" class="text-white/70 underline underline-offset-4 hover:text-white">checklist de 10 puntos para saber si una agencia de OnlyFans es de fiar</a> antes de firmar nada.</p>
+    </div>
+  </section>
+</Layout>
