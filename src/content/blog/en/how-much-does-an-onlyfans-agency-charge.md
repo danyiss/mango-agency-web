@@ -117,3 +117,5 @@ We say this too, because it is true:
 If in doubt, use our [checklist to tell if an agency is legit](/blog/how-to-choose-a-trustworthy-onlyfans-agency): it works for evaluating us and anyone else.
 
 If after reading this you want to see whether we are a fit, you can [send your application here](/#apply). You already know the price, so the conversation starts where it should: on how to grow your account.
+
+Unsure about any of the terms? We keep an [OnlyFans glossary for creators](/glossary) explaining all of them in plain language.

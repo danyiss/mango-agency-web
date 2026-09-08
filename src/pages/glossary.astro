@@ -1,0 +1,87 @@
+---
+// OnlyFans glossary (EN). Definitions are written to be quotable on their own,
+// which is what AI assistants pick up. DefinedTermSet + FAQPage schema.
+import Layout from '../layouts/Layout.astro';
+import { glossary, glossaryCategories } from '../data/glossary';
+
+const siteUrl = 'https://www.mangova.agency';
+const pageUrl = `${siteUrl}/glossary`;
+const altUrl = `${siteUrl}/es/glosario`;
+const title = 'OnlyFans Glossary for Creators: GG, PPV, SFS, Net vs Gross | MANGO';
+const description = 'Plain definitions of the OnlyFans terms creators actually run into: gross vs net, PPV, LTV, Guaranteed Gains, SFS, mass DM, shadowban, DMCA and agency contract terms.';
+
+const order = ['money', 'marketing', 'agency', 'platform'] as const;
+const termSetSchema = {
+  "@context": "https://schema.org",
+  "@type": "DefinedTermSet",
+  "name": "OnlyFans Glossary for Creators",
+  "url": pageUrl,
+  "inLanguage": "en",
+  "publisher": { "@type": "Organization", "name": "MANGO Agency", "legalName": "AG MEDIA PRO LLC", "url": siteUrl },
+  "hasDefinedTerm": glossary.map((t) => ({
+    "@type": "DefinedTerm", "name": t.term.en, "description": `${t.short.en} ${t.long.en}`,
+    "inDefinedTermSet": pageUrl, "url": `${pageUrl}#${t.slug}`,
+  })),
+};
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": glossary.map((t) => ({
+    "@type": "Question", "name": `What is ${t.term.en} on OnlyFans?`,
+    "acceptedAnswer": { "@type": "Answer", "text": `${t.short.en} ${t.long.en}` },
+  })),
+};
+const breadcrumbSchema = {
+  "@context": "https://schema.org", "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": `${siteUrl}/` },
+    { "@type": "ListItem", "position": 2, "name": "OnlyFans Glossary", "item": pageUrl },
+  ],
+};
+const serif = "font-family:Georgia,'Times New Roman',serif;";
+---
+
+<Layout title={title} description={description} activeNav="" lang="en" transparentTop={true}>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(termSetSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+    <link rel="alternate" hreflang="es" href={altUrl} />
+  </Fragment>
+
+  <section class="relative min-h-[42vh] -mt-16 w-full overflow-hidden flex items-end pb-14 md:pb-20 section-cinematic grain">
+    <div class="atmosphere-glow magenta" style="top:14%;right:-12%;width:520px;height:520px;opacity:0.35;"></div>
+    <div class="relative z-10 max-w-5xl mx-auto px-6 lg:px-10 w-full pt-32 md:pt-40">
+      <div class="flex flex-col items-start gap-6 max-w-3xl">
+        <span class="text-[11px] uppercase tracking-[0.32em] italic text-white/45" style={serif}>Glossary</span>
+        <h1 class="font-display text-[40px] sm:text-6xl md:text-7xl lg:text-[86px] text-white leading-[0.95] tracking-[-0.03em]">The OnlyFans words nobody explains.</h1>
+        <p class="text-white/65 text-[15px] md:text-base lg:text-lg leading-relaxed max-w-2xl">{glossary.length} terms creators run into when they start earning: what agencies charge on, how paid promo is counted, and the contract words that decide who owns your account. Written plainly, with no sales pitch.</p>
+      </div>
+    </div>
+  </section>
+
+  {order.map((cat) => (
+    <section class="relative py-16 md:py-24 section-panel grain">
+      <div class="relative z-10 max-w-5xl mx-auto px-6 lg:px-10">
+        <span class="block text-[11px] uppercase tracking-[0.32em] italic text-white/45 mb-8 md:mb-10" style={serif}>{glossaryCategories[cat].en}</span>
+        <div class="flex flex-col divide-y divide-white/10">
+          {glossary.filter((t) => t.category === cat).map((t) => (
+            <article id={t.slug} class="py-8 md:py-10 scroll-mt-28">
+              <h2 class="font-display text-2xl md:text-3xl lg:text-4xl text-white leading-[1.05] tracking-[-0.02em] mb-4">{t.term.en}</h2>
+              <p class="text-white text-base md:text-lg leading-relaxed mb-3">{t.short.en}</p>
+              <p class="text-white/65 text-base md:text-lg leading-relaxed">{t.long.en}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  ))}
+
+  <section class="relative py-20 md:py-28 section-cinematic grain">
+    <div class="relative z-10 max-w-3xl mx-auto px-6 lg:px-8 text-center flex flex-col items-center gap-7 md:gap-9">
+      <h2 class="font-display text-3xl md:text-4xl lg:text-5xl text-white leading-[1.0] tracking-[-0.02em]">Want the long version?</h2>
+      <p class="text-white/70 text-base md:text-lg leading-relaxed max-w-xl">We wrote the full breakdown of <a href="/blog/how-much-does-an-onlyfans-agency-charge" class="text-white underline underline-offset-4">what an OnlyFans agency charges</a> and a <a href="/blog/how-to-choose-a-trustworthy-onlyfans-agency" class="text-white underline underline-offset-4">10-point checklist to tell if an agency is legit</a>.</p>
+      <a href="/#apply" class="inline-block bg-accent text-black font-bold px-8 py-4 rounded-[7px] text-sm tracking-wide hover:brightness-95 hover:scale-[1.02] transition-all">Apply to work with us</a>
+    </div>
+  </section>
+</Layout>

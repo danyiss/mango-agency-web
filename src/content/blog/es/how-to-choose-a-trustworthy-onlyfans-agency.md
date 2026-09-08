@@ -110,3 +110,5 @@ Trabajamos con pocas creadoras a la vez y seleccionamos por compromiso, no por f
 Si después de pasar esta checklist quieres ver si encajamos, puedes [enviar tu solicitud aquí](/es#apply). Y si acabas eligiendo otra agencia, usa igualmente las siete preguntas: es lo que nos habría gustado que le preguntaran a todas las creadoras que llegan a nosotros después de una mala experiencia.
 
 Trabajamos con creadoras de toda Latinoamérica y España: [Buenos Aires](/es/buenos-aires), [Ciudad de México](/es/mexico-city), [Bogotá](/es/bogota), [Santiago](/es/santiago), [Lima](/es/lima), [Medellín](/es/medellin) y [Madrid](/es/madrid), entre otras ciudades.
+
+¿Te suena a chino algún término? Tenemos un [glosario de OnlyFans para creadoras](/es/glosario) con todo lo que aparece aquí explicado en claro.

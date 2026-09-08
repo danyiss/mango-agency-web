@@ -110,3 +110,5 @@ We work with a small roster and select on commitment rather than current revenue
 If you have run this checklist and want to see whether we are a fit, you can [send an application here](/#apply). And if you end up choosing a different agency, use the seven questions anyway — it is what we wish someone had asked on behalf of every creator who reaches us after a bad experience.
 
 We work with creators across Latin America and Spain: [Buenos Aires](/buenos-aires), [Mexico City](/mexico-city), [Bogotá](/bogota), [Santiago](/santiago), [Lima](/lima), [Medellín](/medellin) and [Madrid](/madrid), among other cities.
+
+Unsure about any of the terms? We keep an [OnlyFans glossary for creators](/glossary) explaining all of them in plain language.

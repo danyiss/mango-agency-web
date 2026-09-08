@@ -117,3 +117,5 @@ Te lo decimos también, porque es verdad:
 Si dudas, usa nuestra [checklist para saber si una agencia es de fiar](/es/blog/how-to-choose-a-trustworthy-onlyfans-agency): sirve para evaluarnos a nosotros y a cualquiera.
 
 Si después de leer esto quieres ver si encajamos, puedes [enviar tu solicitud aquí](/es#apply). Ya sabes el precio, así que la conversación empieza donde tiene que empezar: en cómo hacer crecer tu cuenta.
+
+¿Te suena a chino algún término? Tenemos un [glosario de OnlyFans para creadoras](/es/glosario) con todo lo que aparece aquí explicado en claro.
